@@ -1,0 +1,409 @@
+fileFormatVersion: 2
+guid: b0a7f54e04f90fe409abc545f955386d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5101093893852213387
+    second: Player Effect_0
+  - first:
+      213: 1317488718999911931
+    second: Player Effect_1
+  - first:
+      213: 1266369670070326285
+    second: Player Effect_2
+  - first:
+      213: -2782513724058499001
+    second: Player Effect_3
+  - first:
+      213: 2339587494728700019
+    second: Player Effect_4
+  - first:
+      213: -3655352352612725084
+    second: Player Effect_5
+  - first:
+      213: 1960677140720289279
+    second: Player Effect_6
+  - first:
+      213: -7833087916939268399
+    second: Player Effect_7
+  - first:
+      213: 4123918688276633813
+    second: Player Effect_8
+  - first:
+      213: 7489802516554423974
+    second: Player Effect_9
+  - first:
+      213: 6563753440461614376
+    second: Player Effect_10
+  - first:
+      213: 3187514559501985743
+    second: Player Effect_11
+  - first:
+      213: 1518738760214706825
+    second: Player Effect_12
+  - first:
+      213: 1130537707640882398
+    second: Player Effect_13
+  - first:
+      213: 8612183090239672731
+    second: Player Effect_14
+  - first:
+      213: 3335444102140476099
+    second: Player Effect_15
+  - first:
+      213: -1291921692086669951
+    second: Player Effect_16
+  - first:
+      213: 6304997942098131559
+    second: Player Effect_17
+  - first:
+      213: -4152666765525635045
+    second: Player Effect_18
+  - first:
+      213: 446381306732279601
+    second: Player Effect_19
+  - first:
+      213: 8292349550923433312
+    second: Player Effect_20
+  - first:
+      213: -2678107053603184855
+    second: Player Effect_21
+  - first:
+      213: -6197336659253310854
+    second: Player Effect_22
+  - first:
+      213: 8539013762791342428
+    second: Player Effect_23
+  - first:
+      213: -4377569536174974468
+    second: Player Effect_24
+  - first:
+      213: -1089006921351304154
+    second: Player Effect_25
+  - first:
+      213: 7526229986195188006
+    second: Player Effect_26
+  - first:
+      213: -7091547020391534426
+    second: Player Effect_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Player Effect_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 293
+        width: 61
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b80b9f4aed9bac640800000000000000
+      internalID: 5101093893852213387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Effect_1
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 278
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfdf2937209a84210800000000000000
+      internalID: 1317488718999911931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Effect_2
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 253
+        width: 152
+        height: 142
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d04ded2618c039110800000000000000
+      internalID: 1266369670070326285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Effect_3
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 258
+        width: 131
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74808d6a2868269d0800000000000000
+      internalID: -2782513724058499001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Effect_4
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 1
+        width: 152
+        height: 156
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37010484e62e77020800000000000000
+      internalID: 2339587494728700019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Effect_6
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 0
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff58cdba879b53b10800000000000000
+      internalID: 1960677140720289279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Effect_26
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 0
+        width: 163
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 629ae09fb4a827860800000000000000
+      internalID: 7526229986195188006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: b038c8e2725893643b293eea85c1eb58
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Player Effect_0: 5101093893852213387
+      Player Effect_1: 1317488718999911931
+      Player Effect_10: 6563753440461614376
+      Player Effect_11: 3187514559501985743
+      Player Effect_12: 1518738760214706825
+      Player Effect_13: 1130537707640882398
+      Player Effect_14: 8612183090239672731
+      Player Effect_15: 3335444102140476099
+      Player Effect_16: -1291921692086669951
+      Player Effect_17: 6304997942098131559
+      Player Effect_18: -4152666765525635045
+      Player Effect_19: 446381306732279601
+      Player Effect_2: 1266369670070326285
+      Player Effect_20: 8292349550923433312
+      Player Effect_21: -2678107053603184855
+      Player Effect_22: -6197336659253310854
+      Player Effect_23: 8539013762791342428
+      Player Effect_24: -4377569536174974468
+      Player Effect_25: -1089006921351304154
+      Player Effect_26: 7526229986195188006
+      Player Effect_27: -7091547020391534426
+      Player Effect_3: -2782513724058499001
+      Player Effect_4: 2339587494728700019
+      Player Effect_5: -3655352352612725084
+      Player Effect_6: 1960677140720289279
+      Player Effect_7: -7833087916939268399
+      Player Effect_8: 4123918688276633813
+      Player Effect_9: 7489802516554423974
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

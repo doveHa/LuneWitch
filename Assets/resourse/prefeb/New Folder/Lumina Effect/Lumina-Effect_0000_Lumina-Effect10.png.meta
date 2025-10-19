@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: e57489bbb6bcab149b7d8c93d3bfdd34
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2198917138137282262
+    second: Lumina-Effect_0000_Lumina-Effect10_0
+  - first:
+      213: -4530297464239459713
+    second: Lumina-Effect_0000_Lumina-Effect10_1
+  - first:
+      213: 2663502668309159461
+    second: Lumina-Effect_0000_Lumina-Effect10_2
+  - first:
+      213: -4632689642927290431
+    second: Lumina-Effect_0000_Lumina-Effect10_3
+  - first:
+      213: -6900719635405121132
+    second: Lumina-Effect_0000_Lumina-Effect10_4
+  - first:
+      213: -8278650533847511830
+    second: Lumina-Effect_0000_Lumina-Effect10_5
+  - first:
+      213: -9219905747088791466
+    second: Lumina-Effect_0000_Lumina-Effect10_6
+  - first:
+      213: -1235277567440457461
+    second: Lumina-Effect_0000_Lumina-Effect10_7
+  - first:
+      213: 8136581818849939933
+    second: Lumina-Effect_0000_Lumina-Effect10_8
+  - first:
+      213: -6916307463576304432
+    second: Lumina-Effect_0000_Lumina-Effect10_9
+  - first:
+      213: 8006182327143246159
+    second: Lumina-Effect_0000_Lumina-Effect10_10
+  - first:
+      213: 4649033787485153954
+    second: Lumina-Effect_0000_Lumina-Effect10_11
+  - first:
+      213: -2349182793436910192
+    second: Lumina-Effect_0000_Lumina-Effect10_12
+  - first:
+      213: -8242046705320530769
+    second: Lumina-Effect_0000_Lumina-Effect10_13
+  - first:
+      213: 8127924626278453922
+    second: Lumina-Effect_0000_Lumina-Effect10_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Lumina-Effect_0000_Lumina-Effect10_0
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 434
+        width: 92
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a290fc26380eb71e0800000000000000
+      internalID: -2198917138137282262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lumina-Effect_0000_Lumina-Effect10_1
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 384
+        width: 77
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f72772575762121c0800000000000000
+      internalID: -4530297464239459713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lumina-Effect_0000_Lumina-Effect10_2
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 294
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52e5fd2a099a6f420800000000000000
+      internalID: 2663502668309159461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lumina-Effect_0000_Lumina-Effect10_3
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 304
+        width: 82
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c700b6905165bfb0800000000000000
+      internalID: -4632689642927290431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lumina-Effect_0000_Lumina-Effect10_4
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 254
+        width: 152
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4995d1d9d08bb30a0800000000000000
+      internalID: -6900719635405121132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lumina-Effect_0000_Lumina-Effect10_5
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 294
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aeccb6e93335c1d80800000000000000
+      internalID: -8278650533847511830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lumina-Effect_0000_Lumina-Effect10_6
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 249
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 658a03a72905c0080800000000000000
+      internalID: -9219905747088791466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lumina-Effect_0000_Lumina-Effect10_7
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 204
+        width: 32
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b01f3b1e8996bdee0800000000000000
+      internalID: -1235277567440457461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lumina-Effect_0000_Lumina-Effect10_8
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 239
+        width: 72
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd1d3760e02fae070800000000000000
+      internalID: 8136581818849939933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lumina-Effect_0000_Lumina-Effect10_9
+      rect:
+        serializedVersion: 2
+        x: 698
+        y: 204
+        width: 32
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d4c62c81075400a0800000000000000
+      internalID: -6916307463576304432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lumina-Effect_0000_Lumina-Effect10_10
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 249
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f492260786cab1f60800000000000000
+      internalID: 8006182327143246159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lumina-Effect_0000_Lumina-Effect10_11
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 104
+        width: 127
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2aa67db199fa48040800000000000000
+      internalID: 4649033787485153954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lumina-Effect_0000_Lumina-Effect10_12
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 139
+        width: 82
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09dabb422b6066fd0800000000000000
+      internalID: -2349182793436910192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lumina-Effect_0000_Lumina-Effect10_13
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 94
+        width: 142
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: face033903e5e9d80800000000000000
+      internalID: -8242046705320530769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lumina-Effect_0000_Lumina-Effect10_14
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 104
+        width: 132
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a21a7e42603cc070800000000000000
+      internalID: 8127924626278453922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Lumina-Effect_0000_Lumina-Effect10_0: -2198917138137282262
+      Lumina-Effect_0000_Lumina-Effect10_1: -4530297464239459713
+      Lumina-Effect_0000_Lumina-Effect10_10: 8006182327143246159
+      Lumina-Effect_0000_Lumina-Effect10_11: 4649033787485153954
+      Lumina-Effect_0000_Lumina-Effect10_12: -2349182793436910192
+      Lumina-Effect_0000_Lumina-Effect10_13: -8242046705320530769
+      Lumina-Effect_0000_Lumina-Effect10_14: 8127924626278453922
+      Lumina-Effect_0000_Lumina-Effect10_2: 2663502668309159461
+      Lumina-Effect_0000_Lumina-Effect10_3: -4632689642927290431
+      Lumina-Effect_0000_Lumina-Effect10_4: -6900719635405121132
+      Lumina-Effect_0000_Lumina-Effect10_5: -8278650533847511830
+      Lumina-Effect_0000_Lumina-Effect10_6: -9219905747088791466
+      Lumina-Effect_0000_Lumina-Effect10_7: -1235277567440457461
+      Lumina-Effect_0000_Lumina-Effect10_8: 8136581818849939933
+      Lumina-Effect_0000_Lumina-Effect10_9: -6916307463576304432
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

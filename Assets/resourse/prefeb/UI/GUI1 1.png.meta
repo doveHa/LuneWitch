@@ -1,0 +1,693 @@
+fileFormatVersion: 2
+guid: 562568336dbcda1409824c701279eccc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3303060334013916961
+    second: GUI1 1_0
+  - first:
+      213: 8638664446363215617
+    second: GUI1 1_1
+  - first:
+      213: 5430273023855561910
+    second: GUI1 1_2
+  - first:
+      213: -3155854426916639408
+    second: GUI1 1_3
+  - first:
+      213: -1681882931568289167
+    second: GUI1 1_4
+  - first:
+      213: 234993798587531872
+    second: GUI1 1_5
+  - first:
+      213: 7727117825521495989
+    second: GUI1 1_6
+  - first:
+      213: 6406488099240409177
+    second: GUI1 1_7
+  - first:
+      213: -384532689145951674
+    second: GUI1 1_8
+  - first:
+      213: -5690699101130358458
+    second: GUI1 1_9
+  - first:
+      213: 1515899209913891969
+    second: GUI1 1_10
+  - first:
+      213: -8423239946755092558
+    second: GUI1 1_11
+  - first:
+      213: 3641229133527597417
+    second: GUI1 1_12
+  - first:
+      213: -9169221463424373694
+    second: GUI1 1_13
+  - first:
+      213: 8619739089578884046
+    second: GUI1 1_14
+  - first:
+      213: 4971807306627838743
+    second: GUI1 1_15
+  - first:
+      213: 1594667947914476066
+    second: GUI1 1_16
+  - first:
+      213: -6467823760353854829
+    second: GUI1 1_17
+  - first:
+      213: 1501769361901116431
+    second: GUI1 1_18
+  - first:
+      213: 400669634131705249
+    second: GUI1 1_19
+  - first:
+      213: -1219723795186387266
+    second: GUI1 1_20
+  - first:
+      213: 2733269577416356764
+    second: GUI1 1_21
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GUI1 1_0
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 539
+        width: 82
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd8da67602c2922d0800000000000000
+      internalID: -3303060334013916961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI1 1_1
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 535
+        width: 74
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 107a64b5b83b2e770800000000000000
+      internalID: 8638664446363215617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI1 1_2
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 539
+        width: 18
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bc0c4c5b843c5b40800000000000000
+      internalID: 5430273023855561910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI1 1_3
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 539
+        width: 18
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05d2ac08e172434d0800000000000000
+      internalID: -3155854426916639408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI1 1_4
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 539
+        width: 62
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17a541e7260c8a8e0800000000000000
+      internalID: -1681882931568289167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI1 1_5
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 391
+        width: 62
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 062ca316d9dd24300800000000000000
+      internalID: 234993798587531872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI1 1_6
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 407
+        width: 6
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bf2cc7e8bc3c3b60800000000000000
+      internalID: 7727117825521495989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI1 1_7
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 419
+        width: 6
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 958fdf4bbfa68e850800000000000000
+      internalID: 6406488099240409177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI1 1_8
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 423
+        width: 6
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64a0eea7e8dd9aaf0800000000000000
+      internalID: -384532689145951674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI1 1_9
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 432
+        width: 4
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6418d7171539601b0800000000000000
+      internalID: -5690699101130358458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI1 1_10
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 271
+        width: 26
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18c7632cc4e890510800000000000000
+      internalID: 1515899209913891969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI1 1_11
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 271
+        width: 50
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bf48cb85e3aa1b80800000000000000
+      internalID: -8423239946755092558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI1 1_12
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 271
+        width: 74
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96147b9da9e388230800000000000000
+      internalID: 3641229133527597417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI1 1_13
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 271
+        width: 26
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24ce3bdd8a160c080800000000000000
+      internalID: -9169221463424373694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI1 1_14
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 276
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecbf5ea58077f9770800000000000000
+      internalID: 8619739089578884046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI1 1_15
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 271
+        width: 74
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7137e3357686ff440800000000000000
+      internalID: 4971807306627838743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI1 1_16
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 167
+        width: 450
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22ab42abc06612610800000000000000
+      internalID: 1594667947914476066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI1 1_19
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 27
+        width: 102
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1adb4bec8e67f8500800000000000000
+      internalID: 400669634131705249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI1 1_20
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 271
+        width: 90
+        height: 98
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb6f2dfababa21fe0800000000000000
+      internalID: -1219723795186387266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI1 1_21
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 11
+        width: 98
+        height: 107
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c93b84df2368ee520800000000000000
+      internalID: 2733269577416356764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI1 1_17
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 12
+        width: 88
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 038a7c87d59ae004f80564a4eb44cc5d
+      internalID: -6467823760353854829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 6a2b923b3a06e0f4192331122d7fa0b4
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      GUI1 1_0: -3303060334013916961
+      GUI1 1_1: 8638664446363215617
+      GUI1 1_10: 1515899209913891969
+      GUI1 1_11: -8423239946755092558
+      GUI1 1_12: 3641229133527597417
+      GUI1 1_13: -9169221463424373694
+      GUI1 1_14: 8619739089578884046
+      GUI1 1_15: 4971807306627838743
+      GUI1 1_16: 1594667947914476066
+      GUI1 1_17: -6467823760353854829
+      GUI1 1_18: 1501769361901116431
+      GUI1 1_19: 400669634131705249
+      GUI1 1_2: 5430273023855561910
+      GUI1 1_20: -1219723795186387266
+      GUI1 1_21: 2733269577416356764
+      GUI1 1_3: -3155854426916639408
+      GUI1 1_4: -1681882931568289167
+      GUI1 1_5: 234993798587531872
+      GUI1 1_6: 7727117825521495989
+      GUI1 1_7: 6406488099240409177
+      GUI1 1_8: -384532689145951674
+      GUI1 1_9: -5690699101130358458
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

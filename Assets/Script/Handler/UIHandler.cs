@@ -1,72 +1,19 @@
 using Script.Manager;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
-namespace Handler
+public class SceneClickHandler : MonoBehaviour
 {
-    public class UIHandler : MonoBehaviour
+    void Update()
     {
-        [SerializeField] private GameObject optionMenu, exitMenu;
-
-        private KeyInput _keyInput;
-
-        void Start()
+        if (Input.GetMouseButtonDown(0)) // 마우스 왼쪽 클릭
         {
-            _keyInput = new KeyInput();
-            _keyInput.Input.Enable();
-            _keyInput.Input.Exit.performed += ShowExitMenu;
-            _keyInput.TitleScene.Enable();
-            _keyInput.TitleScene.NextScene.performed += SceneChange;
-        }
+            // UI 위를 클릭했다면 return
+            if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+                return;
 
-        public void ShowOptionMenu()
-        {
-            _keyInput.TitleScene.Disable();
-            optionMenu.SetActive(true);
-        }
-
-        public void CloseOptionMenu()
-        {
-            _keyInput.TitleScene.Enable();
-            optionMenu.SetActive(false);
-        }
-
-        public void CloseExitMenu()
-        {
-            exitMenu.SetActive(false);
-        }
-
-        public void Exit()
-        {
-            Application.Quit();
-        }
-
-        private void ShowExitMenu(InputAction.CallbackContext ctx)
-        {
-            exitMenu.SetActive(!exitMenu.activeInHierarchy);
-        }
-
-        private void SceneChange(InputAction.CallbackContext ctx)
-        {
-            if (!IsPointerOverUI())
-            {
-                SceneLoadManager.Manager.LoadMainScene();
-            }
-
-            _keyInput.Disable();
-        }
-
-        private bool IsPointerOverUI()
-        {
-            PointerEventData pointerData = new PointerEventData(EventSystem.current)
-            {
-                position = Mouse.current.position.ReadValue()
-            };
-
-            var results = new System.Collections.Generic.List<RaycastResult>();
-            EventSystem.current.RaycastAll(pointerData, results);
-            return results.Count > 0;
+            SceneLoadManager.Manager.LoadMainScene();
         }
     }
 }

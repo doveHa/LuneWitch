@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: LuminaAnimation
+  m_Controller: {fileID: 9100000, guid: 6d541a562728dd04481d75a0682193a7, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: c2ef8a05a878f334dbe637a47fc00b75, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: dec6e5248c095014cbcdbd2ae3f40864, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 343fe33b6a02ba6468bc737f9181ba1b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 48b67b73a4e219e4e9407bab94868283, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: da4960746d496104089803845f664070, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: fed4db5c9f9c84c468484836045cee29, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 0390a695229446347988032e052e7ceb, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 4bbf012fa0751c14a9b3ff395e212cc6, type: 2}

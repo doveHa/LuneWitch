@@ -1,9 +1,11 @@
+/*
 using System.Collections.Generic;
+using Script.Manager;
 using UnityEngine;
 
 public class InGameCardLoader : MonoBehaviour
 {
-    public List<GameObject> allCardObjects; // ¾À¿¡ ¹Ì¸® ¹èÄ¡µÈ Ä«µåµé
+    public List<GameObject> allCardObjects;
 
     private Dictionary<string, GameObject> cardDict = new Dictionary<string, GameObject>();
 
@@ -15,12 +17,12 @@ public class InGameCardLoader : MonoBehaviour
             cardDict[card.name] = card;
         }
 
-        var selectedNames = InGameManager2.Instance.selectedCharacterNames;
+        var selectedCards = PlayerManager.Manager.SelectedCreatures;
 
-        for (int i = 0; i < selectedNames.Count; i++)
+        for (int i = 0; i < selectedCards.Count; i++)
         {
-            string name = selectedNames[i];
-
+            string name = selectedCards[i].characterName;
+            Debug.Log(name);
             if (cardDict.TryGetValue(name, out GameObject card))
             {
                 card.SetActive(true);
@@ -28,8 +30,8 @@ public class InGameCardLoader : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning("ÇØ´ç ÀÌ¸§ÀÇ Ä«µå ¾øÀ½: " + name);
+                Debug.LogWarning("ï¿½Ø´ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ Ä«ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½: " + name);
             }
         }
     }
-}
+}*/

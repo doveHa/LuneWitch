@@ -25,11 +25,10 @@ public class CharacterManager : MonoBehaviour
         public string Skill { get; set; }
     }
 
-    [System.Serializable]
     public class SaveData
     {
-        public bool[] characterActive;
-        public string selectedCharacter;
+        public bool[] characterActive { get; set; }
+        public string selectedCharacter { get; set; }
     }
 
     public TextAsset Characterlist;
@@ -167,19 +166,7 @@ public class CharacterManager : MonoBehaviour
             Debug.Log($"{characterType} 캐릭터가 활성화 되었습니다.");
         }
     }
-
-    public void SelectCurrentCharacter()
-    {
-        SelectCharacter(curType); // 기존 선택 처리
-        Save(); // 저장
-
-        // 선택한 캐릭터 전역으로 저장
-        if (CharacterSelectionManager.Instance != null)
-            CharacterSelectionManager.Instance.SelectedCharacter = curType;
-
-        // 인게임 씬으로 전환
-    }
-
+    
     public void SelectCharacter(string characterType)
     {
         int index = GetCharacterIndex(characterType);
@@ -209,7 +196,7 @@ public class CharacterManager : MonoBehaviour
     void Save()
     {
         //string jdata = JsonConvert.SerializeObject(AllItemLIst);
-        string path1 = Path.Combine(Application.persistentDataPath, "MyCharacterItemList.txt");
+        string path1 = Path.Combine(Application.persistentDataPath, "MyCharacterItemList.json");
         string itemData = JsonSerializer.Serialize(AllItemLIst);
         //string itemData = JsonConvert.SerializeObject(AllItemLIst, Formatting.Indented);
         File.WriteAllText(path1, itemData);
@@ -220,7 +207,7 @@ public class CharacterManager : MonoBehaviour
             selectedCharacter = curType
         };
 
-        string path2 = Path.Combine(Application.persistentDataPath, "CharacterSaveData.txt");
+        string path2 = Path.Combine(Application.persistentDataPath, "CharacterSaveData.json");
         string saveJson = JsonSerializer.Serialize(saveData);
         //JsonConvert.SerializeObject(saveData, Formatting.Indented);
         File.WriteAllText(path2, saveJson);
@@ -229,7 +216,7 @@ public class CharacterManager : MonoBehaviour
 
     void Load()
     {
-        string path1 = Path.Combine(Application.persistentDataPath, "MyCharacterItemList.txt");
+        string path1 = Path.Combine(Application.persistentDataPath, "MyCharacterItemList.json");
         if (File.Exists(path1))
         {
             string jdata = File.ReadAllText(path1);
@@ -253,7 +240,7 @@ public class CharacterManager : MonoBehaviour
             }
         }
 
-        string path2 = Path.Combine(Application.persistentDataPath, "CharacterSaveData.txt");
+        string path2 = Path.Combine(Application.persistentDataPath, "CharacterSaveData.json");
         if (File.Exists(path2))
         {
             string saveJson = File.ReadAllText(path2);
@@ -275,8 +262,8 @@ public class CharacterManager : MonoBehaviour
     // 저장 데이터 초기화 함수
     public void ResetSaveData()
     {
-        string path1 = Path.Combine(Application.persistentDataPath, "MyCharacterItemList.txt");
-        string path2 = Path.Combine(Application.persistentDataPath, "CharacterSaveData.txt");
+        string path1 = Path.Combine(Application.persistentDataPath, "MyCharacterItemList.json");
+        string path2 = Path.Combine(Application.persistentDataPath, "CharacterSaveData.json");
 
         if (File.Exists(path1))
             File.Delete(path1);

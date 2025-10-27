@@ -173,7 +173,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -265,7 +265,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 2.16, y: 3.12}
+    oldSize: {x: 1.9148935, y: 2.7659574}
     newSize: {x: 2.42, y: 3.07}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -306,14 +306,13 @@ MonoBehaviour:
       UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"ddd","value":{"$content":false,"$type":"System.Boolean"},"typeHandle":{"Identification":"System.Boolean,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"Panel2","value":null,"typeHandle":{"Identification":"UnityEngine.GameObject,
       UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"},{"name":"\uc544\uc774\ub9b0
-      \uc2a4\ud0ac","value":{"$content":4,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.GameObject,
+      \uc2a4\ud0ac","value":null,"typeHandle":{"Identification":"UnityEngine.GameObject,
       UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
     _objectReferences:
     - {fileID: 7580550435601507887, guid: 3acf5c1f3e7801e40b4425accd9dd0ad, type: 3}
     - {fileID: 33942439929063507, guid: c29e604adcc11be47900aeeee9e5b109, type: 3}
     - {fileID: 2608073512222398471, guid: ddfa2bbcaa076124b9f519587c7d5f39, type: 3}
     - {fileID: 2956447731557068263}
-    - {fileID: 0}
 --- !u!114 &745090535770589114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -380,7 +379,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 2.16, y: 3.12}
+    oldSize: {x: 1.9148935, y: 2.7659574}
     newSize: {x: 2.42, y: 3.07}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

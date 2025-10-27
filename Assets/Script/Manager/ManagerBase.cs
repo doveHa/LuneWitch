@@ -2,7 +2,7 @@
 
 namespace Script.Manager
 {
-    public class ManagerBase<T> : MonoBehaviour where T : MonoBehaviour
+    public class ManagerBase<T> : MonoBehaviour where T : ManagerBase<T>
     {
         public static T Manager { get; private set; }
 
@@ -11,19 +11,22 @@ namespace Script.Manager
             GameObject managerObject = GameObject.Find("Manager");
             if (managerObject == null)
             {
-                managerObject = new GameObject();
-                managerObject.name = "Manager";
+                managerObject = new GameObject("Manager");
+                DontDestroyOnLoad(managerObject);
             }
-            
-            DontDestroyOnLoad(GameObject.Find("Manager"));
 
-            if (!managerObject.TryGetComponent(out T manager) && Manager == null)
+            if (Manager != null && Manager != this)
             {
-                managerObject.AddComponent<T>();
                 Destroy(gameObject);
+                return;
             }
 
-            Manager = GameObject.Find("Manager").GetComponent<T>();
+            if (!managerObject.TryGetComponent(out T manager))
+            {
+                manager = managerObject.AddComponent<T>();
+            }
+
+            Manager = manager;
         }
     }
 }

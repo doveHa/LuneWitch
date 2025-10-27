@@ -1,17 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System.Text.Json;
 using TMPro;
 using UnityEngine.UI;
+using Script.Manager;
 
 public class GameManager : MonoBehaviour
 {
     [System.Serializable]
     public class Item
     {
-        public Item(string type, string name, string hp, string attack, string attack1, string mana, string introduction)
+        public Item(string type, string name, string hp, string attack, string attack1, string mana,
+            string introduction)
         {
             Type = type;
             Name = name;
@@ -26,7 +27,7 @@ public class GameManager : MonoBehaviour
         public string Type { get; set; }
         public string Name { get; set; }
         public string hp { get; set; }
-        public string  Attack { get; set; }
+        public string Attack { get; set; }
         public string Attack1 { get; set; }
         public string mana { get; set; }
         public string Introduction { get; set; }
@@ -70,6 +71,7 @@ public class GameManager : MonoBehaviour
             string[] row = line[i].Split(',');
             AllItemLIst.Add(new Item(row[0], row[1], row[2], row[3], row[4], row[5], row[6]));
         }
+
         Load();
     }
 
@@ -181,7 +183,7 @@ public class GameManager : MonoBehaviour
         if (File.Exists(savePath))
         {
             string json = File.ReadAllText(savePath);
-            
+
             MyItemLIst = JsonSerializer.Deserialize<List<Item>>(json);
         }
         else
@@ -189,11 +191,13 @@ public class GameManager : MonoBehaviour
             MyItemLIst = new List<Item>();
             foreach (var item in AllItemLIst)
             {
-                Item newItem = new Item(item.Type, item.Name, item.hp, item.Attack, item.Attack1, item.mana, item.Introduction);
+                Item newItem = new Item(item.Type, item.Name, item.hp, item.Attack, item.Attack1, item.mana,
+                    item.Introduction);
                 if (item.Name == "실룸" || item.Name == "펌피" || item.Name == "마력석" || item.Name == "리멜른")
                     newItem.isUnlocked = true;
                 MyItemLIst.Add(newItem);
             }
+
             Save();
         }
 
@@ -231,16 +235,17 @@ public class GameManager : MonoBehaviour
             Item fromAll = AllItemLIst.Find(x => x.Name == itemName);
             if (fromAll != null)
             {
-                Item newItem = new Item(fromAll.Type, fromAll.Name, fromAll.hp, fromAll.Attack, fromAll.Attack1, fromAll.mana, fromAll.Introduction);
+                Item newItem = new Item(fromAll.Type, fromAll.Name, fromAll.hp, fromAll.Attack, fromAll.Attack1,
+                    fromAll.mana, fromAll.Introduction);
                 newItem.isUnlocked = true;
                 MyItemLIst.Add(newItem);
             }
         }
 
         // ✅ 덱 선택용 해금 매니저에도 추가
-        if (UnlockedCharacterManager.Instance != null)
+        if (UnlockedCharacterManager.Manager != null)
         {
-            UnlockedCharacterManager.Instance.Unlock(itemName);
+            UnlockedCharacterManager.Manager.Unlock(itemName);
         }
 
         Save();
@@ -259,7 +264,8 @@ public class GameManager : MonoBehaviour
         MyItemLIst = new List<Item>();
         foreach (var item in AllItemLIst)
         {
-            Item newItem = new Item(item.Type, item.Name, item.hp, item.Attack, item.Attack1, item.mana, item.Introduction);
+            Item newItem = new Item(item.Type, item.Name, item.hp, item.Attack, item.Attack1, item.mana,
+                item.Introduction);
             if (item.Name == "실룸" || item.Name == "펌피" || item.Name == "마력석" || item.Name == "리멜른")
                 newItem.isUnlocked = true;
             MyItemLIst.Add(newItem);

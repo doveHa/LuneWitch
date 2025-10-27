@@ -10,10 +10,12 @@ public class cardlist : MonoBehaviour
     [System.Serializable]
     public class Item
     {
-        public Item(string _Name, string _Attack, string _hp)
-        { Name = _Name; Attack = _Attack; hp = _hp; }
+        public Item(string Name, string Attack, string hp)
+        { this.Name = Name; this.Attack = Attack; this.hp = hp; }
 
-        public string Name, Attack, hp;
+        public string Name { get; set; }
+        public string Attack { get; set; }
+        public string hp { get; set; }
     }
 
     public TextAsset ItemDatabase;
@@ -88,16 +90,14 @@ public class cardlist : MonoBehaviour
     void Save()
     {
         string jdata = JsonSerializer.Serialize(AllItemList);
-        string path = Application.persistentDataPath + "cardlistText.txt";
+        string path = Application.persistentDataPath + "/cardlistText.json";
         File.WriteAllText(path, jdata);
         Debug.Log("Saved to " + path);
-        //string jdata = JsonConvert.SerializeObject(AllItemList);
-        //File.WriteAllText(Application.dataPath + "/Resources/cardlistText.txt", jdata);
     }
 
     void Load()
     {
-        string path = Application.persistentDataPath + "/Resources/cardlistText.txt";
+        string path = Application.persistentDataPath + "/cardlistText.json";
 
         if (File.Exists(path))
         {

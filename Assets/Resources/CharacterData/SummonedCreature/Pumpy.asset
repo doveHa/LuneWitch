@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 234cd38b9848a3e498c0cca54a1d01d6, type: 3}
+  m_Name: Pumpy
+  m_EditorClassIdentifier: 
+  characterName: Pumpy
+  characterName_Kr: "\uD38C\uD53C"
+  characterImage: {fileID: -4664545495872377565, guid: 6c288604c08d2424cac9562f9837d7e5, type: 3}
+  rarity: 1
+  description: "HP : 120\r\n\\n\uC18C\uBE44 \uB9C8\uB825 : 100\r\n\\n\uACF5\uACA9\uB825
+    :20"
+  characterType: Peashooter
+  cost: 100
+  attack: 20
+  health: 120
+  isUnlocked: 1

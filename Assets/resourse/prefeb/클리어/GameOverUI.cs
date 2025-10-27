@@ -1,4 +1,5 @@
 using System.Collections;
+using Script.Manager;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,20 +10,19 @@ public class GameOverUI : MonoBehaviour
 
     public void OnExitButtonClicked()
     {
-        // 0.5ÃÊ ÈÄ¿¡ ½ÇÇàµÇ´Â ÄÚ·çÆ¾ ½ÃÀÛ
         StartCoroutine(ExitAfterDelay());
     }
 
     private IEnumerator ExitAfterDelay()
     {
-        // 1. ÀçÈ­ Áö±Þ
+        // 1. ï¿½ï¿½È­ ï¿½ï¿½ï¿½ï¿½
         
         PlayerData.GachaTokens += rewardGacha;
 
-        // 2. 0.5ÃÊ ´ë±â
+        // 2. 0.5ï¿½ï¿½ ï¿½ï¿½ï¿½
         yield return new WaitForSeconds(0.5f);
 
-        // 3. ¸ÞÀÎ È­¸éÀ¸·Î ÀÌµ¿
-        SceneManager.LoadScene("Menu"); // ¾À ÀÌ¸§¿¡ ¸Â°Ô º¯°æ
+        // 3. ï¿½ï¿½ï¿½ï¿½ È­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
+        SceneLoadManager.Manager.LoadMainScene();
     }
 }

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: LimelnAnimation
+  m_Controller: {fileID: 9100000, guid: 48fb7ef5161c7d64fab85a78b4a3c182, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: e3532bbb833bd4a4da74241f25b1b488, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 70fcbd8ba6971ce43ad1e007495f0bc4, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 07caaf2c5861e9540bb1dc7c87d2db82, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 360868b4a1f6e434cac4fafa49375f58, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: a94b332ca389f9c438fa2352a7cca98e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8d27967305e07cc47a60bf13c5a5e9e1, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 69d381fb97d283644a2b1cbbd9d04eae, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 068a0e6e60c996b49bb6ed93607aa6a1, type: 2}

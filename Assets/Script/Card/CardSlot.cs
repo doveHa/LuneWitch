@@ -9,7 +9,7 @@ using ResourceManager = Script.Manager.ResourceManager;
 public class CardSlot : MonoBehaviour
 {
     public CharacterData characterData { get; private set; }
-    [SerializeField] private Image creatureSprite;
+    [SerializeField] private Image creatureSprite, moveSprite;
     [SerializeField] private Text cost;
     private Image frameImage;
 
@@ -43,7 +43,14 @@ public class CardSlot : MonoBehaviour
         Debug.Log("Add Card" + data.name);
         characterData = data;
         creatureSprite.sprite = data.characterImage;
+        moveSprite.sprite = data.characterImage;
         cost.text = data.cost.ToString();
+        GameObject creaturePrefab = Instantiate(
+            ResourceManager.Load<GameObject>(
+                Constant.ResourcePath.GAMEOBJECT_PATH_BY_CREATURE_NAME(data.characterName)), transform);
+        creaturePrefab.name = data.characterName;
+        creaturePrefab.SetActive(false);
+        GetComponent<DraggableObject>().SpawnPrefab = creaturePrefab;
     }
 
     private void UpdateUI()
@@ -55,13 +62,15 @@ public class CardSlot : MonoBehaviour
         }
         else
         {
+            GetComponent<DraggableObject>().SetDraggable(true);
             frameImage.color = whiteColor;
             creatureSprite.color = whiteColor;
         }
     }
 
-    public void ResetGauge()
+    public void UseCard()
     {
+        StageManager.Manager.UseCost(characterData.cost);
         StartCoroutine(cooldownCoroutine());
     }
 

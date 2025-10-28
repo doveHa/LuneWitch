@@ -29,7 +29,7 @@ public class DragAndDropItem : MonoBehaviour
     }
 
 
-    #region ¸¶¿ì½º µå·¡±×¾Ø µå·Ó
+    #region ë§ˆìš°ìŠ¤ ë“œë˜ê·¸ì•¤ ë“œë¡­
 
 
 
@@ -68,7 +68,7 @@ public class DragAndDropItem : MonoBehaviour
     #endregion
 
 
-    #region Å¸ÀÓ¶óÀÎÀÌ¶û ¸Â´ÂÁö
+    #region íƒ€ì„ë¼ì¸ì´ë‘ ë§ëŠ”ì§€
 
     private void OnTriggerEnter2D(Collider2D other)
     {

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ManaStoneAnimation
+  m_Controller: {fileID: 9100000, guid: 48fb7ef5161c7d64fab85a78b4a3c182, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: e3532bbb833bd4a4da74241f25b1b488, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: cf01d40c3e5cacb47abd0538b7e3b110, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 07caaf2c5861e9540bb1dc7c87d2db82, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 65cc926bb5b6a5c4085b0a94347fab3b, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: a94b332ca389f9c438fa2352a7cca98e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c6ec5e329f6b50d4c99873130d34aa1b, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 69d381fb97d283644a2b1cbbd9d04eae, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8f0c9ece0e363d54bb48cf98f5d4d590, type: 2}

@@ -7,6 +7,12 @@ namespace Script
     {
         public static class ResourcePath
         {
+            public static string GAMEOBJECT_PATH_BY_CREATURE_NAME(string creatureName)
+            {
+                return "Prefabs/Creatures/" + creatureName;
+                
+            }
+
             public static string SPRITE_PATH_BY_CHARACTER_NAME(string spriteName)
             {
                 return "Images/Character/" + spriteName;

@@ -16,7 +16,7 @@ MonoBehaviour:
   characterName_Kr: "\uC2E4\uB8F8"
   characterImage: {fileID: -3030794605390870092, guid: dcf4f5f9258734d48895ec4665e92bec, type: 3}
   rarity: 3
-  description: "\\nHP : 200\r\n\\n\uC18C\uBE44 \uB9C8\uB825 : 40"
+  description: "HP : 200\r\n\uC18C\uBE44 \uB9C8\uB825 : 40"
   characterType: 
   cost: 40
   attack: 0

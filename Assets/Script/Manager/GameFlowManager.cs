@@ -8,6 +8,7 @@ namespace Script.Manager
     {
         public static GameFlowManager Manager { get; private set; }
 
+        public int CurrentEnemy { get; set; }
         private int TargetCount;
         private int killCount = 0;
         private float startTime;
@@ -15,6 +16,9 @@ namespace Script.Manager
         [SerializeField] private GameObject RoundPanel;
         [SerializeField] private EnemySpawner spawner;
         [SerializeField] private TextMeshProUGUI elapsedTime;
+
+        [SerializeField] private GameObject EndGameScreen, GameOverScreen, GameWinScreen;
+
 
         void Awake()
         {
@@ -43,6 +47,12 @@ namespace Script.Manager
             }
         }
 
+        public void GameOver()
+        {
+            EndGameScreen.SetActive(true);
+            GameOverScreen.SetActive(true);
+        }
+
         private IEnumerator StartGame()
         {
             yield return new WaitUntil(() => !RoundPanel.activeInHierarchy);
@@ -58,6 +68,28 @@ namespace Script.Manager
 
         private void EndGame()
         {
+            //EndGameScreen.SetActive(true);
+            if (SceneLoadManager.SelectedChapterNo == 1)
+            {
+                GameWinScreen.SetActive(true);
+            }
+            else if (SceneLoadManager.SelectedChapterNo == 2)
+            {
+                EndGameScreen.SetActive(true);
+                switch (SceneLoadManager.SelectedRoundNo)
+                {
+                    case 1:
+                        SceneLoadManager.Manager.LoadStory("Chapter 2 Story 1");
+                        break;
+                    case 2:
+                        SceneLoadManager.Manager.LoadStory("Chapter 2 Story 4");
+                        break;
+                    case 3:
+                        SceneLoadManager.Manager.LoadStory("Chapter 2 Story 5");
+                        break;
+                }
+            }
+
             Debug.Log("Ending Game");
         }
 

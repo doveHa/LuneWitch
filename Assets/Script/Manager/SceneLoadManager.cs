@@ -32,5 +32,15 @@ namespace Script.Manager
                     break;
             }
         }
+
+        public void LoadRound()
+        {
+            SceneManager.LoadScene("FightScene");
+        }
+
+        public void LoadStory(string sceneName)
+        {
+            SceneManager.LoadScene(sceneName);
+        }
     }
 }

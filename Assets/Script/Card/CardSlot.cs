@@ -38,6 +38,10 @@ public class CardSlot : MonoBehaviour
         }
     }
 
+    void OnPointerEnter()
+    {
+        
+    }
     public void InitializeCard(CharacterData data)
     {
         Debug.Log("Add Card" + data.name);

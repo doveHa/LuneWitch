@@ -16,8 +16,8 @@ MonoBehaviour:
   characterName_Kr: "\uB9C8\uB825\uC11D"
   characterImage: {fileID: 1721749118665838677, guid: 2f51206596c3aef4e9cd258b91861ed0, type: 3}
   rarity: 3
-  description: "\rHP : 80\r\n\\n\uC18C\uBE44 \uB9C8\uB825 : 50\r\n\\n\uC0DD\uC0B0
-    \uC2DC\uAC04 : 15\uCD08\r\n\\n\uC0DD\uC0B0 \uB9C8\uB825 : 30\r"
+  description: "\rHP : 80\r\n\uC18C\uBE44 \uB9C8\uB825 : 50\r\n\uC0DD\uC0B0 \uC2DC\uAC04
+    : 15\uCD08\r\n\uC0DD\uC0B0 \uB9C8\uB825 : 30\r"
   characterType: 
   cost: 50
   attack: 0

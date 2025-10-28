@@ -12,7 +12,7 @@ public class CallPauseOnEnable : MonoBehaviour
 
     IEnumerator WaitAndPause()
     {
-        yield return null; // ÇÑ ÇÁ·¹ÀÓ ´ë±â
+        yield return null; // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 
         if (pauseScript == null)
         {
@@ -30,7 +30,8 @@ public class CallPauseOnEnable : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning($"[CallPauseOnEnable] PauseTaggedObjects¸¦ Ã£Áö ¸øÇß°Å³ª ºñÈ°¼ºÈ­ »óÅÂÀÔ´Ï´Ù. (½ÇÇà ¿ÀºêÁ§Æ®: {gameObject.name})");
+            Debug.LogWarning(
+                $"[CallPauseOnEnable] PauseTaggedObjectsï¿½ï¿½ Ã£ï¿½ï¿½ ï¿½ï¿½ï¿½ß°Å³ï¿½ ï¿½ï¿½È°ï¿½ï¿½È­ ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½. (ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®: {gameObject.name})");
         }
     }
 }

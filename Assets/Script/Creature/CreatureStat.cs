@@ -9,8 +9,10 @@ namespace Script.Creature
         [SerializeField] private ParticleSystem deathParticles;
 
         private Animator animator;
-        private int health;
+        private bool isDead = false;
 
+        public int MaxHealth { get; private set; }
+        public int Health { get; private set; }
         public int Attack { get; private set; }
 
         void Awake()
@@ -20,7 +22,8 @@ namespace Script.Creature
 
         public void Initialize(CharacterData characterData)
         {
-            health = characterData.health;
+            MaxHealth = characterData.health;
+            Health = MaxHealth;
             Attack = characterData.attack;
         }
 
@@ -31,8 +34,13 @@ namespace Script.Creature
 
         public void Hit(int damage)
         {
-            health -= damage;
-            if (health <= 0)
+            if (isDead)
+            {
+                return;
+            }
+
+            Health -= damage;
+            if (Health <= 0)
             {
                 Death();
             }
@@ -44,6 +52,8 @@ namespace Script.Creature
 
         private void Death()
         {
+            isDead = true;
+
             if (animator != null)
             {
                 animator.SetTrigger("Death");
@@ -53,7 +63,14 @@ namespace Script.Creature
         public void Destroy()
         {
             GetComponentInParent<DropSlot>().IsOnCreature = false;
-            StartCoroutine(DestroyCoroutine());
+            if (deathParticles != null)
+            {
+                StartCoroutine(DestroyCoroutine());
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
 
         public void RangeShootAmmo()

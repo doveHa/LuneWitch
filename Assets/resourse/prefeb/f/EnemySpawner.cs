@@ -1,9 +1,11 @@
 using System.Collections;
 using Script.Manager;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemySpawner : MonoBehaviour
 {
+    [SerializeField] private Slider spawnProgressSlider;
     [SerializeField] private Transform[] spawnPoints;
 
     private float minSpawnDelay = 5f;
@@ -16,6 +18,8 @@ public class EnemySpawner : MonoBehaviour
 
     private IEnumerator SpawnMonsters()
     {
+        spawnProgressSlider.maxValue = StageManager.Manager.SpawnCount;
+
         for (int i = 0; i < StageManager.Manager.SpawnCount; i++)
         {
             float delay = Random.Range(minSpawnDelay, maxSpawnDelay);
@@ -29,6 +33,7 @@ public class EnemySpawner : MonoBehaviour
                 spawnPoints[positionIndex].position,
                 spawnPoints[positionIndex].rotation
             ).transform.parent = spawnPoints[positionIndex];
+            spawnProgressSlider.value++;
         }
     }
 }

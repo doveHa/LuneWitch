@@ -16,7 +16,7 @@ MonoBehaviour:
   characterName_Kr: "\uBB34\uB808\uD2B8"
   characterImage: {fileID: 5560208762045671388, guid: 09852e67dd904ef43bd7388f64887246, type: 3}
   rarity: 1
-  description: "\uC18C\uBE44 \uB9C8\uB825 : 150\r\n\\n\uACF5\uACA9\uB825 :200\r\n"
+  description: "\uC18C\uBE44 \uB9C8\uB825 : 150\r\n\uACF5\uACA9\uB825 :200\r\n"
   characterType: 
   cost: 150
   attack: 200

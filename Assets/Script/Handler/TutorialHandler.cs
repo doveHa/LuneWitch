@@ -1,4 +1,5 @@
 ﻿using System;
+using Script;
 using Script.Manager;
 using TMPro;
 using UnityEngine;
@@ -18,10 +19,10 @@ public class TutorialHandler : MonoBehaviour
 
     public void Start()
     {
-        pageSprites = ResourceManager.LoadAll<Sprite>("Images/Tutorial");
+        pageSprites = ResourceManager.LoadAll<Sprite>(Constant.ResourcePath.TUTORIAL_IMAGES_PATH);
         Debug.Log(pageSprites.Length);
-        onDotImage = ResourceManager.Load<Sprite>("Images/UI/OnDot");
-        offDotImage = ResourceManager.Load<Sprite>("Images/UI/OffDot");
+        onDotImage = ResourceManager.Load<Sprite>(Constant.ResourcePath.UI_PATH_BY_NAME("OnDot"));
+        offDotImage = ResourceManager.Load<Sprite>(Constant.ResourcePath.UI_PATH_BY_NAME("OffDot"));
         Array.Sort(pageSprites, (a, b) => string.Compare(a.name, b.name, StringComparison.Ordinal));
 
         tutorialDescription = new[]

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Script.Enemy;
+using UnityEngine;
 
 namespace Script.Creature
 {
@@ -16,6 +17,7 @@ namespace Script.Creature
 
         public void AddForce()
         {
+            Debug.Log(ammoSpeed);
             GetComponent<Rigidbody2D>().linearVelocity = Vector2.right * ammoSpeed;
         }
 
@@ -23,6 +25,8 @@ namespace Script.Creature
         {
             if (other.CompareTag("Enemy"))
             {
+                other.GetComponentInChildren<EnemyStat>().Hit(atk);
+                Destroy(gameObject);
             }
         }
     }

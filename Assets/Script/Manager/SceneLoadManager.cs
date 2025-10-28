@@ -1,12 +1,14 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using Script.Stage;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Script.Manager
 {
     public class SceneLoadManager : ManagerBase<SceneLoadManager>
     {
-        private const string MAIN_SCENE = "Main";
         public static int SelectedChapterNo;
+        public static int SelectedRoundNo;
 
         protected override void Awake()
         {
@@ -15,7 +17,7 @@ namespace Script.Manager
 
         public void LoadMainScene()
         {
-            SceneManager.LoadScene(MAIN_SCENE);
+            SceneManager.LoadScene(Constant.Scene.MAIN_SCENE);
         }
 
         public void LoadChapter()

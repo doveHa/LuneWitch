@@ -57,7 +57,7 @@ namespace Script.Manager
         private void LoadCreatureData()
         {
             foreach (CharacterData character in
-                     ResourceManager.LoadAll<CharacterData>("CharacterData/SummonedCreature"))
+                     ResourceManager.LoadAll<CharacterData>(Constant.ResourcePath.ALL_CREATURES_PATH))
             {
                 allCharacterData.Add(character.name, character);
             }

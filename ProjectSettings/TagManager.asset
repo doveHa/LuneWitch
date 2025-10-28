@@ -12,6 +12,8 @@ TagManager:
   - "\uC544\uC774\uB9B0"
   - buy_dummy
   - Enemy
+  - PumpkinSeed
+  - Creature
   layers:
   - Default
   - TransparentFX

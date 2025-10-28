@@ -144,89 +144,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: candle_hit_0
+      name: Limeln_hit_0
       rect:
         serializedVersion: 2
-        x: 8
+        x: 0
         y: 0
-        width: 33
+        width: 48
         height: 50
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e9b27dfcd06df2d70800000000000000
-      internalID: 9020663933456296862
+      spriteID: 7c1884eb0a5df5849a5d2941e50053b2
+      internalID: 1930481024
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: candle_hit_2
+      name: Limeln_hit_1
       rect:
         serializedVersion: 2
-        x: 56
+        x: 48
         y: 0
-        width: 33
+        width: 48
         height: 50
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a72097dfe2d510750800000000000000
-      internalID: 6269394612678886010
+      spriteID: cddac5a16379c554ebcce9f020172b04
+      internalID: 728824830
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: candle_hit_4
+      name: Limeln_hit_2
       rect:
         serializedVersion: 2
-        x: 104
+        x: 96
         y: 0
-        width: 33
+        width: 48
         height: 50
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 52975a49cc72cbcf0800000000000000
-      internalID: -235269320909424347
+      spriteID: 443f3b9f4025f774f9f4b0df7608262c
+      internalID: 764526724
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: candle_hit_6
+      name: Limeln_hit_3
       rect:
         serializedVersion: 2
-        x: 152
+        x: 144
         y: 0
-        width: 33
+        width: 48
         height: 50
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: b5d99ea4d765f56e0800000000000000
-      internalID: -1846662226070889125
+      spriteID: bb8c306f073a9484f8c84805b07ed2af
+      internalID: 68447191
       vertices: []
       indices: 
       edges: []
@@ -243,15 +243,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":1.0},"gridSpriteSize":{"x":48.0,"y":50.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      candle_hit_0: 9020663933456296862
-      candle_hit_1: -5898935684771452599
-      candle_hit_2: 6269394612678886010
-      candle_hit_3: -2086750691325967650
-      candle_hit_4: -235269320909424347
-      candle_hit_5: -2487148327740163254
-      candle_hit_6: -1846662226070889125
+      Limeln_hit_0: 1930481024
+      Limeln_hit_1: 728824830
+      Limeln_hit_2: 764526724
+      Limeln_hit_3: 68447191
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

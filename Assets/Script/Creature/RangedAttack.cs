@@ -18,7 +18,7 @@ namespace Script.Creature
         {
             stat = GetComponentInParent<CreatureStat>();
         }
-        
+
         void OnTriggerEnter2D(Collider2D other)
         {
             if (other.CompareTag("Enemy"))
@@ -44,20 +44,24 @@ namespace Script.Creature
         {
             if (isEnemyOn && !isAttacking)
             {
-                StartCoroutine(ShootAmmo());
+                StartCoroutine(AttackMotionCoroutine());
             }
         }
 
-        private IEnumerator ShootAmmo()
+        public void ShootAmmo()
+        {
+            Ammo ammo = Instantiate(ammoPrefab, shootPoint.position, Quaternion.identity).GetComponent<Ammo>();
+            ammo.SetStat(stat.Attack, ammoSpeed);
+            ammo.AddForce();
+        }
+
+        private IEnumerator AttackMotionCoroutine()
         {
             isAttacking = true;
 
             while (isEnemyOn)
             {
                 stat.AttackMotion();
-                Ammo ammo = Instantiate(ammoPrefab, shootPoint.position, Quaternion.identity).GetComponent<Ammo>();
-                ammo.SetStat(stat.Attack, ammoSpeed);
-                ammo.AddForce();
                 yield return new WaitForSeconds(attackSpeed);
             }
 

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 746dae14bf3c42a192cb6f79b4b8ce3a, type: 3}
+  m_Name: Chapter2Round3
+  m_EditorClassIdentifier: Assembly-CSharp:Script.Manager:StageInfo
+  chapter: 2
+  round: 3
+  enemyCount: 11
+  roundTitle: "\uBD88\uAE38\uD55C \uC11C\uB9C9"
+  backGroundImage: {fileID: 994415258, guid: fc1288ec68de55d4cbd14a4ac7b952b0, type: 3}
+  enemyNames: []

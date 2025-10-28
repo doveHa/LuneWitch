@@ -8,6 +8,7 @@ public class ChapterSelectHandler : MonoBehaviour
     public void ShowDeckSelection(int chapter)
     {
         SceneLoadManager.SelectedChapterNo = chapter;
+        SceneLoadManager.SelectedRoundNo = 1;
         deckSelectPanel.SetActive(true);
     }
 }

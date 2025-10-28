@@ -40,11 +40,11 @@ namespace Script
             {
                 this.image = image;
                 _color = image.color;
-            }else if (TryGetComponent(out TextMeshProUGUI textMesh))
+            }
+            else if (TryGetComponent(out TextMeshProUGUI textMesh))
             {
                 this.textMesh = textMesh;
                 _color = textMesh.color;
-                
             }
         }
 
@@ -67,14 +67,14 @@ namespace Script
         private IEnumerator WaitAndFadeIn()
         {
             yield return new WaitForSeconds(waitBeforeStart);
-            yield return Fade(FULL,EMPTY);
+            yield return Fade(FULL, EMPTY);
             gameObject.SetActive(false);
         }
 
         private IEnumerator WaitAndFadeOut()
         {
             yield return new WaitForSeconds(waitBeforeStart);
-            yield return Fade(EMPTY,FULL);
+            yield return Fade(EMPTY, FULL);
         }
 
         private IEnumerator WaitAndFadeInOut()
@@ -85,21 +85,23 @@ namespace Script
             yield return StartCoroutine(Fade(FULL, EMPTY));
             gameObject.SetActive(false);
         }
-        
+
         private IEnumerator Fade(float from, float to)
         {
-            float time = 0f;
+            float alpha = from;
+            float speed = Mathf.Abs(to - from) / fadeDuration; // 초당 변화량
 
-            while (time < fadeDuration)
+            while (!Mathf.Approximately(alpha, to))
             {
-                time += Time.deltaTime;
-                ChangeAlpha(Mathf.Lerp(from, to, time / fadeDuration));
+                alpha = Mathf.MoveTowards(alpha, to, speed * Time.deltaTime);
+                ChangeAlpha(alpha);
                 yield return null;
             }
 
             ChangeAlpha(to);
         }
-        
+
+
         private void ChangeAlpha(float alpha)
         {
             _color.a = alpha;
@@ -114,6 +116,5 @@ namespace Script
                 image.color = _color;
             }
         }
-
     }
 }

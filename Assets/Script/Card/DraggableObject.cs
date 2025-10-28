@@ -1,3 +1,4 @@
+using Script.Creature;
 using Script.Manager;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -73,6 +74,8 @@ public class DraggableObject : MonoBehaviour
         creature.SetActive(true);
         creature.transform.SetParent(slot.transform);
         slot.IsOnCreature = true;
+        slot.Creature = creature.GetComponent<CreatureStat>();
+        slot.Creature.Initialize(GetComponent<CardSlot>().characterData);
         canDrag = false;
     }
 }

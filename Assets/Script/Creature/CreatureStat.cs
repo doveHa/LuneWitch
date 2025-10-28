@@ -1,12 +1,16 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.Serialization;
 
 namespace Script.Creature
 {
     public class CreatureStat : MonoBehaviour
     {
+        [SerializeField] private ParticleSystem deathParticles;
+
         private Animator animator;
-        public int Health { get; private set; }
+        private int health;
+
         public int Attack { get; private set; }
 
         void Awake()
@@ -16,27 +20,52 @@ namespace Script.Creature
 
         public void Initialize(CharacterData characterData)
         {
-            Health = characterData.health;
+            health = characterData.health;
             Attack = characterData.attack;
         }
+
         public void AttackMotion()
         {
-            animator.SetTrigger("Attak");
+            animator.SetTrigger("Attack");
         }
 
         public void Hit(int damage)
         {
-            Health -= damage;
-            if (Health <= 0)
+            health -= damage;
+            if (health <= 0)
             {
                 Death();
             }
-            animator.SetTrigger("Hit");
+            else
+            {
+                animator.SetTrigger("Hit");
+            }
         }
-        
+
         private void Death()
         {
-            animator.SetTrigger("Death");
+            if (animator != null)
+            {
+                animator.SetTrigger("Death");
+            }
+        }
+
+        public void Destroy()
+        {
+            GetComponentInParent<DropSlot>().IsOnCreature = false;
+            StartCoroutine(DestroyCoroutine());
+        }
+
+        public void RangeShootAmmo()
+        {
+            GetComponentInChildren<RangedAttack>().ShootAmmo();
+        }
+
+        private IEnumerator DestroyCoroutine()
+        {
+            deathParticles.Play();
+            yield return new WaitUntil(() => deathParticles.isStopped);
+            Destroy(gameObject);
         }
     }
 }

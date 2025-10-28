@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Limeln
   characterName_Kr: "\uB9AC\uBA5C\uB978"
-  characterImage: {fileID: 1365539031471768751, guid: 257afe877406a794aae36943c40a41e0, type: 3}
+  characterImage: {fileID: -1763985911, guid: 4292c0a7a75805241bc159687cc5b3c7, type: 3}
   rarity: 3
   description: "HP : 120\r\n\\n\uC18C\uBE44 \uB9C8\uB825 : 150\r\n\\n\uACF5\uACA9\uB825
     :15\r\n\\n\uD654\uC0C1 : 5"

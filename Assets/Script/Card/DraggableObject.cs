@@ -1,3 +1,4 @@
+using Script.Card;
 using Script.Creature;
 using Script.Manager;
 using UnityEngine;
@@ -7,7 +8,7 @@ using UnityEngine.Serialization;
 public class DraggableObject : MonoBehaviour
 {
     [SerializeField] private GameObject moveSprite;
-    public GameObject SpawnPrefab { private get; set; }
+
     private Vector3 offset, originalPos;
     private bool isDragging = false, canDrag = false;
     private Camera mainCamera;
@@ -52,30 +53,12 @@ public class DraggableObject : MonoBehaviour
         isDragging = false;
 
         Vector2 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-        Collider2D hit = Physics2D.OverlapPoint(mousePos);
+        Collider2D[] hit = Physics2D.OverlapPointAll(mousePos);
 
-        if (hit != null && hit.TryGetComponent<DropSlot>(out var slot))
-        {
-            if (!slot.IsOnCreature)
-            {
-                SpawnAt(slot);
-            }
-        }
+        moveSprite.GetComponent<IMouseUp>().MouseUp(hit);
 
+        canDrag = true;
         moveSprite.SetActive(false);
         moveSprite.transform.position = originalPos;
-    }
-
-    private void SpawnAt(DropSlot slot)
-    {
-        GetComponent<CardSlot>().UseCard();
-        GameObject creature = Instantiate(SpawnPrefab, slot.transform.position, Quaternion.identity);
-        creature.name = SpawnPrefab.name;
-        creature.SetActive(true);
-        creature.transform.SetParent(slot.transform);
-        slot.IsOnCreature = true;
-        slot.Creature = creature.GetComponent<CreatureStat>();
-        slot.Creature.Initialize(GetComponent<CardSlot>().characterData);
-        canDrag = false;
     }
 }

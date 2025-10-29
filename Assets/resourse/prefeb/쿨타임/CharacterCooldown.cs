@@ -16,16 +16,7 @@ public class CharacterCooldown : MonoBehaviour
     public bool IsSkillReady => isReady;
 
     void Start()
-    {
-        if (cooldownSlider == null)
-        {
-            Debug.LogError("⚠️ Cooldown Slider가 연결되지 않았습니다!");
-        }
-        else
-        {
-            cooldownSlider.value = 0f;
-        }
-    }
+    {}
 
     void Update()
     {

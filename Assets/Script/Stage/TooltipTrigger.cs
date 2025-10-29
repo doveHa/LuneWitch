@@ -7,35 +7,47 @@ public abstract class TooltipTrigger : MonoBehaviour, IPointerEnterHandler, IPoi
     [SerializeField] private GameObject tooltipPanel;
 
     protected string tooltipText;
+    private bool isTooltipActive;
 
     private void Awake()
     {
         tooltipPanel.SetActive(false);
     }
 
-    void Start()
+    void Update()
     {
+        if (isTooltipActive)
+        {
+            AdjustTooltipText();
+        }
     }
 
     protected abstract void SetTooltipText();
-    
-    public void OnPointerEnter(PointerEventData eventData)
+
+    private void AdjustTooltipText()
     {
         SetTooltipText();
         
         if (tooltipPanel.transform.GetChild(0).TryGetComponent(out TextMeshProUGUI textUGUI))
         {
             textUGUI.text = tooltipText;
-        }else if (tooltipPanel.transform.GetChild(0).TryGetComponent(out TextMeshPro text))
+        }
+        else if (tooltipPanel.transform.GetChild(0).TryGetComponent(out TextMeshPro text))
         {
             text.text = tooltipText;
         }
-        
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        isTooltipActive = true; 
+        AdjustTooltipText();
         tooltipPanel.SetActive(true);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        isTooltipActive = false; 
         tooltipPanel.SetActive(false);
     }
 }

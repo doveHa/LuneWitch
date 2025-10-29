@@ -1,7 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System.Text.Json;
+using Script.Enum;
+using Script.Manager;
 using TMPro;
 using UnityEngine.UI;
 
@@ -18,7 +21,7 @@ public class CharacterManager : MonoBehaviour
             Introduction = introduction;
             Skill = skill;
         }
-        
+
         public string Type { get; set; }
         public string Name { get; set; }
         public string Introduction { get; set; }
@@ -166,7 +169,7 @@ public class CharacterManager : MonoBehaviour
             Debug.Log($"{characterType} 캐릭터가 활성화 되었습니다.");
         }
     }
-    
+
     public void SelectCharacter(string characterType)
     {
         int index = GetCharacterIndex(characterType);
@@ -178,6 +181,21 @@ public class CharacterManager : MonoBehaviour
                 MainPlayerImage.sprite = PlayerSprites[index];
                 if (CharacterDescriptionText != null) CharacterDescriptionText.text = CharacterDescriptions[index];
                 if (CharacterNameText != null) CharacterNameText.text = CharacterNames[index];
+
+                CharacterName name = CharacterName.Lumina;
+                switch (characterType)
+                {
+                    case "루미나":
+                        name = CharacterName.Lumina;
+                        break;
+                    case "아이렌":
+                        name = CharacterName.Irene;
+                        break;
+                }
+
+                PlayerManager.Manager.SelectedCharacter = name;
+
+
                 Debug.Log($"[{characterType}] 캐릭터가 선택되어 메인 화면에 반영되었습니다.");
             }
         }

@@ -4,12 +4,20 @@ namespace Script.Enemy
 {
     public class RecognizeCreature : MonoBehaviour
     {
-        void OnTriggerEnter2D(Collider2D other)
+        private bool isRecognized;
+
+        void OnTriggerStay2D(Collider2D other)
         {
+            if (isRecognized)
+            {
+                return;
+            }
+
             if (other.TryGetComponent(out DropSlot dropSlot))
             {
                 if (dropSlot.IsOnCreature)
                 {
+                    isRecognized = true;
                     GetComponentInParent<EnemyStat>().SetCreature(true, dropSlot.Creature);
                 }
             }
@@ -19,6 +27,7 @@ namespace Script.Enemy
         {
             if (other.CompareTag("Creature"))
             {
+                isRecognized = false;
                 GetComponentInParent<EnemyStat>().SetCreature(false, null);
             }
         }

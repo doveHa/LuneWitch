@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿/*
+using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System.Text.Json;
@@ -283,4 +284,4 @@ public class GameManager : MonoBehaviour
         int totalCount = AllItemLIst.Count;
         itemCountText.text = $"{unlockedCount}/{totalCount}";
     }
-}
+}*/

@@ -14,11 +14,13 @@ TagManager:
   - Enemy
   - PumpkinSeed
   - Creature
+  - enemy
+  - "\uD654\uC5FC"
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Recognize
   - Water
   - UI
   - 

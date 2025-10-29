@@ -11,7 +11,7 @@ namespace Script.ButtonOnClick
         
         protected override void OnClick()
         {
-            PlayerManager.Manager.SetCharacter(characterName);
+            PlayerManager.Manager.SelectedCharacter = characterName;
         }
     }
 }

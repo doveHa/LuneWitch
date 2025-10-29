@@ -6,7 +6,7 @@ namespace Script.Manager
 {
     public class PlayerManager : ManagerBase<PlayerManager>
     {
-        public CharacterName SelectedCharacter { get; private set; }
+        public CharacterName SelectedCharacter { get; set; }
 
         public List<CharacterData> SelectedCreatures { get; private set; }
 
@@ -15,11 +15,6 @@ namespace Script.Manager
             base.Awake();
 
             SelectedCreatures = new List<CharacterData>();
-        }
-
-        public void SetCharacter(CharacterName character)
-        {
-            SelectedCharacter = character;
         }
 
         private const int MAX_CARDS = 4;

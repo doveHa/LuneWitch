@@ -43,14 +43,25 @@ namespace Script.Manager
             killCount++;
             if (killCount >= TargetCount)
             {
-                EndGame();
+                StartCoroutine(WaitTime());
             }
+        }
+
+        private IEnumerator WaitTime()
+        {
+            yield return new WaitForSeconds(5f);
+            EndGame();
         }
 
         public void GameOver()
         {
             EndGameScreen.SetActive(true);
             GameOverScreen.SetActive(true);
+        }
+
+        public EnemySpawner Spawner()
+        {
+            return spawner;
         }
 
         private IEnumerator StartGame()

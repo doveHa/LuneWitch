@@ -73,6 +73,12 @@ namespace Script.Creature
             }
         }
 
+        public void DestroyWithoutDeath()
+        {
+            GetComponentInParent<DropSlot>().IsOnCreature = false;
+            Destroy(gameObject);
+        }
+        
         public void RangeShootAmmo()
         {
             GetComponentInChildren<RangedAttack>().ShootAmmo();

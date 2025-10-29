@@ -1,5 +1,8 @@
 using System.Collections;
+using System.Collections.Generic;
+using Script.Enemy;
 using Script.Manager;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,6 +17,11 @@ public class EnemySpawner : MonoBehaviour
     public void SpawnStart()
     {
         StartCoroutine(SpawnMonsters());
+    }
+
+    public Transform[] SpawnPoints()
+    {
+        return spawnPoints;
     }
 
     private IEnumerator SpawnMonsters()

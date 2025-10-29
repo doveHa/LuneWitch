@@ -1,5 +1,6 @@
 using System.Collections;
 using Script;
+using Script.Card;
 using Script.Manager;
 using TMPro;
 using UnityEngine;
@@ -38,13 +39,8 @@ public class CardSlot : MonoBehaviour
         }
     }
 
-    void OnPointerEnter()
-    {
-        
-    }
     public void InitializeCard(CharacterData data)
     {
-        Debug.Log("Add Card" + data.name);
         characterData = data;
         creatureSprite.sprite = data.characterImage;
         moveSprite.sprite = data.characterImage;
@@ -54,7 +50,7 @@ public class CardSlot : MonoBehaviour
                 Constant.ResourcePath.GAMEOBJECT_PATH_BY_CREATURE_NAME(data.characterName)), transform);
         creaturePrefab.name = data.characterName;
         creaturePrefab.SetActive(false);
-        GetComponent<DraggableObject>().SpawnPrefab = creaturePrefab;
+        GetComponentInChildren<CreatureMouseUp>().SpawnPrefab = creaturePrefab;
     }
 
     private void UpdateUI()

@@ -376,7 +376,7 @@ GameObject:
   - component: {fileID: 5576374831925323256}
   - component: {fileID: 2660762103745829368}
   - component: {fileID: 9178146955487068043}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: attack_collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

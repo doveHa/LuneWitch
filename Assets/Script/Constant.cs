@@ -27,6 +27,11 @@ namespace Script
                 return "Prefabs/Enemy/" + enemyName;
             }
 
+            public static string GAMEOBJECT_PATH_BY_CHARACTER_NAME(string characterName)
+            {
+                return "Prefabs/Character/" + characterName;
+            }
+
             public static string STAGE_INFO_DATA_PATH_BY_CHAPTER_ROUND(int chapter, int round)
             {
                 return "StageInfo/Chapter" + chapter + "Round" + round;

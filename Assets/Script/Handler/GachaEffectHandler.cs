@@ -6,24 +6,16 @@ using System.Collections.Generic;
 
 public class GachaEffectHandler : MonoBehaviour
 {
-    [Header("단일 결과 UI")]
-    public GameObject gachaPanel;
+    [Header("단일 결과 UI")] public GameObject gachaPanel;
     public GameObject backgroundEffect;
     public Image characterImage;
     public TMP_Text characterNameText;
     public Animator characterAnimator;
 
-    [Header("다중 결과 UI")]
-    public GameObject multiResultPanel;
+    [Header("다중 결과 UI")] public GameObject multiResultPanel;
     public List<ResultSlot> resultSlots; // 슬롯 5개 등록
 
     private bool isWaitingForClick = false;
-    private GameManager gameManager;
-
-    private void Awake()
-    {
-        gameManager = FindObjectOfType<GameManager>();
-    }
 
     private void Update()
     {
@@ -61,11 +53,6 @@ public class GachaEffectHandler : MonoBehaviour
         characterImage.sprite = characterData.characterImage;
         characterNameText.text = characterData.characterName;
 
-        // ✅ 도감에서 캐릭터 해금
-        if (gameManager != null)
-        {
-            gameManager.UnlockItem(characterData.characterName);
-        }
 
         isWaitingForClick = true;
         yield return null;
@@ -89,12 +76,6 @@ public class GachaEffectHandler : MonoBehaviour
             if (i < characters.Count)
             {
                 resultSlots[i].SetData(characters[i]);
-
-                // ✅ 도감에서 캐릭터 해금
-                if (gameManager != null)
-                {
-                    gameManager.UnlockItem(characters[i].characterName);
-                }
             }
             else
             {

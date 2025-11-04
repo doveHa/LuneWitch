@@ -1,4 +1,4 @@
-﻿using Script.Enum;
+﻿using Script.DataDefinitions.Enum;
 using Script.Manager;
 using UnityEngine;
 using UnityEngine.UI;

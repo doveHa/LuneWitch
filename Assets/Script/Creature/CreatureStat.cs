@@ -1,6 +1,6 @@
 ﻿using System.Collections;
+using Script.DataDefinitions.ScriptableObjects;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Script.Creature
 {

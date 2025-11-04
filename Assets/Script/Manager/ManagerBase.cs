@@ -8,25 +8,22 @@ namespace Script.Manager
 
         protected virtual void Awake()
         {
-            GameObject managerObject = GameObject.Find("Manager");
-            if (managerObject == null)
-            {
-                managerObject = new GameObject("Manager");
-                DontDestroyOnLoad(managerObject);
-            }
-
             if (Manager != null && Manager != this)
             {
                 Destroy(gameObject);
                 return;
             }
 
-            if (!managerObject.TryGetComponent(out T manager))
+            Manager = (T)this;
+
+            GameObject manager = GameObject.Find("Manager");
+            if (manager == null)
             {
-                manager = managerObject.AddComponent<T>();
+                manager = new GameObject("Manager");
+                DontDestroyOnLoad(manager);
             }
 
-            Manager = manager;
+            transform.SetParent(manager.transform);
         }
     }
 }

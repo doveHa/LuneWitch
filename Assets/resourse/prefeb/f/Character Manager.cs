@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System.Text.Json;
-using Script.Enum;
+using Script.DataDefinitions.Enum;
 using Script.Manager;
 using TMPro;
 using UnityEngine.UI;

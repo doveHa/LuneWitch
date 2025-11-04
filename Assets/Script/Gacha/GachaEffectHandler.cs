@@ -14,7 +14,7 @@ public class GachaEffectHandler : MonoBehaviour
     public Animator characterAnimator;
 
     [Header("다중 결과 UI")] public GameObject multiResultPanel;
-    public List<ResultSlot> resultSlots; // 슬롯 5개 등록
+    public List<GachaResultSlot> resultSlots; // 슬롯 5개 등록
 
     private bool isWaitingForClick = false;
 

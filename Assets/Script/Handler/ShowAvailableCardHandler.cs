@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Script;
+using Script.DataDefinitions.ScriptableObjects;
 using UnityEngine;
 using Script.Manager;
 
@@ -58,7 +59,7 @@ public class ShowAvailableCardHandler : MonoBehaviour
         foreach (var character in cards)
         {
             var card = Instantiate(cardPrefab, parent);
-            card.GetComponent<CardUI>().Setup(character, OnCardClicked, false);
+            //card.GetComponent<CardUI>().Setup(character, OnCardClicked, false);
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using Script.Enum;
+using Script.DataDefinitions.Enum;
+using Script.DataDefinitions.ScriptableObjects;
 
 namespace Script.Manager
 {

@@ -1,8 +1,7 @@
 using System.Collections.Generic;
-using UnityEngine;
 using System.IO;
-using System.Linq;
 using System.Text.Json;
+using Script.DataDefinitions.ScriptableObjects;
 
 namespace Script.Manager
 {

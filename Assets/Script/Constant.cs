@@ -47,7 +47,6 @@ namespace Script
         public static class Scene
         {
             public const string MAIN_SCENE = "Main";
-
         }
     }
 }

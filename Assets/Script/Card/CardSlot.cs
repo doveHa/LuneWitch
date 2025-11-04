@@ -1,8 +1,7 @@
 using System.Collections;
 using Script;
-using Script.Card;
+using Script.DataDefinitions.ScriptableObjects;
 using Script.Manager;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using ResourceManager = Script.Manager.ResourceManager;

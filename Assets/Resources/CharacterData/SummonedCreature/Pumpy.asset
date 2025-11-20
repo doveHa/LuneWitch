@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Pumpy
   characterName_Kr: "\uD38C\uD53C"
-  characterImage: {fileID: -4664545495872377565, guid: 6c288604c08d2424cac9562f9837d7e5, type: 3}
+  characterImage: {fileID: -433773718584046436, guid: 681847afacfdb9b49b30e8ba1b4e0bb2, type: 3}
   rarity: 1
   description: "HP : 120\r\n\uC18C\uBE44 \uB9C8\uB825 : 100\r\n\uACF5\uACA9\uB825
     :20"
@@ -23,3 +23,4 @@ MonoBehaviour:
   attack: 1000
   health: 120
   isUnlocked: 1
+  creaturePrefab: {fileID: 804819288300844835, guid: b44e20372bc812d4e92c975ea8a617bc, type: 3}

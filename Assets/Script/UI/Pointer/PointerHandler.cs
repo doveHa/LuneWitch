@@ -23,8 +23,8 @@ namespace Script.UI.Pointer
         {
             rectTransform = target.GetComponent<RectTransform>();
             canvas = GetComponentInParent<Canvas>();
-            CanDrag = true;
-            //CanDrag = false;
+            //CanDrag = true;
+            CanDrag = false;
         }
 
         public void OnPointerEnter(PointerEventData eventData)

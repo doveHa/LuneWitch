@@ -18,7 +18,5 @@ namespace Script.DataDefinitions.ScriptableObjects
         public int attack;
         public int health;
         public bool isUnlocked = true;
-
-        public GameObject creaturePrefab;
     }
 }

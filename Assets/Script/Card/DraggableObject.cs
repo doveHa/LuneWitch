@@ -1,8 +1,5 @@
 using Script.Card;
-using Script.Creature;
-using Script.Manager;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 [RequireComponent(typeof(Collider2D))]
 public class DraggableObject : MonoBehaviour
@@ -10,7 +7,7 @@ public class DraggableObject : MonoBehaviour
     [SerializeField] private GameObject moveSprite;
 
     private Vector3 offset, originalPos;
-    private bool isDragging = false, canDrag = false;
+    private bool isDragging = false, canDrag = true; //canDrag 초기 값은 false
     private Camera mainCamera;
 
     void Awake()
@@ -30,7 +27,7 @@ public class DraggableObject : MonoBehaviour
         {
             return;
         }
-
+        Debug.Log("DraggableObject");
         isDragging = true;
         originalPos = moveSprite.transform.position;
 

@@ -16,6 +16,7 @@ TagManager:
   - Creature
   - enemy
   - "\uD654\uC5FC"
+  - DropZone
   layers:
   - Default
   - TransparentFX

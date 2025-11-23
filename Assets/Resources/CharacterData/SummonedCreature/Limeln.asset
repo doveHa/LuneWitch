@@ -23,3 +23,4 @@ MonoBehaviour:
   attack: 15
   health: 120
   isUnlocked: 1
+  creaturePrefab: {fileID: 804819288300844835, guid: d6957c880fabb1f4ea747af5d4a37952, type: 3}

@@ -4,7 +4,6 @@ namespace Script.Manager
 {
     public class ManagerBase<T> : MonoBehaviour where T : ManagerBase<T>
     {
-        protected bool isDontDestroy = true;
         public static T Manager { get; private set; }
 
         protected virtual void Awake()
@@ -17,17 +16,14 @@ namespace Script.Manager
 
             Manager = (T)this;
 
-            if (isDontDestroy)
+            GameObject manager = GameObject.Find("Manager");
+            if (manager == null)
             {
-                GameObject manager = GameObject.Find("Manager");
-                if (manager == null)
-                {
-                    manager = new GameObject("Manager");
-                    DontDestroyOnLoad(manager);
-                }
-
-                transform.SetParent(manager.transform);
+                manager = new GameObject("Manager");
+                DontDestroyOnLoad(manager);
             }
+
+            transform.SetParent(manager.transform);
         }
     }
 }

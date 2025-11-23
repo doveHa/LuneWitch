@@ -1,4 +1,6 @@
 ﻿using Script.BattleStyle.DataDefinitions.Data;
+using Script.BattleStyle.Manager;
+using Script.UI.Pointer;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,16 +14,26 @@ namespace Script.BattleStyle.Handler
         [SerializeField] private TextMeshProUGUI descriptionText;
 
         public CreatureSummonCard CardData { get; private set; }
+        private Color originalColor;
+        private Color cantUseColor;
+
+        void Update()
+        {
+            UseCheck();
+        }
 
         public void SetCard(CreatureSummonCard card)
         {
-            CardData = card;
+            VarInitialize(card);
             SetImage();
             SetDescription();
+            UseCheck();
         }
 
         public void UseCard()
         {
+            CostManager.Manager.UseCost(CardData.Cost);
+            CantUseCard();
         }
 
         private void SetImage()
@@ -36,6 +48,32 @@ namespace Script.BattleStyle.Handler
         private void SetDescription()
         {
             descriptionText.text = CardData.Description;
+        }
+
+        private void UseCheck()
+        {
+            if (CostManager.Manager.Cost < CardData.Cost)
+            {
+                originalImage.color = cantUseColor;
+            }
+            else
+            {
+                GetComponent<PointerHandler>().CanDrag = true;
+                originalImage.color = originalColor;
+            }
+        }
+
+        private void CantUseCard()
+        {
+            originalImage.color = cantUseColor;
+            originalColor = cantUseColor;
+        }
+
+        private void VarInitialize(CreatureSummonCard card)
+        {
+            CardData = card;
+            originalColor = Color.white;
+            ColorUtility.TryParseHtmlString("#313131", out cantUseColor);
         }
     }
 }

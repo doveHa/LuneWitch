@@ -14,6 +14,7 @@ namespace Script.BattleStyle.DataDefinitions.Data
         public float SummonChance { get; set; }
         public Sprite CreatureImage { get; set; }
         public string Description { get; set; }
+        public int Cost { get; set; }
         public CardZoneHandler CardZone { get; private set; }
 
         public CreatureSummonCard(CharacterData characterData)
@@ -22,6 +23,7 @@ namespace Script.BattleStyle.DataDefinitions.Data
             CreaturePrefab = characterData.creaturePrefab;
             CreatureImage = characterData.characterImage;
             Description = characterData.description;
+            Cost = characterData.cost;
         }
 
         public CreatureSummonCard(CreatureSummonCard cardData, CardZoneHandler cardZone)

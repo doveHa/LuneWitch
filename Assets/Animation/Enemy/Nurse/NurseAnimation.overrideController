@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: NurseAnimation
+  m_Controller: {fileID: 9100000, guid: ce2793430751a5146ba1a6ccbb235feb, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 4c8f9c224658761469bcf97479a835ca, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 29b3176541841e641a639f1ed1d4e9b4, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 6a607f0b7f892f44093e8d2d963a5721, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: bacb1f770f5ed0c43934af1e81ed47bf, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 6225656b3b1f01942b0080e16ffe8cae, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f1044734f5699134e926af170519cda4, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 5877e79e6a6ea494db38a5e4defce48e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 773f0bca0c8d54244b0664dafc74ba71, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 51d1b9cd26004cc48b88e10f53b8996c, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f6085cfec6c14c945bf0eb5d7142c0da, type: 2}

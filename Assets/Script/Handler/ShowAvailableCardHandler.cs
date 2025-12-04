@@ -3,6 +3,7 @@ using Script;
 using Script.DataDefinitions.ScriptableObjects;
 using UnityEngine;
 using Script.Manager;
+using Script.UI;
 
 public class ShowAvailableCardHandler : MonoBehaviour
 {
@@ -59,7 +60,7 @@ public class ShowAvailableCardHandler : MonoBehaviour
         foreach (var character in cards)
         {
             var card = Instantiate(cardPrefab, parent);
-            //card.GetComponent<CardUI>().Setup(character, OnCardClicked, false);
+            card.GetComponent<CardSlot>().CardInitialize(character, OnCardClicked);
         }
     }
 }

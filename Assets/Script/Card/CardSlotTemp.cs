@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using ResourceManager = Script.Manager.ResourceManager;
 
-public class CardSlot : MonoBehaviour
+public class CardSlotTemp : MonoBehaviour
 {
     public CharacterData characterData { get; private set; }
     [SerializeField] private Image creatureSprite, moveSprite;

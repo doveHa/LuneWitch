@@ -89,7 +89,7 @@ namespace Script.Manager
             foreach (CharacterData character in PlayerManager.Manager.SelectedCreatures)
             {
                 GameObject obj = Instantiate(cardSlotPrefab, cardSet);
-                obj.GetComponent<CardSlot>().InitializeCard(character);
+                obj.GetComponent<CardSlotTemp>().InitializeCard(character);
             }
         }
 

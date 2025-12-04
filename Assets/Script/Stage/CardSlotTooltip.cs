@@ -4,7 +4,7 @@
     {
         protected override void SetTooltipText()
         {
-            tooltipText = GetComponent<CardSlot>().characterData.description;
+            tooltipText = GetComponent<CardSlotTemp>().characterData.description;
         }
     }
 }

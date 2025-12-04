@@ -28,14 +28,14 @@ namespace Script.Card
 
         private void SpawnAt(DropSlot slot)
         {
-            GetComponentInParent<CardSlot>().UseCard();
+            GetComponentInParent<CardSlotTemp>().UseCard();
             GameObject creature = Instantiate(SpawnPrefab, slot.transform.position, Quaternion.identity);
             creature.name = SpawnPrefab.name;
             creature.SetActive(true);
             creature.transform.SetParent(slot.transform);
             slot.IsOnCreature = true;
             slot.Creature = creature.GetComponent<CreatureStat>();
-            slot.Creature.Initialize(GetComponentInParent<CardSlot>().characterData);
+            slot.Creature.Initialize(GetComponentInParent<CardSlotTemp>().characterData);
         }
     }
 }

@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 2026474050642936066}
   - component: {fileID: 7577104236157462231}
   - component: {fileID: -8558749457113683372}
+  - component: {fileID: -5481532466767537084}
   m_Layer: 0
   m_Name: ManaStone
   m_TagString: Creature
@@ -222,7 +223,7 @@ SpriteRenderer:
   m_Size: {x: 0.86, y: 1.85}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &52223004
@@ -319,6 +320,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipPanel: {fileID: 1388852178028514844}
+--- !u!114 &-5481532466767537084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5253246037310378019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8cba1fe868f4dfe9edfd5bf919a272d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6810573763871580397
 GameObject:
   m_ObjectHideFlags: 0

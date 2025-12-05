@@ -1,4 +1,6 @@
 ﻿using Script.BattleStyle.Handler;
+using Script.BattleStyle.Manager;
+using Script.Creature.Handler;
 using Script.UI.Pointer.Hover;
 using UnityEngine;
 
@@ -6,11 +8,18 @@ namespace Script.UI.Pointer.Drag
 {
     public class CreatureCardDrag : MonoBehaviour, IDrag
     {
-        public void Click()
+        public void Click(GameObject target)
         {
             if (TryGetComponent(out IHover hover))
             {
                 hover.Exit();
+            }
+
+            CardHandler cardHandler = target.GetComponentInParent<CardHandler>();
+            if (cardHandler.IsSummoned())
+            {
+                GetComponentInParent<PointerHandler>().OnlyClick();
+                cardHandler.UpgradeCard();
             }
         }
 
@@ -23,7 +32,7 @@ namespace Script.UI.Pointer.Drag
         {
             if (drop.TryGetComponent(out CardZoneHandler cardZoneHandler))
             {
-                cardZoneHandler.Initialize(GetComponent<CardHandler>().CardData);
+                cardZoneHandler.SummonCreature(GetComponent<CardHandler>().CreatureHandler);
                 GetComponent<CardHandler>().UseCard();
             }
         }

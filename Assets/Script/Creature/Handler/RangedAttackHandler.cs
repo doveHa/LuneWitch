@@ -2,9 +2,9 @@
 using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace Script.Creature
+namespace Script.Creature.Handler
 {
-    public class RangedAttack : MonoBehaviour
+    public class RangedAttackHandler : MonoBehaviour
     {
         [SerializeField] private GameObject ammoPrefab;
         [SerializeField] private Transform shootPoint;
@@ -12,11 +12,11 @@ namespace Script.Creature
         private int enemyCount = 0;
         private bool isEnemyOn, isAttacking;
 
-        private CreatureStat stat;
+        private HitHandler stat;
 
         void Start()
         {
-            stat = GetComponentInParent<CreatureStat>();
+            stat = GetComponentInParent<HitHandler>();
         }
 
         void OnTriggerEnter2D(Collider2D other)
@@ -50,9 +50,9 @@ namespace Script.Creature
 
         public void ShootAmmo()
         {
-            Ammo ammo = Instantiate(ammoPrefab, shootPoint.position, Quaternion.identity).GetComponent<Ammo>();
-            ammo.SetStat(stat.Attack, ammoSpeed);
-            ammo.AddForce();
+            AmmoHandler ammoHandler = Instantiate(ammoPrefab, shootPoint.position, Quaternion.identity).GetComponent<AmmoHandler>();
+            ammoHandler.SetStat(stat.Attack, ammoSpeed);
+            ammoHandler.AddForce();
         }
 
         private IEnumerator AttackMotionCoroutine()

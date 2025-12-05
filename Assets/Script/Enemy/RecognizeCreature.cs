@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using Script.BattleStyle.Handler;
+using Script.Creature.Handler;
+using UnityEngine;
 
 namespace Script.Enemy
 {
@@ -13,12 +15,12 @@ namespace Script.Enemy
                 return;
             }
 
-            if (other.TryGetComponent(out DropSlot dropSlot))
+            if (other.TryGetComponent(out CardZoneHandler dropSlot))
             {
-                if (dropSlot.IsOnCreature)
+                if (dropSlot.IsSpawned())
                 {
                     isRecognized = true;
-                    GetComponentInParent<EnemyStat>().SetCreature(true, dropSlot.Creature);
+                    GetComponentInParent<EnemyStat>().SetCreature(dropSlot.GetComponentInChildren<HitHandler>());
                 }
             }
         }
@@ -28,7 +30,7 @@ namespace Script.Enemy
             if (other.CompareTag("Creature"))
             {
                 isRecognized = false;
-                GetComponentInParent<EnemyStat>().SetCreature(false, null);
+                GetComponentInParent<EnemyStat>().UnSetCreature();
             }
         }
     }

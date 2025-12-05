@@ -43,7 +43,7 @@ namespace Script.BattleStyle.Manager
 
         private void Initialize()
         {
-            cps = 1;
+            cps = 10;
             costTimer = 0f;
             Cost = 0;
         }

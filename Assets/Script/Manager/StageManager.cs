@@ -33,7 +33,6 @@ namespace Script.Manager
             enemyPrefabs = new List<GameObject>();
             SetStage();
             SetPlayer();
-            SetCards();
         }
 
         void FixedUpdate()
@@ -83,7 +82,7 @@ namespace Script.Manager
                     PlayerManager.Manager.SelectedCharacter.ToString())
             ), player.transform).name = PlayerManager.Manager.SelectedCharacter.ToString();
         }
-
+/*
         private void SetCards()
         {
             foreach (CharacterData character in PlayerManager.Manager.SelectedCreatures)
@@ -92,7 +91,7 @@ namespace Script.Manager
                 obj.GetComponent<CardSlotTemp>().InitializeCard(character);
             }
         }
-
+*/
         private void SetEnemyPrefab(string[] enemyNames)
         {
             foreach (string name in enemyNames)

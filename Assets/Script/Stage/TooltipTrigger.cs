@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using Script.Creature.Handler;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -43,6 +44,7 @@ public abstract class TooltipTrigger : MonoBehaviour, IPointerEnterHandler, IPoi
         isTooltipActive = true; 
         AdjustTooltipText();
         tooltipPanel.SetActive(true);
+        Debug.Log(GetComponentInParent<CreatureHandler>().Rarity);
     }
 
     public void OnPointerExit(PointerEventData eventData)

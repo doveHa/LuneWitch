@@ -1,4 +1,5 @@
 ﻿using Script.Creature;
+using Script.Creature.Handler;
 
 namespace Script.Stage
 {
@@ -6,7 +7,7 @@ namespace Script.Stage
     {
         protected override void SetTooltipText()
         {
-            CreatureStat stat = GetComponent<CreatureStat>();
+            HitHandler stat = GetComponent<HitHandler>();
             string text = $"{stat.Health}/{stat.MaxHealth}";
             tooltipText = text;
         }

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using Script.Creature;
+using Script.Creature.Handler;
 using Script.Manager;
 using UnityEditor;
 using UnityEditor.Rendering;
@@ -15,7 +16,7 @@ namespace Script.Enemy
         private Rigidbody2D rigidbody;
 
         private bool isRecognize, isDead = false;
-        private CreatureStat creature;
+        private HitHandler creature;
 
         void Awake()
         {
@@ -74,10 +75,16 @@ namespace Script.Enemy
             animator.SetTrigger("Hit");
         }
 
-        public void SetCreature(bool isRecognize, CreatureStat creature)
+        public void SetCreature(HitHandler creature)
         {
-            this.isRecognize = isRecognize;
+            isRecognize = true;
             this.creature = creature;
+        }
+
+        public void UnSetCreature()
+        {
+            isRecognize = false;
+            creature = null;
         }
 
         public void Walk()

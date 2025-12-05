@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Muret
   characterName_Kr: "\uBB34\uB808\uD2B8"
-  characterImage: {fileID: 5560208762045671388, guid: 09852e67dd904ef43bd7388f64887246, type: 3}
+  characterImage: {fileID: 34582505, guid: aad5a35b2d76ec64aa4fe7aed7a5c894, type: 3}
   rarity: 1
   description: "\uC18C\uBE44 \uB9C8\uB825 : 150\r\n\uACF5\uACA9\uB825 :200\r\n"
   characterType: 
@@ -22,4 +22,4 @@ MonoBehaviour:
   attack: 200
   health: 0
   isUnlocked: 1
-  creaturePrefab: {fileID: 181916070887692245, guid: 0dca17486d6cda04a8bcabeb1f1a2f3a, type: 3}
+  creaturePrefab: {fileID: 804819288300844835, guid: 8c67b89db349a804e87b5aaa67fb4aad, type: 3}

@@ -1,10 +1,10 @@
 ﻿using Script.Enemy;
 using UnityEngine;
 
-namespace Script.Creature
+namespace Script.Creature.Handler
 {
     [RequireComponent(typeof(Rigidbody2D))]
-    public class Ammo : MonoBehaviour
+    public class AmmoHandler : MonoBehaviour
     {
         private int atk;
         private float ammoSpeed;

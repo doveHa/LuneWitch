@@ -2,29 +2,27 @@
 using Script.BattleStyle.DataDefinitions.Data;
 using Script.BattleStyle.DataDefinitions.Enum;
 using Script.BattleStyle.Manager;
+using Script.Creature.Handler;
 using UnityEngine;
 
 namespace Script.BattleStyle.Handler
 {
     public class CardZoneHandler : MonoBehaviour
     {
-        public bool IsSpawned { get; set; } = false;
+        public CreatureHandler creatureHandler { get; set; }
 
-        public CreatureSummonCard CardData { get; private set; }
-
-        public void Initialize(CreatureSummonCard cardData)
+        public void SummonCreature(CreatureHandler creature)
         {
-            CardData = new CreatureSummonCard(cardData, this);
-            IsSpawned = true;
+            GameObject creatureObject =
+                Instantiate(creature.Card.CreaturePrefab, transform.position, Quaternion.identity);
+            creatureObject.name = creature.Card.CreatureName;
+            creatureObject.transform.SetParent(transform);
+            
+            creatureHandler = creatureObject.GetComponent<CreatureHandler>();
+            creatureHandler.CardZone = this;
+            creatureHandler.SummonCreatureSetting(creature.Card);
 
-            GameObject creature =
-                Instantiate(CardData.CreaturePrefab, transform.position, Quaternion.identity);
-            creature.name = CardData.CreatureName;
-            creature.transform.SetParent(transform);
-
-            CardData.IsOnSummoned = true;
-            CardData.Rarity = NextProbability();
-            CardPoolManager.Manager.AddCardInPool(CardData);
+            CardPoolManager.Manager.AddCardInPool(creatureHandler);
         }
 
         public void Visualization()
@@ -37,17 +35,14 @@ namespace Script.BattleStyle.Handler
             GetComponentInChildren<SpriteRenderer>().color = Color.white;
         }
 
-        private Probability NextProbability()
+        public bool IsSpawned()
         {
-            foreach (Probability probability in Enum.GetValues(typeof(Probability)))
+            if (creatureHandler == null)
             {
-                if ((int)CardData.Rarity > (int)probability)
-                {
-                    return probability;
-                }
+                return false;
             }
 
-            return CardData.Rarity;
+            return creatureHandler.IsOnSummoned;
         }
     }
 }

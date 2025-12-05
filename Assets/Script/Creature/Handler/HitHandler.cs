@@ -1,10 +1,11 @@
 ﻿using System.Collections;
+using Script.BattleStyle.Handler;
 using Script.DataDefinitions.ScriptableObjects;
 using UnityEngine;
 
-namespace Script.Creature
+namespace Script.Creature.Handler
 {
-    public class CreatureStat : MonoBehaviour
+    public class HitHandler : MonoBehaviour
     {
         [SerializeField] private ParticleSystem deathParticles;
 
@@ -62,7 +63,6 @@ namespace Script.Creature
 
         public void Destroy()
         {
-            GetComponentInParent<DropSlot>().IsOnCreature = false;
             if (deathParticles != null)
             {
                 StartCoroutine(DestroyCoroutine());
@@ -75,13 +75,12 @@ namespace Script.Creature
 
         public void DestroyWithoutDeath()
         {
-            GetComponentInParent<DropSlot>().IsOnCreature = false;
             Destroy(gameObject);
         }
         
         public void RangeShootAmmo()
         {
-            GetComponentInChildren<RangedAttack>().ShootAmmo();
+            GetComponentInChildren<RangedAttackHandler>().ShootAmmo();
         }
 
         private IEnumerator DestroyCoroutine()

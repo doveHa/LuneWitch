@@ -1,5 +1,5 @@
-﻿using Script.BattleStyle.DataDefinitions.Data;
-using Script.BattleStyle.Manager;
+﻿using Script.BattleStyle.Manager;
+using Script.Creature.Handler;
 using UnityEngine;
 
 namespace Script.BattleStyle.Handler
@@ -21,10 +21,10 @@ namespace Script.BattleStyle.Handler
         {
             foreach (CardHandler cardHandler in cardHandlers)
             {
-                CreatureSummonCard card = CardPoolManager.Manager.GetRandomCreature();
+                CreatureHandler card = CardPoolManager.Manager.GetRandomCreature();
                 cardHandler.SetCard(card);
-                Debug.Log(card.CreatureName);
             }
+            CardPoolManager.Manager.DebugLog();
         }
     }
 }

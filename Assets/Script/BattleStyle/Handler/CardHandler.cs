@@ -21,9 +21,10 @@ namespace Script.BattleStyle.Handler
         private Color originalColor;
         private Color cantUseColor;
 
+
         void Update()
         {
-            UseCheck();
+                UseCheck();
         }
 
         public void SetCard(CreatureHandler creature)
@@ -36,21 +37,15 @@ namespace Script.BattleStyle.Handler
 
         public void UseCard()
         {
-            if (CanUseCard)
-            {
                 CostManager.Manager.UseCost(Cost);
-                CantUseCard();
-            }
+                ChangeCard();
         }
 
         public void UpgradeCard()
         {
-            if (CanUseCard)
-            {
                 CostManager.Manager.UseCost(Cost);
                 CardPoolManager.Manager.UpgradeCard(CreatureHandler);
-                CantUseCard();
-            }
+                ChangeCard();
         }
 
         public bool IsSummoned()
@@ -71,22 +66,19 @@ namespace Script.BattleStyle.Handler
         {
             if (CostManager.Manager.Cost < Cost)
             {
-                CanUseCard = false;
+                GetComponent<PointerHandler>().CanDrag = false;
                 originalImage.color = cantUseColor;
             }
             else
             {
-                CanUseCard = true;
                 GetComponent<PointerHandler>().CanDrag = true;
                 originalImage.color = originalColor;
             }
         }
 
-        private void CantUseCard()
+        private void ChangeCard()
         {
-            CanUseCard = false;
-            originalImage.color = cantUseColor;
-            originalColor = cantUseColor;
+            SetCard(CardPoolManager.Manager.GetRandomCreature());
         }
 
         private void VarInitialize()

@@ -11,7 +11,8 @@ namespace Script.Enemy
     public class EnemyStat : MonoBehaviour
     {
         [SerializeField] private int health, attack;
-        [SerializeField] private float attackSpeed, speed, hitTerm;
+        [SerializeField] private float attackSpeed, hitTerm;
+        public float Speed { get; set; } = 0.5f;
         private Animator animator;
         private Rigidbody2D rigidbody;
 
@@ -89,14 +90,13 @@ namespace Script.Enemy
 
         public void Walk()
         {
-            rigidbody.linearVelocity = Vector2.left * speed;
+            rigidbody.linearVelocity = Vector2.left * Speed;
         }
 
         public void StopWalk()
         {
             rigidbody.linearVelocity = Vector2.zero;
         }
-
         private void Death()
         {
             isDead = true;

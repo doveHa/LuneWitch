@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Script.BattleStyle.DataDefinitions.Data;
 using Script.Creature.Handler;
+using Script.DataDefinitions.ScriptableObjects;
 using Script.Manager;
 using UnityEngine;
 
@@ -19,12 +19,12 @@ namespace Script.BattleStyle.Manager
             cardPool = new List<CreatureHandler>();
         }
 
-        public void InitialCreature(List<CreatureSummonCard> initialCreatures)
+        public void InitialCreature(List<CharacterData> initialCreatures)
         {
-            foreach (CreatureSummonCard creature in initialCreatures)
+            foreach (CharacterData creature in initialCreatures)
             {
                 GameObject temp =
-                    Instantiate(creature.CreaturePrefab, transform.position, Quaternion.identity);
+                    Instantiate(creature.creaturePrefab, transform.position, Quaternion.identity);
                 temp.transform.SetParent(transform);
                 temp.SetActive(false);
                 CreatureHandler creatureHandler = temp.GetComponent<CreatureHandler>();
@@ -77,7 +77,7 @@ namespace Script.BattleStyle.Manager
             StringBuilder builder = new StringBuilder();
             foreach (CreatureHandler card in cardPool)
             {
-                builder.Append(card.Card.CreatureName).Append(", " + card.Rarity)
+                builder.Append(card.Card.characterName).Append(", " + card.Rarity)
                     .Append(", " + card.SummonChance).AppendLine();
             }
 

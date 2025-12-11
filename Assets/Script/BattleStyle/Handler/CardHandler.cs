@@ -55,8 +55,8 @@ namespace Script.BattleStyle.Handler
 
         private void SetImage()
         {
-            originalImage.sprite = CreatureHandler.Card.CreatureImage;
-            moveImage.sprite = CreatureHandler.Card.CreatureImage;
+            originalImage.sprite = CreatureHandler.Card.characterImage;
+            moveImage.sprite = CreatureHandler.Card.characterImage;
             Color moveSpriteColor = moveImage.color;
             moveSpriteColor.a = 0.6f;
             moveImage.color = moveSpriteColor;
@@ -83,8 +83,8 @@ namespace Script.BattleStyle.Handler
 
         private void VarInitialize()
         {
-            descriptionText.text = CreatureHandler.Card.Description;
-            Cost = CreatureHandler.Card.Cost;
+            descriptionText.text = CreatureHandler.Card.description;
+            Cost = CreatureHandler.Card.cost;
             originalColor = Color.white;
             ColorUtility.TryParseHtmlString("#313131", out cantUseColor);
         }

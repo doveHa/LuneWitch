@@ -8,10 +8,6 @@ namespace Script.BattleStyle.Handler
     {
         private CardHandler[] cardHandlers;
 
-        void Awake()
-        {
-        }
-
         void Start()
         {
             cardHandlers = GetComponentsInChildren<CardHandler>();

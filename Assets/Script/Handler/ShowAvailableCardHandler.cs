@@ -31,10 +31,7 @@ public class ShowAvailableCardHandler : MonoBehaviour
     {
         foreach (var character in UnlockedCharacterManager.Manager.allCharacterData)
         {
-            if (character.Value.isUnlocked)
-            {
-                displayedCharacters.Add(character.Value);
-            }
+            displayedCharacters.Add(character.Value);
         }
     }
 

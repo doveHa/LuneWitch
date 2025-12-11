@@ -15,12 +15,12 @@ namespace Script.BattleStyle.Manager
 
         void Start()
         {
-            var creatures = new List<CreatureSummonCard>();
+            var creatures = new List<CharacterData>();
             CharacterData[] allPrefabs =
                 ResourceManager.LoadAll<CharacterData>(Constant.ResourcePath.ALL_CREATURES_PATH);
             foreach (CharacterData characterData in allPrefabs)
             {
-                creatures.Add(new CreatureSummonCard(characterData));
+                creatures.Add(characterData);
             }
 
             CardPoolManager.Manager.InitialCreature(creatures);

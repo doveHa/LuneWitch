@@ -38,7 +38,6 @@ namespace Script.Manager
         public void Unlock(string characterName)
         {
             unlockCharacters.Add(characterName, allCharacterData[characterName]);
-            allCharacterData[characterName].isUnlocked = true;
             SaveUnlockedCharacters();
         }
 

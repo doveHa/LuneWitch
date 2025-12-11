@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 234cd38b9848a3e498c0cca54a1d01d6, type: 3}
+  m_Name: ManaStone
+  m_EditorClassIdentifier: 
+  characterName: ManaStone
+  characterName_Kr: "\uB9C8\uB825\uC11D"
+  description: 
+  cost: 50
+  attack: 0
+  health: 80
+  attackTerm: 0
+  creaturePrefab: {fileID: 5253246037310378019, guid: efc7b6621885e2a4697f5c8a7b7d8de3, type: 3}
+  characterImage: {fileID: 1721749118665838677, guid: 34c48dbd5fc94454aa7ff6a21ebaf2af, type: 3}

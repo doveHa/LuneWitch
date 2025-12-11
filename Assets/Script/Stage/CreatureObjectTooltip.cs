@@ -7,7 +7,7 @@ namespace Script.Stage
     {
         protected override void SetTooltipText()
         {
-            HitHandler stat = GetComponent<HitHandler>();
+            CombatHandler stat = GetComponent<CombatHandler>();
             string text = $"{stat.Health}/{stat.MaxHealth}";
             tooltipText = text;
         }

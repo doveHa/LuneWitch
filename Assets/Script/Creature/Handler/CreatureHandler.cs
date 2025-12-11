@@ -2,6 +2,7 @@
 using Script.BattleStyle.DataDefinitions.Data;
 using Script.BattleStyle.DataDefinitions.Enum;
 using Script.BattleStyle.Handler;
+using Script.DataDefinitions.ScriptableObjects;
 using UnityEngine;
 
 namespace Script.Creature.Handler
@@ -12,15 +13,15 @@ namespace Script.Creature.Handler
         public float SummonChance { get; set; }
         public Probability Rarity { get; private set; }
         public CardZoneHandler CardZone { get; set; }
-        public CreatureSummonCard Card { get; private set; }
+        public CharacterData Card { get; private set; }
 
-        public void SetCreatureSummonCard(CreatureSummonCard card)
+        public void SetCreatureSummonCard(CharacterData card)
         {
-            Rarity = card.Rarity;
+            Rarity = Probability.Common;
             Card = card;
         }
 
-        public void SummonCreatureSetting(CreatureSummonCard cardData)
+        public void SummonCreatureSetting(CharacterData cardData)
         {
             IsOnSummoned = true;
             SetCreatureSummonCard(cardData);

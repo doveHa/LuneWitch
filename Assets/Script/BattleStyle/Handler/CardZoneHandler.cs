@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Script.BattleStyle.DataDefinitions.Data;
-using Script.BattleStyle.DataDefinitions.Enum;
 using Script.BattleStyle.Manager;
 using Script.Creature.Handler;
 using Script.Enemy;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Script.BattleStyle.Handler
 {

@@ -15,7 +15,6 @@ namespace Script.BattleStyle.Handler
         [SerializeField] private TextMeshProUGUI descriptionText;
 
         public int Cost { get; private set; }
-        public bool CanUseCard { get; private set; } = true;
 
         public CreatureHandler CreatureHandler { get; private set; }
         private Color originalColor;

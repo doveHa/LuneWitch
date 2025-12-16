@@ -1,25 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Script.BattleStyle.DataDefinitions.Data;
+using Script.BattleStyle.Manager;
 using UnityEngine;
 
 namespace Script.Creature.Handler
 {
     public abstract class AttackHandler : MonoBehaviour
     {
-        protected bool isAttacking;
-        protected List<Transform> enemies;
-
         protected float attackSpeed;
         protected CombatHandler CombatHandler;
 
-        public CardZoneCoordinate RootCoordinate { protected get; set; }
+        private float currentCooldown = 0;
 
-        protected virtual void Awake()
-        {
-            isAttacking = false;
-            enemies = new List<Transform>();
-        }
+        public CardZoneCoordinate RootCoordinate { protected get; set; }
 
         protected virtual void Start()
         {
@@ -29,33 +23,30 @@ namespace Script.Creature.Handler
 
         protected virtual void Update()
         {
-            if (isAttacking)
+            if (currentCooldown > 0)
             {
+                currentCooldown -= Time.deltaTime;
                 return;
             }
 
-            if (enemies.Count > 0)
+            if (TryAttackEnemy())
             {
-                StartCoroutine(AttackCoroutine());
+                currentCooldown = attackSpeed;
             }
         }
 
-        protected virtual void OnTriggerEnter2D(Collider2D other)
+        protected bool TryAttackEnemy()
         {
-            if (other.CompareTag("Enemy"))
+            foreach (CardZoneCoordinate coordinate in AttackRanges())
             {
-                enemies.Add(other.transform);
+                if (CardZoneManager.Manager.GetZone(coordinate).Enemies.Count > 0)
+                {
+                }
             }
+
+            return true;
         }
-        
-        protected void OnTriggerExit2D(Collider2D other)
-        {
-            if (other.CompareTag("Enemy"))
-            {
-                enemies.Remove(other.transform);
-            }
-        }
-        
-        protected abstract IEnumerator AttackCoroutine();
+
+        protected abstract List<CardZoneCoordinate> AttackRanges();
     }
 }

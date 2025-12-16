@@ -16,11 +16,9 @@ namespace Script.BattleStyle.Manager
         void Start()
         {
             var creatures = new List<CharacterData>();
-            CharacterData[] allPrefabs =
-                ResourceManager.LoadAll<CharacterData>(Constant.ResourcePath.ALL_CREATURES_PATH);
-            foreach (CharacterData characterData in allPrefabs)
+            foreach (KeyValuePair<string, CharacterData> data in UnlockedCharacterManager.Manager.allCharacterData)
             {
-                creatures.Add(characterData);
+                creatures.Add(data.Value);
             }
 
             CardPoolManager.Manager.InitialCreature(creatures);

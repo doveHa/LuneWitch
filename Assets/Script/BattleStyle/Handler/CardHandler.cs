@@ -24,7 +24,7 @@ namespace Script.BattleStyle.Handler
 
         void Update()
         {
-                UseCheck();
+            UseCheck();
         }
 
         public void SetCard(CreatureHandler creature)
@@ -37,15 +37,15 @@ namespace Script.BattleStyle.Handler
 
         public void UseCard()
         {
-                CostManager.Manager.UseCost(Cost);
-                ChangeCard();
+            CostManager.Manager.UseCost(Cost);
+            ChangeCard();
         }
 
         public void UpgradeCard()
         {
-                CostManager.Manager.UseCost(Cost);
-                CardPoolManager.Manager.UpgradeCard(CreatureHandler);
-                ChangeCard();
+            CostManager.Manager.UseCost(Cost);
+            CardPoolManager.Manager.UpgradeCard(CreatureHandler);
+            ChangeCard();
         }
 
         public bool IsSummoned()

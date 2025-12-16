@@ -22,6 +22,11 @@ namespace Script
 
             public const string ALL_CREATURES_PATH = "CharacterData/SummonedCreature";
 
+            public static string CHARACTER_DATA_PATH_BY_NAME(string characterName)
+            {
+                return "Creature/" + characterName + "/CreatureData/" + characterName;
+            }
+
             public static string GAMEOBJECT_PATH_BY_ENEMY_NAME(string enemyName)
             {
                 return "Prefabs/Enemy/" + enemyName;

@@ -73,6 +73,7 @@ namespace Script.Manager
         {
             foreach (string name in enemyNames)
             {
+                
                 enemyPrefabs.Add(
                     ResourceManager.Load<GameObject>(Constant.ResourcePath.GAMEOBJECT_PATH_BY_ENEMY_NAME(name)));
                 

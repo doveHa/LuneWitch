@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Text.Json;
 using Script.DataDefinitions.ScriptableObjects;
@@ -9,7 +10,7 @@ namespace Script.Manager
     {
         public Dictionary<string, CharacterData> unlockCharacters { get; private set; }
         public Dictionary<string, CharacterData> allCharacterData { get; private set; }
-        
+
         protected override void Awake()
         {
             base.Awake();
@@ -49,20 +50,31 @@ namespace Script.Manager
                 saveList.Add(pairs.Key);
             }
 
-            PersistentDataReadWriteManager.Manager.Write(Constant.PersistentPath.UNLOCKED_CHARACTERS, JsonSerializer.Serialize(saveList));
+            PersistentDataReadWriteManager.Manager.Write(Constant.PersistentPath.UNLOCKED_CHARACTERS,
+                JsonSerializer.Serialize(saveList));
         }
+
+        private string[] creatureNames =
+        {
+            "Balloon", "Bat", "Broomstick", "Frog", "Groot", "Hippocrates", "Limeln", "ManaStone", "Mandragora",
+            "Muret", "Pumpy", "Shadow", "Silum", "Spider"
+        };
 
         private void LoadCreatureData()
         {
-            foreach (CharacterData character in
-                     ResourceManager.LoadAll<CharacterData>(Constant.ResourcePath.ALL_CREATURES_PATH))
+            foreach (string creatureName in creatureNames)
             {
-                allCharacterData.Add(character.name, character);
+                CharacterData data =
+                    ResourceManager.Load<CharacterData>(
+                        Constant.ResourcePath.CHARACTER_DATA_PATH_BY_NAME(creatureName));
+                allCharacterData.Add(data.characterName, data);
             }
-
+/*
             if (File.Exists(Constant.PersistentPath.UNLOCKED_CHARACTERS))
             {
-                List<string> loadList = PersistentDataReadWriteManager.Manager.ReadJson<List<string>>(Constant.PersistentPath.UNLOCKED_CHARACTERS);
+                List<string> loadList =
+                    PersistentDataReadWriteManager.Manager.ReadJson<List<string>>(Constant.PersistentPath
+                        .UNLOCKED_CHARACTERS);
                 foreach (string characterName in loadList)
                 {
                     if (allCharacterData.ContainsKey(characterName))
@@ -70,7 +82,7 @@ namespace Script.Manager
                         unlockCharacters.Add(characterName, allCharacterData[characterName]);
                     }
                 }
-            }
+            }*/
         }
     }
 }

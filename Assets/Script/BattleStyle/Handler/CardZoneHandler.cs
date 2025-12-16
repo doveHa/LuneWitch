@@ -32,6 +32,7 @@ namespace Script.BattleStyle.Handler
             creatureHandler.CardZone = this;
             creatureHandler.SummonCreatureSetting(creature.Card);
 
+            creatureHandler.GetComponent<AttackHandler>().RootCoordinate = Coordinate;
             CardPoolManager.Manager.AddCardInPool(creatureHandler);
         }
 

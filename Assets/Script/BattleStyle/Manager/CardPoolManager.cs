@@ -23,13 +23,16 @@ namespace Script.BattleStyle.Manager
         {
             foreach (CharacterData creature in initialCreatures)
             {
-                GameObject temp =
-                    Instantiate(creature.creaturePrefab, transform.position, Quaternion.identity);
-                temp.transform.SetParent(transform);
-                temp.SetActive(false);
-                CreatureHandler creatureHandler = temp.GetComponent<CreatureHandler>();
-                creatureHandler.SetCreatureSummonCard(creature);
-                AddCardInPool(temp.GetComponent<CreatureHandler>());
+                if (creature.creaturePrefab != null)
+                {
+                    GameObject temp =
+                        Instantiate(creature.creaturePrefab, transform.position, Quaternion.identity);
+                    temp.transform.SetParent(transform);
+                    temp.SetActive(false);
+                    CreatureHandler creatureHandler = temp.GetComponent<CreatureHandler>();
+                    creatureHandler.SetCreatureSummonCard(creature);
+                    AddCardInPool(temp.GetComponent<CreatureHandler>());
+                }
             }
         }
 

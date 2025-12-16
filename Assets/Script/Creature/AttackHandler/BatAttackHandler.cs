@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using Script.BattleStyle.DataDefinitions.Data;
 using Script.BattleStyle.Manager;
-using Script.Enemy;
+using Script.Creature.Handler;
+using Script.Enemy.Handler;
 using Unity.VisualScripting;
 using UnityEngine;
 
-namespace Script.Creature.Handler
+namespace Script.Creature.AttackHandler
 {
     public class BatAttackHandler : AttackHandler
     {
@@ -19,6 +20,14 @@ namespace Script.Creature.Handler
             attackRange.Add(RootCoordinate.Left().Down());
 
             return attackRange;
+        }
+
+        protected override void Attack(List<EnemyHandler> enemies)
+        {
+            foreach (EnemyHandler enemy in enemies)
+            {
+                enemy.Hit(GetComponent<CreatureHandler>().Card.attack);
+            }
         }
     }
 }

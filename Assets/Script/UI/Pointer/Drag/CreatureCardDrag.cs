@@ -32,7 +32,8 @@ namespace Script.UI.Pointer.Drag
         {
             if (drop.TryGetComponent(out CardZoneHandler cardZoneHandler))
             {
-                cardZoneHandler.SummonCreature(GetComponent<CardHandler>().CreatureHandler);
+                CreatureHandler summonedCreature = GetComponentInChildren<CardHandler>().CreatureHandler.SummonCreature(cardZoneHandler.Coordinate);
+                cardZoneHandler.SummonCreature(summonedCreature);
                 GetComponent<CardHandler>().UseCard();
             }
         }

@@ -2,7 +2,8 @@
 using Script.BattleStyle.DataDefinitions.Data;
 using Script.BattleStyle.DataDefinitions.Enum;
 using Script.BattleStyle.Handler;
-using Script.DataDefinitions.ScriptableObjects;
+using Script.BattleStyle.Manager;
+using Script.Creature.DataDefinitions.ScriptableObjects;
 using UnityEngine;
 
 namespace Script.Creature.Handler
@@ -11,20 +12,13 @@ namespace Script.Creature.Handler
     {
         public bool IsOnSummoned { get; private set; } = false;
         public float SummonChance { get; set; }
-        public Probability Rarity { get; private set; }
+        public Probability Rarity { get; private set; } = Probability.Common;
         public CardZoneHandler CardZone { get; set; }
-        public CharacterData Card { get; private set; }
+        public CreatureData Card { get; private set; }
 
-        public void SetCreatureSummonCard(CharacterData card)
+        public void SetCreatureSummonCard(CreatureData card)
         {
-            Rarity = Probability.Common;
             Card = card;
-        }
-
-        public void SummonCreatureSetting(CharacterData cardData)
-        {
-            IsOnSummoned = true;
-            SetCreatureSummonCard(cardData);
         }
 
         public void SetNextProbability()
@@ -40,6 +34,20 @@ namespace Script.Creature.Handler
                     return;
                 }
             }
+        }
+
+        public CreatureHandler SummonCreature(CardZoneCoordinate coordinate)
+        {
+            Transform summonTransform = CardZoneManager.Manager.GetZone(coordinate).gameObject.transform;
+
+            GameObject creatureObject =
+                Instantiate(Card.creaturePrefab, summonTransform.position, Quaternion.identity);
+            creatureObject.name = Card.characterName;
+            creatureObject.transform.SetParent(summonTransform);
+            creatureObject.GetComponent<CreatureHandler>().Card = Card;
+            creatureObject.GetComponent<AttackHandler.AttackHandler>().RootCoordinate = coordinate;
+            
+            return creatureObject.GetComponent<CreatureHandler>();
         }
     }
 }

@@ -2,20 +2,21 @@ using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Text.Json;
+using Script.Creature.DataDefinitions.ScriptableObjects;
 using Script.DataDefinitions.ScriptableObjects;
 
 namespace Script.Manager
 {
     public class UnlockedCharacterManager : ManagerBase<UnlockedCharacterManager>
     {
-        public Dictionary<string, CharacterData> unlockCharacters { get; private set; }
-        public Dictionary<string, CharacterData> allCharacterData { get; private set; }
+        public Dictionary<string, CreatureData> unlockCharacters { get; private set; }
+        public Dictionary<string, CreatureData> allCharacterData { get; private set; }
 
         protected override void Awake()
         {
             base.Awake();
-            unlockCharacters = new Dictionary<string, CharacterData>();
-            allCharacterData = new Dictionary<string, CharacterData>();
+            unlockCharacters = new Dictionary<string, CreatureData>();
+            allCharacterData = new Dictionary<string, CreatureData>();
         }
 
         private void Start()
@@ -45,7 +46,7 @@ namespace Script.Manager
         private void SaveUnlockedCharacters()
         {
             List<string> saveList = new List<string>();
-            foreach (KeyValuePair<string, CharacterData> pairs in unlockCharacters)
+            foreach (KeyValuePair<string, CreatureData> pairs in unlockCharacters)
             {
                 saveList.Add(pairs.Key);
             }
@@ -64,8 +65,8 @@ namespace Script.Manager
         {
             foreach (string creatureName in creatureNames)
             {
-                CharacterData data =
-                    ResourceManager.Load<CharacterData>(
+                CreatureData data =
+                    ResourceManager.Load<CreatureData>(
                         Constant.ResourcePath.CHARACTER_DATA_PATH_BY_NAME(creatureName));
                 allCharacterData.Add(data.characterName, data);
             }

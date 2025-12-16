@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Script.Creature.DataDefinitions.ScriptableObjects;
 using Script.Creature.Handler;
 using Script.DataDefinitions.ScriptableObjects;
 using Script.Manager;
@@ -19,9 +20,9 @@ namespace Script.BattleStyle.Manager
             cardPool = new List<CreatureHandler>();
         }
 
-        public void InitialCreature(List<CharacterData> initialCreatures)
+        public void InitialCreature(List<CreatureData> initialCreatures)
         {
-            foreach (CharacterData creature in initialCreatures)
+            foreach (CreatureData creature in initialCreatures)
             {
                 if (creature.creaturePrefab != null)
                 {
@@ -73,19 +74,6 @@ namespace Script.BattleStyle.Manager
             }
 
             return cardPool.Last();
-        }
-
-        public void DebugLog()
-        {
-            StringBuilder builder = new StringBuilder();
-            foreach (CreatureHandler card in cardPool)
-            {
-                builder.Append(card.Card.characterName).Append(", " + card.Rarity)
-                    .Append(", " + card.SummonChance).AppendLine();
-            }
-
-            builder.Append("total " + probabilitySum);
-            Debug.Log(builder.ToString());
         }
     }
 }

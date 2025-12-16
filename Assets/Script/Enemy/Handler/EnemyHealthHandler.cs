@@ -1,9 +1,6 @@
-﻿using System.Collections;
-using Script.Manager;
-using UnityEditor.Searcher;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Script.Enemy
+namespace Script.Enemy.Handler
 {
     public class EnemyHealthHandler : MonoBehaviour
     {

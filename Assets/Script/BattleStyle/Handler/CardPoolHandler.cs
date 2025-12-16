@@ -11,6 +11,7 @@ namespace Script.BattleStyle.Handler
         void Start()
         {
             cardHandlers = GetComponentsInChildren<CardHandler>();
+            SetCards();
         }
 
         public void SetCards()
@@ -20,7 +21,6 @@ namespace Script.BattleStyle.Handler
                 CreatureHandler card = CardPoolManager.Manager.GetRandomCreature();
                 cardHandler.SetCard(card);
             }
-            CardPoolManager.Manager.DebugLog();
         }
     }
 }

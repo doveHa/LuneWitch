@@ -1,4 +1,5 @@
 ﻿using System;
+using Script.Creature.DataDefinitions.ScriptableObjects;
 using Script.DataDefinitions.ScriptableObjects;
 using TMPro;
 using UnityEngine;
@@ -11,11 +12,11 @@ namespace Script.UI
         [SerializeField] private Image image;
         [SerializeField] private TextMeshProUGUI name;
 
-        public void CardInitialize(CharacterData characterData, Action<CharacterData> callback)
+        public void CardInitialize(CreatureData creatureData, Action<CreatureData> callback)
         {
-            image.sprite = characterData.characterImage;
-            this.name.text = characterData.characterName_Kr;
-            GetComponent<Button>().onClick.AddListener(delegate { callback(characterData); });
+            image.sprite = creatureData.characterImage;
+            this.name.text = creatureData.characterName_Kr;
+            GetComponent<Button>().onClick.AddListener(delegate { callback(creatureData); });
         }
     }
 }

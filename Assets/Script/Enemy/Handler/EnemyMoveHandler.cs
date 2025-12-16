@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Script.Enemy
+namespace Script.Enemy.Handler
 {
     public class EnemyMoveHandler : MonoBehaviour
     {

@@ -1,6 +1,6 @@
 ﻿using Script.BattleStyle.Handler;
 using Script.BattleStyle.Manager;
-using Script.Creature.Handler;
+using Script.Enemy.Handler;
 using UnityEngine;
 
 namespace Script.Enemy
@@ -18,10 +18,9 @@ namespace Script.Enemy
 
             if (other.TryGetComponent(out CardZoneHandler dropSlot))
             {
-                if (dropSlot.IsSpawned())
+                if (dropSlot.IsSummoned())
                 {
                     isRecognized = true;
-                    CardZoneManager.Manager.GetZone(dropSlot.Coordinate.Right()).InEnemy(GetComponentInParent<EnemyHandler>());
                     GetComponentInParent<EnemyHandler>().IsRecognize = true;
                 }
             }

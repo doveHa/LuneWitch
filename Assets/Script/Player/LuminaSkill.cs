@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using Script.Enemy;
+using Script.Enemy.Handler;
 using Script.Manager;
 using UnityEngine;
 

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Script;
+using Script.Creature.DataDefinitions.ScriptableObjects;
 using Script.DataDefinitions.ScriptableObjects;
 using UnityEngine;
 using Script.Manager;
@@ -13,11 +14,11 @@ public class ShowAvailableCardHandler : MonoBehaviour
 
     private int maxSelectCount = 4;
 
-    private List<CharacterData> displayedCharacters;
+    private List<CreatureData> displayedCharacters;
 
     void Awake()
     {
-        displayedCharacters = new List<CharacterData>();
+        displayedCharacters = new List<CreatureData>();
     }
 
     void Start()
@@ -35,21 +36,21 @@ public class ShowAvailableCardHandler : MonoBehaviour
         }
     }
 
-    void OnCardClicked(CharacterData character)
+    void OnCardClicked(CreatureData creature)
     {
-        if (PlayerManager.Manager.SelectedCreatures.Contains(character))
+        if (PlayerManager.Manager.SelectedCreatures.Contains(creature))
         {
-            PlayerManager.Manager.SelectedCreatures.Remove(character);
+            PlayerManager.Manager.SelectedCreatures.Remove(creature);
         }
         else
         {
-            PlayerManager.Manager.AddCreature(character);
+            PlayerManager.Manager.AddCreature(creature);
         }
 
         RefreshCardsPool(selectedCardParent, PlayerManager.Manager.SelectedCreatures);
     }
 
-    private void RefreshCardsPool(Transform parent, List<CharacterData> cards)
+    private void RefreshCardsPool(Transform parent, List<CreatureData> cards)
     {
         foreach (Transform child in parent)
             Destroy(child.gameObject);

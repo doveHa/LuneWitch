@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using Script.Enemy;
+using Script.Enemy.Handler;
 using UnityEngine;
 
 namespace Script.Creature.Handler

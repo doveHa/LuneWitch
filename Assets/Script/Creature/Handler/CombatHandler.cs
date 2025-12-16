@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using Script.BattleStyle.Handler;
+using Script.Creature.DataDefinitions.ScriptableObjects;
 using Script.DataDefinitions.ScriptableObjects;
 using UnityEngine;
 
@@ -21,11 +22,11 @@ namespace Script.Creature.Handler
             animator = GetComponent<Animator>();
         }
 
-        public void Initialize(CharacterData characterData)
+        public void Initialize(CreatureData creatureData)
         {
-            MaxHealth = characterData.health;
+            MaxHealth = creatureData.health;
             Health = MaxHealth;
-            Attack = characterData.attack;
+            Attack = creatureData.attack;
         }
 
         public void AttackMotion()

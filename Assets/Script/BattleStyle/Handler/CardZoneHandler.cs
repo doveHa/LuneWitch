@@ -3,6 +3,7 @@ using Script.BattleStyle.DataDefinitions.Data;
 using Script.BattleStyle.Manager;
 using Script.Creature.Handler;
 using Script.Enemy;
+using Script.Enemy.Handler;
 using UnityEngine;
 
 namespace Script.BattleStyle.Handler
@@ -10,7 +11,7 @@ namespace Script.BattleStyle.Handler
     public class CardZoneHandler : MonoBehaviour
     {
         public CardZoneCoordinate Coordinate { get; set; }
-        public CreatureHandler creatureHandler { get; set; }
+        public CreatureHandler SummonedCreature { get; set; }
         public List<EnemyHandler> Enemies { get; private set; }
 
         void Awake()
@@ -18,34 +19,33 @@ namespace Script.BattleStyle.Handler
             Enemies = new List<EnemyHandler>();
         }
 
+        void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.CompareTag("Enemy"))
+            {
+                Debug.Log(Coordinate.ToString());
+                Enemies.Add(other.GetComponent<EnemyHandler>());
+            }
+        }
+        
+
+        void OnTriggerExit2D(Collider2D other)
+        {
+            if (other.CompareTag("Enemy"))
+            {
+                Debug.Log(Coordinate.ToString());
+                Enemies.Remove(other.GetComponent<EnemyHandler>());
+            }
+        }
+
         public void SummonCreature(CreatureHandler creature)
         {
-            GameObject creatureObject =
-                Instantiate(creature.Card.creaturePrefab, transform.position, Quaternion.identity);
-            creatureObject.name = creature.Card.characterName;
-            creatureObject.transform.SetParent(transform);
-
-            creatureHandler = creatureObject.GetComponent<CreatureHandler>();
-            creatureHandler.CardZone = this;
-            creatureHandler.SummonCreatureSetting(creature.Card);
-
-            creatureHandler.GetComponent<AttackHandler>().RootCoordinate = Coordinate;
-            CardPoolManager.Manager.AddCardInPool(creatureHandler);
+            SummonedCreature = creature;
         }
 
-        public void InEnemy(EnemyHandler enemyHandler)
+        public void DeleteCreature()
         {
-            Enemies.Add(enemyHandler);
-        }
-
-        public void OutEnemy(EnemyHandler enemyHandler)
-        {
-            Enemies.Remove(enemyHandler);
-        }
-
-        public void DeathCreature()
-        {
-            creatureHandler = null;
+            SummonedCreature = null;
         }
 
         public void Visualization()
@@ -58,14 +58,24 @@ namespace Script.BattleStyle.Handler
             GetComponentInChildren<SpriteRenderer>().color = Color.white;
         }
 
-        public bool IsSpawned()
+        public bool IsSummoned()
         {
-            if (creatureHandler == null)
+            if (SummonedCreature == null)
             {
                 return false;
             }
 
-            return creatureHandler.IsOnSummoned;
+            return true;
+        }
+
+        public bool IsOnEnemy()
+        {
+            if (Enemies.Count == 0)
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }

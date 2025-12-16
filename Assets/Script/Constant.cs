@@ -27,9 +27,9 @@ namespace Script
                 return "Creature/" + characterName + "/CreatureData/" + characterName;
             }
 
-            public static string GAMEOBJECT_PATH_BY_ENEMY_NAME(string enemyName)
+            public static string ENEMY_PATH_BY_ENEMY_NAME(string enemyName)
             {
-                return "Prefabs/Enemy/" + enemyName;
+                return "Enemies/" + enemyName + "/EnemyData/" + enemyName;
             }
 
             public static string GAMEOBJECT_PATH_BY_CHARACTER_NAME(string characterName)

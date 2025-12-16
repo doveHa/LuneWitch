@@ -12,10 +12,9 @@ namespace Script.BattleStyle.Handler
     {
         [SerializeField] private Image originalImage;
         [SerializeField] private Image moveImage;
+        [SerializeField] private GameObject usedUI;
         [SerializeField] private TextMeshProUGUI descriptionText;
-
-        public int Cost { get; private set; }
-
+        
         public CreatureHandler CreatureHandler { get; private set; }
         private Color originalColor;
         private Color cantUseColor;
@@ -29,6 +28,7 @@ namespace Script.BattleStyle.Handler
         public void SetCard(CreatureHandler creature)
         {
             CreatureHandler = creature;
+            usedUI.SetActive(false);
             VarInitialize();
             SetImage();
             UseCheck();
@@ -36,15 +36,15 @@ namespace Script.BattleStyle.Handler
 
         public void UseCard()
         {
-            CostManager.Manager.UseCost(Cost);
-            ChangeCard();
+            CostManager.Manager.UseCost(CreatureHandler.Card.cost);
+            SetUsedUI();
         }
 
         public void UpgradeCard()
         {
-            CostManager.Manager.UseCost(Cost);
+            CostManager.Manager.UseCost(CreatureHandler.Card.cost);
             CardPoolManager.Manager.UpgradeCard(CreatureHandler);
-            ChangeCard();
+            SetUsedUI();
         }
 
         public bool IsSummoned()
@@ -63,7 +63,7 @@ namespace Script.BattleStyle.Handler
 
         private void UseCheck()
         {
-            if (CostManager.Manager.Cost < Cost)
+            if (CostManager.Manager.Cost < CreatureHandler.Card.cost)
             {
                 GetComponent<PointerHandler>().CanDrag = false;
                 originalImage.color = cantUseColor;
@@ -75,15 +75,14 @@ namespace Script.BattleStyle.Handler
             }
         }
 
-        private void ChangeCard()
+        private void SetUsedUI()
         {
-            SetCard(CardPoolManager.Manager.GetRandomCreature());
+            usedUI.SetActive(true);
         }
 
         private void VarInitialize()
         {
             descriptionText.text = CreatureHandler.Card.description;
-            Cost = CreatureHandler.Card.cost;
             originalColor = Color.white;
             ColorUtility.TryParseHtmlString("#313131", out cantUseColor);
         }

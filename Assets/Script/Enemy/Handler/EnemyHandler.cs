@@ -3,7 +3,7 @@ using Script.Enemy.DataDefinitions.ScriptableObjects;
 using Script.Manager;
 using UnityEngine;
 
-namespace Script.Enemy
+namespace Script.Enemy.Handler
 {
     public class EnemyHandler : MonoBehaviour
     {
@@ -20,13 +20,12 @@ namespace Script.Enemy
         {
             isAttak = false;
         }
+
         void Start()
         {
             animationHandler = GetComponent<EnemyAnimationHandler>();
             healthHandler = GetComponent<EnemyHealthHandler>();
-            healthHandler.Initialize(enemyData.health);
             moveHandler = GetComponent<EnemyMoveHandler>();
-            moveHandler.Initialize(enemyData.speed);
         }
 
         void Update()
@@ -37,11 +36,18 @@ namespace Script.Enemy
             }
         }
 
+        public void Initialize(EnemyData data)
+        {
+            enemyData = data;
+            healthHandler.Initialize(enemyData.health);
+            moveHandler.Initialize(enemyData.speed);
+        }
+
         public void Hit(int damage)
         {
             animationHandler.PlayHitAnimation();
             healthHandler.Hit(damage);
-         
+
             if (healthHandler.IsDead)
             {
                 GameFlowManager.Manager.KillEnemy();
@@ -60,7 +66,7 @@ namespace Script.Enemy
             float originalSpeed = moveHandler.Speed;
             moveHandler.Speed *= disSpeedRate;
             yield return new WaitForSeconds(slowTime);
-            moveHandler.Speed = originalSpeed; 
+            moveHandler.Speed = originalSpeed;
         }
 
         private IEnumerator AttackCoroutine()
@@ -73,7 +79,7 @@ namespace Script.Enemy
                 animationHandler.PlayAttackAnimation();
                 yield return new WaitForSeconds(enemyData.attackTerm);
             }
-            
+
             animationHandler.StopAttackAnimation();
             moveHandler.Walk();
             isAttak = false;

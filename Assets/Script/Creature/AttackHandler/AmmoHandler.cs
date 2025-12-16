@@ -1,7 +1,7 @@
-﻿using Script.Enemy;
+﻿using Script.Enemy.Handler;
 using UnityEngine;
 
-namespace Script.Creature.Handler
+namespace Script.Creature.AttackHandler
 {
     [RequireComponent(typeof(Rigidbody2D))]
     public class AmmoHandler : MonoBehaviour

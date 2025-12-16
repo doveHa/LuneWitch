@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using Script.BattleStyle.DataDefinitions.Data;
 using Script.BattleStyle.Manager;
+using Script.Creature.Handler;
+using Script.Enemy.Handler;
 using UnityEngine;
 
-namespace Script.Creature.Handler
+namespace Script.Creature.AttackHandler
 {
     public abstract class AttackHandler : MonoBehaviour
     {
-        protected float attackSpeed;
+        private float attackSpeed;
         protected CombatHandler CombatHandler;
 
         private float currentCooldown = 0;
@@ -23,6 +25,8 @@ namespace Script.Creature.Handler
 
         protected virtual void Update()
         {
+            Debug.Log(currentCooldown);
+            
             if (currentCooldown > 0)
             {
                 currentCooldown -= Time.deltaTime;
@@ -37,16 +41,23 @@ namespace Script.Creature.Handler
 
         protected bool TryAttackEnemy()
         {
+            bool isAttack = false;
             foreach (CardZoneCoordinate coordinate in AttackRanges())
             {
-                if (CardZoneManager.Manager.GetZone(coordinate).Enemies.Count > 0)
+                if (CardZoneManager.Manager.GetZone(coordinate).IsOnEnemy())
                 {
+                    Debug.Log(CardZoneManager.Manager.GetZone(coordinate).IsOnEnemy());
+                    Attack(CardZoneManager.Manager.GetZone(coordinate).Enemies);
+                    isAttack = true;
+
                 }
             }
 
-            return true;
+            return isAttack;
         }
 
         protected abstract List<CardZoneCoordinate> AttackRanges();
+
+        protected abstract void Attack(List<EnemyHandler> enemies);
     }
 }

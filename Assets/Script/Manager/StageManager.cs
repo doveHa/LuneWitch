@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Script.DataDefinitions.ScriptableObjects;
+using Script.Enemy.DataDefinitions.ScriptableObjects;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,7 +14,7 @@ namespace Script.Manager
         [SerializeField] private SpriteRenderer backGroundImage;
         [SerializeField] private GameObject player;
 
-        public List<GameObject> enemyPrefabs { get; private set; }
+        public List<EnemyData> EnemyData { get; private set; }
 
         public int SpawnCount { get; private set; }
 
@@ -26,7 +27,7 @@ namespace Script.Manager
                 Manager = this;
             }
 
-            enemyPrefabs = new List<GameObject>();
+            EnemyData = new List<EnemyData>();
             SetStage();
             SetPlayer();
         }
@@ -48,7 +49,7 @@ namespace Script.Manager
             backGroundImage.sprite = data.backGroundImage;
             SpawnCount = data.enemyCount;
 
-            SetEnemyPrefab(data.enemyNames);
+            SetEnemyData(data.enemyNames);
         }
 
         private void SetPlayer()
@@ -59,26 +60,15 @@ namespace Script.Manager
                     PlayerManager.Manager.SelectedCharacter.ToString())
             ), player.transform).name = PlayerManager.Manager.SelectedCharacter.ToString();
         }
-/*
-        private void SetCards()
-        {
-            foreach (CharacterData character in PlayerManager.Manager.SelectedCreatures)
-            {
-                GameObject obj = Instantiate(cardSlotPrefab, cardSet);
-                obj.GetComponent<CardSlotTemp>().InitializeCard(character);
-            }
-        }
-*/
-        private void SetEnemyPrefab(string[] enemyNames)
+
+        private void SetEnemyData(string[] enemyNames)
         {
             foreach (string name in enemyNames)
             {
-                
-                enemyPrefabs.Add(
-                    ResourceManager.Load<GameObject>(Constant.ResourcePath.GAMEOBJECT_PATH_BY_ENEMY_NAME(name)));
+                EnemyData.Add(
+                    ResourceManager.Load<EnemyData>(Constant.ResourcePath.ENEMY_PATH_BY_ENEMY_NAME(name)));
                 
                 Debug.Log($"Add {name}");
-
             }
         }
     }

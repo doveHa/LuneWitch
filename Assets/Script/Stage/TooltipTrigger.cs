@@ -44,7 +44,6 @@ public abstract class TooltipTrigger : MonoBehaviour, IPointerEnterHandler, IPoi
         isTooltipActive = true; 
         AdjustTooltipText();
         tooltipPanel.SetActive(true);
-        Debug.Log(GetComponentInParent<CreatureHandler>().Rarity);
     }
 
     public void OnPointerExit(PointerEventData eventData)

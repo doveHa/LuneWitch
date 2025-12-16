@@ -1,9 +1,9 @@
 using UnityEngine;
 
-namespace Script.DataDefinitions.ScriptableObjects
+namespace Script.Creature.DataDefinitions.ScriptableObjects
 {
     [CreateAssetMenu(fileName = "NewCharacter", menuName = "Gacha/Character")]
-    public class CharacterData : ScriptableObject
+    public class CreatureData : ScriptableObject
     {
         public string characterName;
         public string characterName_Kr;

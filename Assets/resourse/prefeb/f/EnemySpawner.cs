@@ -46,7 +46,7 @@ public class EnemySpawner : MonoBehaviour
                 spawnPoints[positionIndex].rotation
             );
             enemy.transform.parent = spawnPoints[positionIndex];
-            enemy.GetComponent<EnemyHandler>().Initialize(data);
+            enemy.GetComponentInChildren<EnemyHandler>().Initialize(data);
             
             spawnProgressSlider.value++;
         }

@@ -15,6 +15,7 @@ namespace Script.BattleStyle.DataDefinitions.Data
             Col = col;
         }
 
+        
 
         public CardZoneCoordinate Up()
         {

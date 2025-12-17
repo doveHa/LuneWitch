@@ -25,8 +25,6 @@ namespace Script.Creature.AttackHandler
 
         protected virtual void Update()
         {
-            Debug.Log(currentCooldown);
-            
             if (currentCooldown > 0)
             {
                 currentCooldown -= Time.deltaTime;
@@ -46,10 +44,8 @@ namespace Script.Creature.AttackHandler
             {
                 if (CardZoneManager.Manager.GetZone(coordinate).IsOnEnemy())
                 {
-                    Debug.Log(CardZoneManager.Manager.GetZone(coordinate).IsOnEnemy());
                     Attack(CardZoneManager.Manager.GetZone(coordinate).Enemies);
                     isAttack = true;
-
                 }
             }
 

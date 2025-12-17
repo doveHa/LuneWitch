@@ -9,6 +9,7 @@ namespace Script.BattleStyle.Manager
 {
     public class CardZoneManager : ManagerBase<CardZoneManager>
     {
+        public const int COL = 5, ROW = 9;
         [SerializeField] private Transform gridRoot;
 
         private CardZoneHandler[,] handlers;
@@ -16,7 +17,7 @@ namespace Script.BattleStyle.Manager
         protected override void Awake()
         {
             base.Awake();
-            handlers = new CardZoneHandler[5, 9];
+            handlers = new CardZoneHandler[COL, ROW];
             for (int i = 0; i < gridRoot.childCount; i++)
             {
                 Transform raw = gridRoot.GetChild(i);

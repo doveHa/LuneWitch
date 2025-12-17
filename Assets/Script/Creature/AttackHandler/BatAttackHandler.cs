@@ -14,10 +14,10 @@ namespace Script.Creature.AttackHandler
         protected override List<CardZoneCoordinate> AttackRanges()
         {
             List<CardZoneCoordinate> attackRange = new List<CardZoneCoordinate>();
-            attackRange.Add(RootCoordinate.Left());
-            attackRange.Add(RootCoordinate.Left().Left());
-            attackRange.Add(RootCoordinate.Left().Up());
-            attackRange.Add(RootCoordinate.Left().Down());
+            attackRange.Add(RootCoordinate.Right());
+            attackRange.Add(RootCoordinate.Right().Right());
+            attackRange.Add(RootCoordinate.Right().Up());
+            attackRange.Add(RootCoordinate.Right().Down());
 
             return attackRange;
         }

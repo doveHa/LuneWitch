@@ -24,8 +24,6 @@ namespace Script.Enemy.Handler
         void Start()
         {
             animationHandler = GetComponent<EnemyAnimationHandler>();
-            healthHandler = GetComponent<EnemyHealthHandler>();
-            moveHandler = GetComponent<EnemyMoveHandler>();
         }
 
         void Update()
@@ -39,6 +37,8 @@ namespace Script.Enemy.Handler
         public void Initialize(EnemyData data)
         {
             enemyData = data;
+            healthHandler = GetComponent<EnemyHealthHandler>();
+            moveHandler = GetComponent<EnemyMoveHandler>();
             healthHandler.Initialize(enemyData.health);
             moveHandler.Initialize(enemyData.speed);
         }
@@ -50,6 +50,7 @@ namespace Script.Enemy.Handler
 
             if (healthHandler.IsDead)
             {
+                StopAllCoroutines();
                 GameFlowManager.Manager.KillEnemy();
                 animationHandler.PlayDeathAnimation();
                 StartCoroutine(DeathCoroutine());

@@ -1,9 +1,8 @@
 ﻿using Script.Core.Handler;
-using UnityEngine;
 
-namespace Script.Enemy.Handler
+namespace Script.Creature.Handler
 {
-    public class EnemyAnimationHandler : AnimationHandler
+    public class CreatureAnimationHandler : AnimationHandler
     {
         protected override void SetParameter()
         {

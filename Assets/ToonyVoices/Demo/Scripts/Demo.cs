@@ -15,9 +15,9 @@ public class Demo : MonoBehaviour
     private ToonyVoices _voices;
     private int _currentIndex = 0;
     private string[] _messages = {
-        "Welcome to the ToonyVoices game audio asset!",
-        "This asset is designed to provide cartoon style voices, with any given message, in the style of the Animal Crossing games.",
-        "Here is a secret: ToonyVoices has UnityEvent support letting us know when a character is spoken, or a sentence ends."
+        "ToonyVoice Test 안녕하세요 반갑습니다",
+        "한글 사용 적용, 캐릭터 별 음성 달라짐 확인 중",
+        "반갑습니다"
     };
 
     #endregion

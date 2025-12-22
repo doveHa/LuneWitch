@@ -133,6 +133,9 @@ public class ToonyVoices : MonoBehaviour
 	private Queue<CharacterToken> _queue = new Queue<CharacterToken>();
 	private float _previousVolume;
 
+	//HH: 코루틴 제어 변수 추가
+	private Coroutine _speechCoroutine;
+
     #endregion
 
     //--------------------------------------------------------------------------
@@ -159,8 +162,8 @@ public class ToonyVoices : MonoBehaviour
     //--------------------------------------------------------------------------
     #region Unity methods
 
-    private void Start()
-	{
+    private void Awake() //Start -> Awake
+    {
 		_source = GetComponent<AudioSource>();
 		_source.playOnAwake = false;
 		_source.pitch = _basePitch;
@@ -169,19 +172,81 @@ public class ToonyVoices : MonoBehaviour
 
     #endregion
 
+    #region Hangul Extension
+
+	// 초성 매핑 테이블
+	private readonly string[] _choSungTable =
+        { "g", "k", "n", "d", "t", "l", "m", "b", "p", "s", "s", "a", "j", "j", "c", "k", "t", "p", "h" };
+
+	// Speak 메서드 한글 변환 로직 적용
+	public void Speak(string sentence)
+	{
+		StopSpeech();
+
+		string convertedSentence = ConvertHangulToRoman(sentence);
+
+		Process(convertedSentence);
+		PlayNextSound(_basePitch);
+    }
+
+    // 오버로딩 메서드
+    public void Speak(string sentence, float pitch, float volume = 1f)
+    {
+        StopSpeech();
+        _previousVolume = _source.volume;
+        _source.volume = volume;
+
+        string convertedSentence = ConvertHangulToRoman(sentence);
+        Process(convertedSentence);
+        PlayNextSound(pitch);
+    }
+
+    // 소리 즉시 중지 (skip, next)
+    public void StopSpeech()
+    {
+        _queue.Clear();
+        if (_source.isPlaying) _source.Stop();
+        if (_speechCoroutine != null) StopCoroutine(_speechCoroutine);
+    }
+
+    // 한글 알파벳 소리로 변환
+    private string ConvertHangulToRoman(string input)
+    {
+        System.Text.StringBuilder sb = new System.Text.StringBuilder();
+
+        foreach (char c in input)
+        {
+            if (c >= 0xAC00 && c <= 0xD7A3) // 한글 유니코드 범위
+            {
+                // 초성 인덱스 추출: (문자 - 0xAC00) / 28 / 21
+                int choSungIndex = (c - 0xAC00) / 28 / 21;
+                sb.Append(_choSungTable[choSungIndex]);
+            }
+            else
+            {
+                // 한글이 아니면 그대로 유지 (영어, 공백, 특수문자 등)
+                sb.Append(c);
+            }
+        }
+        return sb.ToString();
+    }
+
+    #endregion
+
+
     //--------------------------------------------------------------------------
     #region Class methods
 
-	/// <summary>
+    /// <summary>
     /// Using <see cref="Process(string)"/>, processes the sentence to be spoken.
     /// Calls <see cref="PlayNextSound"/> for each sound in queue.
     /// </summary>
     /// <param name="sentence">The sentence to be spoken</param>
-	public void Speak(string sentence)
+/*    public void Speak(string sentence)
     {
 		Process(sentence);
 		PlayNextSound(_basePitch);
-    }
+    }*/
 
 	/// <summary>
 	/// Using <see cref="Process(string)"/>, processes the sentence to be spoken.
@@ -190,13 +255,13 @@ public class ToonyVoices : MonoBehaviour
 	/// <param name="sentence">The sentence to be spoken</param>
 	/// <param name="pitch">The pitch for this sentence, reverts back to the base pitch when finished</param>
 	/// <param name="volume">The volume for this sentence to be spoken</param>
-	public void Speak(string sentence, float pitch, float volume = 1f)
+/*	public void Speak(string sentence, float pitch, float volume = 1f)
 	{
 		_previousVolume = _source.volume;
 		_source.volume = volume;
 		Process(sentence);
 		PlayNextSound(pitch);
-	}
+	}*/
 
 	/// <summary>
 	/// Processes the input string, splitting by spaces, and calls <see cref="ParseWord(string)"/> for each word individually.
@@ -293,7 +358,9 @@ public class ToonyVoices : MonoBehaviour
 						UnityEngine.Random.Range(-_pitchRange, _pitchRange) +
 						((token.Inflective == true) ? _inflectionPitchModifier : 0f);
 		_source.Play();
-		StartCoroutine(WaitForAudioCompleted(pitch));
+
+		//StartCoroutine(WaitForAudioCompleted(pitch));
+		_speechCoroutine = StartCoroutine(WaitForAudioCompleted(pitch));
     }
 
 	/// <summary>

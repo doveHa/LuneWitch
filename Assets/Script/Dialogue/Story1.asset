@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d9aab5c9c9d22b43bf5c4fdd35c67ef, type: 3}
+  m_Name: Story1
+  m_EditorClassIdentifier: 
+  lines:
+  - speakerType: 1
+    speakerName: "\uB8E8\uBBF8\uB098"
+    text: "\uB300\uD654 \uC2DC\uC2A4\uD15C \uD14C\uC2A4\uD2B8 \uC2DC\uC791"
+    leftSprite: {fileID: 5352576004762474852, guid: dc6975b729361dc43bae75da403e04ca, type: 3}
+    rightSprite: {fileID: 0}
+  - speakerType: 2
+    speakerName: ???
+    text: "\uC548\uB155\uD558\uC138\uC694 \uBC18\uAC11\uC2B5\uB2C8\uB2E4"
+    leftSprite: {fileID: 5352576004762474852, guid: dc6975b729361dc43bae75da403e04ca, type: 3}
+    rightSprite: {fileID: -2569732684498782866, guid: dd1ff8af0fe23e846b6e3168e3854bf2, type: 3}
+  - speakerType: 1
+    speakerName: "\uB8E8\uBBF8\uB098"
+    text: "\uD55C\uAE00 \uD14C\uC2A4\uD2B8 \uC74C\uC131 \uCD9C\uB825 \uC774\uB7F0
+      \uC2DD\uC73C\uB85C \uB429\uB2C8\uB2E4"
+    leftSprite: {fileID: 5352576004762474852, guid: dc6975b729361dc43bae75da403e04ca, type: 3}
+    rightSprite: {fileID: -2569732684498782866, guid: dd1ff8af0fe23e846b6e3168e3854bf2, type: 3}
+  - speakerType: 1
+    speakerName: "\uB8E8\uBBF8\uB098"
+    text: "ToonyVoice\uC640 \uC5EC\uB7EC \uAE30\uB2A5 \uCD94\uAC00"
+    leftSprite: {fileID: 5352576004762474852, guid: dc6975b729361dc43bae75da403e04ca, type: 3}
+    rightSprite: {fileID: -2569732684498782866, guid: dd1ff8af0fe23e846b6e3168e3854bf2, type: 3}

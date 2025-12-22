@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using Script.Enemy;
+using Script.Enemy.DataDefinitions.ScriptableObjects;
+using Script.Enemy.Handler;
 using Script.Manager;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
@@ -16,7 +18,7 @@ public class EnemySpawner : MonoBehaviour
 
     public void SpawnStart()
     {
-        StartCoroutine(SpawnMonsters());
+        StartCoroutine(SpawnEnemies());
     }
 
     public Transform[] SpawnPoints()
@@ -24,7 +26,7 @@ public class EnemySpawner : MonoBehaviour
         return spawnPoints;
     }
 
-    private IEnumerator SpawnMonsters()
+    private IEnumerator SpawnEnemies()
     {
         spawnProgressSlider.maxValue = StageManager.Manager.SpawnCount;
 
@@ -33,14 +35,19 @@ public class EnemySpawner : MonoBehaviour
             float delay = Random.Range(minSpawnDelay, maxSpawnDelay);
             yield return new WaitForSecondsRealtime(delay);
 
-            int monsterIndex = Random.Range(0, StageManager.Manager.enemyPrefabs.Count);
+            int enemyIndex = Random.Range(0, StageManager.Manager.EnemyData.Count);
             int positionIndex = Random.Range(0, spawnPoints.Length);
 
-            Instantiate(
-                StageManager.Manager.enemyPrefabs[monsterIndex],
+            EnemyData data = StageManager.Manager.EnemyData[enemyIndex];
+
+            GameObject enemy = Instantiate(
+                data.prefab,
                 spawnPoints[positionIndex].position,
                 spawnPoints[positionIndex].rotation
-            ).transform.parent = spawnPoints[positionIndex];
+            );
+            enemy.transform.parent = spawnPoints[positionIndex];
+            enemy.GetComponentInChildren<EnemyHandler>().Initialize(data);
+            
             spawnProgressSlider.value++;
         }
     }

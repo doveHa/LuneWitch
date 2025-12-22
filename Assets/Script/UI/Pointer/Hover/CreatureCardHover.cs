@@ -1,5 +1,6 @@
 ﻿using Script.BattleStyle.DataDefinitions.Data;
 using Script.BattleStyle.Handler;
+using Script.Creature.Handler;
 using UnityEngine;
 
 namespace Script.UI.Pointer.Hover
@@ -10,11 +11,11 @@ namespace Script.UI.Pointer.Hover
 
         public void Enter()
         {
-            CreatureSummonCard card = GetComponent<CardHandler>().CardData;
+            CardHandler cardHandler = GetComponent<CardHandler>();
 
-            if (card.IsOnSummoned)
+            if (cardHandler.IsSummoned())
             {
-                card.CardZone.Visualization();
+                cardHandler.CreatureHandler.CreatureSummonHandler.VisualizeCreature();
             }
 
             descriptionPanel.SetActive(true);
@@ -22,13 +23,13 @@ namespace Script.UI.Pointer.Hover
 
         public void Exit()
         {
-            CreatureSummonCard card = GetComponent<CardHandler>().CardData;
+            CardHandler cardHandler = GetComponent<CardHandler>();
 
-            if (card.IsOnSummoned)
+            if (cardHandler.IsSummoned())
             {
-                card.CardZone.Normalization();
+                cardHandler.CreatureHandler.CreatureSummonHandler.NormalizeCreature();
             }
-            
+
             descriptionPanel.SetActive(false);
         }
     }

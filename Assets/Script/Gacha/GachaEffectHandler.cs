@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using System.Collections;
 using System.Collections.Generic;
-using Script.DataDefinitions.ScriptableObjects;
+using Script.Creature.DataDefinitions.ScriptableObjects;
 
 public class GachaEffectHandler : MonoBehaviour
 {
@@ -33,12 +33,12 @@ public class GachaEffectHandler : MonoBehaviour
         }
     }
 
-    public void PlayGachaEffect(CharacterData characterData)
+    public void PlayGachaEffect(CreatureData creatureData)
     {
-        StartCoroutine(PlaySequence(characterData));
+        StartCoroutine(PlaySequence(creatureData));
     }
 
-    private IEnumerator PlaySequence(CharacterData characterData)
+    private IEnumerator PlaySequence(CreatureData creatureData)
     {
         gachaPanel.SetActive(true);
 
@@ -51,8 +51,8 @@ public class GachaEffectHandler : MonoBehaviour
             characterAnimator.Play("Appear 1");
         }
 
-        characterImage.sprite = characterData.characterImage;
-        characterNameText.text = characterData.characterName;
+        characterImage.sprite = creatureData.characterImage;
+        characterNameText.text = creatureData.name;
 
 
         isWaitingForClick = true;
@@ -68,7 +68,7 @@ public class GachaEffectHandler : MonoBehaviour
             backgroundEffect.SetActive(false);
     }
 
-    public void ShowMultipleResults(List<CharacterData> characters)
+    public void ShowMultipleResults(List<CreatureData> characters)
     {
         multiResultPanel.SetActive(true);
 

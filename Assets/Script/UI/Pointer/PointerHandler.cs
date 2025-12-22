@@ -14,16 +14,16 @@ namespace Script.UI.Pointer
         [SerializeField] private GameObject target;
 
         public bool CanDrag { get; set; }
+
         private Vector3 offset, originalPos;
-        private static bool isDragging;
         private RectTransform rectTransform;
+        private bool isDragging;
         private Canvas canvas;
 
         void Awake()
         {
             rectTransform = target.GetComponent<RectTransform>();
             canvas = GetComponentInParent<Canvas>();
-            //CanDrag = true;
             CanDrag = false;
         }
 
@@ -34,7 +34,7 @@ namespace Script.UI.Pointer
                 return;
             }
 
-            if (CanDrag && TryGetComponent(out IHover hover))
+            if (TryGetComponent(out IHover hover))
             {
                 hover.Enter();
             }
@@ -43,7 +43,7 @@ namespace Script.UI.Pointer
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            if (CanDrag && TryGetComponent(out IHover hover))
+            if (TryGetComponent(out IHover hover))
             {
                 hover.Exit();
             }
@@ -53,11 +53,11 @@ namespace Script.UI.Pointer
         {
             if (CanDrag && TryGetComponent(out IDrag drag))
             {
-                drag.Click();
-
                 isDragging = true;
                 originalPos = target.transform.position;
                 offset = rectTransform.localPosition - GetMousePos(eventData);
+
+                drag.Click(target);
             }
             else
             {
@@ -69,7 +69,27 @@ namespace Script.UI.Pointer
         {
             if (isDragging && TryGetComponent(out IDrag drag))
             {
-                drag.Drag(rectTransform, GetMousePos(eventData) + offset);
+                rectTransform.localPosition = GetMousePos(eventData) + offset;
+
+                List<RaycastResult> results = new List<RaycastResult>();
+                EventSystem.current.RaycastAll(eventData, results);
+
+                bool foundDropZone = false;
+
+                foreach (var result in results)
+                {
+                    if (result.gameObject.transform.CompareTag("DropZone"))
+                    {
+                        drag.Drag(result.gameObject);
+                        foundDropZone = true;
+                        break;
+                    }
+                }
+
+                if (!foundDropZone)
+                {
+                    drag.Drag(null);
+                }
             }
             else
             {
@@ -102,6 +122,17 @@ namespace Script.UI.Pointer
             MoveOriginalSpot();
         }
 
+        public void OnlyClick()
+        {
+            isDragging = false;
+            MoveOriginalSpot();
+        }
+
+        public void MoveOriginalSpot()
+        {
+            target.transform.position = originalPos;
+        }
+
         private Vector3 GetMousePos(PointerEventData eventData)
         {
             RectTransformUtility.ScreenPointToLocalPointInRectangle(
@@ -111,11 +142,6 @@ namespace Script.UI.Pointer
                 out Vector2 mousePos
             );
             return mousePos;
-        }
-
-        private void MoveOriginalSpot()
-        {
-            target.transform.position = originalPos;
         }
     }
 }

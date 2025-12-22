@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 234cd38b9848a3e498c0cca54a1d01d6, type: 3}
+  m_Name: Spider
+  m_EditorClassIdentifier: 
+  name: Spider
+  attack: 40
+  health: 80
+  attackTerm: 5
+  prefab: {fileID: 804819288300844835, guid: df58d89dc742f3a49ba5e53dfdfa998e, type: 3}
+  name_Kr: "\uC54C\uAC70\uBBF8"
+  description: 
+  cost: 90
+  characterImage: {fileID: -3438905571476058607, guid: af0eb08a12d4053489ddb427bd2843bd, type: 3}
+  unitSize: {x: 1, y: 1}

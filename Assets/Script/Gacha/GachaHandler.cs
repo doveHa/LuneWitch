@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Script.Creature.DataDefinitions.ScriptableObjects;
 using Script.DataDefinitions.ScriptableObjects;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 namespace Script.Manager
@@ -13,7 +15,7 @@ namespace Script.Manager
         [Serializable]
         public class GachaItem
         {
-            public CharacterData characterData;
+            [FormerlySerializedAs("characterData")] public CreatureData creatureData;
             public float probability;
         }
 
@@ -49,7 +51,7 @@ namespace Script.Manager
             UpdateMoonStone();
         }
 
-        public CharacterData RollOne()
+        public CreatureData RollOne()
         {
             if (currentPoolIndex < 0 || currentPoolIndex >= gachaPools.Count)
             {
@@ -66,7 +68,7 @@ namespace Script.Manager
                 cumulative += item.probability;
                 if (rand <= cumulative)
                 {
-                    return item.characterData;
+                    return item.creatureData;
                 }
             }
 
@@ -94,7 +96,7 @@ namespace Script.Manager
 
             MoonStone -= count;
 
-            List<CharacterData> results = new List<CharacterData>();
+            List<CreatureData> results = new List<CreatureData>();
 
             for (int i = 0; i < count; i++)
             {
@@ -109,8 +111,7 @@ namespace Script.Manager
                     gachaEffectHandler.PlayGachaEffect(character);
                 }
 
-                characterManager?.UnlockCharacter(character.characterType);
-                UnlockedCharacterManager.Manager.Unlock(character.characterName);
+                UnlockedCharacterManager.Manager.Unlock(character.name);
 
                 if (count > 1)
                 {

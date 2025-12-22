@@ -1,3 +1,4 @@
+using Script.Creature.DataDefinitions.ScriptableObjects;
 using Script.DataDefinitions.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,10 +9,10 @@ public class GachaResultSlot : MonoBehaviour
     public Image characterImage;
     public TMP_Text characterNameText;
 
-    public void SetData(CharacterData data)
+    public void SetData(CreatureData data)
     {
         characterImage.sprite = data.characterImage;
-        characterNameText.text = data.characterName;
+        characterNameText.text = data.name;
     }
 
     public void Clear()

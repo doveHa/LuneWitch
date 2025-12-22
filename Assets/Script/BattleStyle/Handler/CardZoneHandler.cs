@@ -1,30 +1,65 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using Script.BattleStyle.DataDefinitions.Data;
-using Script.BattleStyle.DataDefinitions.Enum;
-using Script.BattleStyle.Manager;
+using Script.Creature.Handler;
+using Script.Enemy.Handler;
 using UnityEngine;
 
 namespace Script.BattleStyle.Handler
 {
     public class CardZoneHandler : MonoBehaviour
     {
-        public bool IsSpawned { get; set; } = false;
+        public CardZoneCoordinate Coordinate { get; set; }
+        public CreatureSummonHandler SummonedCreature { get; set; }
+        public List<EnemyHandler> Enemies { get; private set; }
+        private GameObject attackRangeMark, spawnRangeMark;
 
-        public CreatureSummonCard CardData { get; private set; }
-
-        public void Initialize(CreatureSummonCard cardData)
+        void Awake()
         {
-            CardData = new CreatureSummonCard(cardData, this);
-            IsSpawned = true;
+            Enemies = new List<EnemyHandler>();
+            attackRangeMark = transform.GetChild(0).gameObject;
+            spawnRangeMark = transform.GetChild(1).gameObject;
+        }
 
-            GameObject creature =
-                Instantiate(CardData.CreaturePrefab, transform.position, Quaternion.identity);
-            creature.name = CardData.CreatureName;
-            creature.transform.SetParent(transform);
+        void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.CompareTag("Enemy"))
+            {
+                Enemies.Add(other.GetComponent<EnemyHandler>());
+            }
+        }
 
-            CardData.IsOnSummoned = true;
-            CardData.Rarity = NextProbability();
-            CardPoolManager.Manager.AddCardInPool(CardData);
+
+        void OnTriggerExit2D(Collider2D other)
+        {
+            if (other.CompareTag("Enemy"))
+            {
+                Enemies.Remove(other.GetComponent<EnemyHandler>());
+            }
+        }
+
+        public void DeleteCreature()
+        {
+            SummonedCreature = null;
+        }
+
+        public void SpawnVisualization()
+        {
+            spawnRangeMark.SetActive(true);
+        }
+
+        public void AttackRangeVisualization()
+        {
+            attackRangeMark.SetActive(true);
+        }
+
+        public void SpawnNormalization()
+        {
+            spawnRangeMark.SetActive(false);
+        }
+
+        public void AttackNormalization()
+        {
+            attackRangeMark.SetActive(false);
         }
 
         public void Visualization()
@@ -37,17 +72,24 @@ namespace Script.BattleStyle.Handler
             GetComponentInChildren<SpriteRenderer>().color = Color.white;
         }
 
-        private Probability NextProbability()
+        public bool IsSummoned()
         {
-            foreach (Probability probability in Enum.GetValues(typeof(Probability)))
+            if (SummonedCreature == null)
             {
-                if ((int)CardData.Rarity > (int)probability)
-                {
-                    return probability;
-                }
+                return false;
             }
 
-            return CardData.Rarity;
+            return true;
+        }
+
+        public bool IsOnEnemy()
+        {
+            if (Enemies.Count == 0)
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }

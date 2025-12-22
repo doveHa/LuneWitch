@@ -69,7 +69,6 @@ namespace Script.Manager
             yield return new WaitUntil(() => !RoundPanel.activeInHierarchy);
 
             Debug.Log("Starting Game");
-            StageManager.Manager.Initialize();
             TargetCount = StageManager.Manager.SpawnCount;
             spawner.SpawnStart();
 

@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using Script.Enemy;
+using Script.Enemy.Handler;
 using Script.Manager;
 using UnityEngine;
 
@@ -28,10 +28,10 @@ namespace Script.Player
         {
             foreach (Transform point in points)
             {
-                EnemyStat[] stats = point.gameObject.GetComponentsInChildren<EnemyStat>();
-                foreach (EnemyStat stat in stats)
+                EnemyHandler[] stats = point.gameObject.GetComponentsInChildren<EnemyHandler>();
+                foreach (EnemyHandler enemyHandler in stats)
                 {
-                    stat.Hit(damage);
+                    enemyHandler.Hit(damage);
                 }
             }
         }

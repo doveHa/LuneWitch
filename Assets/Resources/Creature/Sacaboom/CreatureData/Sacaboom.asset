@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 234cd38b9848a3e498c0cca54a1d01d6, type: 3}
+  m_Name: Sacaboom
+  m_EditorClassIdentifier: 
+  name: Sacaboom
+  attack: 300
+  health: 300
+  attackTerm: 0
+  prefab: {fileID: 804819288300844835, guid: 6edbd60b3b0d23a43a39091b47733a58, type: 3}
+  name_Kr: "\uC0AC\uCE74\uBD90"
+  description: 
+  cost: 300
+  characterImage: {fileID: -8961627957254999368, guid: 04bf7dad6dff21b48be65e4dfa920f19, type: 3}
+  unitSize: {x: 2, y: 1}

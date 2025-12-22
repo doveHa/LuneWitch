@@ -1,5 +1,6 @@
 ﻿using Script.BattleStyle.DataDefinitions.Data;
 using Script.BattleStyle.Manager;
+using Script.Creature.Handler;
 using Script.UI.Pointer;
 using TMPro;
 using UnityEngine;
@@ -11,49 +12,60 @@ namespace Script.BattleStyle.Handler
     {
         [SerializeField] private Image originalImage;
         [SerializeField] private Image moveImage;
+        [SerializeField] private GameObject usedUI;
         [SerializeField] private TextMeshProUGUI descriptionText;
-
-        public CreatureSummonCard CardData { get; private set; }
+        
+        public CreatureHandler CreatureHandler { get; private set; }
         private Color originalColor;
         private Color cantUseColor;
+
 
         void Update()
         {
             UseCheck();
         }
 
-        public void SetCard(CreatureSummonCard card)
+        public void SetCard(CreatureHandler creatureHandler)
         {
-            VarInitialize(card);
+            CreatureHandler = creatureHandler;
+            usedUI.SetActive(false);
+            VarInitialize();
             SetImage();
-            SetDescription();
             UseCheck();
         }
 
         public void UseCard()
         {
-            CostManager.Manager.UseCost(CardData.Cost);
-            CantUseCard();
+            CostManager.Manager.UseCost(CreatureHandler.CreatureData.cost);
+            SetUsedUI();
+        }
+
+        public void UpgradeCard()
+        {
+            CostManager.Manager.UseCost(CreatureHandler.CreatureData.cost);
+            CardPoolManager.Manager.UpgradeCard(CreatureHandler.CreatureSummonHandler);
+            SetUsedUI();
+        }
+
+        public bool IsSummoned()
+        {
+            return CreatureHandler.CreatureSummonHandler.IsOnSummoned;
         }
 
         private void SetImage()
         {
-            originalImage.sprite = CardData.CreatureImage;
-            moveImage.sprite = CardData.CreatureImage;
+            originalImage.sprite = CreatureHandler.CreatureData.characterImage;
+            moveImage.sprite = CreatureHandler.CreatureData.characterImage;
             Color moveSpriteColor = moveImage.color;
             moveSpriteColor.a = 0.6f;
             moveImage.color = moveSpriteColor;
         }
 
-        private void SetDescription()
-        {
-            descriptionText.text = CardData.Description;
-        }
-
         private void UseCheck()
         {
-            if (CostManager.Manager.Cost < CardData.Cost)
+            if (CostManager.Manager.Cost < CreatureHandler.CreatureData.cost)
             {
+                GetComponent<PointerHandler>().CanDrag = false;
                 originalImage.color = cantUseColor;
             }
             else
@@ -63,15 +75,14 @@ namespace Script.BattleStyle.Handler
             }
         }
 
-        private void CantUseCard()
+        private void SetUsedUI()
         {
-            originalImage.color = cantUseColor;
-            originalColor = cantUseColor;
+            usedUI.SetActive(true);
         }
 
-        private void VarInitialize(CreatureSummonCard card)
+        private void VarInitialize()
         {
-            CardData = card;
+            descriptionText.text = CreatureHandler.CreatureData.description;
             originalColor = Color.white;
             ColorUtility.TryParseHtmlString("#313131", out cantUseColor);
         }

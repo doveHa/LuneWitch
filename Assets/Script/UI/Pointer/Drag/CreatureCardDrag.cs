@@ -1,30 +1,99 @@
-﻿using Script.BattleStyle.Handler;
+﻿using System.Collections.Generic;
+using Script.BattleStyle.DataDefinitions.Data;
+using Script.BattleStyle.Handler;
+using Script.BattleStyle.Manager;
+using Script.Creature.Handler;
 using Script.UI.Pointer.Hover;
+using UnityEditor.Searcher;
 using UnityEngine;
 
 namespace Script.UI.Pointer.Drag
 {
     public class CreatureCardDrag : MonoBehaviour, IDrag
     {
-        public void Click()
+        private bool canSpawn = true;
+
+        private List<CardZoneCoordinate> currentSpawnVisualList = new List<CardZoneCoordinate>();
+        private CardZoneCoordinate lastHoveredCoord = null;
+
+        public void Click(GameObject target)
         {
             if (TryGetComponent(out IHover hover))
             {
                 hover.Exit();
             }
-        }
 
-        public void Drag(RectTransform rectTransform, Vector3 mousePos)
-        {
-            rectTransform.localPosition = mousePos;
-        }
+            currentSpawnVisualList.Clear();
+            lastHoveredCoord = null;
 
-        public void Drop(GameObject drop)
-        {
-            if (drop.TryGetComponent(out CardZoneHandler cardZoneHandler))
+            CardHandler cardHandler = target.GetComponentInParent<CardHandler>();
+            if (cardHandler.IsSummoned())
             {
-                cardZoneHandler.Initialize(GetComponent<CardHandler>().CardData);
-                GetComponent<CardHandler>().UseCard();
+                GetComponentInParent<PointerHandler>().OnlyClick();
+                cardHandler.UpgradeCard();
+            }
+        }
+
+        public void Drag(GameObject target)
+        {
+            if (target == null)
+            {
+                ClearVisuals();
+                lastHoveredCoord = null;
+                canSpawn = false;
+                return;
+            }
+
+            CardZoneHandler cardZoneHandler = target.GetComponent<CardZoneHandler>();
+            CardZoneCoordinate currentCoord = cardZoneHandler.Coordinate;
+
+            if (lastHoveredCoord != null && lastHoveredCoord == currentCoord)
+            {
+                return;
+            }
+
+            ClearVisuals();
+            var spawnTileList = GetComponent<CardHandler>().CreatureHandler.GetSpawnTiles(currentCoord);
+            lastHoveredCoord = currentCoord;
+
+            if (spawnTileList == null)
+            {
+                canSpawn = false;
+            }
+            else
+            {
+                canSpawn = true;
+                CardZoneManager.Manager.SpawnVisuals(spawnTileList);
+
+                currentSpawnVisualList = new List<CardZoneCoordinate>(spawnTileList);
+            }
+        }
+
+        public void Drop(GameObject target)
+        {
+            ClearVisuals();
+            lastHoveredCoord = null;
+
+            if (target.TryGetComponent(out CardZoneHandler cardZoneHandler))
+            {
+                if (canSpawn)
+                {
+                    CreatureHandler creatureHandler =
+                        GetComponent<CardHandler>().CreatureHandler;
+
+                    cardZoneHandler.SummonedCreature = creatureHandler.SummonCreature(cardZoneHandler.Coordinate);
+                    GetComponent<CardHandler>().UseCard();
+                }
+            }
+        }
+
+        private void ClearVisuals()
+        {
+            if (currentSpawnVisualList != null && currentSpawnVisualList.Count > 0)
+            {
+                // 질문하신 SpawnNormalize 호출!
+                CardZoneManager.Manager.SpawnNormalize(currentSpawnVisualList);
+                currentSpawnVisualList.Clear();
             }
         }
     }

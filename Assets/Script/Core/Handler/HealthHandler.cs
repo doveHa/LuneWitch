@@ -1,0 +1,24 @@
+﻿namespace Script.Core.Handler
+{
+    public class HealthHandler
+    {
+        public int MaxHealth { get; private set; }
+        public int Health { get; private set; }
+        public bool IsDead { get; private set; } = false;
+
+        protected HealthHandler(int maxHealth)
+        {
+            MaxHealth = maxHealth;
+            Health = maxHealth;
+        }
+
+        public void Hit(int damage)
+        {
+            Health -= damage;
+            if (Health <= 0)
+            {
+                IsDead = true;
+            }
+        }
+    }
+}

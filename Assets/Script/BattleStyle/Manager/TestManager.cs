@@ -14,9 +14,9 @@ namespace Script.BattleStyle.Manager
             CardPoolManager.Manager.InitialCreature(LoadCreatureData());
         }
 
-        private string[] creatureNames =
+        [SerializeField] private string[] creatureNames =
         {
-            "Balloon", "Bat", "Broomstick", "Spider", "Shadow","Groot", "Frog", "Hippocrates", "Limeln", "ManaStone",
+            "Balloon", "Bat", "Broomstick", "Spider", "Shadow", "Groot", "Frog", "Hippocrates", "Limeln", "ManaStone",
             "Mandragora", "Muret", "Pumpy", "Silum"
         };
 

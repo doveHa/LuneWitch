@@ -4597,6 +4597,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa2bec0ac5a24a3eb5b8edec85a9b1b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creatureNames:
+  - Balloon
+  - Bat
+  - Broomstick
+  - Spider
+  - Shadow
+  - Groot
+  - Frog
+  - Hippocrates
+  - Limeln
+  - ManaStone
+  - Mandragora
+  - Muret
+  - Pumpy
+  - Silum
+  - Sacaboom
 --- !u!4 &666320845
 Transform:
   m_ObjectHideFlags: 0

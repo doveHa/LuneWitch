@@ -24,7 +24,7 @@ namespace Script.Creature.AttackHandler
             }
         }
 
-        public void Initialize(CreatureData data)
+        public virtual void Initialize(CreatureData data)
         {
             attackTerm = data.attackTerm;
             Atk = data.attack;

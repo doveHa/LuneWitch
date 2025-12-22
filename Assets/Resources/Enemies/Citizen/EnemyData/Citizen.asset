@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 959c590b0bcf40a0a3d4d0bf14afcf77, type: 3}
   m_Name: Citizen
   m_EditorClassIdentifier: 
-  enemyName: Citizen
-  speed: 0.5
+  name: Citizen
   attack: 10
   health: 100
   attackTerm: 5
-  creaturePrefab: {fileID: 8436103653396323419, guid: 3214579f4449d504c824848a9255fcf2, type: 3}
+  prefab: {fileID: 8436103653396323419, guid: 3214579f4449d504c824848a9255fcf2, type: 3}
+  moveSpeed: 0.5

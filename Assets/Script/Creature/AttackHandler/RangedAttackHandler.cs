@@ -1,63 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Script.BattleStyle.DataDefinitions.Data;
-using Script.BattleStyle.Manager;
-using Script.Creature.AttackHandler;
 using Script.Enemy.Handler;
 using UnityEngine;
 
-namespace Script.Creature.Handler
+namespace Script.Creature.AttackHandler
 {
-    public class RangedAttackHandler : AttackHandler.AttackHandler
+    public class RangedAttackHandler : BaseAttackHandler
     {
         [SerializeField] private GameObject ammoPrefab;
         [SerializeField] private Transform shootPoint;
-        [SerializeField] private float attackSpeed = 1f, ammoSpeed = 1f;
-        private int enemyCount = 0;
-        private bool isEnemyOn, isAttacking;
+        [SerializeField] private float ammoSpeed = 1f;
 
-        private CombatHandler stat;
-
-        void Start()
+        public override HashSet<CardZoneCoordinate> AttackRanges()
         {
-            stat = GetComponentInParent<CombatHandler>();
-        }
-
-        void OnTriggerEnter2D(Collider2D other)
-        {
-            if (other.CompareTag("Enemy"))
-            {
-                enemyCount++;
-                isEnemyOn = true;
-            }
-        }
-
-        void OnTriggerExit2D(Collider2D other)
-        {
-            if (other.CompareTag("Enemy"))
-            {
-                enemyCount--;
-                if (enemyCount <= 0)
-                {
-                    isEnemyOn = false;
-                }
-            }
-        }
-
-        void Update()
-        {
-            if (isEnemyOn && !isAttacking)
-            {
-                StartCoroutine(AttackMotionCoroutine());
-            }
-        }
-
-        protected override List<CardZoneCoordinate> AttackRanges()
-        {
-            var attackRange = new List<CardZoneCoordinate>();
+            var attackRange = new HashSet<CardZoneCoordinate>();
             CardZoneCoordinate coordinate = RootCoordinate;
 
-            for (int i = RootCoordinate.Row; i < CardZoneManager.ROW; i++)
+            for (int i = RootCoordinate.Col; i <= CardZoneCoordinate.MAXCOL; i++)
             {
                 coordinate = coordinate.Right();
                 attackRange.Add(coordinate);
@@ -68,28 +27,14 @@ namespace Script.Creature.Handler
 
         protected override void Attack(List<EnemyHandler> enemies)
         {
-            throw new System.NotImplementedException();
         }
 
         public void ShootAmmo()
         {
             AmmoHandler ammoHandler = Instantiate(ammoPrefab, shootPoint.position, Quaternion.identity)
                 .GetComponent<AmmoHandler>();
-            ammoHandler.SetStat(stat.Attack, ammoSpeed);
+            ammoHandler.SetStat(Atk, ammoSpeed);
             ammoHandler.AddForce();
-        }
-
-        private IEnumerator AttackMotionCoroutine()
-        {
-            isAttacking = true;
-
-            while (isEnemyOn)
-            {
-                stat.AttackMotion();
-                yield return new WaitForSeconds(attackSpeed);
-            }
-
-            isAttacking = false;
         }
     }
 }

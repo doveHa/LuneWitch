@@ -111,7 +111,7 @@ namespace Script.Manager
                     gachaEffectHandler.PlayGachaEffect(character);
                 }
 
-                UnlockedCharacterManager.Manager.Unlock(character.characterName);
+                UnlockedCharacterManager.Manager.Unlock(character.name);
 
                 if (count > 1)
                 {

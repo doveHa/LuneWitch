@@ -12,12 +12,12 @@ namespace Script.Creature.Handler
         //private int enemyCount = 0;
         private bool isAttacking;
 
-        private CombatHandler stat;
+        //private CombatHandler stat;
         private List<Transform> enemies;
         
         void Start()
         {
-            stat = GetComponentInParent<CombatHandler>();
+            //stat = GetComponentInParent<CombatHandler>();
             enemies = new List<Transform>();
         }
 
@@ -56,7 +56,7 @@ namespace Script.Creature.Handler
 
             while (enemies.Count > 0)
             {
-                stat.AttackMotion();
+                //stat.AttackMotion();
                 Transform nearestTransform = enemies[0];
                 foreach (Transform enemyTransform in enemies)
                 {
@@ -67,7 +67,7 @@ namespace Script.Creature.Handler
                     }
                 }
                 
-                Instantiate(pointSummonPrefab, nearestTransform.position, Quaternion.identity).GetComponent<RootPointSummon>().SetStat(stat.Attack);
+                //Instantiate(pointSummonPrefab, nearestTransform.position, Quaternion.identity).GetComponent<RootPointSummon>().SetStat(stat.Attack);
                 yield return new WaitForSeconds(attackSpeed);
             }
 

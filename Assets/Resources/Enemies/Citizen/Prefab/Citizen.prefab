@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 1575134427707446588}
   - component: {fileID: 1667645480765525267}
   - component: {fileID: 4233490886807584939}
-  - component: {fileID: 6403726141989182824}
   - component: {fileID: 1137572352068517080}
   m_Layer: 0
   m_Name: Body
@@ -178,7 +177,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.35}
+  m_Offset: {x: 0.5, y: -0.35}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -214,18 +213,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d29ad65e467452f8fa680f219be0c5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6403726141989182824
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3530049837360633509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 942bd7d94f304d848a21814f1d7b58d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1137572352068517080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,7 +225,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b860433ffa24aeabfec6ad65d1a1162, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
 --- !u!1 &5273886551367826912
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,7 +252,7 @@ Transform:
   m_GameObject: {fileID: 5273886551367826912}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.15, y: -0.492, z: 0}
+  m_LocalPosition: {x: 0.367, y: -0.492, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -306,7 +292,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.5895338, y: 0}
+  m_Offset: {x: 0.6674607, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -316,7 +302,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.1790674, y: 1}
+  m_Size: {x: 2.0232134, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &3374229998645214535
 MonoBehaviour:

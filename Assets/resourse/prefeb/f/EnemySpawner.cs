@@ -41,7 +41,7 @@ public class EnemySpawner : MonoBehaviour
             EnemyData data = StageManager.Manager.EnemyData[enemyIndex];
 
             GameObject enemy = Instantiate(
-                data.creaturePrefab,
+                data.prefab,
                 spawnPoints[positionIndex].position,
                 spawnPoints[positionIndex].rotation
             );

@@ -18,8 +18,8 @@ namespace Script.BattleStyle.Handler
         {
             foreach (CardHandler cardHandler in cardHandlers)
             {
-                CreatureHandler card = CardPoolManager.Manager.GetRandomCreature();
-                cardHandler.SetCard(card);
+                CreatureSummonHandler card = CardPoolManager.Manager.GetRandomCreature();
+                cardHandler.SetCard(card.GetComponent<CreatureHandler>());
             }
         }
     }

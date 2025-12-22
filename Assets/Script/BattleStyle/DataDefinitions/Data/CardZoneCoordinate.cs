@@ -2,9 +2,9 @@
 
 namespace Script.BattleStyle.DataDefinitions.Data
 {
-    public class CardZoneCoordinate
+    public record CardZoneCoordinate
     {
-        private const int MAXRAW = 2, MAXCOL = 8, MINRAW = 0, MINCOL = 0;
+        public const int MAXROW = 4, MAXCOL = 8, MINROW = 0, MINCOL = 0;
 
         public int Row { get; private set; }
         public int Col { get; private set; }
@@ -15,11 +15,10 @@ namespace Script.BattleStyle.DataDefinitions.Data
             Col = col;
         }
 
-        
 
         public CardZoneCoordinate Up()
         {
-            if (Row > MINRAW)
+            if (Row > MINROW)
             {
                 return new CardZoneCoordinate(Row - 1, Col);
             }
@@ -29,7 +28,7 @@ namespace Script.BattleStyle.DataDefinitions.Data
 
         public CardZoneCoordinate Down()
         {
-            if (Row < MAXRAW)
+            if (Row < MAXROW)
             {
                 return new CardZoneCoordinate(Row + 1, Col);
             }

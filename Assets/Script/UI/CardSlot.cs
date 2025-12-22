@@ -15,7 +15,7 @@ namespace Script.UI
         public void CardInitialize(CreatureData creatureData, Action<CreatureData> callback)
         {
             image.sprite = creatureData.characterImage;
-            this.name.text = creatureData.characterName_Kr;
+            name.text = creatureData.name_Kr;
             GetComponent<Button>().onClick.AddListener(delegate { callback(creatureData); });
         }
     }

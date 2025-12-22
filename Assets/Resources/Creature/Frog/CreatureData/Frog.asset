@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 234cd38b9848a3e498c0cca54a1d01d6, type: 3}
   m_Name: Frog
   m_EditorClassIdentifier: 
-  characterName: Frog
-  characterName_Kr: "\uAC1C\uAD6C\uB9AC"
-  description: 
-  cost: 180
+  name: Frog
   attack: 0
   health: 300
   attackTerm: 13
-  creaturePrefab: {fileID: 0}
+  prefab: {fileID: 0}
+  name_Kr: "\uAC1C\uAD6C\uB9AC"
+  description: 
+  cost: 180
   characterImage: {fileID: 0}
+  unitSize: {x: 2, y: 2}

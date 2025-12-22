@@ -89,7 +89,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: -1506815649369673336, guid: 2c7129316a3b207498ac133755eef6e4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -144,9 +144,11 @@ GameObject:
   - component: {fileID: 6247598519623152445}
   - component: {fileID: 52223004}
   - component: {fileID: 2026474050642936066}
-  - component: {fileID: 7577104236157462231}
   - component: {fileID: -8558749457113683372}
   - component: {fileID: -5481532466767537084}
+  - component: {fileID: 3427705673750733680}
+  - component: {fileID: 364604990910339329}
+  - component: {fileID: 7604146563181210448}
   m_Layer: 0
   m_Name: ManaStone
   m_TagString: Creature
@@ -294,19 +296,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2, y: 1}
   m_EdgeRadius: 0
---- !u!114 &7577104236157462231
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5253246037310378019}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afe03f8247374181af62bf2c12f2ff97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deathParticles: {fileID: 0}
 --- !u!114 &-8558749457113683372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330,6 +319,43 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c8cba1fe868f4dfe9edfd5bf919a272d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3427705673750733680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5253246037310378019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3440991be06946d9b4e01ad3cdbdb53d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &364604990910339329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5253246037310378019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e9add828d3648e8adb03e2a24294b07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathParticles: {fileID: 0}
+--- !u!114 &7604146563181210448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5253246037310378019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f4c0b57700f441f865c6f5325a73cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6810573763871580397
@@ -412,7 +438,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &3306467466785408198
 MonoBehaviour:

@@ -2,6 +2,7 @@
 using Script.BattleStyle.DataDefinitions.Data;
 using Script.BattleStyle.Handler;
 using Script.Enemy;
+using Script.Enemy.Handler;
 using Script.Manager;
 using UnityEngine;
 
@@ -9,7 +10,6 @@ namespace Script.BattleStyle.Manager
 {
     public class CardZoneManager : ManagerBase<CardZoneManager>
     {
-        public const int COL = 5, ROW = 9;
         [SerializeField] private Transform gridRoot;
 
         private CardZoneHandler[,] handlers;
@@ -17,7 +17,7 @@ namespace Script.BattleStyle.Manager
         protected override void Awake()
         {
             base.Awake();
-            handlers = new CardZoneHandler[COL, ROW];
+            handlers = new CardZoneHandler[5, 9];
             for (int i = 0; i < gridRoot.childCount; i++)
             {
                 Transform raw = gridRoot.GetChild(i);
@@ -29,9 +29,56 @@ namespace Script.BattleStyle.Manager
             }
         }
 
+        public void HitDamage(List<CardZoneCoordinate> range, int damage)
+        {
+            foreach (CardZoneCoordinate coordinate in range)
+            {
+                CardZoneHandler zone = GetZone(coordinate);
+                if (zone.Enemies.Count > 0)
+                {
+                    foreach (EnemyHandler enemyHandler in zone.Enemies)
+                    {
+                        enemyHandler.Hit(damage);
+                    }
+                }
+            }
+        }
+
         public CardZoneHandler GetZone(CardZoneCoordinate coordinate)
         {
             return handlers[coordinate.Row, coordinate.Col];
+        }
+
+        public void SpawnVisuals(List<CardZoneCoordinate> coordinates)
+        {
+            foreach (CardZoneCoordinate coordinate in coordinates)
+            {
+                GetZone(coordinate).SpawnVisualization();
+            }
+        }
+
+        public void SpawnNormalize(List<CardZoneCoordinate> coordinates)
+        {
+            foreach (CardZoneCoordinate coordinate in coordinates)
+            {
+                GetZone(coordinate).SpawnNormalization();
+            }
+        }
+
+        public void AttackRangeVisuals(HashSet<CardZoneCoordinate> coordinates)
+        {
+            foreach (CardZoneCoordinate coordinate in coordinates)
+            {
+                GetZone(coordinate).AttackRangeVisualization();
+            }
+        }
+
+        public void AttackRangeNormalize(HashSet<CardZoneCoordinate> coordinates)
+        {
+            foreach (CardZoneCoordinate coordinate in coordinates)
+            {
+                GetZone(coordinate).AttackNormalization();
+            }
         }
     }
 }

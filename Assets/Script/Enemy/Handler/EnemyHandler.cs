@@ -1,17 +1,17 @@
 ﻿using System.Collections;
+using Script.Core.DataDefinitions.ScriptableObjects;
+using Script.Core.Handler;
 using Script.Enemy.DataDefinitions.ScriptableObjects;
 using Script.Manager;
 using UnityEngine;
 
 namespace Script.Enemy.Handler
 {
-    public class EnemyHandler : MonoBehaviour
+    public class EnemyHandler : BaseHandler
     {
         private EnemyData enemyData;
 
-        private EnemyAnimationHandler animationHandler;
-        private EnemyHealthHandler healthHandler;
-        private EnemyMoveHandler moveHandler;
+        public EnemyMoveHandler MoveHandler { get; private set; }
 
         public bool IsRecognize { get; set; }
         private bool isAttak;
@@ -19,11 +19,6 @@ namespace Script.Enemy.Handler
         void Awake()
         {
             isAttak = false;
-        }
-
-        void Start()
-        {
-            animationHandler = GetComponent<EnemyAnimationHandler>();
         }
 
         void Update()
@@ -34,27 +29,20 @@ namespace Script.Enemy.Handler
             }
         }
 
-        public void Initialize(EnemyData data)
+        public override void Initialize(BaseData data)
         {
-            enemyData = data;
-            healthHandler = GetComponent<EnemyHealthHandler>();
-            moveHandler = GetComponent<EnemyMoveHandler>();
-            healthHandler.Initialize(enemyData.health);
-            moveHandler.Initialize(enemyData.speed);
+            enemyData = data as EnemyData;
+            AnimationHandler = GetComponent<EnemyAnimationHandler>();
+            HealthHandler = new EnemyHealthHandler(enemyData.health);
+            MoveHandler = GetComponent<EnemyMoveHandler>();
+            MoveHandler.Initialize(enemyData.moveSpeed);
         }
 
-        public void Hit(int damage)
+        protected override void Dead()
         {
-            animationHandler.PlayHitAnimation();
-            healthHandler.Hit(damage);
-
-            if (healthHandler.IsDead)
-            {
-                StopAllCoroutines();
-                GameFlowManager.Manager.KillEnemy();
-                animationHandler.PlayDeathAnimation();
-                StartCoroutine(DeathCoroutine());
-            }
+            //GameFlowManager.Manager.KillEnemy();
+            AnimationHandler.PlayDeathAnimation();
+            StartCoroutine(DeathCoroutine());
         }
 
         public void DisSpeed(float disSpeedRate, float slowTime)
@@ -64,32 +52,32 @@ namespace Script.Enemy.Handler
 
         private IEnumerator SpeedDebuff(float disSpeedRate, float slowTime)
         {
-            float originalSpeed = moveHandler.Speed;
-            moveHandler.Speed *= disSpeedRate;
+            float originalSpeed = MoveHandler.Speed;
+            MoveHandler.Speed *= disSpeedRate;
             yield return new WaitForSeconds(slowTime);
-            moveHandler.Speed = originalSpeed;
+            MoveHandler.Speed = originalSpeed;
         }
 
         private IEnumerator AttackCoroutine()
         {
             isAttak = true;
-            moveHandler.StopWalk();
+            MoveHandler.StopWalk();
 
             while (IsRecognize)
             {
-                animationHandler.PlayAttackAnimation();
+                AnimationHandler.PlayAttackAnimation();
                 yield return new WaitForSeconds(enemyData.attackTerm);
             }
 
-            animationHandler.StopAttackAnimation();
-            moveHandler.Walk();
+            AnimationHandler.StopAttackAnimation();
+            MoveHandler.Walk();
             isAttak = false;
         }
 
         private IEnumerator DeathCoroutine()
         {
-            animationHandler.PlayDeathAnimation();
-            yield return new WaitUntil(() => animationHandler.GetAnimationStateInfo().normalizedTime >= 1f);
+            AnimationHandler.PlayDeathAnimation();
+            yield return new WaitUntil(() => AnimationHandler.GetAnimationStateInfo().normalizedTime >= 1f);
             Destroy(gameObject);
         }
     }

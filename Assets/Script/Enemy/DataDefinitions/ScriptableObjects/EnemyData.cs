@@ -1,18 +1,11 @@
-﻿using UnityEngine;
+﻿using Script.Core.DataDefinitions.ScriptableObjects;
+using UnityEngine;
 
 namespace Script.Enemy.DataDefinitions.ScriptableObjects
 {
     [CreateAssetMenu(fileName = "NewEnemy", menuName = "Enemy")]
-    public class EnemyData : ScriptableObject
+    public class EnemyData : BaseData
     {
-        public string enemyName;
-
-        public float speed;
-
-        public int attack;
-        public int health;
-        public float attackTerm;
-
-        public GameObject creaturePrefab;
+        public float moveSpeed;
     }
 }

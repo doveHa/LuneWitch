@@ -15,7 +15,7 @@ namespace Script.UI.Pointer.Hover
 
             if (cardHandler.IsSummoned())
             {
-                cardHandler.CreatureHandler.CardZone.Visualization();
+                cardHandler.CreatureHandler.CreatureSummonHandler.VisualizeCreature();
             }
 
             descriptionPanel.SetActive(true);
@@ -27,7 +27,7 @@ namespace Script.UI.Pointer.Hover
 
             if (cardHandler.IsSummoned())
             {
-                cardHandler.CreatureHandler.CardZone.Normalization();
+                cardHandler.CreatureHandler.CreatureSummonHandler.NormalizeCreature();
             }
 
             descriptionPanel.SetActive(false);

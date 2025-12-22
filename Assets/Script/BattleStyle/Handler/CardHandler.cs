@@ -25,9 +25,9 @@ namespace Script.BattleStyle.Handler
             UseCheck();
         }
 
-        public void SetCard(CreatureHandler creature)
+        public void SetCard(CreatureHandler creatureHandler)
         {
-            CreatureHandler = creature;
+            CreatureHandler = creatureHandler;
             usedUI.SetActive(false);
             VarInitialize();
             SetImage();
@@ -36,26 +36,26 @@ namespace Script.BattleStyle.Handler
 
         public void UseCard()
         {
-            CostManager.Manager.UseCost(CreatureHandler.Card.cost);
+            CostManager.Manager.UseCost(CreatureHandler.CreatureData.cost);
             SetUsedUI();
         }
 
         public void UpgradeCard()
         {
-            CostManager.Manager.UseCost(CreatureHandler.Card.cost);
-            CardPoolManager.Manager.UpgradeCard(CreatureHandler);
+            CostManager.Manager.UseCost(CreatureHandler.CreatureData.cost);
+            CardPoolManager.Manager.UpgradeCard(CreatureHandler.CreatureSummonHandler);
             SetUsedUI();
         }
 
         public bool IsSummoned()
         {
-            return CreatureHandler.IsOnSummoned;
+            return CreatureHandler.CreatureSummonHandler.IsOnSummoned;
         }
 
         private void SetImage()
         {
-            originalImage.sprite = CreatureHandler.Card.characterImage;
-            moveImage.sprite = CreatureHandler.Card.characterImage;
+            originalImage.sprite = CreatureHandler.CreatureData.characterImage;
+            moveImage.sprite = CreatureHandler.CreatureData.characterImage;
             Color moveSpriteColor = moveImage.color;
             moveSpriteColor.a = 0.6f;
             moveImage.color = moveSpriteColor;
@@ -63,7 +63,7 @@ namespace Script.BattleStyle.Handler
 
         private void UseCheck()
         {
-            if (CostManager.Manager.Cost < CreatureHandler.Card.cost)
+            if (CostManager.Manager.Cost < CreatureHandler.CreatureData.cost)
             {
                 GetComponent<PointerHandler>().CanDrag = false;
                 originalImage.color = cantUseColor;
@@ -82,7 +82,7 @@ namespace Script.BattleStyle.Handler
 
         private void VarInitialize()
         {
-            descriptionText.text = CreatureHandler.Card.description;
+            descriptionText.text = CreatureHandler.CreatureData.description;
             originalColor = Color.white;
             ColorUtility.TryParseHtmlString("#313131", out cantUseColor);
         }

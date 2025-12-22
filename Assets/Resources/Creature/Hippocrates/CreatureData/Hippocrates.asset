@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 234cd38b9848a3e498c0cca54a1d01d6, type: 3}
   m_Name: Hippocrates
   m_EditorClassIdentifier: 
-  characterName: Hippocrates
-  characterName_Kr: "\uD788\uD3EC\uD06C\uB77C\uD14C\uC2A4"
-  description: 
-  cost: 140
+  name: Hippocrates
   attack: 30
   health: 110
   attackTerm: 3.5
-  creaturePrefab: {fileID: 0}
+  prefab: {fileID: 0}
+  name_Kr: "\uD788\uD3EC\uD06C\uB77C\uD14C\uC2A4"
+  description: 
+  cost: 140
   characterImage: {fileID: 0}
+  unitSize: {x: 1, y: 1}

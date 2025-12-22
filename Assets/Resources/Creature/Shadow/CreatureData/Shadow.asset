@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 234cd38b9848a3e498c0cca54a1d01d6, type: 3}
   m_Name: Shadow
   m_EditorClassIdentifier: 
-  characterName: Shadow
-  characterName_Kr: "\uC544\uAE30 \uADF8\uB9BC\uC790"
-  description: 
-  cost: 120
+  name: Shadow
   attack: 30
   health: 120
   attackTerm: 5
-  creaturePrefab: {fileID: 0}
-  characterImage: {fileID: 0}
+  prefab: {fileID: 804819288300844835, guid: b12299ca47d1a0944b7a2410c0b23d3e, type: 3}
+  name_Kr: "\uC544\uAE30 \uADF8\uB9BC\uC790"
+  description: 
+  cost: 120
+  characterImage: {fileID: 4093480436322176185, guid: 160947d1d5ffe7949a19f4f07fbd6590, type: 3}
+  unitSize: {x: 1, y: 1}

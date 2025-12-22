@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 234cd38b9848a3e498c0cca54a1d01d6, type: 3}
   m_Name: Muret
   m_EditorClassIdentifier: 
-  characterName: Muret
-  characterName_Kr: "\uBB34\uB808\uD2B8"
-  description: 
-  cost: 150
+  name: Muret
   attack: 200
   health: 0
   attackTerm: 0
-  creaturePrefab: {fileID: 804819288300844835, guid: 8c67b89db349a804e87b5aaa67fb4aad, type: 3}
+  prefab: {fileID: 0}
+  name_Kr: "\uBB34\uB808\uD2B8"
+  description: 
+  cost: 150
   characterImage: {fileID: 34582505, guid: aad5a35b2d76ec64aa4fe7aed7a5c894, type: 3}
+  unitSize: {x: 1, y: 1}

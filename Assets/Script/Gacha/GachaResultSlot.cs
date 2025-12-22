@@ -12,7 +12,7 @@ public class GachaResultSlot : MonoBehaviour
     public void SetData(CreatureData data)
     {
         characterImage.sprite = data.characterImage;
-        characterNameText.text = data.characterName;
+        characterNameText.text = data.name;
     }
 
     public void Clear()

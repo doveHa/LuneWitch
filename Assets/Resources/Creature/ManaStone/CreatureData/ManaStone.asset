@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 234cd38b9848a3e498c0cca54a1d01d6, type: 3}
   m_Name: ManaStone
   m_EditorClassIdentifier: 
-  characterName: ManaStone
-  characterName_Kr: "\uB9C8\uB825\uC11D"
-  description: 
-  cost: 50
+  name: ManaStone
   attack: 0
   health: 80
   attackTerm: 0
-  creaturePrefab: {fileID: 5253246037310378019, guid: efc7b6621885e2a4697f5c8a7b7d8de3, type: 3}
+  prefab: {fileID: 5253246037310378019, guid: efc7b6621885e2a4697f5c8a7b7d8de3, type: 3}
+  name_Kr: "\uB9C8\uB825\uC11D"
+  description: 
+  cost: 50
   characterImage: {fileID: 1721749118665838677, guid: 34c48dbd5fc94454aa7ff6a21ebaf2af, type: 3}
+  unitSize: {x: 1, y: 1}

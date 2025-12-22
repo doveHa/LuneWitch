@@ -1,24 +1,26 @@
-﻿using UnityEngine;
+﻿using Script.Core.DataDefinitions.ScriptableObjects;
+using UnityEngine;
 
 namespace Script.Core.Handler
 {
-    public class BaseHandler : MonoBehaviour
+    public abstract class BaseHandler : MonoBehaviour
     {
-        private int health;
-        public bool IsDead { get; private set; } = false;
-
-        public void Initialize(int health)
-        {
-            this.health = health;
-        }
+        protected AnimationHandler AnimationHandler;
+        public HealthHandler HealthHandler;
         
         public void Hit(int damage)
         {
-            health -= damage;
-            if (health <= 0)
+            AnimationHandler.PlayHitAnimation();
+            HealthHandler.Hit(damage);
+
+            if (HealthHandler.IsDead)
             {
-                IsDead = true;
+                StopAllCoroutines();
+                Dead();
             }
         }
+
+        protected abstract void Dead();
+        public abstract void Initialize(BaseData data);
     }
 }

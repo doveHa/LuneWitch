@@ -80,7 +80,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &27647005980263935
 MonoBehaviour:
@@ -188,9 +188,9 @@ GameObject:
   - component: {fileID: 6261519868874826293}
   - component: {fileID: 2505885102792291298}
   - component: {fileID: 1936838593575802131}
-  - component: {fileID: -7742659181929906884}
   - component: {fileID: -7761636038083233575}
   - component: {fileID: 8536045109592909330}
+  - component: {fileID: 1254071694806312422}
   m_Layer: 0
   m_Name: Muret
   m_TagString: Creature
@@ -338,19 +338,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2, y: 1.3}
   m_EdgeRadius: 0
---- !u!114 &-7742659181929906884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 804819288300844835}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afe03f8247374181af62bf2c12f2ff97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deathParticles: {fileID: 4093918912061837179}
 --- !u!114 &-7761636038083233575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,6 +361,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c8cba1fe868f4dfe9edfd5bf919a272d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1254071694806312422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804819288300844835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f4c0b57700f441f865c6f5325a73cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6461709369096450634
@@ -646,11 +645,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe450f99f20212d4589b91d3a3cbc3da, type: 3}
---- !u!198 &4093918912061837179 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 5203602074698150152, guid: fe450f99f20212d4589b91d3a3cbc3da, type: 3}
-  m_PrefabInstance: {fileID: 8135309670944177779}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7707997505046137995 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1881981205364224760, guid: fe450f99f20212d4589b91d3a3cbc3da, type: 3}

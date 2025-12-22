@@ -5,7 +5,7 @@ namespace Script.UI.Pointer.Drag
     public interface IDrag
     {
         public void Click(GameObject target);
-        public void Drag(RectTransform target, Vector3 mousePos);
-        public void Drop(GameObject drop);
+        public void Drag(GameObject target);
+        public void Drop(GameObject target);
     }
 }

@@ -9,16 +9,16 @@ using UnityEngine;
 
 namespace Script.Creature.AttackHandler
 {
-    public class BatAttackHandler : AttackHandler
+    public class BatAttackHandler : BaseAttackHandler
     {
-        protected override List<CardZoneCoordinate> AttackRanges()
+        public override HashSet<CardZoneCoordinate> AttackRanges()
         {
-            List<CardZoneCoordinate> attackRange = new List<CardZoneCoordinate>();
+            HashSet<CardZoneCoordinate> attackRange = new HashSet<CardZoneCoordinate>();
             attackRange.Add(RootCoordinate.Right());
             attackRange.Add(RootCoordinate.Right().Right());
-            attackRange.Add(RootCoordinate.Right().Up());
-            attackRange.Add(RootCoordinate.Right().Down());
-
+            attackRange.Add(RootCoordinate.Right().Right().Up());
+            attackRange.Add(RootCoordinate.Right().Right().Down());
+            
             return attackRange;
         }
 
@@ -26,7 +26,7 @@ namespace Script.Creature.AttackHandler
         {
             foreach (EnemyHandler enemy in enemies)
             {
-                enemy.Hit(GetComponent<CreatureHandler>().Card.attack);
+                enemy.Hit(Atk);
             }
         }
     }

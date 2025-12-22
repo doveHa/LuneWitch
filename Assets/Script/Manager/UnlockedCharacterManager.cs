@@ -4,6 +4,7 @@ using System.IO;
 using System.Text.Json;
 using Script.Creature.DataDefinitions.ScriptableObjects;
 using Script.DataDefinitions.ScriptableObjects;
+using UnityEngine;
 
 namespace Script.Manager
 {
@@ -17,16 +18,17 @@ namespace Script.Manager
             base.Awake();
             unlockCharacters = new Dictionary<string, CreatureData>();
             allCharacterData = new Dictionary<string, CreatureData>();
+            LoadCreatureData();
         }
 
         private void Start()
         {
-            LoadCreatureData();
-
+            //LoadCreatureData();
+/*
             UnlockIfNotAlready("Pumpy");
             UnlockIfNotAlready("Silum");
             UnlockIfNotAlready("ManaStone");
-            UnlockIfNotAlready("Limeln");
+            UnlockIfNotAlready("Limeln");*/
         }
 
         private void UnlockIfNotAlready(string characterName)
@@ -68,7 +70,8 @@ namespace Script.Manager
                 CreatureData data =
                     ResourceManager.Load<CreatureData>(
                         Constant.ResourcePath.CHARACTER_DATA_PATH_BY_NAME(creatureName));
-                allCharacterData.Add(data.characterName, data);
+                allCharacterData.Add(data.name, data);
+                Debug.Log(data.name);
             }
 /*
             if (File.Exists(Constant.PersistentPath.UNLOCKED_CHARACTERS))

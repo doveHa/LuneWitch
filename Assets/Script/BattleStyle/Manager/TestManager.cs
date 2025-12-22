@@ -11,13 +11,28 @@ namespace Script.BattleStyle.Manager
     {
         void Start()
         {
-            var creatures = new List<CreatureData>();
-            foreach (KeyValuePair<string, CreatureData> data in UnlockedCharacterManager.Manager.allCharacterData)
+            CardPoolManager.Manager.InitialCreature(LoadCreatureData());
+        }
+
+        private string[] creatureNames =
+        {
+            "Balloon", "Bat", "Broomstick", "Spider", "Shadow","Groot", "Frog", "Hippocrates", "Limeln", "ManaStone",
+            "Mandragora", "Muret", "Pumpy", "Silum"
+        };
+
+        private List<CreatureData> LoadCreatureData()
+        {
+            var creatureDataList = new List<CreatureData>();
+
+            foreach (string creatureName in creatureNames)
             {
-                creatures.Add(data.Value);
+                CreatureData data =
+                    ResourceManager.Load<CreatureData>(
+                        Constant.ResourcePath.CHARACTER_DATA_PATH_BY_NAME(creatureName));
+                creatureDataList.Add(data);
             }
 
-            CardPoolManager.Manager.InitialCreature(creatures);
+            return creatureDataList;
         }
     }
 }

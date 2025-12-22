@@ -1,21 +1,19 @@
+using Script.Core.DataDefinitions.ScriptableObjects;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Script.Creature.DataDefinitions.ScriptableObjects
 {
-    [CreateAssetMenu(fileName = "NewCharacter", menuName = "Gacha/Character")]
-    public class CreatureData : ScriptableObject
+    [CreateAssetMenu(fileName = "NewCreature", menuName = "Creature")]
+    public class CreatureData : BaseData
     {
-        public string characterName;
-        public string characterName_Kr;
+        public string name_Kr;
         [TextArea] public string description;
-        
-        public int cost;
-        public int attack;
-        public int health;
-        public float attackTerm;
 
-        public GameObject creaturePrefab;
+        public int cost;
+
         public Sprite characterImage;
-        
+
+        public Vector2Int unitSize;
     }
 }

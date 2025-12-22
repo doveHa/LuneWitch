@@ -4,8 +4,8 @@ namespace Script.Core.Handler
 {
     public abstract class AnimationHandler : MonoBehaviour
     {
-        private Animator Animator;
-        private int attackParameter, hitParameter, deathParameter;
+        protected Animator Animator;
+        protected int attackParameter, hitParameter, deathParameter;
 
         protected virtual void Awake()
         {
@@ -13,7 +13,7 @@ namespace Script.Core.Handler
             SetParameter();
         }
 
-        public void PlayAttackAnimation()
+        public virtual void PlayAttackAnimation()
         {
             Animator.SetBool(attackParameter, true);
         }
@@ -28,7 +28,7 @@ namespace Script.Core.Handler
             Animator.SetTrigger(hitParameter);
         }
 
-        public void PlayDeathAnimation()
+        public virtual void PlayDeathAnimation()
         {
             Animator.SetTrigger(deathParameter);
         }

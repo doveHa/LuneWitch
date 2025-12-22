@@ -1,53 +1,81 @@
-﻿using System;
+﻿using System.Collections;
+using System.Collections.Generic;
 using Script.BattleStyle.DataDefinitions.Data;
-using Script.BattleStyle.DataDefinitions.Enum;
-using Script.BattleStyle.Handler;
 using Script.BattleStyle.Manager;
+using Script.Core.DataDefinitions.ScriptableObjects;
+using Script.Core.Handler;
+using Script.Creature.AttackHandler;
 using Script.Creature.DataDefinitions.ScriptableObjects;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Script.Creature.Handler
 {
-    public class CreatureHandler : MonoBehaviour
+    public class CreatureHandler : BaseHandler
     {
-        public bool IsOnSummoned { get; private set; } = false;
-        public float SummonChance { get; set; }
-        public Probability Rarity { get; private set; } = Probability.Common;
-        public CardZoneHandler CardZone { get; set; }
-        public CreatureData Card { get; private set; }
+        public CreatureData CreatureData { get; private set; }
+        public CreatureSummonHandler CreatureSummonHandler { get; private set; }
+        public BaseAttackHandler AttackHandler { get; private set; }
 
-        public void SetCreatureSummonCard(CreatureData card)
+        void Update()
         {
-            Card = card;
-        }
-
-        public void SetNextProbability()
-        {
-            Probability[] probabilities = Enum.GetValues(typeof(Probability)) as Probability[];
-            Array.Reverse(probabilities);
-
-            foreach (Probability probability in probabilities)
+            if (AttackHandler.IsCoolOn() && AttackHandler.HasTarget())
             {
-                if ((int)Rarity > (int)probability)
-                {
-                    Rarity = probability;
-                    return;
-                }
+                Debug.Log("attack");
+                AnimationHandler.PlayAttackAnimation();
+                AttackHandler.StartAttacking();
             }
         }
 
-        public CreatureHandler SummonCreature(CardZoneCoordinate coordinate)
+        public override void Initialize(BaseData data)
+        {
+            CreatureData = data as CreatureData;
+            HealthHandler = new CreatureHealthHandler(CreatureData.health);
+            AnimationHandler = GetComponent<CreatureAnimationHandler>();
+            CreatureSummonHandler = GetComponent<CreatureSummonHandler>();
+            AttackHandler = GetComponent<BaseAttackHandler>();
+            AttackHandler.Initialize(CreatureData);
+        }
+
+        protected override void Dead()
+        {
+            AnimationHandler.PlayDeathAnimation();
+        }
+
+        public CreatureSummonHandler SummonCreature(CardZoneCoordinate coordinate)
         {
             Transform summonTransform = CardZoneManager.Manager.GetZone(coordinate).gameObject.transform;
 
             GameObject creatureObject =
-                Instantiate(Card.creaturePrefab, summonTransform.position, Quaternion.identity);
-            creatureObject.name = Card.characterName;
+                Instantiate(CreatureData.prefab, summonTransform.position, Quaternion.identity);
+            creatureObject.name = CreatureData.name;
             creatureObject.transform.SetParent(summonTransform);
-            creatureObject.GetComponent<CreatureHandler>().Card = Card;
-            creatureObject.GetComponent<AttackHandler.AttackHandler>().RootCoordinate = coordinate;
-            
-            return creatureObject.GetComponent<CreatureHandler>();
+            creatureObject.GetComponent<BaseAttackHandler>().RootCoordinate = coordinate;
+            creatureObject.GetComponent<CreatureHandler>().Initialize(CreatureData);
+            return creatureObject.GetComponent<CreatureSummonHandler>().FirstSummonInitialize();
+        }
+
+        public List<CardZoneCoordinate> GetSpawnTiles(CardZoneCoordinate coordinate)
+        {
+            List<CardZoneCoordinate> spawnTiles = new List<CardZoneCoordinate>();
+            for (int x = 0; x < CreatureData.unitSize.x; x++)
+            {
+                for (int y = 0; y < CreatureData.unitSize.y; y++)
+                {
+                    int targetCol = coordinate.Col + x;
+                    int targetRow = coordinate.Row + y;
+
+                    if (targetCol < 0 || targetCol >= CardZoneCoordinate.MAXCOL ||
+                        targetRow < 0 || targetRow >= CardZoneCoordinate.MAXROW)
+                    {
+                        return null;
+                    }
+
+                    spawnTiles.Add(new CardZoneCoordinate(targetRow, targetCol));
+                }
+            }
+
+            return spawnTiles;
         }
     }
 }

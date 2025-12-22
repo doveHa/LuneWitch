@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 234cd38b9848a3e498c0cca54a1d01d6, type: 3}
   m_Name: Mandragora
   m_EditorClassIdentifier: 
-  characterName: Mandragor
-  characterName_Kr: "\uB9CC\uB4DC\uB77C\uACE0\uB77C"
-  description: 
-  cost: 0
+  name: Mandragora
   attack: 0
   health: 0
   attackTerm: 0
-  creaturePrefab: {fileID: 0}
+  prefab: {fileID: 0}
+  name_Kr: "\uB9CC\uB4DC\uB77C\uACE0\uB77C"
+  description: 
+  cost: 0
   characterImage: {fileID: 0}
+  unitSize: {x: 1, y: 1}

@@ -52,7 +52,7 @@ public class GachaEffectHandler : MonoBehaviour
         }
 
         characterImage.sprite = creatureData.characterImage;
-        characterNameText.text = creatureData.characterName;
+        characterNameText.text = creatureData.name;
 
 
         isWaitingForClick = true;

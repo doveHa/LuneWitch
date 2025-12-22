@@ -12,38 +12,38 @@ namespace Script.BattleStyle.Manager
     public class CardPoolManager : ManagerBase<CardPoolManager>
     {
         private float probabilitySum;
-        private List<CreatureHandler> cardPool;
+        private List<CreatureSummonHandler> cardPool;
 
         protected override void Awake()
         {
             base.Awake();
-            cardPool = new List<CreatureHandler>();
+            cardPool = new List<CreatureSummonHandler>();
         }
 
         public void InitialCreature(List<CreatureData> initialCreatures)
         {
             foreach (CreatureData creature in initialCreatures)
             {
-                if (creature.creaturePrefab != null)
+                if (creature.prefab != null)
                 {
                     GameObject temp =
-                        Instantiate(creature.creaturePrefab, transform.position, Quaternion.identity);
+                        Instantiate(creature.prefab, transform.position, Quaternion.identity);
                     temp.transform.SetParent(transform);
                     temp.SetActive(false);
                     CreatureHandler creatureHandler = temp.GetComponent<CreatureHandler>();
-                    creatureHandler.SetCreatureSummonCard(creature);
-                    AddCardInPool(temp.GetComponent<CreatureHandler>());
+                    creatureHandler.Initialize(creature);
+                    AddCardInPool(creatureHandler.CreatureSummonHandler);
                 }
             }
         }
 
-        public void AddCardInPool(CreatureHandler card)
+        public void AddCardInPool(CreatureSummonHandler card)
         {
             AddTotalProbability(card);
             cardPool.Add(card);
         }
 
-        public void UpgradeCard(CreatureHandler card)
+        public void UpgradeCard(CreatureSummonHandler card)
         {
             cardPool.Remove(card);
             RemoveTotalProbability(card);
@@ -51,22 +51,23 @@ namespace Script.BattleStyle.Manager
             AddCardInPool(card);
         }
 
-        private void AddTotalProbability(CreatureHandler card)
+        private void AddTotalProbability(CreatureSummonHandler card)
         {
             probabilitySum += (int)card.Rarity * 0.01f;
             card.SummonChance = probabilitySum;
         }
 
-        private void RemoveTotalProbability(CreatureHandler card)
+        private void RemoveTotalProbability(CreatureSummonHandler card)
         {
             probabilitySum -= (int)card.Rarity * 0.01f;
         }
 
-        public CreatureHandler GetRandomCreature()
+        public CreatureSummonHandler GetRandomCreature()
         {
             float summonChance = Random.Range(0, probabilitySum);
-            foreach (CreatureHandler card in cardPool)
+            foreach (CreatureSummonHandler card in cardPool)
             {
+                Debug.Log(card);
                 if (card.SummonChance > summonChance)
                 {
                     return card;

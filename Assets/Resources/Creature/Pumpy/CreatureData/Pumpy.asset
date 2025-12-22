@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 234cd38b9848a3e498c0cca54a1d01d6, type: 3}
   m_Name: Pumpy
   m_EditorClassIdentifier: 
-  characterName: Pumpy
-  characterName_Kr: "\uD38C\uD53C"
-  description: 
-  cost: 100
+  name: Pumpy
   attack: 1000
   health: 120
   attackTerm: 4
-  creaturePrefab: {fileID: 804819288300844835, guid: b44e20372bc812d4e92c975ea8a617bc, type: 3}
+  prefab: {fileID: 804819288300844835, guid: b44e20372bc812d4e92c975ea8a617bc, type: 3}
+  name_Kr: "\uD38C\uD53C"
+  description: 
+  cost: 100
   characterImage: {fileID: -433773718584046436, guid: 681847afacfdb9b49b30e8ba1b4e0bb2, type: 3}
+  unitSize: {x: 1, y: 1}

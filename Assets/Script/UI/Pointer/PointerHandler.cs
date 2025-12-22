@@ -34,7 +34,7 @@ namespace Script.UI.Pointer
                 return;
             }
 
-            if (CanDrag && TryGetComponent(out IHover hover))
+            if (TryGetComponent(out IHover hover))
             {
                 hover.Enter();
             }
@@ -43,7 +43,7 @@ namespace Script.UI.Pointer
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            if (CanDrag && TryGetComponent(out IHover hover))
+            if (TryGetComponent(out IHover hover))
             {
                 hover.Exit();
             }
@@ -56,7 +56,7 @@ namespace Script.UI.Pointer
                 isDragging = true;
                 originalPos = target.transform.position;
                 offset = rectTransform.localPosition - GetMousePos(eventData);
-                
+
                 drag.Click(target);
             }
             else
@@ -69,7 +69,27 @@ namespace Script.UI.Pointer
         {
             if (isDragging && TryGetComponent(out IDrag drag))
             {
-                drag.Drag(rectTransform, GetMousePos(eventData) + offset);
+                rectTransform.localPosition = GetMousePos(eventData) + offset;
+
+                List<RaycastResult> results = new List<RaycastResult>();
+                EventSystem.current.RaycastAll(eventData, results);
+
+                bool foundDropZone = false;
+
+                foreach (var result in results)
+                {
+                    if (result.gameObject.transform.CompareTag("DropZone"))
+                    {
+                        drag.Drag(result.gameObject);
+                        foundDropZone = true;
+                        break;
+                    }
+                }
+
+                if (!foundDropZone)
+                {
+                    drag.Drag(null);
+                }
             }
             else
             {

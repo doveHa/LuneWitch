@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MuretIdle
+  m_Name: MuretAttack
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,17 +21,9 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 34582505, guid: aad5a35b2d76ec64aa4fe7aed7a5c894, type: 3}
-    - time: 0.33333334
-      value: {fileID: -1460969723, guid: aad5a35b2d76ec64aa4fe7aed7a5c894, type: 3}
-    - time: 0.5
-      value: {fileID: -195555490, guid: aad5a35b2d76ec64aa4fe7aed7a5c894, type: 3}
-    - time: 0.8333333
-      value: {fileID: -1934791777, guid: aad5a35b2d76ec64aa4fe7aed7a5c894, type: 3}
-    - time: 1.0833334
-      value: {fileID: -195555490, guid: aad5a35b2d76ec64aa4fe7aed7a5c894, type: 3}
-    - time: 1.25
-      value: {fileID: -1460969723, guid: aad5a35b2d76ec64aa4fe7aed7a5c894, type: 3}
+      value: {fileID: 0}
+    - time: 2.0833333
+      value: {fileID: 0}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -54,18 +46,14 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 34582505, guid: aad5a35b2d76ec64aa4fe7aed7a5c894, type: 3}
-    - {fileID: -1460969723, guid: aad5a35b2d76ec64aa4fe7aed7a5c894, type: 3}
-    - {fileID: -195555490, guid: aad5a35b2d76ec64aa4fe7aed7a5c894, type: 3}
-    - {fileID: -1934791777, guid: aad5a35b2d76ec64aa4fe7aed7a5c894, type: 3}
-    - {fileID: -195555490, guid: aad5a35b2d76ec64aa4fe7aed7a5c894, type: 3}
-    - {fileID: -1460969723, guid: aad5a35b2d76ec64aa4fe7aed7a5c894, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.3333334
+    m_StopTime: 2.1666665
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -84,4 +72,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0
+    functionName: AttackAnimationTrigger
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

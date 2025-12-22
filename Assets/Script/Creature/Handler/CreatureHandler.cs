@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Script.BattleStyle.DataDefinitions.Data;
 using Script.BattleStyle.Manager;
 using Script.Core.DataDefinitions.ScriptableObjects;
@@ -7,7 +6,6 @@ using Script.Core.Handler;
 using Script.Creature.AttackHandler;
 using Script.Creature.DataDefinitions.ScriptableObjects;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Script.Creature.Handler
 {
@@ -52,6 +50,11 @@ namespace Script.Creature.Handler
             creatureObject.transform.SetParent(summonTransform);
             creatureObject.GetComponent<BaseAttackHandler>().RootCoordinate = coordinate;
             creatureObject.GetComponent<CreatureHandler>().Initialize(CreatureData);
+            if (creatureObject.GetComponent<CreatureHandler>().CreatureData.isActive)
+            {
+                return creatureObject.GetComponent<CreatureSummonHandler>();
+            }
+
             return creatureObject.GetComponent<CreatureSummonHandler>().FirstSummonInitialize();
         }
 

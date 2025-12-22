@@ -15,8 +15,9 @@ MonoBehaviour:
   name: Muret
   attack: 200
   health: 0
-  attackTerm: 0
-  prefab: {fileID: 0}
+  attackTerm: 4
+  prefab: {fileID: 804819288300844835, guid: 8c67b89db349a804e87b5aaa67fb4aad, type: 3}
+  isActive: 1
   name_Kr: "\uBB34\uB808\uD2B8"
   description: 
   cost: 150

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Sacaboom_0: -8961627957254999368
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

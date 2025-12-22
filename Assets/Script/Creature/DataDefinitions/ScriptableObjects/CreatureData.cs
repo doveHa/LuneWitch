@@ -1,12 +1,12 @@
 using Script.Core.DataDefinitions.ScriptableObjects;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Script.Creature.DataDefinitions.ScriptableObjects
 {
     [CreateAssetMenu(fileName = "NewCreature", menuName = "Creature")]
     public class CreatureData : BaseData
     {
+        public bool isActive;
         public string name_Kr;
         [TextArea] public string description;
 

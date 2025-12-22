@@ -35,7 +35,7 @@ namespace Script.Creature.AttackHandler
             return CurrentCooldown <= 0;
         }
 
-        public bool HasTarget()
+        public virtual bool HasTarget()
         {
             foreach (CardZoneCoordinate coordinate in AttackRanges())
             {

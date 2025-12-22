@@ -74,12 +74,12 @@ namespace Script.BattleStyle.Handler
 
         public bool IsSummoned()
         {
-            if (SummonedCreature == null)
+            if (SummonedCreature != null && SummonedCreature.IsOnSummoned)
             {
-                return false;
+                return true;
             }
 
-            return true;
+            return false;
         }
 
         public bool IsOnEnemy()

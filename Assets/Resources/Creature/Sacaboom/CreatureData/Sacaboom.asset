@@ -17,6 +17,7 @@ MonoBehaviour:
   health: 300
   attackTerm: 0
   prefab: {fileID: 804819288300844835, guid: 6edbd60b3b0d23a43a39091b47733a58, type: 3}
+  isActive: 1
   name_Kr: "\uC0AC\uCE74\uBD90"
   description: 
   cost: 300

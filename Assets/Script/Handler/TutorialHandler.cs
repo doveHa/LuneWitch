@@ -1,9 +1,8 @@
 ﻿using System;
 using Script;
-using Script.Manager;
+using Script.Core.Manager;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class TutorialHandler : MonoBehaviour

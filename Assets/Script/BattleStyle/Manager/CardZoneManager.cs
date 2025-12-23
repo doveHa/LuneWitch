@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 using Script.BattleStyle.DataDefinitions.Data;
 using Script.BattleStyle.Handler;
-using Script.Enemy;
+using Script.Core.Manager;
 using Script.Enemy.Handler;
-using Script.Manager;
 using UnityEngine;
 
 namespace Script.BattleStyle.Manager

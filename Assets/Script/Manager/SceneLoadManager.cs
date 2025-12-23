@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Script.Core.Manager;
 using Script.Stage;
 using UnityEngine;
 using UnityEngine.SceneManagement;

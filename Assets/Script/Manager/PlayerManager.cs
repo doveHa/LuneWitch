@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Script.Core.Manager;
 using Script.Creature.DataDefinitions.ScriptableObjects;
 using Script.DataDefinitions.Enum;
 using Script.DataDefinitions.ScriptableObjects;
@@ -26,16 +27,11 @@ namespace Script.Manager
             return SelectedCreatures.Count == MAX_CARDS;
         }
 
-        public bool AddCreature(CreatureData creature)
+        public void AddCreature(CreatureData creature)
         {
             if (SelectedCreatures.Count < MAX_CARDS)
             {
                 SelectedCreatures.Add(creature);
-                return true;
-            }
-            else
-            {
-                return false;
             }
         }
     }

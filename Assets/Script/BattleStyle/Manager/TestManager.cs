@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using Script.BattleStyle.DataDefinitions.Data;
+using Script.Core.Manager;
 using Script.Creature.DataDefinitions.ScriptableObjects;
-using Script.DataDefinitions.ScriptableObjects;
 using Script.Manager;
 using UnityEngine;
 

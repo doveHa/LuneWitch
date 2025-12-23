@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
+using Script.Core.Manager;
 using Script.DataDefinitions.ScriptableObjects;
 using Script.Enemy.DataDefinitions.ScriptableObjects;
+using Script.Manager;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
-namespace Script.Manager
+namespace Script.Stage.Manager
 {
     public class StageManager : MonoBehaviour
     {
@@ -67,7 +68,7 @@ namespace Script.Manager
             {
                 EnemyData.Add(
                     ResourceManager.Load<EnemyData>(Constant.ResourcePath.ENEMY_PATH_BY_ENEMY_NAME(name)));
-                
+
                 Debug.Log($"Add {name}");
             }
         }

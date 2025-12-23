@@ -12,27 +12,26 @@ public class ShowAvailableCardHandler : MonoBehaviour
     public Transform selectedCardParent;
     public GameObject cardPrefab;
 
-    private int maxSelectCount = 4;
-
-    private List<CreatureData> displayedCharacters;
+    private Dictionary<CreatureData, GameObject> cards;
 
     void Awake()
     {
-        displayedCharacters = new List<CreatureData>();
+        cards = new Dictionary<CreatureData, GameObject>();
     }
 
     void Start()
     {
-        UpdateDisplayedCharacters();
-        RefreshCardsPool(availableCardParent, displayedCharacters);
-        RefreshCardsPool(selectedCardParent, PlayerManager.Manager.SelectedCreatures);
+        SetDisplayedCreature();
+        SelectedCardRefresh();
     }
 
-    void UpdateDisplayedCharacters()
+    void SetDisplayedCreature()
     {
-        foreach (var character in UnlockedCharacterManager.Manager.allCharacterData)
+        foreach (var creature in CreatureManager.Manager.AllCreatureData)
         {
-            displayedCharacters.Add(character.Value);
+            var card = Instantiate(cardPrefab, availableCardParent);
+            card.GetComponent<CardSlot>().CardInitialize(creature.Value, OnCardClicked);
+            cards.Add(creature.Value, card);
         }
     }
 
@@ -41,23 +40,25 @@ public class ShowAvailableCardHandler : MonoBehaviour
         if (PlayerManager.Manager.SelectedCreatures.Contains(creature))
         {
             PlayerManager.Manager.SelectedCreatures.Remove(creature);
+            cards[creature].SetActive(true);
         }
         else
         {
             PlayerManager.Manager.AddCreature(creature);
+            cards[creature].SetActive(false);
         }
 
-        RefreshCardsPool(selectedCardParent, PlayerManager.Manager.SelectedCreatures);
+        SelectedCardRefresh();
     }
 
-    private void RefreshCardsPool(Transform parent, List<CreatureData> cards)
+    private void SelectedCardRefresh()
     {
-        foreach (Transform child in parent)
+        foreach (Transform child in selectedCardParent)
             Destroy(child.gameObject);
 
-        foreach (var character in cards)
+        foreach (var character in PlayerManager.Manager.SelectedCreatures)
         {
-            var card = Instantiate(cardPrefab, parent);
+            var card = Instantiate(cardPrefab, selectedCardParent);
             card.GetComponent<CardSlot>().CardInitialize(character, OnCardClicked);
         }
     }

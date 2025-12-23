@@ -1,31 +1,29 @@
 ﻿using System.Collections;
+using Script.Core.Manager;
+using Script.Manager;
+using Script.Stage.Handler;
 using TMPro;
 using UnityEngine;
 
-namespace Script.Manager
+namespace Script.Stage.Manager
 {
-    public class GameFlowManager : MonoBehaviour
+    public class GameFlowManager : ManagerBase<GameFlowManager>
     {
-        public static GameFlowManager Manager { get; private set; }
 
         public int CurrentEnemy { get; set; }
-        private int TargetCount;
-        private int killCount = 0;
+        private int targetCount, killCount = 0;
         private float startTime;
 
         [SerializeField] private GameObject RoundPanel;
-        [SerializeField] private EnemySpawner spawner;
+        [SerializeField] private EnemySpawnHandler spawner;
         [SerializeField] private TextMeshProUGUI elapsedTime;
 
         [SerializeField] private GameObject EndGameScreen, GameOverScreen, GameWinScreen;
 
 
-        void Awake()
+        protected override void Awake()
         {
-            if (Manager == null)
-            {
-                Manager = this;
-            }
+            base.Awake();
         }
 
         void Start()
@@ -41,7 +39,7 @@ namespace Script.Manager
         public void KillEnemy()
         {
             killCount++;
-            if (killCount >= TargetCount)
+            if (killCount >= targetCount)
             {
                 StartCoroutine(WaitTime());
             }
@@ -59,7 +57,7 @@ namespace Script.Manager
             GameOverScreen.SetActive(true);
         }
 
-        public EnemySpawner Spawner()
+        public EnemySpawnHandler Spawner()
         {
             return spawner;
         }
@@ -69,7 +67,7 @@ namespace Script.Manager
             yield return new WaitUntil(() => !RoundPanel.activeInHierarchy);
 
             Debug.Log("Starting Game");
-            TargetCount = StageManager.Manager.SpawnCount;
+            targetCount = StageManager.Manager.SpawnCount;
             spawner.SpawnStart();
 
             startTime = Time.time;

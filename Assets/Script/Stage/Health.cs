@@ -1,4 +1,4 @@
-using Script.Manager;
+using Script.Stage.Manager;
 using UnityEngine;
 
 public class Health : MonoBehaviour

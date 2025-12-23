@@ -1,7 +1,6 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using Script.Enemy.Handler;
-using Script.Manager;
+using Script.Stage.Manager;
 using UnityEngine;
 
 namespace Script.Player

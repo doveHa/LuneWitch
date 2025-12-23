@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Script.Manager
+namespace Script.Core.Manager
 {
     public class ManagerBase<T> : MonoBehaviour where T : ManagerBase<T>
     {

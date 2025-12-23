@@ -1,4 +1,5 @@
-﻿using Script.Manager;
+﻿using Script.Core.Manager;
+using Script.Manager;
 using TMPro;
 using UnityEngine;
 

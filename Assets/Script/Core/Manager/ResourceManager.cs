@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
 
-namespace Script.Manager
+namespace Script.Core.Manager
 {
-    public class ResourceManager
+    public static class ResourceManager
     {
-
         public static T Load<T>(string path) where T : Object
         {
             T resource = Resources.Load<T>(path);
@@ -18,7 +17,7 @@ namespace Script.Manager
             }
         }
 
-        public static  T[] LoadAll<T>(string path) where T : Object
+        public static T[] LoadAll<T>(string path) where T : Object
         {
             T[] resources = Resources.LoadAll<T>(path);
             return resources;

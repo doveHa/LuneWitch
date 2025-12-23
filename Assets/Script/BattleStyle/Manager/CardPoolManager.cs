@@ -1,10 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using Script.Core.Manager;
 using Script.Creature.DataDefinitions.ScriptableObjects;
 using Script.Creature.Handler;
-using Script.DataDefinitions.ScriptableObjects;
-using Script.Manager;
 using UnityEngine;
 
 namespace Script.BattleStyle.Manager

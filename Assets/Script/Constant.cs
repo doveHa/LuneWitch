@@ -8,19 +8,12 @@ namespace Script
     {
         public static class ResourcePath
         {
-            public static string GAMEOBJECT_PATH_BY_CREATURE_NAME(string creatureName)
-            {
-                return "Prefabs/Creatures/" + creatureName;
-            }
-
             public static string UI_PATH_BY_NAME(string uiName)
             {
                 return "Images/UI/" + uiName;
             }
 
             public const string TUTORIAL_IMAGES_PATH = "Images/Tutorial";
-
-            public const string ALL_CREATURES_PATH = "CharacterData/SummonedCreature";
 
             public static string CHARACTER_DATA_PATH_BY_NAME(string characterName)
             {
@@ -41,12 +34,6 @@ namespace Script
             {
                 return "StageInfo/Chapter" + chapter + "Round" + round;
             }
-        }
-
-        public static class PersistentPath
-        {
-            public static readonly string UNLOCKED_CHARACTERS =
-                Path.Combine(Application.persistentDataPath + "/UnlockedCharacters.json");
         }
 
         public static class Scene

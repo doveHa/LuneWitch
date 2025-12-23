@@ -1,5 +1,5 @@
 ﻿using System.Collections;
-using Script.Manager;
+using Script.Stage.Manager;
 using UnityEngine;
 using UnityEngine.UI;
 

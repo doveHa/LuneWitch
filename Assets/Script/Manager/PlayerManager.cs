@@ -9,13 +9,22 @@ namespace Script.Manager
     {
         public CharacterName SelectedCharacter { get; set; }
 
+        public Dictionary<string, CreatureData> AllCreatureData;
         public List<CreatureData> SelectedCreatures { get; private set; }
 
         protected override void Awake()
         {
             base.Awake();
-
+            AllCreatureData = new Dictionary<string, CreatureData>();
             SelectedCreatures = new List<CreatureData>();
+        }
+
+        void Start()
+        {
+            foreach (CreatureData data in ResourceManager.LoadAll<CreatureData>("Creature"))
+            {
+                AllCreatureData.Add(data.name, data);
+            }
         }
 
         private const int MAX_CARDS = 4;

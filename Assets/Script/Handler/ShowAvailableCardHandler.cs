@@ -25,7 +25,7 @@ public class ShowAvailableCardHandler : MonoBehaviour
 
     void SetDisplayedCreature()
     {
-        foreach (var creature in CreatureManager.Manager.AllCreatureData)
+        foreach (var creature in PlayerManager.Manager.AllCreatureData)
         {
             var card = Instantiate(cardPrefab, availableCardParent);
             card.GetComponent<CardSlot>().CardInitialize(creature.Value, OnCardClicked);

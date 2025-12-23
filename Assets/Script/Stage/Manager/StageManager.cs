@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Script.BattleStyle.Manager;
 using Script.Core.Manager;
 using Script.Enemy.DataDefinitions.ScriptableObjects;
 using Script.Manager;
@@ -33,6 +34,11 @@ namespace Script.Stage.Manager
             SetPlayer();
         }
 
+        void Start()
+        {
+            CardPoolManager.Manager.InitialCreature(PlayerManager.Manager.SelectedCreatures);    
+        }
+        
         public GameObject Player()
         {
             return player;
@@ -61,7 +67,7 @@ namespace Script.Stage.Manager
                     PlayerManager.Manager.SelectedCharacter.ToString())
             ), player.transform).name = PlayerManager.Manager.SelectedCharacter.ToString();
         }
-
+        
         private void SetEnemyData(string[] enemyNames)
         {
             foreach (string name in enemyNames)

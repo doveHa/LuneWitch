@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp:Script.Manager:StageInfo
   chapter: 1
   round: 1
-  enemyCount: 3
+  enemyCount: 16
   roundTitle: "\uBD88\uCCAD\uAC1D\uACFC\uC758 \uC870\uC6B0"
   backGroundImage: {fileID: 2016905225, guid: a2b7c14865698eb4a99cb0b416e61373, type: 3}
   enemyNames:

@@ -4,7 +4,7 @@ namespace Script.BattleStyle.DataDefinitions.Data
 {
     public record CardZoneCoordinate
     {
-        public const int MAXROW = 5, MAXCOL = 10, MINROW = 0, MINCOL = 0;
+        public const int MAXROW = 5, MAXCOL = 9, MINROW = 0, MINCOL = 0;
 
         public int Row { get; private set; }
         public int Col { get; private set; }

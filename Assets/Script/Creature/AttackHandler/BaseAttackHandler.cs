@@ -65,5 +65,10 @@ namespace Script.Creature.AttackHandler
         public abstract HashSet<CardZoneCoordinate> AttackRanges();
 
         protected abstract void Attack(List<EnemyHandler> enemies);
+
+        public virtual HashSet<CardZoneCoordinate> VisualizeAttackRange()
+        {
+            return AttackRanges();
+        }
     }
 }

@@ -41,14 +41,14 @@ namespace Script.Stage
             isTooltipActive = true;
             AdjustTooltipText();
             tooltipPanel.SetActive(true);
-            CardZoneManager.Manager.AttackRangeVisuals(GetComponent<BaseAttackHandler>().AttackRanges());
+            CardZoneManager.Manager.AttackRangeVisuals(GetComponent<BaseAttackHandler>().VisualizeAttackRange());
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
             isTooltipActive = false;
             tooltipPanel.SetActive(false);
-            CardZoneManager.Manager.AttackRangeNormalize(GetComponent<BaseAttackHandler>().AttackRanges());
+            CardZoneManager.Manager.AttackRangeNormalize(GetComponent<BaseAttackHandler>().VisualizeAttackRange());
         }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using System;
 using Script.Creature.DataDefinitions.ScriptableObjects;
-using Script.DataDefinitions.ScriptableObjects;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;

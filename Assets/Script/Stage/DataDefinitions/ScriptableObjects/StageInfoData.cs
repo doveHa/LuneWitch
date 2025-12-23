@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Script.DataDefinitions.ScriptableObjects
+namespace Script.Stage.DataDefinitions.ScriptableObjects
 {
     [CreateAssetMenu(fileName = "StageInfo", menuName = "StageInfo")]
     public class StageInfoData : ScriptableObject

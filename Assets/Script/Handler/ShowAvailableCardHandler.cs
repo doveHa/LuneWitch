@@ -1,7 +1,5 @@
 ﻿using System.Collections.Generic;
-using Script;
 using Script.Creature.DataDefinitions.ScriptableObjects;
-using Script.DataDefinitions.ScriptableObjects;
 using UnityEngine;
 using Script.Manager;
 using Script.UI;

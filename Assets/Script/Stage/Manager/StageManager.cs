@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using Script.Core.Manager;
-using Script.DataDefinitions.ScriptableObjects;
 using Script.Enemy.DataDefinitions.ScriptableObjects;
 using Script.Manager;
+using Script.Stage.DataDefinitions.ScriptableObjects;
 using TMPro;
 using UnityEngine;
 

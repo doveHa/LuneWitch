@@ -38,7 +38,7 @@ namespace Script.Enemy.Handler
             MoveHandler.Initialize(enemyData.moveSpeed);
         }
 
-        protected override void Dead()
+        public override void Dead()
         {
             //GameFlowManager.Manager.KillEnemy();
             AnimationHandler.PlayDeathAnimation();

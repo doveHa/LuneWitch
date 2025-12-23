@@ -10,19 +10,21 @@ namespace Script.Creature.Handler
     {
         [SerializeField] private ParticleSystem deathParticles;
 
+        private int attackMotionParameter;
+
         protected override void SetParameter()
         {
             SetAttackParameter("Attack");
             SetHitParameter("Hit");
             SetDeathParameter("Death");
+            SetAttackMotionParameter("AttackMotion");
         }
 
         public override void PlayAttackAnimation()
         {
             Animator.SetTrigger(attackParameter);
-
         }
-        
+
         public override void PlayDeathAnimation()
         {
             StartCoroutine(DestroyCoroutine());
@@ -33,6 +35,21 @@ namespace Script.Creature.Handler
             deathParticles.Play();
             yield return new WaitUntil(() => deathParticles.isStopped);
             Destroy(gameObject);
+        }
+
+        public void PlayAdditionalAttackAnimation()
+        {
+            Animator.SetBool(attackMotionParameter, true);
+        }
+
+        public void EndAdditionalAttackAnimation()
+        {
+            Animator.SetBool(attackMotionParameter, false);
+        }
+
+        private void SetAttackMotionParameter(string parameter)
+        {
+            attackMotionParameter = Animator.StringToHash(parameter);
         }
     }
 }

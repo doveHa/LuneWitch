@@ -20,7 +20,7 @@ namespace Script.Core.Handler
             }
         }
 
-        protected abstract void Dead();
+        public abstract void Dead();
         public abstract void Initialize(BaseData data);
     }
 }

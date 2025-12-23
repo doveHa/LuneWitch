@@ -39,12 +39,12 @@ namespace Script.Creature.Handler
 
         public void VisualizeCreature()
         {
-            GetComponent<SpriteRenderer>().color = Color.red;
+            GetComponentInChildren<SpriteRenderer>().color = Color.red;
         }
 
         public void NormalizeCreature()
         {
-            GetComponent<SpriteRenderer>().color = Color.white;
+            GetComponentInChildren<SpriteRenderer>().color = Color.white;
         }
     }
 }

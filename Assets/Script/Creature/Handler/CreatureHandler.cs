@@ -35,7 +35,7 @@ namespace Script.Creature.Handler
             AttackHandler.Initialize(CreatureData);
         }
 
-        protected override void Dead()
+        public override void Dead()
         {
             AnimationHandler.PlayDeathAnimation();
         }
@@ -66,7 +66,7 @@ namespace Script.Creature.Handler
                 for (int y = 0; y < CreatureData.unitSize.y; y++)
                 {
                     int targetCol = coordinate.Col + x;
-                    int targetRow = coordinate.Row + y;
+                    int targetRow = coordinate.Row - y;
 
                     if (targetCol < 0 || targetCol >= CardZoneCoordinate.MAXCOL ||
                         targetRow < 0 || targetRow >= CardZoneCoordinate.MAXROW)

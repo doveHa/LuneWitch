@@ -17,7 +17,12 @@ namespace Script
 
             public static string CHARACTER_DATA_PATH_BY_NAME(string characterName)
             {
-                return "Creature/" + characterName + "/CreatureData/" + characterName;
+                return "Character/" + characterName + "/CharacterData/" + characterName;
+            }
+
+            public static string CREATURE_DATA_PATH_BY_NAME(string creatureName)
+            {
+                return "Creature/" + creatureName + "/CreatureData/" + creatureName;
             }
 
             public static string ENEMY_PATH_BY_ENEMY_NAME(string enemyName)

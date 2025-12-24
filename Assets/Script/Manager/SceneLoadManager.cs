@@ -36,7 +36,7 @@ namespace Script.Manager
 
         public void LoadRound()
         {
-            SceneManager.LoadScene("FightScene");
+            SceneManager.LoadScene("BattleScene");
         }
 
         public void LoadStory(string sceneName)

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Script.Character.DataDefinitions.ScriptableObjects;
 using Script.Core.Manager;
 using Script.Creature.DataDefinitions.ScriptableObjects;
 using Script.DataDefinitions.Enum;
@@ -7,7 +8,7 @@ namespace Script.Manager
 {
     public class PlayerManager : ManagerBase<PlayerManager>
     {
-        public CharacterName SelectedCharacter { get; set; }
+        public CharacterData SelectedCharacter { get; set; }
 
         public Dictionary<string, CreatureData> AllCreatureData;
         public List<CreatureData> SelectedCreatures { get; private set; }
@@ -15,6 +16,8 @@ namespace Script.Manager
         protected override void Awake()
         {
             base.Awake();
+            SelectedCharacter =
+                ResourceManager.Load<CharacterData>(Constant.ResourcePath.CHARACTER_DATA_PATH_BY_NAME("Lumina"));
             AllCreatureData = new Dictionary<string, CreatureData>();
             SelectedCreatures = new List<CreatureData>();
         }

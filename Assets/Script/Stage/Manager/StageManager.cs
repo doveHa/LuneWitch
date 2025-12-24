@@ -36,9 +36,9 @@ namespace Script.Stage.Manager
 
         void Start()
         {
-            CardPoolManager.Manager.InitialCreature(PlayerManager.Manager.SelectedCreatures);    
+            CardPoolManager.Manager.InitialCreature(PlayerManager.Manager.SelectedCreatures);
         }
-        
+
         public GameObject Player()
         {
             return player;
@@ -61,13 +61,10 @@ namespace Script.Stage.Manager
 
         private void SetPlayer()
         {
-            Debug.Log(PlayerManager.Manager.SelectedCharacter.ToString());
-            Instantiate(ResourceManager.Load<GameObject>(
-                Constant.ResourcePath.GAMEOBJECT_PATH_BY_CHARACTER_NAME(
-                    PlayerManager.Manager.SelectedCharacter.ToString())
-            ), player.transform).name = PlayerManager.Manager.SelectedCharacter.ToString();
+            Instantiate(PlayerManager.Manager.SelectedCharacter.prefab, player.transform).name =
+                PlayerManager.Manager.SelectedCharacter.name;
         }
-        
+
         private void SetEnemyData(string[] enemyNames)
         {
             foreach (string name in enemyNames)

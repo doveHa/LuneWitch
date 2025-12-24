@@ -21,5 +21,5 @@ MonoBehaviour:
   name_Kr: "\uD788\uD3EC\uD06C\uB77C\uD14C\uC2A4"
   description: 
   cost: 140
-  characterImage: {fileID: -4823608696527787152, guid: 3ec577ee2cd86924bbe967efec785908, type: 3}
+  characterImage: {fileID: 809257557, guid: 4c6b3e15cfb19154a89bc210d1c636bd, type: 3}
   unitSize: {x: 2, y: 1}

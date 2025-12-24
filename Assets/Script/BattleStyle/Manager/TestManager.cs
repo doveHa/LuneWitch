@@ -27,7 +27,7 @@ namespace Script.BattleStyle.Manager
             {
                 CreatureData data =
                     ResourceManager.Load<CreatureData>(
-                        Constant.ResourcePath.CHARACTER_DATA_PATH_BY_NAME(creatureName));
+                        Constant.ResourcePath.CREATURE_DATA_PATH_BY_NAME(creatureName));
                 creatureDataList.Add(data);
             }
 

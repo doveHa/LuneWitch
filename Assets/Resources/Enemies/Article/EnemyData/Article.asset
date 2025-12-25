@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 959c590b0bcf40a0a3d4d0bf14afcf77, type: 3}
   m_Name: Article
   m_EditorClassIdentifier: 
-  enemyName: 
-  speed: 0
-  attack: 0
-  health: 0
-  attackTerm: 0
-  creaturePrefab: {fileID: 0}
+  name: Article
+  attack: 10
+  health: 100
+  attackTerm: 5
+  prefab: {fileID: 8436103653396323419, guid: be9f0f62e294ca647aec7ff890dbdcee, type: 3}
+  moveSpeed: 0.5

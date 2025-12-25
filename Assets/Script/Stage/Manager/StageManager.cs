@@ -29,7 +29,6 @@ namespace Script.Stage.Manager
                 Manager = this;
             }
 
-            EnemyData = new List<EnemyData>();
             SetStage();
             SetPlayer();
         }
@@ -56,7 +55,7 @@ namespace Script.Stage.Manager
             backGroundImage.sprite = data.backGroundImage;
             SpawnCount = data.enemyCount;
 
-            SetEnemyData(data.enemyNames);
+            SetEnemyData(data.enemyDatas);
         }
 
         private void SetPlayer()
@@ -65,15 +64,9 @@ namespace Script.Stage.Manager
                 PlayerManager.Manager.SelectedCharacter.name;
         }
 
-        private void SetEnemyData(string[] enemyNames)
+        private void SetEnemyData(EnemyData[] enemies)
         {
-            foreach (string name in enemyNames)
-            {
-                EnemyData.Add(
-                    ResourceManager.Load<EnemyData>(Constant.ResourcePath.ENEMY_PATH_BY_ENEMY_NAME(name)));
-
-                Debug.Log($"Add {name}");
-            }
+            EnemyData = new List<EnemyData>(enemies);
         }
     }
 }

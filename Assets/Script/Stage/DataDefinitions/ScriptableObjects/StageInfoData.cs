@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Script.Enemy.DataDefinitions.ScriptableObjects;
+using UnityEngine;
 
 namespace Script.Stage.DataDefinitions.ScriptableObjects
 {
@@ -10,6 +11,6 @@ namespace Script.Stage.DataDefinitions.ScriptableObjects
         public int enemyCount;
         public string roundTitle;
         public Sprite backGroundImage;
-        public string[] enemyNames;
+        public EnemyData[] enemyDatas;
     }
 }

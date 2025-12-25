@@ -17,5 +17,9 @@ MonoBehaviour:
   enemyCount: 16
   roundTitle: "\uBD88\uCCAD\uAC1D\uACFC\uC758 \uC870\uC6B0"
   backGroundImage: {fileID: 2016905225, guid: a2b7c14865698eb4a99cb0b416e61373, type: 3}
-  enemyNames:
-  - Citizen
+  enemyDatas:
+  - {fileID: 11400000, guid: 1522881bce13b0047b77c9951cc3eb57, type: 2}
+  - {fileID: 11400000, guid: 5945ec5650f0001428c1d188a5f19fb2, type: 2}
+  - {fileID: 11400000, guid: f953c459caa90c24ea375ff562ee9dea, type: 2}
+  - {fileID: 11400000, guid: a5ee1d405a8ddaa49be928a0a0b5e48d, type: 2}
+  - {fileID: 11400000, guid: 02b0f38c7a08bce4b8175264f4a0dca6, type: 2}

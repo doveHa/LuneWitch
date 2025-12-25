@@ -1,31 +1,25 @@
 fileFormatVersion: 2
-guid: bba17b1f0e9068e4992edfecc77e0b44
+guid: e0c67f32251d8b444a4a8bc9717c8fbc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6745672645558971406
-    second: Article_death_0
+      213: -2569732684498782866
+    second: Article_Attack_0
   - first:
-      213: 6335545301444542399
-    second: Article_death_1
+      213: 8028797681279227218
+    second: Article_Attack_1
   - first:
-      213: -8396752412220379434
-    second: Article_death_2
+      213: -6906055456822867736
+    second: Article_Attack_2
   - first:
-      213: 4886908510591005621
-    second: Article_death_3
+      213: 6537931644130619705
+    second: Article_Attack_3
   - first:
-      213: 3618285078263825089
-    second: Article_death_4
+      213: -3000291543420581476
+    second: Article_Attack_4
   - first:
-      213: 4019303900700008087
-    second: Article_death_5
-  - first:
-      213: -6953476018467570416
-    second: Article_death_6
-  - first:
-      213: 2310730000091609525
-    second: Article_death_7
+      213: -7791734921744079011
+    second: Article_Attack_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -58,7 +52,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -96,7 +90,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -147,177 +141,133 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Article_death_0
+      name: Article_Attack_0
       rect:
         serializedVersion: 2
-        x: 143
+        x: 142
         y: 31
-        width: 134
-        height: 202
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 136
+        height: 203
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2f3536e087e8262a0800000000000000
-      internalID: -6745672645558971406
+      spriteID: e653dbc0db9765cd0800000000000000
+      internalID: -2569732684498782866
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Article_death_1
+      name: Article_Attack_1
       rect:
         serializedVersion: 2
-        x: 615
+        x: 659
         y: 31
-        width: 190
-        height: 210
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 196
+        height: 191
+      alignment: 9
+      pivot: {x: 0.3553062, y: 0.5223879}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fbf3ffe62e06ce750800000000000000
-      internalID: 6335545301444542399
+      spriteID: 255d026e3f40c6f60800000000000000
+      internalID: 8028797681279227218
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Article_death_2
+      name: Article_Attack_2
       rect:
         serializedVersion: 2
-        x: 1123
-        y: 27
-        width: 130
-        height: 194
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6de23b24b2eb87b80800000000000000
-      internalID: -8396752412220379434
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Article_death_3
-      rect:
-        serializedVersion: 2
-        x: 1611
-        y: 27
-        width: 130
-        height: 194
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5b33c9ff569c1d340800000000000000
-      internalID: 4886908510591005621
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Article_death_4
-      rect:
-        serializedVersion: 2
-        x: 2087
+        x: 1006
         y: 31
-        width: 150
-        height: 166
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 327
+        height: 219
+      alignment: 9
+      pivot: {x: 0.4956458, y: 0.4674916}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1c20302bb1bb63230800000000000000
-      internalID: 3618285078263825089
+      spriteID: 8e8cce0e623c820a0800000000000000
+      internalID: -6906055456822867736
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Article_death_5
+      name: Article_Attack_3
       rect:
         serializedVersion: 2
-        x: 2547
-        y: 27
-        width: 178
-        height: 166
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 79ed09d3a9f67c730800000000000000
-      internalID: 4019303900700008087
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Article_death_6
-      rect:
-        serializedVersion: 2
-        x: 2975
-        y: 27
+        x: 1495
+        y: 31
         width: 238
-        height: 134
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        height: 178
+      alignment: 9
+      pivot: {x: 0.7127101, y: 0.57326543}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 01dfa0df66a408f90800000000000000
-      internalID: -6953476018467570416
+      spriteID: 931f03ed0366bba50800000000000000
+      internalID: 6537931644130619705
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Article_death_7
+      name: Article_Attack_4
       rect:
         serializedVersion: 2
-        x: 3455
-        y: 27
-        width: 254
-        height: 106
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 1987
+        y: 31
+        width: 311
+        height: 178
+      alignment: 9
+      pivot: {x: 0.5042234, y: 0.5652323}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5b97c4b31bc511020800000000000000
-      internalID: 2310730000091609525
+      spriteID: c99cecbccb2dc56d0800000000000000
+      internalID: -3000291543420581476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Article_Attack_5
+      rect:
+        serializedVersion: 2
+        x: 2546
+        y: 31
+        width: 240
+        height: 178
+      alignment: 9
+      pivot: {x: 0.33114013, y: 0.55832833}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d57207dfe523ed390800000000000000
+      internalID: -7791734921744079011
       vertices: []
       indices: 
       edges: []
@@ -326,7 +276,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 4a46be8c900fc99449ef0de15c14d45e
+    spriteID: b8550e9784dfd5440af13474eab1705f
     internalID: 0
     vertices: []
     indices: 
@@ -336,14 +286,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Article_death_0: -6745672645558971406
-      Article_death_1: 6335545301444542399
-      Article_death_2: -8396752412220379434
-      Article_death_3: 4886908510591005621
-      Article_death_4: 3618285078263825089
-      Article_death_5: 4019303900700008087
-      Article_death_6: -6953476018467570416
-      Article_death_7: 2310730000091609525
+      Article_Attack_0: -2569732684498782866
+      Article_Attack_1: 8028797681279227218
+      Article_Attack_2: -6906055456822867736
+      Article_Attack_3: 6537931644130619705
+      Article_Attack_4: -3000291543420581476
+      Article_Attack_5: -7791734921744079011
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

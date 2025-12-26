@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Script.BattleStyle.Handler;
 using Script.Core.Manager;
 using Script.Creature.DataDefinitions.ScriptableObjects;
 using Script.Creature.Handler;
@@ -9,11 +10,14 @@ namespace Script.BattleStyle.Manager
 {
     public class CardPoolManager : ManagerBase<CardPoolManager>
     {
+        [SerializeField] private CardPoolHandler cardPoolHandler;
+
         private float probabilitySum;
         private List<CreatureSummonHandler> cardPool;
 
         protected override void Awake()
         {
+            isDontDestroy = false;
             base.Awake();
             cardPool = new List<CreatureSummonHandler>();
         }
@@ -33,6 +37,32 @@ namespace Script.BattleStyle.Manager
                     AddCardInPool(creatureHandler.CreatureSummonHandler);
                 }
             }
+        }
+
+        public void ReRoll()
+        {
+            List<CreatureSummonHandler> creatures = new List<CreatureSummonHandler>();
+            for (int i = 0; i < Constant.BattleSystem.MAX_CARDS; i++)
+            {
+                creatures.Add(GetRandomCreature());
+            }
+
+            cardPoolHandler.SetCards(creatures);
+        }
+
+        public CreatureSummonHandler GetRandomCreature()
+        {
+            float summonChance = Random.Range(0, probabilitySum);
+            foreach (CreatureSummonHandler card in cardPool)
+            {
+                Debug.Log(card);
+                if (card.SummonChance > summonChance)
+                {
+                    return card;
+                }
+            }
+
+            return cardPool.Last();
         }
 
         public void AddCardInPool(CreatureSummonHandler card)
@@ -58,21 +88,6 @@ namespace Script.BattleStyle.Manager
         private void RemoveTotalProbability(CreatureSummonHandler card)
         {
             probabilitySum -= (int)card.Rarity * 0.01f;
-        }
-
-        public CreatureSummonHandler GetRandomCreature()
-        {
-            float summonChance = Random.Range(0, probabilitySum);
-            foreach (CreatureSummonHandler card in cardPool)
-            {
-                Debug.Log(card);
-                if (card.SummonChance > summonChance)
-                {
-                    return card;
-                }
-            }
-
-            return cardPool.Last();
         }
     }
 }

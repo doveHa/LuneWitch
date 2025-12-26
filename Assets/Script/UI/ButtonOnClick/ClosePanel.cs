@@ -2,7 +2,7 @@
 
 namespace Script.UI.ButtonOnClick
 {
-    public class ClosePanel : Base.ButtonOnClick
+    public class ClosePanel : Core.OnButtonClick.ButtonOnClick
     {
         [SerializeField] private GameObject closePanel;
         protected override void OnClick()

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Script.Character.DataDefinitions.ScriptableObjects
 {
@@ -8,8 +9,10 @@ namespace Script.Character.DataDefinitions.ScriptableObjects
         public string name;
         [TextArea] public string introduction;
         [TextArea] public string skillIntroduction;
+        [TextArea] public string dialogueText;
 
         public GameObject prefab;
-        public Sprite sprite;
+        public Sprite sdSprite;
+        public Sprite ldSprite;
     }
 }

@@ -9,8 +9,6 @@ namespace Script.Stage.Manager
 {
     public class GameFlowManager : ManagerBase<GameFlowManager>
     {
-
-        public int CurrentEnemy { get; set; }
         private int targetCount, killCount = 0;
         private float startTime;
 
@@ -23,6 +21,7 @@ namespace Script.Stage.Manager
 
         protected override void Awake()
         {
+            isDontDestroy = false;
             base.Awake();
         }
 

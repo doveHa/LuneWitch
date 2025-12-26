@@ -34,7 +34,7 @@ namespace Script.Creature.AttackHandler
         
         public override void StartAttacking()
         {
-            CurrentCooldown = attackTerm;
+            CurrentCooldown = AttackTerm;
 
             HashSet<CardZoneCoordinate> attackRange = new HashSet<CardZoneCoordinate>(AttackRanges());
             attackRange.Remove(RootCoordinate.Right().Right());

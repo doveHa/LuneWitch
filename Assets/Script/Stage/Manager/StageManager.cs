@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿    using System.Collections.Generic;
 using Script.BattleStyle.Manager;
 using Script.Core.Manager;
 using Script.Enemy.DataDefinitions.ScriptableObjects;
@@ -9,7 +9,7 @@ using UnityEngine;
 
 namespace Script.Stage.Manager
 {
-    public class StageManager : MonoBehaviour
+    public class StageManager : ManagerBase<StageManager>
     {
         [SerializeField] private float RecoverCostPerSec;
         [SerializeField] private TextMeshProUGUI waveTitle, roundPanelRound, roundPanelTitle;
@@ -20,15 +20,10 @@ namespace Script.Stage.Manager
 
         public int SpawnCount { get; private set; }
 
-        public static StageManager Manager { get; private set; }
-
-        void Awake()
+        protected override void Awake()
         {
-            if (Manager == null)
-            {
-                Manager = this;
-            }
-
+            isDontDestroy = false;
+            base.Awake();
             SetStage();
             SetPlayer();
         }
@@ -36,6 +31,7 @@ namespace Script.Stage.Manager
         void Start()
         {
             CardPoolManager.Manager.InitialCreature(PlayerManager.Manager.SelectedCreatures);
+            CardPoolManager.Manager.ReRoll();
         }
 
         public GameObject Player()

@@ -5,14 +5,14 @@ using UnityEngine;
 
 namespace Script.Player
 {
-    public class LuminaSkill : IPlayerSkill
+    public class IreneSkill : IPlayerSkill
     {
         public override void OnSkillUse()
         {
             particle.Play();
             StartCoroutine(AdjustDamage());
         }
-
+        
         private IEnumerator AdjustDamage()
         {
             yield return new WaitUntil(() => particle.time / particle.totalTime > 0.5);

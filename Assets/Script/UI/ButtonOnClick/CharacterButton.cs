@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Script.UI.ButtonOnClick
 {
-    public class CharacterButton : Base.ButtonOnClick
+    public class CharacterButton : Core.OnButtonClick.ButtonOnClick
     {
         [SerializeField] private CharacterData characterData;
 

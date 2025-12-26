@@ -15,6 +15,7 @@ namespace Script.BattleStyle.Manager
 
         protected override void Awake()
         {
+            isDontDestroy = false;
             base.Awake();
             handlers = new CardZoneHandler[5, 9];
             for (int i = 0; i < gridRoot.childCount; i++)

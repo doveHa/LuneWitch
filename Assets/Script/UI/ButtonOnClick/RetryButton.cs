@@ -2,7 +2,7 @@
 
 namespace Script.UI.ButtonOnClick
 {
-    public class RetryButton : Base.ButtonOnClick
+    public class RetryButton : Core.OnButtonClick.ButtonOnClick
     {
         protected override void OnClick()
         {

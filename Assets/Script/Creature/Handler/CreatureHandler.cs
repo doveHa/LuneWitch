@@ -5,6 +5,7 @@ using Script.Core.DataDefinitions.ScriptableObjects;
 using Script.Core.Handler;
 using Script.Creature.AttackHandler;
 using Script.Creature.DataDefinitions.ScriptableObjects;
+using Script.Creature.UpgradeHandler;
 using UnityEngine;
 
 namespace Script.Creature.Handler
@@ -14,6 +15,7 @@ namespace Script.Creature.Handler
         public CreatureData CreatureData { get; private set; }
         public CreatureSummonHandler CreatureSummonHandler { get; private set; }
         public BaseAttackHandler AttackHandler { get; private set; }
+        public BaseUpgradeHandler UpgradeHandler { get; private set; }
 
         void Update()
         {
@@ -33,6 +35,7 @@ namespace Script.Creature.Handler
             CreatureSummonHandler = GetComponent<CreatureSummonHandler>();
             AttackHandler = GetComponent<BaseAttackHandler>();
             AttackHandler.Initialize(CreatureData);
+            UpgradeHandler = GetComponent<BaseUpgradeHandler>();
         }
 
         public override void Dead()
@@ -56,6 +59,12 @@ namespace Script.Creature.Handler
             }
 
             return creatureObject.GetComponent<CreatureSummonHandler>().FirstSummonInitialize();
+        }
+
+        public void UpgradeCreature()
+        {
+            CardPoolManager.Manager.UpgradeCard(CreatureSummonHandler);
+            UpgradeHandler.Upgrade(AttackHandler);
         }
 
         public List<CardZoneCoordinate> GetSpawnTiles(CardZoneCoordinate coordinate)

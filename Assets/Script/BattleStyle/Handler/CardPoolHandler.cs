@@ -1,4 +1,5 @@
-﻿using Script.BattleStyle.Manager;
+﻿using System.Collections.Generic;
+using Script.BattleStyle.Manager;
 using Script.Creature.Handler;
 using UnityEngine;
 
@@ -11,15 +12,13 @@ namespace Script.BattleStyle.Handler
         void Start()
         {
             cardHandlers = GetComponentsInChildren<CardHandler>();
-            SetCards();
         }
 
-        public void SetCards()
+        public void SetCards(List<CreatureSummonHandler> cards)
         {
-            foreach (CardHandler cardHandler in cardHandlers)
+            for (int i = 0; i < Constant.BattleSystem.MAX_CARDS; i++)
             {
-                CreatureSummonHandler card = CardPoolManager.Manager.GetRandomCreature();
-                cardHandler.SetCard(card.GetComponent<CreatureHandler>());
+                cardHandlers[i].SetCard(cards[i].GetComponent<CreatureHandler>());
             }
         }
     }

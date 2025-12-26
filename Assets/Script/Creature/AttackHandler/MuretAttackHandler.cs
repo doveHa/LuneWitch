@@ -14,7 +14,7 @@ namespace Script.Creature.AttackHandler
         public override void Initialize(CreatureData data)
         {
             base.Initialize(data);
-            CurrentCooldown = attackTerm;
+            CurrentCooldown = AttackTerm;
         }
 
         public override HashSet<CardZoneCoordinate> AttackRanges()

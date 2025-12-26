@@ -3,7 +3,7 @@ using UnityEngine.Device;
 
 namespace Script.UI.ButtonOnClick
 {
-    public class QuitButton : Base.ButtonOnClick
+    public class QuitButton : Core.OnButtonClick.ButtonOnClick
     {
         protected override void OnClick()
         {

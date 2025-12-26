@@ -42,9 +42,8 @@ namespace Script.UI.MainScene
                 PlayerManager.Manager.SelectedCreatures.Remove(creature);
                 cards[creature].SetActive(true);
             }
-            else
+            else if (PlayerManager.Manager.AddCreature(creature))
             {
-                PlayerManager.Manager.AddCreature(creature);
                 cards[creature].SetActive(false);
             }
 

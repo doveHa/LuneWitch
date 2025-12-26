@@ -41,6 +41,11 @@ namespace Script
             }
         }
 
+        public static class BattleSystem
+        {
+            public const int MAX_CARDS = 4;
+        }
+
         public static class Scene
         {
             public const string MAIN_SCENE = "Main";

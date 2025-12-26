@@ -28,7 +28,6 @@ namespace Script.BattleStyle.Handler
             }
         }
 
-
         void OnTriggerExit2D(Collider2D other)
         {
             if (other.CompareTag("Enemy"))
@@ -62,16 +61,6 @@ namespace Script.BattleStyle.Handler
             attackRangeMark.SetActive(false);
         }
 
-        public void Visualization()
-        {
-            GetComponentInChildren<SpriteRenderer>().color = Color.red;
-        }
-
-        public void Normalization()
-        {
-            GetComponentInChildren<SpriteRenderer>().color = Color.white;
-        }
-
         public bool IsSummoned()
         {
             if (SummonedCreature != null && SummonedCreature.IsOnSummoned)
@@ -90,6 +79,11 @@ namespace Script.BattleStyle.Handler
             }
 
             return true;
+        }
+
+        public void AttackCreature(int dmg)
+        {
+            SummonedCreature.gameObject.GetComponent<CreatureHandler>().Hit(dmg);
         }
     }
 }

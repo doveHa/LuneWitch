@@ -43,7 +43,7 @@ namespace Script.BattleStyle.Handler
         public void UpgradeCard()
         {
             CostManager.Manager.UseCost(CreatureHandler.CreatureData.cost);
-            CardPoolManager.Manager.UpgradeCard(CreatureHandler.CreatureSummonHandler);
+            CreatureHandler.UpgradeCreature();
             SetUsedUI();
         }
 

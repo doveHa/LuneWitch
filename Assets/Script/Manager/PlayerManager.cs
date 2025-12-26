@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Script.Character.DataDefinitions.ScriptableObjects;
 using Script.Core.Manager;
 using Script.Creature.DataDefinitions.ScriptableObjects;
@@ -30,19 +31,20 @@ namespace Script.Manager
             }
         }
 
-        private const int MAX_CARDS = 4;
-
         public bool IsAllCardSelected()
         {
-            return SelectedCreatures.Count == MAX_CARDS;
+            return SelectedCreatures.Count == Constant.BattleSystem.MAX_CARDS;
         }
 
-        public void AddCreature(CreatureData creature)
+        public bool AddCreature(CreatureData creature)
         {
-            if (SelectedCreatures.Count < MAX_CARDS)
+            if (SelectedCreatures.Count < Constant.BattleSystem.MAX_CARDS)
             {
                 SelectedCreatures.Add(creature);
+                return true;
             }
+
+            return false;
         }
     }
 }

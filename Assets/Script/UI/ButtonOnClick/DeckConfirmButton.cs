@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Script.UI.ButtonOnClick
 {
-    public class DeckConfirmButton : Base.ButtonOnClick
+    public class DeckConfirmButton : Core.OnButtonClick.ButtonOnClick
     {
         [SerializeField] private GameObject sceneChangeEffect;
 

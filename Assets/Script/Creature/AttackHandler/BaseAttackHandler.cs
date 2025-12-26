@@ -9,7 +9,7 @@ namespace Script.Creature.AttackHandler
 {
     public abstract class BaseAttackHandler : MonoBehaviour
     {
-        protected float attackTerm;
+        protected float AttackTerm;
         protected int Atk;
 
         public float CurrentCooldown { get; protected set; } = 0;
@@ -26,7 +26,7 @@ namespace Script.Creature.AttackHandler
 
         public virtual void Initialize(CreatureData data)
         {
-            attackTerm = data.attackTerm;
+            AttackTerm = data.attackTerm;
             Atk = data.attack;
         }
 
@@ -50,7 +50,7 @@ namespace Script.Creature.AttackHandler
 
         public virtual void StartAttacking()
         {
-            CurrentCooldown = attackTerm;
+            CurrentCooldown = AttackTerm;
 
             foreach (CardZoneCoordinate coordinate in AttackRanges())
             {

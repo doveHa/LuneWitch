@@ -21,7 +21,7 @@ namespace Script.Creature.AttackHandler
 
         public override void StartAttacking()
         {
-            CurrentCooldown = attackTerm;
+            CurrentCooldown = AttackTerm;
             StartCoroutine(TimeDifferenceAttack(RootCoordinate));
         }
 

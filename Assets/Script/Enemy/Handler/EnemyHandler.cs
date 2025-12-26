@@ -1,8 +1,10 @@
 ﻿using System.Collections;
+using Script.BattleStyle.DataDefinitions.Data;
+using Script.BattleStyle.Manager;
 using Script.Core.DataDefinitions.ScriptableObjects;
 using Script.Core.Handler;
 using Script.Enemy.DataDefinitions.ScriptableObjects;
-using Script.Manager;
+using Script.Stage.Manager;
 using UnityEngine;
 
 namespace Script.Enemy.Handler
@@ -15,6 +17,8 @@ namespace Script.Enemy.Handler
 
         public bool IsRecognize { get; set; }
         private bool isAttak;
+
+        private CardZoneCoordinate attackZone;
 
         void Awake()
         {
@@ -40,7 +44,7 @@ namespace Script.Enemy.Handler
 
         public override void Dead()
         {
-            //GameFlowManager.Manager.KillEnemy();
+            GameFlowManager.Manager.KillEnemy();
             AnimationHandler.PlayDeathAnimation();
             StartCoroutine(DeathCoroutine());
         }
@@ -48,6 +52,20 @@ namespace Script.Enemy.Handler
         public void DisSpeed(float disSpeedRate, float slowTime)
         {
             StartCoroutine(SpeedDebuff(disSpeedRate, slowTime));
+        }
+
+        public void SetRecognize(CardZoneCoordinate coordinate)
+        {
+            if (coordinate != null)
+            {
+                IsRecognize = true;
+            }
+            else
+            {
+                IsRecognize = false;
+            }
+
+            attackZone = coordinate;
         }
 
         private IEnumerator SpeedDebuff(float disSpeedRate, float slowTime)
@@ -66,6 +84,7 @@ namespace Script.Enemy.Handler
             while (IsRecognize)
             {
                 AnimationHandler.PlayAttackAnimation();
+                CardZoneManager.Manager.GetZone(attackZone).AttackCreature(enemyData.attack);
                 yield return new WaitForSeconds(enemyData.attackTerm);
             }
 

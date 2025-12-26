@@ -3,7 +3,7 @@ using Script.UI.MainScene;
 
 namespace Script.UI.ButtonOnClick
 {
-    public class CharacterSelectButton : Base.ButtonOnClick
+    public class CharacterSelectButton : Core.OnButtonClick.ButtonOnClick
     {
         protected override void OnClick()
         {

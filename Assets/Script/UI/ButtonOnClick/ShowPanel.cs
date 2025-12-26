@@ -2,7 +2,7 @@
 
 namespace Script.UI.ButtonOnClick
 {
-    public class ShowPanel : Base.ButtonOnClick
+    public class ShowPanel : Core.OnButtonClick.ButtonOnClick
     {
         [SerializeField] private GameObject showPanel;
         protected override void OnClick()

@@ -45,7 +45,7 @@ namespace Script.Creature.AttackHandler
 
         private IEnumerator WaitCoolDown()
         {
-            yield return new WaitForSeconds(attackTerm);
+            yield return new WaitForSeconds(AttackTerm);
             GetComponent<CreatureAnimationHandler>().EndAdditionalAttackAnimation();
         }
     }

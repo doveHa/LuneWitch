@@ -20,5 +20,8 @@ MonoBehaviour:
   skillIntroduction: "\uB77C\uC778 \uC804\uCCB4\uC5D0 \uAC15\uB825\uD55C \uBE5B\uC758
     \uB9C8\uBC95\uC73C\uB85C \uC801\uC5D0\uAC8C \uACE0\uC815 \uB370\uBBF8\uC9C0\uB97C
     \uC900\uB2E4. "
+  dialogueText: "\uC5B4\uC11C\uC624\uC138\uC694! \uC624\uB298\uC740 \uC5B4\uB5A4
+    \uC7AC\uB8CC\uB97C \uC900\uBE44\uD574 \uB4DC\uB9B4\uAE4C\uC694?"
   prefab: {fileID: 142970479182208228, guid: 648a192b887609d438329fe43878bc5e, type: 3}
-  sprite: {fileID: 1300622657, guid: f38d336accc180641beae937dff687c6, type: 3}
+  sdSprite: {fileID: 1300622657, guid: f38d336accc180641beae937dff687c6, type: 3}
+  ldSprite: {fileID: 5352576004762474852, guid: 4e8afaf34cf5fd64da8942ce4793530b, type: 3}

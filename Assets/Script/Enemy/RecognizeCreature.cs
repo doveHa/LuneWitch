@@ -21,7 +21,7 @@ namespace Script.Enemy
                 if (dropSlot.IsSummoned())
                 {
                     isRecognized = true;
-                    GetComponentInParent<EnemyHandler>().IsRecognize = true;
+                    GetComponentInParent<EnemyHandler>().SetRecognize(dropSlot.Coordinate);
                 }
             }
         }
@@ -31,7 +31,7 @@ namespace Script.Enemy
             if (other.CompareTag("Creature"))
             {
                 isRecognized = false;
-                GetComponentInParent<EnemyHandler>().IsRecognize = false;
+                GetComponentInParent<EnemyHandler>().SetRecognize(null);
             }
         }
     }

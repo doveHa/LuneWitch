@@ -1,12 +1,29 @@
 ﻿using System.Collections;
 using Script.Manager;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Script.UI.ButtonOnClick
 {
+    [RequireComponent(typeof(Button))]
     public class DeckConfirmButton : Core.OnButtonClick.ButtonOnClick
     {
         [SerializeField] private GameObject sceneChangeEffect;
+
+        private Button _targetButton;
+
+        private void Start()
+        {
+            _targetButton = GetComponent<Button>();
+        }
+
+        private void Update()
+        {
+            if(_targetButton != null)
+            {
+                _targetButton.interactable = PlayerManager.Manager.IsAllCardSelected();
+            }
+        }
 
         protected override void OnClick()
         {

@@ -22,7 +22,8 @@ MonoBehaviour:
     \uD55C \uACF3\uC73C\uB85C \uC751\uCD95\uC2DC\uCF1C \uAC15\uB825\uD55C \uD3ED\uBC1C\uC744
     \uC77C\uC73C\uD0A4\uACE0 \uADF8 \uC794\uC7AC\uB85C \uC544\uB984\uB2E4\uC6B4 \uBCC4\uB4E4\uC744
     \uB9CC\uB4E4\uC5B4\uB0B8\uB2E4."
-  dialogueText: "\uC544\uC774\uB9B0 \uBA54\uC778 \uB300\uD654"
+  dialogueText: "\uC5B4\uC11C\uC640! \uC624\uB298\uB3C4 \uACE0\uC0DD\uC774 \uB9CE\uB124!
+    \uB0B4\uAC00 \uBB50 \uB3C4\uC640\uC904\uAC8C \uC788\uC5B4?"
   prefab: {fileID: 142970479182208228, guid: 2f78deb3de237e84d892ecad9dc0db78, type: 3}
   sdSprite: {fileID: -395058365, guid: 4499765106cd484429308e64bf172d9d, type: 3}
   ldSprite: {fileID: -3737621811342974781, guid: 6c8d6ff02bfef984caeacb01868154c6, type: 3}

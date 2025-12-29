@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Script.Core.Manager;
 using Script.Creature.DataDefinitions.ScriptableObjects;
 using UnityEngine;
 using Script.Manager;
@@ -10,13 +11,14 @@ namespace Script.UI.MainScene
     {
         public Transform availableCardParent;
         public Transform selectedCardParent;
-        public GameObject cardPrefab;
+        private GameObject cardPrefab;
 
         private Dictionary<CreatureData, GameObject> cards;
 
         void Awake()
         {
             cards = new Dictionary<CreatureData, GameObject>();
+            cardPrefab = ResourceManager.Load<GameObject>(Constant.ResourcePath.UI_OBJECT_PATH_BY_NAME("Card"));
         }
 
         void Start()

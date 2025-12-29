@@ -20,8 +20,8 @@ public class TutorialHandler : MonoBehaviour
     {
         pageSprites = ResourceManager.LoadAll<Sprite>(Constant.ResourcePath.TUTORIAL_IMAGES_PATH);
         Debug.Log(pageSprites.Length);
-        onDotImage = ResourceManager.Load<Sprite>(Constant.ResourcePath.UI_PATH_BY_NAME("OnDot"));
-        offDotImage = ResourceManager.Load<Sprite>(Constant.ResourcePath.UI_PATH_BY_NAME("OffDot"));
+        onDotImage = ResourceManager.Load<Sprite>(Constant.ResourcePath.UI_IMAGE_PATH_BY_NAME("OnDot"));
+        offDotImage = ResourceManager.Load<Sprite>(Constant.ResourcePath.UI_IMAGE_PATH_BY_NAME("OffDot"));
         Array.Sort(pageSprites, (a, b) => string.Compare(a.name, b.name, StringComparison.Ordinal));
 
         tutorialDescription = new[]

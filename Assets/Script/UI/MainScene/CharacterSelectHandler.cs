@@ -1,5 +1,4 @@
-﻿using System.Resources;
-using Script.Character.DataDefinitions.ScriptableObjects;
+﻿using Script.Character.DataDefinitions.ScriptableObjects;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,7 +11,7 @@ namespace Script.UI.MainScene
         [SerializeField]
         private TextMeshProUGUI characterName, introduction, skillIntroduction, dialogueCharacterName, dialogueText;
 
-        [SerializeField] private Image characterIcon, mainCharacterImage;
+        [SerializeField] private Image characterIcon, mainCharacterImage, characterSelectImage;
         [SerializeField] private Transform characterButtonScrollContent;
 
         void Start()
@@ -34,7 +33,8 @@ namespace Script.UI.MainScene
             dialogueText.text = characterData.dialogueText;
 
             mainCharacterImage.sprite = characterData.ldSprite;
-            
+            characterSelectImage.sprite = characterData.ldSprite;
+
             SelectedCharacter = characterData;
         }
     }

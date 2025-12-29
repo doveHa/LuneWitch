@@ -1,64 +1,34 @@
 fileFormatVersion: 2
-guid: 12a9657292cdf3542b430d14e35d0c30
+guid: 16a5a747a3330584ca8c0f3b07f4fa0e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7158813693357147371
-    second: effect2_0
+      213: 1974895838090585116
+    second: Spider_Idle_0
   - first:
-      213: 861048366620365521
-    second: effect2_1
+      213: 1829324309001267361
+    second: Spider_Idle_1
   - first:
-      213: 7981864427885111977
-    second: effect2_2
+      213: 3062135226306828002
+    second: Spider_Idle_2
   - first:
-      213: -3073226149826396484
-    second: effect2_3
+      213: -2704754160999275011
+    second: Spider_Idle_3
   - first:
-      213: 4502179582117627898
-    second: effect2_4
+      213: 8955776280775515899
+    second: Spider_Idle_4
   - first:
-      213: 2938470570783865546
-    second: effect2_5
+      213: 3857004015402991681
+    second: Spider_Idle_5
   - first:
-      213: -6359402688530946091
-    second: effect2_6
+      213: 3212631659527141565
+    second: Spider_Idle_6
   - first:
-      213: -8484211296486739956
-    second: effect2_7
+      213: 4979347207375379644
+    second: Spider_Idle_7
   - first:
-      213: -7549674286378796665
-    second: effect2_8
-  - first:
-      213: 8528608317195796477
-    second: effect2_9
-  - first:
-      213: -3563922344977222750
-    second: effect2_10
-  - first:
-      213: 3164604954099041837
-    second: effect2_11
-  - first:
-      213: -1039503231465213998
-    second: effect2_12
-  - first:
-      213: 1059227790650872453
-    second: effect2_13
-  - first:
-      213: -2520704607159834074
-    second: effect2_14
-  - first:
-      213: 6632433752713484184
-    second: effect2_15
-  - first:
-      213: 5483182412328664696
-    second: effect2_16
-  - first:
-      213: 4200592129236922652
-    second: effect2_17
-  - first:
-      213: 660361320581114612
-    second: effect2_18
+      213: 7916050020939741323
+    second: Spider_Idle_8
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -105,7 +75,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 20
+  spritePixelsToUnits: 40
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -167,13 +137,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: effect2_0
+      name: Spider_Idle_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 69
-        height: 64
+        width: 84
+        height: 84
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58bac4d14932b6e4da53b7681db07f8d
-      internalID: 1334995997
+      spriteID: 0fd277a3eb25aa341ba96a0265feb99c
+      internalID: -1307796211
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: effect2_1
+      name: Spider_Idle_1
       rect:
         serializedVersion: 2
-        x: 69
+        x: 84
         y: 0
-        width: 69
-        height: 64
+        width: 84
+        height: 84
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,20 +174,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db89b4daf4378d240a8f09b1f04e28f3
-      internalID: -1296190231
+      spriteID: 1e53cd9a965fb49479442d8d190c1cc2
+      internalID: 919967446
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: effect2_2
+      name: Spider_Idle_2
       rect:
         serializedVersion: 2
-        x: 138
+        x: 168
         y: 0
-        width: 69
-        height: 64
+        width: 84
+        height: 84
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,20 +196,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42908d1edffdabc428c3b22e23159979
-      internalID: 84808857
+      spriteID: e52b31707236d534b9eb0d4992c15b59
+      internalID: 411264215
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: effect2_3
+      name: Spider_Idle_3
       rect:
         serializedVersion: 2
-        x: 207
+        x: 252
         y: 0
-        width: 69
-        height: 64
+        width: 84
+        height: 84
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,20 +218,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 806e1f1eae5cd814a9cf9a53763e2a8a
-      internalID: -339106969
+      spriteID: 256a5eec97dd1d34691e3d2dbea0a745
+      internalID: -1491166522
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: effect2_4
+      name: Spider_Idle_4
       rect:
         serializedVersion: 2
-        x: 276
+        x: 336
         y: 0
-        width: 69
-        height: 64
+        width: 84
+        height: 84
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -270,20 +240,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ffb4d6c6d96a8cd4398d940330705772
-      internalID: 1672374338
+      spriteID: 5e4a50c70ac33354cbd0b9579c37a182
+      internalID: 808114100
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: effect2_5
+      name: Spider_Idle_5
       rect:
         serializedVersion: 2
-        x: 345
+        x: 420
         y: 0
-        width: 69
-        height: 64
+        width: 84
+        height: 84
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,20 +262,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3cf488ed6ec253146a9242ba6d0af401
-      internalID: -1729105415
+      spriteID: dff1842cd15bbdd408400cbdf6ecc621
+      internalID: -457394421
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: effect2_6
+      name: Spider_Idle_6
       rect:
         serializedVersion: 2
-        x: 414
+        x: 504
         y: 0
-        width: 69
-        height: 64
+        width: 84
+        height: 84
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -314,20 +284,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b67ff4e53130b3e43a347f9877d812e1
-      internalID: 973143892
+      spriteID: 165eb52b519fd094bb55f8fb9fb54165
+      internalID: -588298690
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: effect2_7
+      name: Spider_Idle_7
       rect:
         serializedVersion: 2
-        x: 483
+        x: 588
         y: 0
-        width: 69
-        height: 64
+        width: 84
+        height: 84
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -336,20 +306,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 28ec296149ec30848957299ba5cd03d3
-      internalID: 1510710796
+      spriteID: 38b41dc969cdfb74fa112ac779cbb67a
+      internalID: 2076966461
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: effect2_8
+      name: Spider_Idle_8
       rect:
         serializedVersion: 2
-        x: 552
+        x: 672
         y: 0
-        width: 69
-        height: 64
+        width: 84
+        height: 84
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -358,52 +328,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e061dd242a3b0a47a1753229819d5f7
-      internalID: 1535365549
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: effect2_9
-      rect:
-        serializedVersion: 2
-        x: 621
-        y: 0
-        width: 69
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 068d8a9f0a2726c47aba06e2b36a56c0
-      internalID: -1340389888
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: effect2_10
-      rect:
-        serializedVersion: 2
-        x: 690
-        y: 0
-        width: 69
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b5e052f4b9405394d8d0304aa1a2fe46
-      internalID: 2010452095
+      spriteID: 5b951be1f1845a949a353cc2747e051a
+      internalID: -1480488268
       vertices: []
       indices: 
       edges: []
@@ -412,7 +338,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 0c2c2c7ddb9d25944a50c88bf31f00b7
+    spriteID: 3eb42cbcc243dd84389db36aeef774cd
     internalID: 0
     vertices: []
     indices: 
@@ -422,19 +348,17 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":11.0,"y":1.0},"gridSpriteSize":{"x":69.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":9.0,"y":1.0},"gridSpriteSize":{"x":84.0,"y":84.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      effect2_0: 1334995997
-      effect2_1: -1296190231
-      effect2_10: 2010452095
-      effect2_2: 84808857
-      effect2_3: -339106969
-      effect2_4: 1672374338
-      effect2_5: -1729105415
-      effect2_6: 973143892
-      effect2_7: 1510710796
-      effect2_8: 1535365549
-      effect2_9: -1340389888
+      Spider_Idle_0: -1307796211
+      Spider_Idle_1: 919967446
+      Spider_Idle_2: 411264215
+      Spider_Idle_3: -1491166522
+      Spider_Idle_4: 808114100
+      Spider_Idle_5: -457394421
+      Spider_Idle_6: -588298690
+      Spider_Idle_7: 2076966461
+      Spider_Idle_8: -1480488268
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

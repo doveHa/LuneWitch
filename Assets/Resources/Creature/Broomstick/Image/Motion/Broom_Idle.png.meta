@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 0045bf58252ac7d45ac8e485d144a697
+guid: b5d92acea184ca645b9ac6ba20a3be40
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1331256906279849570
-    second: broomstick_0
+      213: -403235161927917251
+    second: Broom_Idle_0
+  - first:
+      213: 930424281551106964
+    second: Broom_Idle_1
+  - first:
+      213: -5946703137336415992
+    second: Broom_Idle_2
+  - first:
+      213: -3759336830196400339
+    second: Broom_Idle_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 300
+  spritePixelsToUnits: 70
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,23 +122,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: broomstick_0
+      name: Broom_Idle_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 29
-        width: 512
-        height: 454
+        y: 0
+        width: 74
+        height: 95
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e917764a5ec668de0800000000000000
-      internalID: -1331256906279849570
+      spriteID: ad7536c78c289ac4da6ad907c2ad4376
+      internalID: -1265781473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broom_Idle_1
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 0
+        width: 74
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d4737a54ce19df46ad17958c132a655
+      internalID: 1758996467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broom_Idle_2
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 0
+        width: 74
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad6e4dbe08334f1469d56450743e86de
+      internalID: -732022389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broom_Idle_3
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 0
+        width: 74
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36b702f7766fc6246ba2078d0f943c2d
+      internalID: 1850368814
       vertices: []
       indices: 
       edges: []
@@ -138,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b40999d98945a694cb8c780f7429de5a
     internalID: 0
     vertices: []
     indices: 
@@ -146,9 +221,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":1.0},"gridSpriteSize":{"x":74.0,"y":95.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      broomstick_0: -1331256906279849570
+      Broom_Idle_0: -1265781473
+      Broom_Idle_1: 1758996467
+      Broom_Idle_2: -732022389
+      Broom_Idle_3: 1850368814
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

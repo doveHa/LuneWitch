@@ -26,7 +26,7 @@ namespace Script.Creature.AttackHandler
                 CardZoneCoordinate endLineZone = RootCoordinate;
 
                 gameObject.transform.position = CardZoneManager.Manager
-                    .GetZone(new CardZoneCoordinate(endLineZone.Row, CardZoneCoordinate.MINCOL)).transform.position;
+                    .GetZone(new CardZoneCoordinate(endLineZone.Row, CardZoneCoordinate.MINCOL - 1)).transform.position;
 
                 for (int i = endLineZone.Col; i < CardZoneCoordinate.MAXCOL; i++)
                 {

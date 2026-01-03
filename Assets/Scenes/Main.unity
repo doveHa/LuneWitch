@@ -147663,7 +147663,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6047925896318931512}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1260.8988}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 4.3609524, y: 1.1325722, z: 1.038195}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -148851,6 +148851,7 @@ GameObject:
   - component: {fileID: 5115744725177861248}
   - component: {fileID: 6972170195205081165}
   - component: {fileID: 9131677228473085445}
+  - component: {fileID: 9131677228473085446}
   m_Layer: 5
   m_Name: AlwaysUI
   m_TagString: Untagged
@@ -151141,6 +151142,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &9131677228473085446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5813494566511660857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6294ab25f0160574c82f846cf1523a30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ExitMenu: {fileID: 7781974054809551225}
 --- !u!224 &9132083239084225751
 RectTransform:
   m_ObjectHideFlags: 0

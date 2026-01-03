@@ -1,4 +1,5 @@
 ﻿using System.Net.Mime;
+using UnityEditor;
 using UnityEngine.Device;
 
 namespace Script.UI.ButtonOnClick
@@ -7,7 +8,12 @@ namespace Script.UI.ButtonOnClick
     {
         protected override void OnClick()
         {
+            //Application.Quit();
+#if UNITY_EDITOR
+            EditorApplication.isPlaying = false;
+#else
             Application.Quit();
+#endif
         }
     }
 }

@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: GrootAnimation
+  m_Controller: {fileID: 9100000, guid: 48fb7ef5161c7d64fab85a78b4a3c182, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: e3532bbb833bd4a4da74241f25b1b488, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 55b82154b0a189a4abcf584d63033024, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 69d381fb97d283644a2b1cbbd9d04eae, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 4b92e9fbd64635d4c951c8c70b89207c, type: 2}

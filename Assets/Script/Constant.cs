@@ -8,9 +8,14 @@ namespace Script
     {
         public static class ResourcePath
         {
-            public static string UI_PATH_BY_NAME(string uiName)
+            public static string UI_IMAGE_PATH_BY_NAME(string uiName)
             {
                 return "Images/UI/" + uiName;
+            }
+
+            public static string UI_OBJECT_PATH_BY_NAME(string uiName)
+            {
+                return "Prefabs/UI/" + uiName;
             }
 
             public const string TUTORIAL_IMAGES_PATH = "Images/Tutorial";

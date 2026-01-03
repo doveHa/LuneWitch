@@ -5,6 +5,7 @@
         MainTopUIDown = 0,
         MainRightButtonLayout = 1,
         MainCharacterDialogueUp = 2,
-        GameClear = 3
+        GameClear = 3,
+        CreatureDescription = 4
     }
 }

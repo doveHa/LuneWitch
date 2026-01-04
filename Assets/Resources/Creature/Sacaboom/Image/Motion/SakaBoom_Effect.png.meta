@@ -1,0 +1,415 @@
+fileFormatVersion: 2
+guid: 16cad917c5be2944baf281ca075d2b13
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3352887767705834027
+    second: SakaBoom_Effect_0
+  - first:
+      213: 8041795073807014124
+    second: SakaBoom_Effect_1
+  - first:
+      213: -528302892679348540
+    second: SakaBoom_Effect_2
+  - first:
+      213: -8871234576049344279
+    second: SakaBoom_Effect_3
+  - first:
+      213: 5335088746677643661
+    second: SakaBoom_Effect_4
+  - first:
+      213: 9127095008714326466
+    second: SakaBoom_Effect_5
+  - first:
+      213: 273046788971624798
+    second: SakaBoom_Effect_6
+  - first:
+      213: 1421741120622250502
+    second: SakaBoom_Effect_7
+  - first:
+      213: 5914017860707904516
+    second: SakaBoom_Effect_8
+  - first:
+      213: -2895359655656090331
+    second: SakaBoom_Effect_9
+  - first:
+      213: -176701755576548014
+    second: SakaBoom_Effect_10
+  - first:
+      213: 5024748500627601843
+    second: SakaBoom_Effect_11
+  - first:
+      213: 1030618878895806204
+    second: SakaBoom_Effect_12
+  - first:
+      213: -3652615165106200270
+    second: SakaBoom_Effect_13
+  - first:
+      213: 1716212897171005452
+    second: SakaBoom_Effect_14
+  - first:
+      213: 5978455755800210615
+    second: SakaBoom_Effect_15
+  - first:
+      213: 621343114424253435
+    second: SakaBoom_Effect_16
+  - first:
+      213: -279981373709681546
+    second: SakaBoom_Effect_17
+  - first:
+      213: 8939238508827207087
+    second: SakaBoom_Effect_18
+  - first:
+      213: -1182660410800389942
+    second: SakaBoom_Effect_19
+  - first:
+      213: 5610976827522272414
+    second: SakaBoom_Effect_20
+  - first:
+      213: 2245849812732129571
+    second: SakaBoom_Effect_21
+  - first:
+      213: -2850835703014120337
+    second: SakaBoom_Effect_22
+  - first:
+      213: -6449112109826831197
+    second: SakaBoom_Effect_23
+  - first:
+      213: 3891175290136363580
+    second: SakaBoom_Effect_24
+  - first:
+      213: 237078080006522387
+    second: SakaBoom_Effect_25
+  - first:
+      213: -2715102939864528527
+    second: SakaBoom_Effect_26
+  - first:
+      213: -5880972117028091656
+    second: SakaBoom_Effect_27
+  - first:
+      213: -4254248098184383710
+    second: SakaBoom_Effect_28
+  - first:
+      213: 1379597103524227523
+    second: SakaBoom_Effect_29
+  - first:
+      213: 4327676197784418256
+    second: SakaBoom_Effect_30
+  - first:
+      213: 6761523931004524088
+    second: SakaBoom_Effect_31
+  - first:
+      213: 6033755410893849400
+    second: SakaBoom_Effect_32
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 50
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SakaBoom_Effect_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 122
+        width: 127
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31bf2bc999add7a4bad6968cdbb91e05
+      internalID: -1532242780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SakaBoom_Effect_1
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 122
+        width: 127
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b307392d923660d409be7f21c9f5d8ff
+      internalID: 188904170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SakaBoom_Effect_2
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 122
+        width: 127
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3874e5784b1d6034f80b259dc2d8b54a
+      internalID: 1654934836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SakaBoom_Effect_3
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 122
+        width: 127
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 971a07e37dec2d24e8add88e4cd22b9c
+      internalID: -1578536784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SakaBoom_Effect_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 127
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d41086ecbaf9f44bb829f672d03a3f0
+      internalID: 15365151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SakaBoom_Effect_5
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 0
+        width: 127
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a0238111378b2b44bd153b0ffe0fc65
+      internalID: 533718151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SakaBoom_Effect_6
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 0
+        width: 127
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fad24fae719e8cf4790988ac5944ecf0
+      internalID: -815393086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SakaBoom_Effect_7
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 0
+        width: 127
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87c893b36e7be0b47b1c69233dcfb138
+      internalID: 304690254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 8361151fb7e6bea459a12ca3b2c4714f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":2.0},"gridSpriteSize":{"x":127.0,"y":122.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      SakaBoom_Effect_0: -1532242780
+      SakaBoom_Effect_1: 188904170
+      SakaBoom_Effect_2: 1654934836
+      SakaBoom_Effect_3: -1578536784
+      SakaBoom_Effect_4: 15365151
+      SakaBoom_Effect_5: 533718151
+      SakaBoom_Effect_6: -815393086
+      SakaBoom_Effect_7: 304690254
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

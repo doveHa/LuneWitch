@@ -61,6 +61,14 @@ namespace Script.BattleStyle.Handler
             attackRangeMark.SetActive(false);
         }
 
+        void Update()
+        {
+            if (IsSummoned())
+            {
+                Debug.Log(Coordinate.ToString());
+            }
+        }
+
         public bool IsSummoned()
         {
             if (SummonedCreature != null && SummonedCreature.IsOnSummoned)

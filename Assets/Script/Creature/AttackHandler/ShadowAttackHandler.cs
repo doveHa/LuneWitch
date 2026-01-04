@@ -12,17 +12,20 @@ namespace Script.Creature.AttackHandler
     {
         private float waitTime = 0.3f;
 
+        private bool nextAttack = false;
+
         public override HashSet<CardZoneCoordinate> AttackRanges()
         {
             HashSet<CardZoneCoordinate> attackRange = new HashSet<CardZoneCoordinate>();
             attackRange.Add(RootCoordinate.Right());
+            attackRange.Add(RootCoordinate.Right().Right());
+            attackRange.Add(RootCoordinate.Right().Right().Right());
             return attackRange;
         }
 
         public override void StartAttacking()
         {
-            CurrentCooldown = AttackTerm;
-            StartCoroutine(TimeDifferenceAttack(RootCoordinate));
+            StartCoroutine(TimeDifferenceAttack());
         }
 
         protected override void Attack(List<EnemyHandler> enemies)
@@ -41,11 +44,17 @@ namespace Script.Creature.AttackHandler
             return ranges;
         }
 
-        private IEnumerator TimeDifferenceAttack(CardZoneCoordinate coordinate)
+        public void AdditionalAttack()
         {
-            CardZoneCoordinate coord = coordinate;
+            nextAttack = true;
+        }
+
+        private IEnumerator TimeDifferenceAttack()
+        {
+            CardZoneCoordinate coord = RootCoordinate;
             for (int i = 0; i < 3; i++)
             {
+                yield return new WaitUntil(() => nextAttack);
                 coord = coord.Right();
                 CardZoneHandler zone = CardZoneManager.Manager.GetZone(coord);
 
@@ -54,7 +63,7 @@ namespace Script.Creature.AttackHandler
                     Attack(zone.Enemies);
                 }
 
-                yield return new WaitForSeconds(waitTime);
+                nextAttack = false;
             }
         }
     }

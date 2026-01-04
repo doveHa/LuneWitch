@@ -21,16 +21,15 @@ namespace Script.Creature.Handler
         {
             if (AttackHandler.IsCoolOn() && AttackHandler.HasTarget())
             {
-                Debug.Log("attack");
                 AnimationHandler.PlayAttackAnimation();
-                AttackHandler.StartAttacking();
+                AttackHandler.Cooldown();
             }
         }
 
         public override void Initialize(BaseData data)
         {
             CreatureData = data as CreatureData;
-            HealthHandler = new CreatureHealthHandler(CreatureData.health);
+            HealthHandler = new CreatureHealthHandler(CreatureData.health, CreatureData.cost);
             AnimationHandler = GetComponent<CreatureAnimationHandler>();
             CreatureSummonHandler = GetComponent<CreatureSummonHandler>();
             AttackHandler = GetComponent<BaseAttackHandler>();
@@ -41,6 +40,7 @@ namespace Script.Creature.Handler
         public override void Dead()
         {
             AnimationHandler.PlayDeathAnimation();
+            Destroy(gameObject);
         }
 
         public CreatureSummonHandler SummonCreature(CardZoneCoordinate coordinate)

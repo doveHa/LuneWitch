@@ -4,7 +4,6 @@ using Script.BattleStyle.Handler;
 using Script.BattleStyle.Manager;
 using Script.Creature.Handler;
 using Script.UI.Pointer.Hover;
-using UnityEditor.Searcher;
 using UnityEngine;
 
 namespace Script.UI.Pointer.Drag
@@ -91,7 +90,6 @@ namespace Script.UI.Pointer.Drag
         {
             if (currentSpawnVisualList != null && currentSpawnVisualList.Count > 0)
             {
-                // 질문하신 SpawnNormalize 호출!
                 CardZoneManager.Manager.SpawnNormalize(currentSpawnVisualList);
                 currentSpawnVisualList.Clear();
             }

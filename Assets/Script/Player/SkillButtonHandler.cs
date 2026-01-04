@@ -59,7 +59,7 @@ namespace Script.Player
 
         private IEnumerator WaitSkillUse()
         {
-            StageManager.Manager.Player().GetComponentInChildren<IPlayerSkill>().OnSkillUse();
+            GameFlowManager.Manager.Player().GetComponentInChildren<IPlayerSkill>();
             yield return new WaitUntil(() => animationController.IsSkillEnd);
             animationController.ReturnIdle();
             currentGauge = 0f;

@@ -11,23 +11,25 @@ namespace Script.Stage.Manager
     {
         private int targetCount, killCount = 0;
         private float startTime;
+        public bool IsAllKill { get; private set; }
 
         [SerializeField] private GameObject RoundPanel;
-        [SerializeField] private EnemySpawnHandler spawner;
         [SerializeField] private TextMeshProUGUI elapsedTime;
-
         [SerializeField] private GameObject EndGameScreen, GameOverScreen, GameWinScreen;
 
+        private StageHandlerBase currentStage;
 
         protected override void Awake()
         {
             isDontDestroy = false;
+            IsAllKill = false;
             base.Awake();
         }
 
         void Start()
         {
-            StartCoroutine(StartGame());
+            currentStage = FindFirstObjectByType<StageHandlerBase>();
+            StartCoroutine(GameLoop());
         }
 
         void Update()
@@ -35,19 +37,30 @@ namespace Script.Stage.Manager
             UpdateElapsedTime();
         }
 
+        public EnemySpawnHandler Spawner()
+        {
+            return currentStage.Spawner();
+        }
+
+        public GameObject Player()
+        {
+            return currentStage.Player();
+        }
+
+        public void SetTargetCount(int count)
+        {
+            targetCount = count;
+            killCount = 0;
+            IsAllKill = false;
+        }
+
         public void KillEnemy()
         {
             killCount++;
             if (killCount >= targetCount)
             {
-                StartCoroutine(WaitTime());
+                IsAllKill = true;
             }
-        }
-
-        private IEnumerator WaitTime()
-        {
-            yield return new WaitForSeconds(5f);
-            EndGame();
         }
 
         public void GameOver()
@@ -56,26 +69,26 @@ namespace Script.Stage.Manager
             GameOverScreen.SetActive(true);
         }
 
-        public EnemySpawnHandler Spawner()
+
+        private IEnumerator GameLoop()
         {
-            return spawner;
-        }
-
-        private IEnumerator StartGame()
-        {
-            yield return new WaitUntil(() => !RoundPanel.activeInHierarchy);
-
-            Debug.Log("Starting Game");
-            targetCount = StageManager.Manager.SpawnCount;
-            spawner.SpawnStart();
-
+            yield return !RoundPanel.activeInHierarchy;
             startTime = Time.time;
+
+            yield return StartCoroutine(currentStage.StartGame());
+
+            HandlerGameClear();
         }
 
-
-        private void EndGame()
+        private void HandlerGameClear()
         {
-            //EndGameScreen.SetActive(true);
+            StartCoroutine(GameEndRoutine());
+        }
+
+        private IEnumerator GameEndRoutine()
+        {
+            yield return new WaitForSeconds(5f);
+
             if (SceneLoadManager.SelectedChapterNo == 1)
             {
                 GameWinScreen.SetActive(true);
@@ -83,21 +96,24 @@ namespace Script.Stage.Manager
             else if (SceneLoadManager.SelectedChapterNo == 2)
             {
                 EndGameScreen.SetActive(true);
-                switch (SceneLoadManager.SelectedRoundNo)
-                {
-                    case 1:
-                        SceneLoadManager.Manager.LoadStory("Chapter 2 Story 1");
-                        break;
-                    case 2:
-                        SceneLoadManager.Manager.LoadStory("Chapter 2 Story 4");
-                        break;
-                    case 3:
-                        SceneLoadManager.Manager.LoadStory("Chapter 2 Story 5");
-                        break;
-                }
+                LoadNextStory();
             }
-
-            Debug.Log("Ending Game");
+        }
+        
+        private void LoadNextStory()
+        {
+            switch (SceneLoadManager.SelectedRoundNo)
+            {
+                case 1:
+                    SceneLoadManager.Manager.LoadStory("Chapter 2 Story 1");
+                    break;
+                case 2:
+                    SceneLoadManager.Manager.LoadStory("Chapter 2 Story 4");
+                    break;
+                case 3:
+                    SceneLoadManager.Manager.LoadStory("Chapter 2 Story 5");
+                    break;
+            }
         }
 
         private void UpdateElapsedTime()

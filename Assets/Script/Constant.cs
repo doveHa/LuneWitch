@@ -44,11 +44,13 @@ namespace Script
             {
                 return "StageInfo/Chapter" + chapter + "Round" + round;
             }
+
+            public static string INFINITY_STAGE_INFO_DATA_PATH = "StageInfo/InfinityStageData";
         }
 
         public static class BattleSystem
         {
-            public const int MAX_CARDS = 4;
+            public const int MAX_CARDS = 3;
         }
 
         public static class Scene

@@ -35,6 +35,11 @@ namespace Script.Creature.AttackHandler
             return CurrentCooldown <= 0;
         }
 
+        public void Cooldown()
+        {
+            CurrentCooldown = AttackTerm;
+        }
+
         public virtual bool HasTarget()
         {
             foreach (CardZoneCoordinate coordinate in AttackRanges())
@@ -50,8 +55,6 @@ namespace Script.Creature.AttackHandler
 
         public virtual void StartAttacking()
         {
-            CurrentCooldown = AttackTerm;
-
             foreach (CardZoneCoordinate coordinate in AttackRanges())
             {
                 var zone = CardZoneManager.Manager.GetZone(coordinate);

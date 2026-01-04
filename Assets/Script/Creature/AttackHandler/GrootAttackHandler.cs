@@ -19,7 +19,7 @@ namespace Script.Creature.AttackHandler
         public override HashSet<CardZoneCoordinate> AttackRanges()
         {
             HashSet<CardZoneCoordinate> attackRange = new HashSet<CardZoneCoordinate>();
-            attackRange.Add(new CardZoneCoordinate(RootCoordinate.Row, CardZoneCoordinate.MAXCOL - 1));
+            attackRange.Add(new CardZoneCoordinate(RootCoordinate.Row, CardZoneCoordinate.MAXCOL));
             return attackRange;
         }
 
@@ -33,7 +33,7 @@ namespace Script.Creature.AttackHandler
                 .GetComponent<GrootAmmoHandler>();
             CardZoneHandler cardZone =
                 CardZoneManager.Manager.GetZone(new CardZoneCoordinate(RootCoordinate.Row,
-                    CardZoneCoordinate.MAXCOL - 1));
+                    CardZoneCoordinate.MAXCOL));
             
             ammoHandler.ShootAmmo(shootPoint.transform,cardZone.transform);
             ammoHandler.SetStat(Atk, disSpeedRate, slowTime);

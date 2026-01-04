@@ -13,6 +13,8 @@ namespace Script.Creature.AttackHandler
         [SerializeField] private float speed;
         private float endLineX;
 
+        private bool isEndLine = false, isMove;
+
         public override HashSet<CardZoneCoordinate> AttackRanges()
         {
             return new HashSet<CardZoneCoordinate>();
@@ -26,7 +28,7 @@ namespace Script.Creature.AttackHandler
                 CardZoneCoordinate endLineZone = RootCoordinate;
 
                 gameObject.transform.position = CardZoneManager.Manager
-                    .GetZone(new CardZoneCoordinate(endLineZone.Row, CardZoneCoordinate.MINCOL - 1)).transform.position;
+                    .GetZone(new CardZoneCoordinate(endLineZone.Row, CardZoneCoordinate.MINCOL)).transform.position;
 
                 for (int i = endLineZone.Col; i < CardZoneCoordinate.MAXCOL; i++)
                 {
@@ -34,30 +36,42 @@ namespace Script.Creature.AttackHandler
                 }
 
                 endLineX = CardZoneManager.Manager.GetZone(endLineZone).gameObject.transform.position.x;
+                isMove = true;
             }
+        }
+
+        public override bool HasTarget()
+        {
+            return isEndLine;
         }
 
         protected override void Update()
         {
-            if (RootCoordinate != null)
+            if (isMove)
             {
                 transform.Translate(Vector2.right * speed * Time.deltaTime);
             }
 
             if (gameObject.transform.position.x >= endLineX)
             {
-                for (int i = 0; i < CardZoneCoordinate.MAXCOL; i++)
-                {
-                    CardZoneHandler handler =
-                        CardZoneManager.Manager.GetZone(new CardZoneCoordinate(RootCoordinate.Row, i));
-                    if (handler.IsOnEnemy())
-                    {
-                        Attack(handler.Enemies);
-                    }
-                }
-
-                Explore();
+                isMove = false;
+                isEndLine = true;
             }
+        }
+
+        public override void StartAttacking()
+        {
+            for (int i = 0; i < CardZoneCoordinate.MAXCOL; i++)
+            {
+                CardZoneHandler handler =
+                    CardZoneManager.Manager.GetZone(new CardZoneCoordinate(RootCoordinate.Row, i));
+                if (handler.IsOnEnemy())
+                {
+                    Attack(handler.Enemies);
+                }
+            }
+
+            Destroy(gameObject);
         }
 
         protected override void Attack(List<EnemyHandler> enemies)
@@ -66,11 +80,6 @@ namespace Script.Creature.AttackHandler
             {
                 handler.Hit(Atk);
             }
-        }
-
-        private void Explore()
-        {
-            Destroy(gameObject);
         }
     }
 }

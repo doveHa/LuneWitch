@@ -68,6 +68,11 @@ namespace Script.Enemy.Handler
             attackZone = coordinate;
         }
 
+        public void Explore()
+        {
+            Destroy(gameObject);
+        }
+
         private IEnumerator SpeedDebuff(float disSpeedRate, float slowTime)
         {
             float originalSpeed = MoveHandler.Speed;

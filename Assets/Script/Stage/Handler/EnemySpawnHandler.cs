@@ -1,7 +1,7 @@
 using System.Collections;
+using System.Collections.Generic;
 using Script.Enemy.DataDefinitions.ScriptableObjects;
 using Script.Enemy.Handler;
-using Script.Stage.Manager;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,13 +11,18 @@ namespace Script.Stage.Handler
     {
         [SerializeField] private Slider spawnProgressSlider;
         [SerializeField] private Transform[] spawnPoints;
-
+        private float healthRate = 1.0f;
         private float minSpawnDelay = 5f;
         private float maxSpawnDelay = 10f;
 
-        public void SpawnStart()
+        public void SpawnStart(int spawnCount, List<EnemyData> enemies)
         {
-            StartCoroutine(SpawnEnemies());
+            StartCoroutine(SpawnEnemies(spawnCount, enemies));
+        }
+
+        public void SetEnemyHealthRate(float healthRate)
+        {
+            this.healthRate = healthRate;
         }
 
         public Transform[] SpawnPoints()
@@ -25,19 +30,19 @@ namespace Script.Stage.Handler
             return spawnPoints;
         }
 
-        private IEnumerator SpawnEnemies()
+        private IEnumerator SpawnEnemies(int spawnCount, List<EnemyData> enemies)
         {
-            spawnProgressSlider.maxValue = StageManager.Manager.SpawnCount;
+            spawnProgressSlider.maxValue = spawnCount;
 
-            for (int i = 0; i < StageManager.Manager.SpawnCount; i++)
+            for (int i = 0; i < spawnCount; i++)
             {
                 float delay = Random.Range(minSpawnDelay, maxSpawnDelay);
                 yield return new WaitForSecondsRealtime(delay);
 
-                int enemyIndex = Random.Range(0, StageManager.Manager.EnemyData.Count);
+                int enemyIndex = Random.Range(0, enemies.Count);
                 int positionIndex = Random.Range(0, spawnPoints.Length);
 
-                EnemyData data = StageManager.Manager.EnemyData[enemyIndex];
+                EnemyData data = enemies[enemyIndex];
 
                 GameObject enemy = Instantiate(
                     data.prefab,
@@ -46,6 +51,7 @@ namespace Script.Stage.Handler
                 );
                 enemy.transform.parent = spawnPoints[positionIndex];
                 enemy.GetComponentInChildren<EnemyHandler>().Initialize(data);
+                enemy.GetComponentInChildren<EnemyHandler>().HealthHandler.HealthUpgrade(healthRate);
 
                 spawnProgressSlider.value++;
             }

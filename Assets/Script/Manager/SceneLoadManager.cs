@@ -8,6 +8,7 @@ namespace Script.Manager
 {
     public class SceneLoadManager : ManagerBase<SceneLoadManager>
     {
+        public static bool isInfinityMode = false;
         public static int SelectedChapterNo;
         public static int SelectedRoundNo;
 

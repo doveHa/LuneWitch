@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Script.BattleStyle.Manager;
 using Script.Core.Manager;
 using Script.Enemy.DataDefinitions.ScriptableObjects;
 using Script.Manager;
@@ -14,6 +15,12 @@ namespace Script.Stage.Manager
         public List<EnemyData> EnemyData { get; private set; }
 
         protected SceneReferences sceneReferences;
+
+        protected void Start()
+        {
+            CardPoolManager.Manager.InitialCreature(PlayerManager.Manager.SelectedCreatures);
+            CardPoolManager.Manager.ReRoll();
+        }
 
         public virtual void Setup(SceneReferences references)
         {

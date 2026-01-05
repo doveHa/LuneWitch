@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using Script.Stage;
+using Unity.Profiling;
 using UnityEngine.Device;
 
 namespace Script
@@ -50,12 +51,31 @@ namespace Script
 
         public static class BattleSystem
         {
-            public const int MAX_CARDS = 3;
+            public const int MAX_CARDS = 4;
         }
 
         public static class Scene
         {
             public const string MAIN_SCENE = "Main";
+        }
+
+        public static class Upgrade
+        {
+            public static class Attack
+            {
+                public static int FIRSTUPGRADE = 10;
+                public static int SECONDUPGRADE = 20;
+                public static int THIRDUPGRADE = 30;
+            }
+
+            public static float AttackTerm = 1.0f;
+
+            public static class Health
+            {
+                public static int FIRSTUPGRADE = 20;
+                public static int SECONDUPGRADE = 30;
+                public static int THIRDUPGRADE = 50;
+            }
         }
     }
 }

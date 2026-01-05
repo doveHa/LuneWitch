@@ -9,12 +9,6 @@ namespace Script.Stage.Manager
 {
     public class StageHandler : StageHandlerBase
     {
-        void Start()
-        {
-            CardPoolManager.Manager.InitialCreature(PlayerManager.Manager.SelectedCreatures);
-            CardPoolManager.Manager.ReRoll();
-        }
-
         public override void Setup(SceneReferences references)
         {
             base.Setup(references);
@@ -29,7 +23,7 @@ namespace Script.Stage.Manager
             sceneReferences.backGroundImage.sprite = data.backGroundImage;
 
             SpawnCount = data.enemyCount;
-            SetEnemyData(data.enemyDatas);
+            SetEnemyData(data.enemyData);
             SetPlayer();
         }
 

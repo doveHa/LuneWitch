@@ -21,15 +21,14 @@ namespace Script.UI.Pointer.Drag
             {
                 hover.Exit();
             }
-
+            
             currentSpawnVisualList.Clear();
             lastHoveredCoord = null;
 
             CardHandler cardHandler = target.GetComponentInParent<CardHandler>();
             if (cardHandler.IsSummoned())
             {
-                GetComponentInParent<PointerHandler>().OnlyClick();
-                cardHandler.UpgradeCard();
+                GetComponentInParent<PointerHandler>().CanDrag = false;
             }
         }
 

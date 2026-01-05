@@ -19,7 +19,7 @@ namespace Script.UI.ButtonOnClick
 
         private void Update()
         {
-            if(_targetButton != null)
+            if (_targetButton != null)
             {
                 _targetButton.interactable = PlayerManager.Manager.IsAllCardSelected();
             }
@@ -39,7 +39,14 @@ namespace Script.UI.ButtonOnClick
 
             yield return new WaitForSeconds(0.5f);
 
-            SceneLoadManager.Manager.LoadChapter();
+            if (SceneLoadManager.isInfinityMode)
+            {
+                SceneLoadManager.Manager.LoadRound();
+            }
+            else
+            {
+                SceneLoadManager.Manager.LoadChapter();
+            }
         }
     }
 }

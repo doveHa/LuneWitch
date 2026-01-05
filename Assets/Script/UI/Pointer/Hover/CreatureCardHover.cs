@@ -8,14 +8,16 @@ namespace Script.UI.Pointer.Hover
     public class CreatureCardHover : MonoBehaviour, IHover
     {
         [SerializeField] private GameObject descriptionPanel;
+        [SerializeField] private GameObject upgradePanel;
 
         public void Enter()
         {
             CardHandler cardHandler = GetComponent<CardHandler>();
 
-            if (cardHandler.IsSummoned())
+            if (cardHandler.IsSummoned() && !cardHandler.IsUsed)
             {
                 cardHandler.CreatureHandler.CreatureSummonHandler.VisualizeCreature();
+                upgradePanel.SetActive(true);
             }
 
             descriptionPanel.SetActive(true);
@@ -28,6 +30,7 @@ namespace Script.UI.Pointer.Hover
             if (cardHandler.IsSummoned())
             {
                 cardHandler.CreatureHandler.CreatureSummonHandler.NormalizeCreature();
+                upgradePanel.SetActive(false);
             }
 
             descriptionPanel.SetActive(false);

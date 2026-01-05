@@ -14,6 +14,8 @@ namespace Script.Creature.Handler
         public float SummonChance { get; set; }
         public Probability Rarity { get; private set; } = Probability.Common;
 
+        public bool IsTemplate { get; set; } = false;
+
         public void SetNextProbability()
         {
             Probability[] probabilities = Enum.GetValues(typeof(Probability)) as Probability[];

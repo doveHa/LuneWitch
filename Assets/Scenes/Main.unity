@@ -35903,6 +35903,7 @@ GameObject:
   - component: {fileID: 604327035}
   - component: {fileID: 604327034}
   - component: {fileID: 604327033}
+  - component: {fileID: 604327037}
   - component: {fileID: 604327036}
   m_Layer: 5
   m_Name: GachaButton
@@ -35959,7 +35960,7 @@ MonoBehaviour:
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
+    m_ColorMultiplier: 1.4
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
@@ -36027,7 +36028,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a4f150c58b243b781407cd15a152a30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showPanel: {fileID: 1669550576}
+  showPanel: {fileID: 1491781870}
+--- !u!114 &604327037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604327029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ab58d2c02474b4ca957a02b8e65bac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isInfinityMode: 1
 --- !u!1 &606180350
 GameObject:
   m_ObjectHideFlags: 0
@@ -109241,6 +109255,8 @@ GameObject:
   - component: {fileID: 2011070831}
   - component: {fileID: 2011070830}
   - component: {fileID: 2011070829}
+  - component: {fileID: 2011070834}
+  - component: {fileID: 2011070833}
   - component: {fileID: 2011070832}
   m_Layer: 5
   m_Name: StoryButton
@@ -109365,6 +109381,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showPanel: {fileID: 911722035}
+--- !u!114 &2011070833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011070825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ab58d2c02474b4ca957a02b8e65bac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isInfinityMode: 0
+--- !u!114 &2011070834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011070825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5396c88dc03f46ee990f1c3a07ca3cbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2014008923
 GameObject:
   m_ObjectHideFlags: 0

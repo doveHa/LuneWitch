@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ce4fa52b314b84995f33fb80c26448, type: 3}
+  m_Name: InfinityStageData
+  m_EditorClassIdentifier: 
+  stageTitle: "\uBB34\uD55C\uC758 \uD0D1"
+  backGroundImage: {fileID: 857720722223687862, guid: 7a906f3aea476e043abe6a10187f490c, type: 3}
+  normalEnemyPool:
+  - {fileID: 11400000, guid: 5945ec5650f0001428c1d188a5f19fb2, type: 2}
+  - {fileID: 11400000, guid: a5ee1d405a8ddaa49be928a0a0b5e48d, type: 2}
+  - {fileID: 11400000, guid: 1522881bce13b0047b77c9951cc3eb57, type: 2}
+  - {fileID: 11400000, guid: f953c459caa90c24ea375ff562ee9dea, type: 2}
+  - {fileID: 11400000, guid: 02b0f38c7a08bce4b8175264f4a0dca6, type: 2}
+  bossEnemyPool: []
+  bossWaveInterval: 5
+  hpMultiplierPerWave: 0.1
+  atkMultiplierPerWave: 0.05
+  spawnCountIncreaseRate: 1
+  rewardCostPerWave: 50
+  enemyCount: 15

@@ -51,7 +51,7 @@ namespace Script.Stage.Handler
                 );
                 enemy.transform.parent = spawnPoints[positionIndex];
                 enemy.GetComponentInChildren<EnemyHandler>().Initialize(data);
-                enemy.GetComponentInChildren<EnemyHandler>().HealthHandler.HealthUpgrade(healthRate);
+                enemy.GetComponentInChildren<EnemyHandler>().HealthHandler.HealthRateUpgrade(healthRate);
 
                 spawnProgressSlider.value++;
             }

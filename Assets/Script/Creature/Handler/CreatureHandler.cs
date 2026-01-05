@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Script.BattleStyle.DataDefinitions.Data;
+using Script.BattleStyle.DataDefinitions.Enum;
 using Script.BattleStyle.Manager;
 using Script.Core.DataDefinitions.ScriptableObjects;
 using Script.Core.Handler;
@@ -15,7 +16,6 @@ namespace Script.Creature.Handler
         public CreatureData CreatureData { get; private set; }
         public CreatureSummonHandler CreatureSummonHandler { get; private set; }
         public BaseAttackHandler AttackHandler { get; private set; }
-        public BaseUpgradeHandler UpgradeHandler { get; private set; }
 
         void Update()
         {
@@ -34,7 +34,6 @@ namespace Script.Creature.Handler
             CreatureSummonHandler = GetComponent<CreatureSummonHandler>();
             AttackHandler = GetComponent<BaseAttackHandler>();
             AttackHandler.Initialize(CreatureData);
-            UpgradeHandler = GetComponent<BaseUpgradeHandler>();
         }
 
         public override void Dead()
@@ -61,10 +60,21 @@ namespace Script.Creature.Handler
             return creatureObject.GetComponent<CreatureSummonHandler>().FirstSummonInitialize();
         }
 
-        public void UpgradeCreature()
+        public void UpgradeCreature(UpgradeType upgradeType)
         {
             CardPoolManager.Manager.UpgradeCard(CreatureSummonHandler);
-            UpgradeHandler.Upgrade(AttackHandler);
+            switch (upgradeType)
+            {
+                case UpgradeType.Attack:
+                    BaseUpgradeHandler.UpgradeAttack(AttackHandler, CreatureSummonHandler.Rarity);
+                    break;
+                case UpgradeType.Health:
+                    BaseUpgradeHandler.UpgradeHealth(HealthHandler, CreatureSummonHandler.Rarity);
+                    break;
+                case UpgradeType.AttackTerm:
+                    BaseUpgradeHandler.UpgradeAttackTerm(AttackHandler);
+                    break;
+            }
         }
 
         public List<CardZoneCoordinate> GetSpawnTiles(CardZoneCoordinate coordinate)
@@ -77,8 +87,8 @@ namespace Script.Creature.Handler
                     int targetCol = coordinate.Col + x;
                     int targetRow = coordinate.Row - y;
 
-                    if (targetCol < 0 || targetCol >= CardZoneCoordinate.MAXCOL ||
-                        targetRow < 0 || targetRow >= CardZoneCoordinate.MAXROW)
+                    if (targetCol < 0 || targetCol > CardZoneCoordinate.MAXCOL ||
+                        targetRow < 0 || targetRow > CardZoneCoordinate.MAXROW)
                     {
                         return null;
                     }

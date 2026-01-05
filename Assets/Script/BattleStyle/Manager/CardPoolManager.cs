@@ -14,12 +14,14 @@ namespace Script.BattleStyle.Manager
 
         private float probabilitySum;
         private List<CreatureSummonHandler> cardPool;
+        private HashSet<CreatureSummonHandler> originalCards;
 
         protected override void Awake()
         {
             isDontDestroy = false;
             base.Awake();
             cardPool = new List<CreatureSummonHandler>();
+            originalCards = new HashSet<CreatureSummonHandler>();
         }
 
         public void InitialCreature(List<CreatureData> initialCreatures)
@@ -32,9 +34,12 @@ namespace Script.BattleStyle.Manager
                         Instantiate(creature.prefab, transform.position, Quaternion.identity);
                     temp.transform.SetParent(transform);
                     temp.SetActive(false);
+
                     CreatureHandler creatureHandler = temp.GetComponent<CreatureHandler>();
                     creatureHandler.Initialize(creature);
+
                     AddCardInPool(creatureHandler.CreatureSummonHandler);
+                    originalCards.Add(creatureHandler.CreatureSummonHandler);
                 }
             }
         }
@@ -42,9 +47,19 @@ namespace Script.BattleStyle.Manager
         public void ReRoll()
         {
             List<CreatureSummonHandler> creatures = new List<CreatureSummonHandler>();
-            for (int i = 0; i < Constant.BattleSystem.MAX_CARDS; i++)
+
+            while (creatures.Count < Constant.BattleSystem.MAX_CARDS)
             {
-                creatures.Add(GetRandomCreature());
+                CreatureSummonHandler pickedCard = GetRandomCreature();
+
+                if (originalCards.Contains(pickedCard))
+                {
+                    creatures.Add(pickedCard);
+                }
+                else if (!creatures.Contains(pickedCard))
+                {
+                    creatures.Add(pickedCard);
+                }
             }
 
             cardPoolHandler.SetCards(creatures);

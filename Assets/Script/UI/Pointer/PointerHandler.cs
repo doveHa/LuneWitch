@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Script.BattleStyle.Handler;
 using Script.UI.Pointer.Drag;
 using Script.UI.Pointer.Hover;
 using UnityEngine;
@@ -51,6 +52,11 @@ namespace Script.UI.Pointer
 
         public void OnPointerDown(PointerEventData eventData)
         {
+            if (GetComponent<CardHandler>().IsUsed)
+            {
+                return;
+            }
+            
             if (CanDrag && TryGetComponent(out IDrag drag))
             {
                 isDragging = true;

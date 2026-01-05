@@ -65,6 +65,16 @@ namespace Script.Creature.AttackHandler
             }
         }
 
+        public void UpgradeAttack(int atk)
+        {
+            Atk += atk;
+        }
+
+        public void UpgradeAttackTerm(float attackTerm)
+        {
+            AttackTerm -= attackTerm;
+        }
+
         public abstract HashSet<CardZoneCoordinate> AttackRanges();
 
         protected abstract void Attack(List<EnemyHandler> enemies);

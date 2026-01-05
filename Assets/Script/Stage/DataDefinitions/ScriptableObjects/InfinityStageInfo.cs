@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Script.Stage.DataDefinitions.ScriptableObjects
 {
+    [CreateAssetMenu(fileName = "StageInfo", menuName = "StageInfo/InfinityStageInfo")]
     public class InfinityStageInfo : ScriptableObject
     {
         public string stageTitle = "무한의 탑";

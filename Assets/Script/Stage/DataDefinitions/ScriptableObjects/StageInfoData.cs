@@ -1,9 +1,10 @@
 ﻿using Script.Enemy.DataDefinitions.ScriptableObjects;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Script.Stage.DataDefinitions.ScriptableObjects
 {
-    [CreateAssetMenu(fileName = "StageInfo", menuName = "StageInfo")]
+    [CreateAssetMenu(fileName = "StageInfo", menuName = "StageInfo/StoryStageInfo")]
     public class StageInfoData : ScriptableObject
     {
         public int chapter;
@@ -11,6 +12,6 @@ namespace Script.Stage.DataDefinitions.ScriptableObjects
         public int enemyCount;
         public string roundTitle;
         public Sprite backGroundImage;
-        public EnemyData[] enemyDatas;
+        public EnemyData[] enemyData;
     }
 }

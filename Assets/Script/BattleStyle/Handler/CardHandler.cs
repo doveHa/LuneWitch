@@ -1,4 +1,5 @@
 ﻿using Script.BattleStyle.DataDefinitions.Data;
+using Script.BattleStyle.DataDefinitions.Enum;
 using Script.BattleStyle.Manager;
 using Script.Creature.Handler;
 using Script.UI.Pointer;
@@ -14,7 +15,9 @@ namespace Script.BattleStyle.Handler
         [SerializeField] private Image moveImage;
         [SerializeField] private GameObject usedUI;
         [SerializeField] private TextMeshProUGUI descriptionText;
-        
+
+        public bool IsUsed { get; private set; }
+
         public CreatureHandler CreatureHandler { get; private set; }
         private Color originalColor;
         private Color cantUseColor;
@@ -29,6 +32,7 @@ namespace Script.BattleStyle.Handler
         {
             CreatureHandler = creatureHandler;
             usedUI.SetActive(false);
+            IsUsed = false;
             VarInitialize();
             SetImage();
             UseCheck();
@@ -40,10 +44,10 @@ namespace Script.BattleStyle.Handler
             SetUsedUI();
         }
 
-        public void UpgradeCard()
+        public void UpgradeCard(UpgradeType upgradeType)
         {
             CostManager.Manager.UseCost(CreatureHandler.CreatureData.cost);
-            CreatureHandler.UpgradeCreature();
+            CreatureHandler.UpgradeCreature(upgradeType);
             SetUsedUI();
         }
 
@@ -77,6 +81,7 @@ namespace Script.BattleStyle.Handler
 
         private void SetUsedUI()
         {
+            IsUsed = true;
             usedUI.SetActive(true);
         }
 

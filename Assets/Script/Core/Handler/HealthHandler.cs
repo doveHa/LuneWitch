@@ -12,9 +12,15 @@
             Health = maxHealth;
         }
 
-        public void HealthUpgrade(float upgradeRate)
+        public void HealthRateUpgrade(float upgradeRate)
         {
             MaxHealth += (int)(MaxHealth * upgradeRate);
+            Health += MaxHealth - Health;
+        }
+
+        public void HealthAddUpgrade(int health)
+        {
+            MaxHealth += health;
             Health += MaxHealth - Health;
         }
 

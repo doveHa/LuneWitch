@@ -90725,14 +90725,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3692813139004952743, guid: 175cf936d348fc543b61f6bc99afbf16, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3920310811077378492, guid: 175cf936d348fc543b61f6bc99afbf16, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5813494566108886805, guid: 175cf936d348fc543b61f6bc99afbf16, type: 3}
       propertyPath: m_Name
       value: AlwaysUI

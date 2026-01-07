@@ -15,24 +15,25 @@ namespace Script.UI.Pointer.Drag
         private List<CardZoneCoordinate> currentSpawnVisualList = new List<CardZoneCoordinate>();
         private CardZoneCoordinate lastHoveredCoord = null;
 
-        public void Click(GameObject target)
+        public void Click(PointerHandler pointer, GameObject target)
         {
             if (TryGetComponent(out IHover hover))
             {
                 hover.Exit();
             }
-            
+
             currentSpawnVisualList.Clear();
             lastHoveredCoord = null;
 
             CardHandler cardHandler = target.GetComponentInParent<CardHandler>();
             if (cardHandler.IsSummoned())
             {
-                GetComponentInParent<PointerHandler>().CanDrag = false;
+                pointer.CanDrag = false;
+                pointer.OnlyClick();
             }
         }
 
-        public void Drag(GameObject target)
+        public void Drag(PointerHandler pointer, GameObject target)
         {
             if (target == null)
             {
@@ -67,7 +68,7 @@ namespace Script.UI.Pointer.Drag
             }
         }
 
-        public void Drop(GameObject target)
+        public void Drop(PointerHandler pointer, GameObject target)
         {
             ClearVisuals();
             lastHoveredCoord = null;

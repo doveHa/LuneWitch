@@ -5585,7 +5585,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 1970050235}
-  data: {fileID: 11400000, guid: 1522881bce13b0047b77c9951cc3eb57, type: 2}
+  data: {fileID: 11400000, guid: 02b0f38c7a08bce4b8175264f4a0dca6, type: 2}
 --- !u!114 &795219271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7567,7 +7567,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 431859414}
-  data: {fileID: 11400000, guid: 1522881bce13b0047b77c9951cc3eb57, type: 2}
+  data: {fileID: 11400000, guid: 5945ec5650f0001428c1d188a5f19fb2, type: 2}
 --- !u!114 &1028407300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8141,7 +8141,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: 'Citizen
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8493,7 +8495,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Charger
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -11317,7 +11319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 1826024830}
-  data: {fileID: 11400000, guid: 1522881bce13b0047b77c9951cc3eb57, type: 2}
+  data: {fileID: 11400000, guid: a5ee1d405a8ddaa49be928a0a0b5e48d, type: 2}
 --- !u!114 &1550059740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12260,7 +12262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 889899668}
-  data: {fileID: 11400000, guid: 1522881bce13b0047b77c9951cc3eb57, type: 2}
+  data: {fileID: 11400000, guid: f953c459caa90c24ea375ff562ee9dea, type: 2}
 --- !u!114 &1620401536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13026,7 +13028,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Nurse
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -13377,6 +13379,7 @@ GameObject:
   - component: {fileID: 1748884732}
   - component: {fileID: 1748884734}
   - component: {fileID: 1748884733}
+  - component: {fileID: 1748884735}
   m_Layer: 0
   m_Name: 3 Sheet
   m_TagString: DropZone
@@ -13459,6 +13462,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.3, y: 1.3}
   m_EdgeRadius: 0
+--- !u!114 &1748884735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1748884731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24f2e989f4783af478c1c03ea78fb45d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 0, g: 1, b: 0, a: 1}
 --- !u!1 &1756773992
 GameObject:
   m_ObjectHideFlags: 0
@@ -13609,7 +13625,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Shield
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -15247,7 +15263,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Article
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

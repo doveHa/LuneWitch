@@ -16,10 +16,23 @@ namespace Script.BattleStyle.Handler
 
         public void SetCards(List<CreatureSummonHandler> cards)
         {
-            for (int i = 0; i < Constant.BattleSystem.MAX_CARDS; i++)
+            for (int i = 0; i < Constant.BattleSystem.MAX_CARDS - 1; i++)
             {
                 cardHandlers[i].SetCard(cards[i].GetComponent<CreatureHandler>());
             }
+        }
+
+        public CardHandler GetCardSlot(CreatureSummonHandler summon)
+        {
+            foreach (CardHandler cardHandler in cardHandlers)
+            {
+                if (cardHandler.CreatureHandler.CreatureSummonHandler == summon)
+                {
+                    return cardHandler;
+                }
+            }
+
+            return null;
         }
     }
 }

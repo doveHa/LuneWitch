@@ -7,7 +7,7 @@ namespace Script.Stage.ButtonOnClick
     {
         private float initialSpeed;
         private float[] speedStep = { 1.0f, 2.0f, 3.0f };
-
+        private string[] speedText = { "1X", "2X", "3X" };
         private int currentIndex = 0;
 
         void Start()
@@ -22,7 +22,7 @@ namespace Script.Stage.ButtonOnClick
             currentIndex %= speedStep.Length;
             Time.timeScale = speedStep[currentIndex];
             Time.fixedDeltaTime = initialSpeed * speedStep[currentIndex];
-            GetComponentInChildren<TextMeshProUGUI>().text = currentIndex.ToString();
+            GetComponentInChildren<TextMeshProUGUI>().text = speedText[currentIndex];
         }
     }
 }

@@ -14,23 +14,20 @@ namespace Script.Enemy.Handler
             rigidbody = GetComponent<Rigidbody2D>();
         }
 
-        void Start()
-        {
-            Walk();
-        }
-
         public void Initialize(float speed)
         {
             Speed = speed;
         }
 
-        public void Walk()
+        public void StartWalk()
         {
+            Debug.Log("Start walk");
             rigidbody.linearVelocity = Vector2.left * Speed;
         }
 
         public void StopWalk()
         {
+            Debug.Log("Stop Walk");
             rigidbody.linearVelocity = Vector2.zero;
         }
 
@@ -59,7 +56,7 @@ namespace Script.Enemy.Handler
             }
 
             transform.position = endPos;
-            Walk();
+            StartWalk();
         }
     }
 }

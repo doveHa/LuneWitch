@@ -1,25 +1,10 @@
 fileFormatVersion: 2
-guid: 222da263713061d4594319bdab6b0d87
+guid: 83f681edd42f1bc4fb5df5612658835e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1921365333731528149
-    second: "\uB3CC\uACA9\uAE30\uC0AC \uACF5\uACA9_0"
-  - first:
-      213: -4991763707542161839
-    second: "\uB3CC\uACA9\uAE30\uC0AC \uACF5\uACA9_1"
-  - first:
-      213: -7271143172573527973
-    second: "\uB3CC\uACA9\uAE30\uC0AC \uACF5\uACA9_2"
-  - first:
-      213: -309279215393770700
-    second: "\uB3CC\uACA9\uAE30\uC0AC \uACF5\uACA9_3"
-  - first:
-      213: -982577749728274864
-    second: "\uB3CC\uACA9\uAE30\uC0AC \uACF5\uACA9_4"
-  - first:
-      213: -1963917658148533363
-    second: "\uB3CC\uACA9\uAE30\uC0AC \uACF5\uACA9_5"
+      213: 6614103314484744707
+    second: Shield_Hit_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -52,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -124,106 +109,27 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Charger_Attack_0
+      name: Shield_Hit_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 3
         y: 0
-        width: 176
-        height: 168
+        width: 154
+        height: 167
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 8d88de6017638474d909ab165f1f0f08
-      internalID: -1746326979
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Charger_Attack_2
-      rect:
-        serializedVersion: 2
-        x: 352
-        y: 0
-        width: 176
-        height: 168
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 151d14a057b8ada47b442e4ee55f6504
-      internalID: 494514605
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Charger_Attack_1
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 0
-        width: 176
-        height: 168
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4a361817b3abef349a093f19d499b58b
-      internalID: -856525784
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Charger_Attack_3
-      rect:
-        serializedVersion: 2
-        x: 528
-        y: 0
-        width: 176
-        height: 168
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7bfa7ff32c59df343b4f7a0f9fdce58b
-      internalID: -1366289531
+      spriteID: 302d897ebe30acb50800000000000000
+      internalID: 6614103314484744707
       vertices: []
       indices: 
       edges: []
@@ -232,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 737d6b359ccf06341b0ac96b1d33012e
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -240,14 +146,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":1.0},"gridSpriteSize":{"x":176.0,"y":168.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      Charger_Attack_0: -1746326979
-      Charger_Attack_1: -856525784
-      Charger_Attack_2: 494514605
-      Charger_Attack_3: -1366289531
+      Shield_Hit_0: 6614103314484744707
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

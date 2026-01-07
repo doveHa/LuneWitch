@@ -86,10 +86,19 @@ namespace Script.BattleStyle.Manager
             cardPool.Add(card);
         }
 
+        public void RemoveCardInPool(CreatureSummonHandler card)
+        {
+            if (cardPoolHandler.GetCardSlot(card) != null)
+            {
+                cardPoolHandler.GetCardSlot(card).SetUsedUI();
+            }
+            RemoveTotalProbability(card);
+            cardPool.Remove(card);
+        }
+
         public void UpgradeCard(CreatureSummonHandler card)
         {
-            cardPool.Remove(card);
-            RemoveTotalProbability(card);
+            RemoveCardInPool(card);
             card.SetNextProbability();
             AddCardInPool(card);
         }

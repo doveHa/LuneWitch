@@ -52,18 +52,21 @@ namespace Script.UI.Pointer
 
         public void OnPointerDown(PointerEventData eventData)
         {
-            if (GetComponent<CardHandler>().IsUsed)
+            if (TryGetComponent<CardHandler>(out var handler))
             {
-                return;
+                if (handler.IsUsed)
+                {
+                    return;
+                }
             }
-            
+
             if (CanDrag && TryGetComponent(out IDrag drag))
             {
                 isDragging = true;
                 originalPos = target.transform.position;
                 offset = rectTransform.localPosition - GetMousePos(eventData);
 
-                drag.Click(target);
+                drag.Click(this, target);
             }
             else
             {
@@ -86,7 +89,7 @@ namespace Script.UI.Pointer
                 {
                     if (result.gameObject.transform.CompareTag("DropZone"))
                     {
-                        drag.Drag(result.gameObject);
+                        drag.Drag(this, result.gameObject);
                         foundDropZone = true;
                         break;
                     }
@@ -94,7 +97,7 @@ namespace Script.UI.Pointer
 
                 if (!foundDropZone)
                 {
-                    drag.Drag(null);
+                    drag.Drag(this , null);
                 }
             }
             else
@@ -119,7 +122,7 @@ namespace Script.UI.Pointer
             {
                 if (result.gameObject.transform.CompareTag("DropZone"))
                 {
-                    GetComponent<IDrag>().Drop(result.gameObject);
+                    GetComponent<IDrag>().Drop(this, result.gameObject);
                     MoveOriginalSpot();
                     return;
                 }

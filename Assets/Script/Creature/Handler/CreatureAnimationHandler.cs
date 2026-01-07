@@ -8,26 +8,43 @@ namespace Script.Creature.Handler
 {
     public class CreatureAnimationHandler : AnimationHandler
     {
+        [SerializeField] private SpriteRenderer creatureSprite;
+        [SerializeField] private GameObject hitEffectObject;
         [SerializeField] private ParticleSystem deathParticles;
 
         private int attackMotionParameter;
+        private SpriteRenderer hitEffectSprite;
+
+        void Start()
+        {
+            hitEffectSprite = hitEffectObject.GetComponent<SpriteRenderer>();
+        }
 
         protected override void SetParameter()
         {
             SetAttackParameter("Attack");
-            SetHitParameter("Hit");
             SetDeathParameter("Death");
             SetAttackMotionParameter("AttackMotion");
         }
 
-        public override void PlayAttackAnimation()
+        public override void PlayHitAnimation()
         {
-            Animator.SetTrigger(attackParameter);
+            StartCoroutine(WaitDelayAndHit());
         }
 
         public override void PlayDeathAnimation()
         {
             StartCoroutine(DestroyCoroutine());
+        }
+
+        private IEnumerator WaitDelayAndHit()
+        {
+            Animator.speed = 0f;
+            hitEffectObject.SetActive(true);
+            hitEffectSprite.sprite = creatureSprite.sprite;
+            yield return new WaitForSeconds(Constant.BattleSystem.HIT_TIME);
+            hitEffectObject.SetActive(false);
+            Animator.speed = 1f;
         }
 
         private IEnumerator DestroyCoroutine()

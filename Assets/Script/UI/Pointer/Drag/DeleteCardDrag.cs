@@ -12,15 +12,15 @@ namespace Script.UI.Pointer.Drag
             GetComponent<PointerHandler>().CanDrag = true;
         }
 
-        public void Click(GameObject target)
+        public void Click(PointerHandler pointer, GameObject target)
         {
         }
 
-        public void Drag(GameObject target)
+        public void Drag(PointerHandler pointer, GameObject target)
         {
         }
 
-        public void Drop(GameObject target)
+        public void Drop(PointerHandler pointer, GameObject target)
         {
             if (target.TryGetComponent(out CardZoneHandler cardZoneHandler) && cardZoneHandler.IsSummoned())
             {

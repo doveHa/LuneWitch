@@ -7,9 +7,10 @@ namespace Script.Core.Handler
     {
         protected AnimationHandler AnimationHandler;
         public HealthHandler HealthHandler;
-        
-        public void Hit(int damage)
+
+        public virtual void Hit(int damage)
         {
+            Debug.Log("Hit");
             AnimationHandler.PlayHitAnimation();
             HealthHandler.Hit(damage);
 

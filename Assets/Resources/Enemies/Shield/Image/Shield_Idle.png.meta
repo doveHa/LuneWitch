@@ -138,10 +138,10 @@ TextureImporter:
       name: Shield_Idle_0
       rect:
         serializedVersion: 2
-        x: 4
+        x: 0
         y: 0
-        width: 152
-        height: 166
+        width: 175
+        height: 168
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,10 +160,10 @@ TextureImporter:
       name: Shield_Idle_1
       rect:
         serializedVersion: 2
-        x: 176
+        x: 175
         y: 0
-        width: 152
-        height: 164
+        width: 175
+        height: 168
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,10 +182,10 @@ TextureImporter:
       name: Shield_Idle_2
       rect:
         serializedVersion: 2
-        x: 358
+        x: 350
         y: 0
-        width: 160
-        height: 162
+        width: 175
+        height: 168
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,10 +204,10 @@ TextureImporter:
       name: Shield_Idle_3
       rect:
         serializedVersion: 2
-        x: 534
+        x: 525
         y: 0
-        width: 160
-        height: 164
+        width: 175
+        height: 168
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,7 +236,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":1.0},"gridSpriteSize":{"x":161.0,"y":168.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":1.0},"gridSpriteSize":{"x":175.0,"y":168.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Shield_Idle_0: 130294660
       Shield_Idle_1: 1386518991

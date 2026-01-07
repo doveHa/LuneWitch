@@ -79,7 +79,7 @@ namespace Script.BattleStyle.Handler
             }
         }
 
-        private void SetUsedUI()
+        public void SetUsedUI()
         {
             IsUsed = true;
             usedUI.SetActive(true);

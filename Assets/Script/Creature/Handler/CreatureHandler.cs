@@ -38,6 +38,7 @@ namespace Script.Creature.Handler
 
         public override void Dead()
         {
+            CardPoolManager.Manager.RemoveCardInPool(CreatureSummonHandler);
             AnimationHandler.PlayDeathAnimation();
             Destroy(gameObject);
         }

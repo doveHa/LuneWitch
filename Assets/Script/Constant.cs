@@ -52,6 +52,8 @@ namespace Script
         public static class BattleSystem
         {
             public const int MAX_CARDS = 4;
+
+            public const float HIT_TIME = 0.3f;
         }
 
         public static class Scene

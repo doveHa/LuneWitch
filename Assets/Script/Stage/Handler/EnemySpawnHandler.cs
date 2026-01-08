@@ -8,7 +8,6 @@ namespace Script.Stage.Handler
 {
     public class EnemySpawnHandler : MonoBehaviour
     {
-        //[SerializeField] private EnemySpawnPointHandler[] spawnPoints;
         private EnemySpawnPointHandler[] spawnPoints;
         private float healthRate = 1.0f;
 
@@ -40,13 +39,11 @@ namespace Script.Stage.Handler
 
         private IEnumerator SpawnEnemies(int spawnCount, List<EnemyData> enemies)
         {
-            float baseInterval = Constant.BattleSystem.WAVE_DURATION / spawnCount;
-
             for (int i = 0; i < spawnCount; i++)
             {
-                float randomInterval = baseInterval * Random.Range(0.8f, 1.2f);
+                float randomInterval = Random.Range(Constant.BattleSystem.MIN_SPAWN_TERM, Constant.BattleSystem.MAX_SPAWN_TERM);
 
-                yield return new WaitForSecondsRealtime(randomInterval);
+                yield return new WaitForSeconds(randomInterval);
 
                 int enemyIndex = Random.Range(0, enemies.Count);
                 int positionIndex = Random.Range(0, spawnPoints.Length);

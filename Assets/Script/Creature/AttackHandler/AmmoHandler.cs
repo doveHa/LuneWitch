@@ -1,4 +1,5 @@
-﻿using Script.Enemy.Handler;
+﻿using Script.Boss.Handler;
+using Script.Enemy.Handler;
 using UnityEngine;
 
 namespace Script.Creature.AttackHandler
@@ -26,6 +27,11 @@ namespace Script.Creature.AttackHandler
             if (other.CompareTag("Enemy"))
             {
                 other.GetComponentInChildren<EnemyHandler>().Hit(atk);
+                Destroy(gameObject);
+            }
+            else if (other.CompareTag("Boss"))
+            {
+                other.GetComponentInChildren<BossHandler>().Hit(atk);
                 Destroy(gameObject);
             }
         }

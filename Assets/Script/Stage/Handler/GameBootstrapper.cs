@@ -18,6 +18,11 @@ namespace Script.Stage.StageHandler
                 InfinityStageHandler handler = managerObject.AddComponent<InfinityStageHandler>();
                 handler.Setup(sceneReferences);
             }
+            else if(SceneLoadManager.SelectedChapterNo == 2 && SceneLoadManager.SelectedRoundNo == 3)
+            {
+                BossStageHandler handler = managerObject.AddComponent<BossStageHandler>();
+                handler.Setup(sceneReferences);
+            }
             else
             {
                 StoryStageHandler handler = managerObject.AddComponent<StoryStageHandler>();

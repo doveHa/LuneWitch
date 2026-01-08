@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Script.Boss.Handler;
 using Script.Core.Manager;
 using Script.Manager;
 using Script.Stage.Abstaractions;
@@ -8,8 +9,10 @@ using UnityEngine;
 
 namespace Script.Stage.StageHandler
 {
-    public class StoryStageHandler : StageHandlerBase
+    public class BossStageHandler : StageHandlerBase
     {
+        public BossHandler BossHandler { get; private set; }
+
         public override void Setup(SceneReferences references)
         {
             base.Setup(references);
@@ -26,15 +29,28 @@ namespace Script.Stage.StageHandler
             SpawnCount = data.enemyCount;
             SetEnemyData(data.enemyData);
             SetPlayer();
+            SummonBoss();
         }
 
         public override IEnumerator StartGame()
         {
-            GameFlowManager.Manager.SetTargetCount(SpawnCount);
-            GameFlowManager.Manager.StartWaveLogic();
-            
-            sceneReferences.spawner.SpawnStart(SpawnCount, EnemyData);
-            yield return new WaitUntil(() => GameFlowManager.Manager.IsAllKill);
+            while (!BossHandler.IsDead())
+            {
+                BossHandler.StartBossState();
+                GameFlowManager.Manager.SetTargetCount(SpawnCount);
+                GameFlowManager.Manager.StartWaveLogic();
+
+                sceneReferences.spawner.SpawnStart(SpawnCount, EnemyData);
+                yield return new WaitUntil(() => GameFlowManager.Manager.IsAllKill);
+            }
+        }
+
+        private void SummonBoss()
+        {
+            GameObject bossObject = Instantiate(ResourceManager.Load<GameObject>
+                (Constant.ResourcePath.BOSS_PREFAB), transform);
+            bossObject.name = "Boss";
+            BossHandler = bossObject.GetComponentInChildren<BossHandler>();
         }
     }
 }

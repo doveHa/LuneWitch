@@ -4,6 +4,7 @@ using Script.Core.Manager;
 using Script.Manager;
 using Script.Stage.Abstaractions;
 using Script.Stage.Handler;
+using Script.Stage.StageHandler;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,8 +22,7 @@ namespace Script.Stage.Manager
         private float startTime;
         public bool IsAllKill { get; private set; }
 
-        private float waveDuration;
-        private float currentWaveTime;
+        private float sliderSpeed;
         private bool isWaveInProgress;
 
         private StageHandlerBase currentStage;
@@ -48,17 +48,15 @@ namespace Script.Stage.Manager
             UpdateWaveProgress();
         }
 
-        public void StartWaveTimer()
+        public void StartWaveLogic()
         {
-            waveDuration = Constant.BattleSystem.WAVE_DURATION;
-            currentWaveTime = 0f;
-            isWaveInProgress = true;
+            waveProgressSlider.maxValue = targetCount;
+            waveProgressSlider.value = 0f;
 
-            if (waveProgressSlider != null)
-            {
-                waveProgressSlider.maxValue = 1.0f;
-                waveProgressSlider.value = 0f;
-            }
+            float avgInterval = (Constant.BattleSystem.MIN_SPAWN_TERM + Constant.BattleSystem.MAX_SPAWN_TERM) / 2;
+
+            sliderSpeed = 1.0f / avgInterval;
+            isWaveInProgress = true;
         }
 
         public EnemySpawnHandler Spawner()
@@ -76,6 +74,12 @@ namespace Script.Stage.Manager
         public void KillEnemy()
         {
             killCount++;
+            Debug.Log($"{killCount}/{targetCount}");
+            if (currentStage.GetType() == typeof(BossStageHandler))
+            {
+                (currentStage as BossStageHandler).BossHandler.Hit(Constant.Boss.ENEMY_KILL_DMG);
+            }
+
             if (killCount >= targetCount)
             {
                 IsAllKill = true;
@@ -94,16 +98,19 @@ namespace Script.Stage.Manager
             {
                 return;
             }
-            
-            currentWaveTime += Time.deltaTime;
-            
-            waveProgressSlider.value = Mathf.Clamp01(currentWaveTime / waveDuration);
 
-            if (currentWaveTime >= waveDuration)
+            float visualLimit = killCount + 1;
+
+            if (waveProgressSlider.value < visualLimit)
             {
-                isWaveInProgress = false;
+                waveProgressSlider.value += sliderSpeed * Time.deltaTime * 0.5f;
+            }
+            else
+            {
+                waveProgressSlider.value = visualLimit;
             }
         }
+
         private IEnumerator GameLoop()
         {
             yield return !RoundPanel.activeInHierarchy;

@@ -28,17 +28,18 @@ namespace Script.Boss.Handler
 
         private void Pattern1()
         {
-            
+            Debug.Log("Pattern 1");
         }
 
         private void Pattern2()
         {
-            
+            Debug.Log("Pattern 2");
+
         }
 
         private void Pattern3()
         {
-            
+            Debug.Log("Pattern 3");
         }
     }
 }

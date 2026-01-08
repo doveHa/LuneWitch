@@ -34,15 +34,21 @@ namespace Script.Stage.StageHandler
                 sceneReferences.waveTitle.text = $"Wave {currentWave}";
 
                 int waveEnemyCount = stageInfo.enemyCount + currentWave * 3;
-                
+
                 GameFlowManager.Manager.SetTargetCount(waveEnemyCount);
-                GameFlowManager.Manager.StartWaveTimer();
-                
+                GameFlowManager.Manager.StartWaveLogic();
+
                 SpawnEnemies(waveEnemyCount);
                 yield return new WaitUntil(() => GameFlowManager.Manager.IsAllKill);
                 yield return new WaitForSeconds(3.0f);
-                currentWave++;
+
+                NextWave();
             }
+        }
+
+        private void NextWave()
+        {
+            currentWave++;
         }
 
         private void SpawnEnemies(int count)

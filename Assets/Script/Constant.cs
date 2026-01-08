@@ -47,6 +47,8 @@ namespace Script
             }
 
             public static string INFINITY_STAGE_INFO_DATA_PATH = "StageInfo/InfinityStageData";
+
+            public static string BOSS_PREFAB = "Enemies/Boss/Prefab/BossObject";
         }
 
         public static class BattleSystem
@@ -55,7 +57,9 @@ namespace Script
 
             public const float HIT_TIME = 0.3f;
 
-            public const float WAVE_DURATION = 120f;
+            public const float MIN_SPAWN_TERM = 3f;
+
+            public const float MAX_SPAWN_TERM = 6f;
         }
 
         public static class Scene
@@ -96,6 +100,8 @@ namespace Script
         public static class Boss
         {
             public static int ATTACKTERM = 5;
+            public static int HEALTH = 4500;
+            public static int ENEMY_KILL_DMG = 150;
         }
     }
 }

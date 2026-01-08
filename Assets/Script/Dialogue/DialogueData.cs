@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.Rendering;
 
 public enum SpeakerType { None, Left, Right }
 
@@ -16,7 +17,7 @@ public class DialogueLine
     [TextArea(3, 5)]
     public string text;
 
-    [Tooltip("왼쪽 캐릭터 스프라이트 (비워두면 기존 유지/숨김 처리 가능)")]
+    [Tooltip("왼쪽 캐릭터 스프라이트")]
     public Sprite leftSprite;
 
     [Tooltip("오른쪽 캐릭터 스프라이트")]
@@ -26,5 +27,18 @@ public class DialogueLine
 [CreateAssetMenu(fileName = "New Story", menuName = "Dialogue/Story Data")]
 public class DialogueData : ScriptableObject
 {
-    public List<DialogueLine> lines; // 대사 리스트
+    [Header("Intro")]
+    public string introTitle;
+    [TextArea] public string introDescription;
+
+    [Header("Background")]
+    public Sprite backgroundSprite;
+    public bool isIllustrationMode; // 일러스트 모드면 캐릭터 이미지X
+
+    [Header("Dialogue Lines")]
+    public List<DialogueLine> lines;
+
+    [Header("Outro")]
+    public bool isChapterEnd; // 챕터 종료 여부 -> true면 보상 패널
+    public string nextSceneName; // 다음 장면 이름, BattleScene or Main
 }

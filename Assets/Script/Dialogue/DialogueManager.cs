@@ -1,39 +1,47 @@
 using UnityEngine;
-using UnityEngine.UI; // Button 컴포넌트 사용을 위해 필수
+using UnityEngine.UI;
 using TMPro;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance;
 
-    [Header("UI Components")]
-    public GameObject dialoguePanel;
+    [Header("Intro Canvas")]
+    public GameObject introPanel;
+    public TextMeshProUGUI introTitleText;
+    public TextMeshProUGUI introDescText;
+    public float introDuration = 2.0f; // 인트로 패널 표시 시간
+    public float fadeDuration = 1.0f;  // 페이드 아웃 시간
+
+    [Header("Main Dialogue")]
+    public GameObject dialogueCanvas;
+    public Image backgroundImage;
     public Image leftCharImage;
     public Image rightCharImage;
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
 
+    [Header("Reward Panel")]
+    public GameObject rewardPanel;
+
     [Header("Buttons")]
     public Button nextButton; // 다음 대사 버튼
     public Button skipButton; // 스킵 버튼
 
-    [Header("Audio")]
-    public ToonyVoices toonyVoices;
-
     [Header("Settings")]
+    public ToonyVoices toonyVoices;
     public Color inactiveColor = new Color(0.5f, 0.5f, 0.5f, 1f);
     public float activeScale = 1.0f;
     public float inactiveScale = 0.85f;
-
     [Range(0.01f, 0.2f)]
-    public float typingSpeed = 0.15f;
+    public float typingSpeed = 0.15f; // 타이핑 속도 조절 필요
+
 
     private DialogueData currentStory;
     private int currentLineIndex = 0;
     private bool isDialogueActive = false;
-
-    // 타이핑 효과
     private bool isTyping = false;
     private string currentFullText = "";
     private Coroutine typingCoroutine;
@@ -41,13 +49,15 @@ public class DialogueManager : MonoBehaviour
     private void Awake()
     {
         if (Instance == null) Instance = this;
-        dialoguePanel.SetActive(false);
+
+        // 초기화
+        if (introPanel) introPanel.SetActive(false);
+        if (dialogueCanvas) dialogueCanvas.SetActive(false);
+        if (rewardPanel) rewardPanel.SetActive(false);
     }
 
     private void Start()
     {
-        // 버튼에 리스너(기능) 연결
-        // 람다식을 사용하여 안전하게 연결하거나 함수 이름을 직접 넣습니다.
         if (nextButton != null)
             nextButton.onClick.AddListener(OnNextBtnClicked);
 
@@ -55,7 +65,60 @@ public class DialogueManager : MonoBehaviour
             skipButton.onClick.AddListener(OnSkipBtnClicked);
     }
 
-    public void StartDialogue(DialogueData storyData)
+    // 외부 호출 시작 함수
+    public void PlayStory(DialogueData storyData)
+    {
+        currentStory = storyData;
+        currentLineIndex = 0;
+        isDialogueActive = true;
+
+        // 1. 인트로 시작
+        StartCoroutine(PlayIntroSequence());
+    }
+
+    // 인트로 연출 코루틴
+    IEnumerator PlayIntroSequence()
+    {
+        // UI 초기 설정
+        dialogueCanvas.SetActive(false); // 대화창 숨김
+        if (rewardPanel) rewardPanel.SetActive(false);
+
+        // 배경 설정
+        if (backgroundImage != null && currentStory.backgroundSprite != null)
+            backgroundImage.sprite = currentStory.backgroundSprite;
+
+        // 인트로 패널 활성화 및 텍스트 설정
+        if (introPanel != null)
+        {
+            introPanel.SetActive(true);
+            CanvasGroup canvasGroup = introPanel.GetComponent<CanvasGroup>();
+            if (canvasGroup == null) canvasGroup = introPanel.AddComponent<CanvasGroup>();
+
+            canvasGroup.alpha = 1f; // 완전 불투명
+            if (introTitleText) introTitleText.text = currentStory.introTitle;
+            if (introDescText) introDescText.text = currentStory.introDescription;
+
+            // 대기
+            yield return new WaitForSeconds(introDuration);
+
+            // 페이드 아웃 (검은 화면이 서서히 사라짐)
+            float timer = 0f;
+            while (timer < fadeDuration)
+            {
+                timer += Time.deltaTime;
+                canvasGroup.alpha = Mathf.Lerp(1f, 0f, timer / fadeDuration);
+                yield return null;
+            }
+
+            introPanel.SetActive(false); // 인트로 끄기
+        }
+
+        // 2. 대화창 켜고 대화 시작
+        dialogueCanvas.SetActive(true);
+        DisplayNextLine();
+    }
+
+/*    public void StartDialogue(DialogueData storyData)
     {
         currentStory = storyData;
         currentLineIndex = 0;
@@ -63,7 +126,7 @@ public class DialogueManager : MonoBehaviour
         dialoguePanel.SetActive(true);
 
         DisplayNextLine();
-    }
+    }*/
 
     // Next 버튼이 클릭되었을 때 실행
     public void OnNextBtnClicked()
@@ -113,19 +176,21 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = "";
         currentFullText = line.text; // 전체 문장 저장해두기
 
-        // 이미지 설정
-        if (line.leftSprite != null)
+        // 일러스트 모드 체크 후 배경 업데이트
+        if (currentStory.isIllustrationMode)
         {
-            leftCharImage.sprite = line.leftSprite;
-            leftCharImage.gameObject.SetActive(true);
+            // 일러스트 모드면 캐릭터 둘 다 숨김
+            if (leftCharImage) leftCharImage.gameObject.SetActive(false);
+            if (rightCharImage) rightCharImage.gameObject.SetActive(false);
         }
-        if (line.rightSprite != null)
+        else
         {
-            rightCharImage.sprite = line.rightSprite;
-            rightCharImage.gameObject.SetActive(true);
+            // 일반 모드면 캐릭터 이미지 업데이트
+            UpdateCharacterImages(line);
+            UpdateVisuals(line.speakerType);
         }
 
-        UpdateVisuals(line.speakerType);
+        //UpdateVisuals(line.speakerType);
 
         // 백로그 추가 (이전 대화 내용이 있다면)
         if (BacklogManager.Instance != null)
@@ -147,29 +212,21 @@ public class DialogueManager : MonoBehaviour
         currentLineIndex++;
     }
 
-    IEnumerator TypeText(string textToType)
+    void UpdateCharacterImages(DialogueLine line)
     {
-        isTyping = true;
-        dialogueText.text = ""; // 시작 전 초기화
-
-        foreach (char letter in textToType.ToCharArray())
+        // 왼쪽 이미지 업데이트 (비어있으면 기존 것 유지)
+        if (line.leftSprite != null && leftCharImage != null)
         {
-            dialogueText.text += letter; // 한 글자 추가
-            yield return new WaitForSeconds(typingSpeed); // 대기
+            leftCharImage.sprite = line.leftSprite;
+            leftCharImage.gameObject.SetActive(true);
         }
 
-        isTyping = false;
-    }
-
-    void CompleteTextImmediately()
-    {
-        if (typingCoroutine != null) StopCoroutine(typingCoroutine);
-
-        dialogueText.text = currentFullText; // 완성된 문장 바로 출력
-        isTyping = false;
-
-        // 텍스트 완성 시 소리도 멈추기
-        if (toonyVoices != null) toonyVoices.StopSpeech();
+        // 오른쪽 이미지 업데이트
+        if (line.rightSprite != null && rightCharImage != null)
+        {
+            rightCharImage.sprite = line.rightSprite;
+            rightCharImage.gameObject.SetActive(true);
+        }
     }
 
     void UpdateVisuals(SpeakerType speaker)
@@ -200,12 +257,53 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    IEnumerator TypeText(string textToType)
+    {
+        isTyping = true;
+        dialogueText.text = ""; // 시작 전 초기화
+
+        foreach (char letter in textToType.ToCharArray())
+        {
+            dialogueText.text += letter; // 한 글자 추가
+            yield return new WaitForSeconds(typingSpeed); // 대기
+        }
+
+        isTyping = false;
+    }
+
+    void CompleteTextImmediately()
+    {
+        if (typingCoroutine != null) StopCoroutine(typingCoroutine);
+
+        dialogueText.text = currentFullText; // 완성된 문장 바로 출력
+        isTyping = false;
+
+        // 텍스트 완성 시 소리도 멈추기
+        if (toonyVoices != null) toonyVoices.StopSpeech();
+    }
+
     void EndDialogue()
     {
         if (toonyVoices != null) toonyVoices.StopSpeech();
 
         isDialogueActive = false;
-        dialoguePanel.SetActive(false);
+        dialogueCanvas.SetActive(false);
         Debug.Log("대화 종료");
+
+        if (currentStory.isChapterEnd)
+        {
+            // 1장 2장 종료 -> 보상 패널 활성화
+            Debug.Log("보상 패널 활성화");
+            if (rewardPanel != null) rewardPanel.SetActive(true);
+        }
+        else
+        {
+            // 2. 소챕터 종료 -> 전투 씬으로 이동
+            Debug.Log($"소챕터 종료: {currentStory.nextSceneName} 씬으로 이동");
+            if (!string.IsNullOrEmpty(currentStory.nextSceneName))
+            {
+                SceneManager.LoadScene(currentStory.nextSceneName);
+            }
+        }
     }
 }

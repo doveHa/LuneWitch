@@ -13,6 +13,6 @@ public class StoryTest : MonoBehaviour
     // 예: 버튼 클릭 시 혹은 게임 시작 시
     public void TriggerStory()
     {
-        DialogueManager.Instance.StartDialogue(storyToPlay);
+        //DialogueManager.Instance.StartDialogue(storyToPlay);
     }
 }

@@ -28,6 +28,7 @@ namespace Script.Manager
             {
                 case 1:
                     SceneManager.LoadScene("Chapter 1 Story");
+                    // SceneManager.LoadScene("StoryScene");
                     break;
                 case 2:
                     SceneManager.LoadScene("Chapter 2 Story");

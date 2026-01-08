@@ -4,7 +4,12 @@ using UnityEngine.Audio;
 public class SoundManager : MonoBehaviour
 {
     //public static SoundManager Instance;
-
+    /*
+     * HR: 싱글톤을 쓰지 않는 이유는 PlayerPrefs를 이용해
+     * 하드 디스크에 BGM 및 SFX 볼륨 값을 저장하기 때문임.
+     * 싱글톤을 사용하니 Story 씬에서 에러 발생
+     * VolumeSettingHandler.cs 참고
+     */
     public AudioClip[] sfxClips;
     public int poolSize = 10;
     public AudioMixerGroup sfxMixerGroup;

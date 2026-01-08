@@ -13,8 +13,7 @@ namespace Script.Creature.Handler
         public bool IsOnSummoned { get; set; } = false;
         public float SummonChance { get; set; }
         public Probability Rarity { get; private set; } = Probability.Common;
-
-        public bool IsTemplate { get; set; } = false;
+        public int Cost { get; private set; }
 
         public void SetNextProbability()
         {
@@ -31,9 +30,31 @@ namespace Script.Creature.Handler
             }
         }
 
+        public void SetCost()
+        {
+            switch (Rarity)
+            {
+                case Probability.Rare:
+                    Cost = Constant.Upgrade.Cost.TO_SUPERRARE_COST;
+                    break;
+                case Probability.SuperRare:
+                    Cost = Constant.Upgrade.Cost.TO_ULTRARARE_COST;
+                    break;
+                case Probability.UltraRare:
+                    Cost = Constant.Upgrade.Cost.UPPER_ULTRARERE_COST;
+                    break;
+            }
+        }
+
+        public void Initialize(int cost)
+        {
+            Cost = cost;
+        }
+
         public CreatureSummonHandler FirstSummonInitialize()
         {
             SetNextProbability();
+            SetCost();
             IsOnSummoned = true;
             CardPoolManager.Manager.AddCardInPool(this);
             return this;

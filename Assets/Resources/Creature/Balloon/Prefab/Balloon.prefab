@@ -278,6 +278,7 @@ GameObject:
   - component: {fileID: 7256031534414054774}
   - component: {fileID: 6261519868874826293}
   - component: {fileID: 2505885102792291298}
+  - component: {fileID: 2913696447492913601}
   - component: {fileID: 1936838593575802131}
   - component: {fileID: -7761636038083233575}
   - component: {fileID: 6240769264667422077}
@@ -387,6 +388,33 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!50 &2913696447492913601
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804819288300844835}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &1936838593575802131
 BoxCollider2D:
   m_ObjectHideFlags: 0

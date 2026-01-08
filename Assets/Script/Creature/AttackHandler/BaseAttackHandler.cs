@@ -12,6 +12,9 @@ namespace Script.Creature.AttackHandler
         protected float AttackTerm;
         protected int Atk;
 
+        public int AttackTermUpgradeCount { get; private set; } = 0;
+        public int AtkUpgradeCount { get; private set; } = 0;
+
         public float CurrentCooldown { get; protected set; } = 0;
 
         public CardZoneCoordinate RootCoordinate { protected get; set; }
@@ -67,12 +70,17 @@ namespace Script.Creature.AttackHandler
 
         public void UpgradeAttack(int atk)
         {
+            AtkUpgradeCount++;
+
             Atk += atk;
         }
 
-        public void UpgradeAttackTerm(float attackTerm)
+        public void UpgradeAttackTerm()
         {
-            AttackTerm -= attackTerm;
+            AttackTermUpgradeCount++;
+
+            AttackTerm *= 1f - Constant.Upgrade.AttackTerm.ATTACKTERM_RATE;
+            AttackTerm = Mathf.Max(AttackTerm, Constant.Upgrade.AttackTerm.MIN_ATTACKTERM);
         }
 
         public abstract HashSet<CardZoneCoordinate> AttackRanges();

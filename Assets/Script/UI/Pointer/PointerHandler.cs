@@ -4,6 +4,7 @@ using Script.UI.Pointer.Drag;
 using Script.UI.Pointer.Hover;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace Script.UI.Pointer
 {
@@ -17,13 +18,16 @@ namespace Script.UI.Pointer
         public bool CanDrag { get; set; }
 
         private Vector3 offset, originalPos;
+        private Image targetImage;
         private RectTransform rectTransform;
         private bool isDragging;
         private Canvas canvas;
+        private Vector2 originalImageSize;
 
         void Awake()
         {
             rectTransform = target.GetComponent<RectTransform>();
+            targetImage = target.GetComponent<Image>();
             canvas = GetComponentInParent<Canvas>();
             CanDrag = false;
         }
@@ -66,6 +70,12 @@ namespace Script.UI.Pointer
                 originalPos = target.transform.position;
                 offset = rectTransform.localPosition - GetMousePos(eventData);
 
+                if (targetImage != null)
+                {
+                    originalImageSize = rectTransform.sizeDelta;
+                    targetImage.SetNativeSize();
+                }
+
                 drag.Click(this, target);
             }
             else
@@ -97,7 +107,7 @@ namespace Script.UI.Pointer
 
                 if (!foundDropZone)
                 {
-                    drag.Drag(this , null);
+                    drag.Drag(this, null);
                 }
             }
             else
@@ -114,7 +124,12 @@ namespace Script.UI.Pointer
             }
 
             isDragging = false;
-
+            
+            if (targetImage != null)
+            {
+                rectTransform.sizeDelta = originalImageSize;
+            }
+            
             List<RaycastResult> results = new List<RaycastResult>();
             EventSystem.current.RaycastAll(eventData, results);
 
@@ -145,7 +160,7 @@ namespace Script.UI.Pointer
         private Vector3 GetMousePos(PointerEventData eventData)
         {
             RectTransformUtility.ScreenPointToLocalPointInRectangle(
-                canvas.transform as RectTransform,
+                rectTransform.parent as RectTransform,
                 eventData.position,
                 canvas.worldCamera,
                 out Vector2 mousePos

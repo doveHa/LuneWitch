@@ -26,6 +26,7 @@ namespace Script.UI.MainScene.ArcanaListPage
             descriptionText.text = creature.description;
 
             creatureIcon.sprite = creature.characterImage;
+            creatureIcon.SetNativeSize();
         }
 
         public void PositionInitialize()

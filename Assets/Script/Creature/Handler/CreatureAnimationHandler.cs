@@ -17,7 +17,10 @@ namespace Script.Creature.Handler
 
         void Start()
         {
-            hitEffectSprite = hitEffectObject.GetComponent<SpriteRenderer>();
+            if (hitEffectObject != null)
+            {
+                hitEffectSprite = hitEffectObject.GetComponent<SpriteRenderer>();
+            }
         }
 
         protected override void SetParameter()
@@ -42,6 +45,7 @@ namespace Script.Creature.Handler
             Animator.speed = 0f;
             hitEffectObject.SetActive(true);
             hitEffectSprite.sprite = creatureSprite.sprite;
+            hitEffectObject.transform.position = creatureSprite.transform.position;
             yield return new WaitForSeconds(Constant.BattleSystem.HIT_TIME);
             hitEffectObject.SetActive(false);
             Animator.speed = 1f;

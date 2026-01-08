@@ -1,23 +1,25 @@
 ﻿using System.Collections;
+using Script.Character.Handler;
 using Script.Enemy.Handler;
+using Script.Player;
 using Script.Stage.Manager;
 using UnityEngine;
 
-namespace Script.Player
+namespace Script.Character.SkillHandler
 {
-    public class LuminaSkill : IPlayerSkill
+    public class IreneSkillHandler : BaseSkillHandler
     {
         public override void OnSkillUse()
         {
             particle.Play();
             StartCoroutine(AdjustDamage());
         }
-
+        
         private IEnumerator AdjustDamage()
         {
-            yield return new WaitUntil(() => particle.time / particle.totalTime > 0.5);
+            yield return new WaitUntil(() => particle.time / particle.totalTime > 0.7);
             Damage(GameFlowManager.Manager.Spawner().SpawnPoints());
-            GetComponent<PlayerAnimationController>().SkillEnd();
+            GetComponent<CharacterAnimationHandler>().SkillEnd();
         }
 
         private void Damage(Transform[] points)

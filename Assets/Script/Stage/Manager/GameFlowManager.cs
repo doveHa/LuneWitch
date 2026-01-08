@@ -1,9 +1,11 @@
 ﻿using System.Collections;
+using Script.Character.Handler;
 using Script.Core.Manager;
 using Script.Manager;
 using Script.Stage.Handler;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Script.Stage.Manager
 {
@@ -18,6 +20,7 @@ namespace Script.Stage.Manager
         [SerializeField] private GameObject EndGameScreen, GameOverScreen, GameWinScreen;
 
         private StageHandlerBase currentStage;
+        public CharacterHandler ChHandler { get; private set; }
 
         protected override void Awake()
         {
@@ -30,6 +33,7 @@ namespace Script.Stage.Manager
         {
             currentStage = FindFirstObjectByType<StageHandlerBase>();
             StartCoroutine(GameLoop());
+            ChHandler = currentStage.Player().GetComponentInChildren<CharacterHandler>();
         }
 
         void Update()
@@ -40,11 +44,6 @@ namespace Script.Stage.Manager
         public EnemySpawnHandler Spawner()
         {
             return currentStage.Spawner();
-        }
-
-        public GameObject Player()
-        {
-            return currentStage.Player();
         }
 
         public void SetTargetCount(int count)
@@ -99,7 +98,7 @@ namespace Script.Stage.Manager
                 LoadNextStory();
             }
         }
-        
+
         private void LoadNextStory()
         {
             switch (SceneLoadManager.SelectedRoundNo)

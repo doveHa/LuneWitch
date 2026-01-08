@@ -30,15 +30,15 @@ namespace Script.BattleStyle.Handler
 
         void OnTriggerExit2D(Collider2D other)
         {
-            if (other.CompareTag("Enemy"))
+            if (other.CompareTag("Creature"))
+            {
+                Debug.Log("CardZone ExitTrigger");
+                SummonedCreature = null;
+            }
+            else if (other.CompareTag("Enemy"))
             {
                 Enemies.Remove(other.GetComponent<EnemyHandler>());
             }
-        }
-
-        public void DeleteCreature()
-        {
-            SummonedCreature = null;
         }
 
         public void SpawnVisualization()

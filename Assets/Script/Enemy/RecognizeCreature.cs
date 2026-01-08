@@ -30,8 +30,9 @@ namespace Script.Enemy
         {
             if (other.CompareTag("Creature"))
             {
+                Debug.Log("OnTriggerExit");
                 isRecognized = false;
-                GetComponentInParent<EnemyHandler>().SetRecognize(null);
+                GetComponentInParent<EnemyHandler>().KillCreature();
             }
         }
     }

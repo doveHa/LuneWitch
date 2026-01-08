@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Script.BattleStyle.DataDefinitions.Enum;
 using Script.BattleStyle.Handler;
 using Script.Core.Manager;
 using Script.Creature.DataDefinitions.ScriptableObjects;
@@ -92,6 +93,7 @@ namespace Script.BattleStyle.Manager
             {
                 cardPoolHandler.GetCardSlot(card).SetUsedUI();
             }
+
             RemoveTotalProbability(card);
             cardPool.Remove(card);
         }
@@ -100,6 +102,7 @@ namespace Script.BattleStyle.Manager
         {
             RemoveCardInPool(card);
             card.SetNextProbability();
+            card.SetCost();
             AddCardInPool(card);
         }
 

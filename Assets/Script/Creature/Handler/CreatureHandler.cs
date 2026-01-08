@@ -32,6 +32,7 @@ namespace Script.Creature.Handler
             HealthHandler = new CreatureHealthHandler(CreatureData.health, CreatureData.cost);
             AnimationHandler = GetComponent<CreatureAnimationHandler>();
             CreatureSummonHandler = GetComponent<CreatureSummonHandler>();
+            CreatureSummonHandler.Initialize(CreatureData.cost);
             AttackHandler = GetComponent<BaseAttackHandler>();
             AttackHandler.Initialize(CreatureData);
         }

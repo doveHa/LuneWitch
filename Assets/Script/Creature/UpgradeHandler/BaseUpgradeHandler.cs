@@ -14,7 +14,7 @@ namespace Script.Creature.UpgradeHandler
 
         public static void UpgradeAttackTerm(BaseAttackHandler attackHandler)
         {
-            attackHandler.UpgradeAttackTerm(Constant.Upgrade.AttackTerm);
+            attackHandler.UpgradeAttackTerm();
         }
 
         public static void UpgradeHealth(HealthHandler healthHandler, Probability rarity)

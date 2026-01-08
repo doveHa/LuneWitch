@@ -70,13 +70,24 @@ namespace Script
                 public static int THIRDUPGRADE = 30;
             }
 
-            public static float AttackTerm = 1.0f;
+            public static class AttackTerm
+            {
+                public static float ATTACKTERM_RATE = 0.1f;
+                public static float MIN_ATTACKTERM = 1f;
+            }
 
             public static class Health
             {
                 public static int FIRSTUPGRADE = 20;
                 public static int SECONDUPGRADE = 30;
                 public static int THIRDUPGRADE = 50;
+            }
+
+            public static class Cost
+            {
+                public static int TO_SUPERRARE_COST = 50;
+                public static int TO_ULTRARARE_COST = 100;
+                public static int UPPER_ULTRARERE_COST = 200;
             }
         }
     }

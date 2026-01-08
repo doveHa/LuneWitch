@@ -40,6 +40,7 @@ namespace Script.Creature.AttackHandler
 
         public void KillTarget()
         {
+            StartAttacking();
             target.Dead();
         }
 

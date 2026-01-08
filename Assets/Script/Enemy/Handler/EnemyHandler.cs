@@ -59,7 +59,7 @@ namespace Script.Enemy.Handler
             base.Hit(damage);
             StartCoroutine(WaitDelayAndWalk());
         }
-        
+
         private IEnumerator WaitDelayAndWalk()
         {
             MoveHandler.StopWalk();
@@ -81,16 +81,16 @@ namespace Script.Enemy.Handler
 
         public void SetRecognize(CardZoneCoordinate coordinate)
         {
-            if (coordinate != null)
-            {
-                IsRecognize = true;
-            }
-            else
-            {
-                IsRecognize = false;
-            }
-
+            IsRecognize = true;
             attackZone = coordinate;
+        }
+
+        public void KillCreature()
+        {
+            Debug.Log("KillCreature");
+            IsRecognize = false;
+            isAttack = false;
+            Walk();
         }
 
         public void Explore()

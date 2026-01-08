@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7118144658392831655}
   - component: {fileID: 6959262396777255023}
   - component: {fileID: 4218964527415906265}
+  - component: {fileID: 1231128453715442899}
   - component: {fileID: 8211363716846743842}
   m_Layer: 0
   m_Name: Irene
@@ -123,6 +124,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bee893c6a0c5da24da7fd60b6cc7060a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1231128453715442899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142970479182208228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91ccfd03c0d04de59c7fa23a8e16be20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &8211363716846743842

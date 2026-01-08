@@ -55,15 +55,27 @@ namespace Script.UI.Pointer.Drag
             var spawnTileList = GetComponent<CardHandler>().CreatureHandler.GetSpawnTiles(currentCoord);
             lastHoveredCoord = currentCoord;
 
+            canSpawn = true;
+            
             if (spawnTileList == null)
             {
                 canSpawn = false;
             }
             else
             {
-                canSpawn = true;
-                CardZoneManager.Manager.SpawnVisuals(spawnTileList);
+                foreach (CardZoneCoordinate spawnTile in spawnTileList)
+                {
+                    if (CardZoneManager.Manager.GetZone(spawnTile).IsSummoned())
+                    {
+                        canSpawn = false;
+                        break;
+                    }
+                }
+            }
 
+            if (canSpawn)
+            {
+                CardZoneManager.Manager.SpawnVisuals(spawnTileList);
                 currentSpawnVisualList = new List<CardZoneCoordinate>(spawnTileList);
             }
         }

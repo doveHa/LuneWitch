@@ -6,6 +6,8 @@
         public int Health { get; private set; }
         public bool IsDead { get; private set; } = false;
 
+        public int HealthUpgradeCount { get; private set; } = 0;
+
         protected HealthHandler(int maxHealth)
         {
             MaxHealth = maxHealth;
@@ -20,6 +22,8 @@
 
         public void HealthAddUpgrade(int health)
         {
+            HealthUpgradeCount += health;
+            
             MaxHealth += health;
             Health += MaxHealth - Health;
         }

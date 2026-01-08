@@ -2,7 +2,7 @@
 
 namespace Script.Player
 {
-    public abstract class IPlayerSkill : MonoBehaviour
+    public abstract class BaseSkillHandler : MonoBehaviour
     {
         [SerializeField] protected int damage;
         [SerializeField] protected ParticleSystem particle;

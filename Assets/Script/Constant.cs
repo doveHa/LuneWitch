@@ -54,6 +54,8 @@ namespace Script
             public const int MAX_CARDS = 4;
 
             public const float HIT_TIME = 0.3f;
+
+            public const float WAVE_DURATION = 120f;
         }
 
         public static class Scene
@@ -89,6 +91,11 @@ namespace Script
                 public static int TO_ULTRARARE_COST = 100;
                 public static int UPPER_ULTRARERE_COST = 200;
             }
+        }
+
+        public static class Boss
+        {
+            public static int ATTACKTERM = 5;
         }
     }
 }

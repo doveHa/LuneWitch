@@ -1,9 +1,10 @@
 ﻿using Script.Manager;
 using Script.Stage.Handler;
+using Script.Stage.StageHandler;
 using TMPro;
 using UnityEngine;
 
-namespace Script.Stage.Manager
+namespace Script.Stage.StageHandler
 {
     public class GameBootstrapper : MonoBehaviour
     {
@@ -19,7 +20,7 @@ namespace Script.Stage.Manager
             }
             else
             {
-                StageHandler handler = managerObject.AddComponent<StageHandler>();
+                StoryStageHandler handler = managerObject.AddComponent<StoryStageHandler>();
                 handler.Setup(sceneReferences);
             }
         }

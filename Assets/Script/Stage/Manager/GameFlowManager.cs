@@ -30,6 +30,7 @@ namespace Script.Stage.Manager
 
         protected override void Awake()
         {
+            Time.timeScale = 1f;
             isDontDestroy = false;
             IsAllKill = false;
             base.Awake();
@@ -74,10 +75,14 @@ namespace Script.Stage.Manager
         public void KillEnemy()
         {
             killCount++;
-            Debug.Log($"{killCount}/{targetCount}");
             if (currentStage.GetType() == typeof(BossStageHandler))
             {
-                (currentStage as BossStageHandler).BossHandler.Hit(Constant.Boss.ENEMY_KILL_DMG);
+                var bossHandler = (currentStage as BossStageHandler).BossHandler;
+
+                if (bossHandler != null && !bossHandler.IsDead())
+                {
+                    bossHandler.Hit(Constant.Boss.ENEMY_KILL_DMG);
+                }
             }
 
             if (killCount >= targetCount)
@@ -86,10 +91,16 @@ namespace Script.Stage.Manager
             }
         }
 
+        public void AllKill()
+        {
+            IsAllKill = true;
+        }
+
         public void GameOver()
         {
             EndGameScreen.SetActive(true);
             GameOverScreen.SetActive(true);
+            Time.timeScale = 1f;
         }
 
         private void UpdateWaveProgress()
@@ -117,7 +128,7 @@ namespace Script.Stage.Manager
             startTime = Time.time;
 
             yield return StartCoroutine(currentStage.StartGame());
-
+            Time.timeScale = 1f;
             HandlerGameClear();
         }
 

@@ -37,6 +37,11 @@ namespace Script.Stage.Handler
             return spawnPoints;
         }
 
+        public void StopSpawning()
+        {
+            StopCoroutine("SpawnEnemies");
+        }
+
         private IEnumerator SpawnEnemies(int spawnCount, List<EnemyData> enemies)
         {
             for (int i = 0; i < spawnCount; i++)

@@ -15,7 +15,7 @@ namespace Script.BattleStyle.Handler
         [SerializeField] private Image moveImage;
         [SerializeField] private GameObject usedUI;
         [SerializeField] private TextMeshProUGUI descriptionText;
-
+        [SerializeField] private GameObject upgradePanel;
         public bool IsUsed { get; private set; }
 
         public CreatureHandler CreatureHandler { get; private set; }
@@ -82,6 +82,7 @@ namespace Script.BattleStyle.Handler
         public void SetUsedUI()
         {
             IsUsed = true;
+            upgradePanel.SetActive(false);
             usedUI.SetActive(true);
         }
 

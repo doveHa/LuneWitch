@@ -34,7 +34,7 @@ namespace Script.Creature.AttackHandler
             AmmoHandler ammoHandler = Instantiate(ammoPrefab, shootPoint.position, Quaternion.identity)
                 .GetComponent<AmmoHandler>();
             ammoHandler.SetStat(Atk, ammoSpeed);
-            ammoHandler.AddForce();
+            ammoHandler.Fire();
         }
     }
 }

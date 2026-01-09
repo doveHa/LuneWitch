@@ -29,21 +29,6 @@ namespace Script.BattleStyle.Manager
             }
         }
 
-        public void HitDamage(List<CardZoneCoordinate> range, int damage)
-        {
-            foreach (CardZoneCoordinate coordinate in range)
-            {
-                CardZoneHandler zone = GetZone(coordinate);
-                if (zone.Enemies.Count > 0)
-                {
-                    foreach (EnemyHandler enemyHandler in zone.Enemies)
-                    {
-                        enemyHandler.Hit(damage);
-                    }
-                }
-            }
-        }
-
         public CardZoneHandler GetZone(CardZoneCoordinate coordinate)
         {
             return handlers[coordinate.Row, coordinate.Col];
@@ -79,6 +64,11 @@ namespace Script.BattleStyle.Manager
             {
                 GetZone(coordinate).AttackNormalization();
             }
+        }
+
+        public Transform GridRootTransform()
+        {
+            return gridRoot.transform;
         }
     }
 }

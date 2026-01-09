@@ -1477,6 +1477,7 @@ MonoBehaviour:
   moveImage: {fileID: 2037612392619736620}
   usedUI: {fileID: 2625491130638956114}
   descriptionText: {fileID: 8692544843960743926}
+  upgradePanel: {fileID: 1962628988157212332}
 --- !u!114 &7991500340313649670
 MonoBehaviour:
   m_ObjectHideFlags: 0

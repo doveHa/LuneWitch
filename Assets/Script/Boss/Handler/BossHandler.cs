@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using Script.Core.Handler;
 using Script.Enemy.Handler;
+using Script.Stage.Manager;
+using UnityEditor.Build.Content;
 using UnityEngine;
 
 namespace Script.Boss.Handler
@@ -10,6 +12,8 @@ namespace Script.Boss.Handler
         private BossAnimationHandler animationHandler;
         private BossAttackHandler attackHandler;
         private HealthHandler healthHandler;
+
+        private bool isDeadProsess = false;
 
         void Awake()
         {
@@ -25,20 +29,42 @@ namespace Script.Boss.Handler
 
         public void Hit(int atk)
         {
-            animationHandler.HitAnimation();
-            healthHandler.Hit(atk);
+            if (isDeadProsess)
+            {
+                return;
+            }
 
+            healthHandler.Hit(atk);
             if (healthHandler.IsDead)
             {
-                animationHandler.DeathAnimation();
+                isDeadProsess = true;
                 StopAllCoroutines();
-                Time.timeScale = 0;
+
+                animationHandler.DeathAnimation();
+                EndBossStage();
+            }
+            else
+            {
+                animationHandler.HitAnimation();
             }
         }
 
         public bool IsDead()
         {
             return healthHandler.IsDead;
+        }
+
+        private void EndBossStage()
+        {
+            GameFlowManager.Manager.Spawner().StopSpawning();
+            foreach (Transform point in GameFlowManager.Manager.Spawner().SpawnPoints())
+            {
+                foreach (EnemyHandler handler in point.GetComponentsInChildren<EnemyHandler>())
+                {
+                    handler.Dead();
+                }
+            }
+            GameFlowManager.Manager.AllKill();
         }
 
         private IEnumerator StartRoutine()

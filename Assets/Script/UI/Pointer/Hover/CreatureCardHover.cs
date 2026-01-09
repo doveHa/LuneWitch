@@ -1,6 +1,4 @@
-﻿using Script.BattleStyle.DataDefinitions.Data;
-using Script.BattleStyle.Handler;
-using Script.Creature.Handler;
+﻿using Script.BattleStyle.Handler;
 using UnityEngine;
 
 namespace Script.UI.Pointer.Hover

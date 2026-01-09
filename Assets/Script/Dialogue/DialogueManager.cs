@@ -13,7 +13,7 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI introTitleText;
     public TextMeshProUGUI introDescText;
     public float introDuration = 2.0f; // 인트로 패널 표시 시간
-    public float fadeDuration = 1.0f;  // 페이드 아웃 시간
+    public float fadeDuration = 1.5f;  // 페이드 아웃 시간
 
     [Header("Main Dialogue")]
     public GameObject dialogueCanvas;
@@ -35,8 +35,8 @@ public class DialogueManager : MonoBehaviour
     public Color inactiveColor = new Color(0.5f, 0.5f, 0.5f, 1f);
     public float activeScale = 1.0f;
     public float inactiveScale = 0.85f;
-    [Range(0.01f, 0.2f)]
-    public float typingSpeed = 0.15f; // 타이핑 속도 조절 필요
+    [Range(0.01f, 0.5f)]
+    public float typingSpeed = 0.08f; // 타이핑 속도 조절 필요
 
 
     private DialogueData currentStory;

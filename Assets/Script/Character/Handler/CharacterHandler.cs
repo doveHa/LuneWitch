@@ -24,5 +24,11 @@ namespace Script.Character.Handler
             animationHandler.ActiveSkillAnimation();
             skillHandler.OnSkillUse();
         }
+
+        public void GameOver()
+        {
+            transform.parent.position = new Vector2(0, 0);
+            animationHandler.DeathAnimation();
+        }
     }
 }

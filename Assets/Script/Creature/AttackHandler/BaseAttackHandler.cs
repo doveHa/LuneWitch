@@ -9,8 +9,8 @@ namespace Script.Creature.AttackHandler
 {
     public abstract class BaseAttackHandler : MonoBehaviour
     {
-        protected float AttackTerm;
-        protected int Atk;
+        public float AttackTerm { get; private set; }
+        public int Atk { get; private set; }
 
         public int AttackTermUpgradeCount { get; private set; } = 0;
         public int AtkUpgradeCount { get; private set; } = 0;

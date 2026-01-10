@@ -30,7 +30,6 @@ namespace Script.Stage.Manager
 
         protected override void Awake()
         {
-            Time.timeScale = 1f;
             isDontDestroy = false;
             IsAllKill = false;
             base.Awake();
@@ -100,7 +99,7 @@ namespace Script.Stage.Manager
         {
             EndGameScreen.SetActive(true);
             GameOverScreen.SetActive(true);
-            Time.timeScale = 1f;
+            ChHandler.GameOver();
         }
 
         private void UpdateWaveProgress()
@@ -128,7 +127,6 @@ namespace Script.Stage.Manager
             startTime = Time.time;
 
             yield return StartCoroutine(currentStage.StartGame());
-            Time.timeScale = 1f;
             HandlerGameClear();
         }
 

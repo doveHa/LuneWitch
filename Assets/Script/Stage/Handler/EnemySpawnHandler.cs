@@ -9,7 +9,7 @@ namespace Script.Stage.Handler
     public class EnemySpawnHandler : MonoBehaviour
     {
         private EnemySpawnPointHandler[] spawnPoints;
-        private float healthRate = 1.0f;
+        private float healthRate = 0f;
 
         void Start()
         {

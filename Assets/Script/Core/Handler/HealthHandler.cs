@@ -1,4 +1,6 @@
-﻿namespace Script.Core.Handler
+﻿using UnityEngine;
+
+namespace Script.Core.Handler
 {
     public class HealthHandler
     {

@@ -232,7 +232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammoPrefab: {fileID: 2608073512222398471, guid: 6a3f99c9076d2114e966afa909f8d635, type: 3}
   shootPoint: {fileID: 4750009388380501251}
-  ammoSpeed: 1
+  ammoSpeed: 5
 --- !u!1 &4648750435391281324
 GameObject:
   m_ObjectHideFlags: 0

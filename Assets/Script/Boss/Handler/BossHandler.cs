@@ -1,6 +1,9 @@
 ﻿using System.Collections;
+using Script.BattleStyle.Manager;
 using Script.Core.Handler;
+using Script.Creature.Handler;
 using Script.Enemy.Handler;
+using Script.Manager;
 using Script.Stage.Manager;
 using UnityEditor.Build.Content;
 using UnityEngine;
@@ -64,6 +67,7 @@ namespace Script.Boss.Handler
                     handler.Dead();
                 }
             }
+
             GameFlowManager.Manager.AllKill();
         }
 
@@ -72,7 +76,11 @@ namespace Script.Boss.Handler
             while (!healthHandler.IsDead)
             {
                 yield return new WaitForSeconds(Constant.Boss.ATTACKTERM);
-
+                int creatureCount = CardZoneManager.Manager.GridRootTransform()
+                    .GetComponentsInChildren<CreatureHandler>().Length;
+                Debug.Log(creatureCount);
+                yield return new WaitUntil(() => creatureCount > 0);
+                
                 int attackPattern = attackHandler.GetAttackPatternIndex();
                 animationHandler.AttackAnimation(attackPattern);
                 attackHandler.ActiveBossPattern(attackPattern).Invoke();

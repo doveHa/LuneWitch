@@ -54,7 +54,7 @@ namespace Script.Creature.Handler
         private IEnumerator DestroyCoroutine()
         {
             deathParticles.Play();
-            yield return new WaitUntil(() => deathParticles.isStopped);
+            yield return new WaitUntil(() => !deathParticles.isPlaying);
             Destroy(gameObject);
         }
 

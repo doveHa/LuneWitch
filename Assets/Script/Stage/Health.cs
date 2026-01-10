@@ -18,6 +18,7 @@ public class Health : MonoBehaviour
         Debug.Log(collision.gameObject.name);
         if (collision.gameObject.CompareTag("Enemy"))
         {
+            Destroy(gameObject);
             GameFlowManager.Manager.GameOver();
         }
     }

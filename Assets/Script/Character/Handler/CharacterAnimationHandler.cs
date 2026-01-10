@@ -4,7 +4,6 @@ namespace Script.Character.Handler
 {
     public class CharacterAnimationHandler : MonoBehaviour
     {
-        public bool IsSkillEnd { get; private set; }
         private Animator animator;
 
         void Awake()
@@ -20,16 +19,6 @@ namespace Script.Character.Handler
         public void ActiveSkillAnimation()
         {
             animator.SetTrigger("ActiveSkill");
-        }
-
-        public void SkillEnd()
-        {
-            IsSkillEnd = true;
-        }
-
-        public void ReturnIdle()
-        {
-            animator.SetTrigger("Idle");
         }
 
         public void DeathAnimation()

@@ -21,13 +21,11 @@ namespace Script.Enemy.Handler
 
         public void StartWalk()
         {
-            Debug.Log("Start walk");
             rigidbody.linearVelocity = Vector2.left * Speed;
         }
 
         public void StopWalk()
         {
-            Debug.Log("Stop Walk");
             rigidbody.linearVelocity = Vector2.zero;
         }
 

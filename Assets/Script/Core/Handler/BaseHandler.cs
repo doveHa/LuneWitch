@@ -10,7 +10,6 @@ namespace Script.Core.Handler
 
         public virtual void Hit(int damage)
         {
-            Debug.Log("Hit");
             AnimationHandler.PlayHitAnimation();
             HealthHandler.Hit(damage);
 

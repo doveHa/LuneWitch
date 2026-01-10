@@ -71,7 +71,6 @@ namespace Script.Enemy.Handler
         {
             GameFlowManager.Manager.KillEnemy();
             AnimationHandler.PlayDeathAnimation();
-            StartCoroutine(DeathCoroutine());
         }
 
         public void DisSpeed(float disSpeedRate, float slowTime)
@@ -92,17 +91,17 @@ namespace Script.Enemy.Handler
             isAttack = false;
             Walk();
         }
-
-        public void Explore()
-        {
-            Destroy(gameObject);
-        }
-
+        
         public void AdjustCreatureDamage()
         {
             CardZoneManager.Manager.GetZone(attackZone).AttackCreature(enemyData.attack);
         }
 
+        public void DestroyGameObject()
+        {
+            Destroy(transform.parent.gameObject);
+        }
+        
         private IEnumerator SpeedDebuff(float disSpeedRate, float slowTime)
         {
             float originalSpeed = MoveHandler.Speed;
@@ -125,13 +124,6 @@ namespace Script.Enemy.Handler
             Debug.Log("AttackCoroutine Walk");
             Walk();
             isAttack = false;
-        }
-
-        private IEnumerator DeathCoroutine()
-        {
-            AnimationHandler.PlayDeathAnimation();
-            yield return new WaitUntil(() => AnimationHandler.GetAnimationStateInfo().normalizedTime >= 1f);
-            Destroy(gameObject);
         }
     }
 }

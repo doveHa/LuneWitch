@@ -24,7 +24,22 @@ namespace Script.Manager
 
         public void LoadChapter()
         {
-            switch (SelectedChapterNo)
+            string path = $"DialogueData/Story_{SelectedChapterNo}_0";
+            // 시작 스토리가 2개 뿐이기 때문에 하드코딩 하였음
+
+            DialogueData loadedData = Resources.Load<DialogueData>(path);
+
+            if(loadedData != null)
+            {
+                StoryContext.storyToPlay = loadedData;
+                SceneManager.LoadScene("StoryScene");
+            }
+            else
+            {
+                Debug.LogError($"DialogueData not found at path: {path}");
+            }
+
+/*            switch (SelectedChapterNo)
             {
                 case 1:
                     SceneManager.LoadScene("Chapter 1 Story");
@@ -33,7 +48,7 @@ namespace Script.Manager
                 case 2:
                     SceneManager.LoadScene("Chapter 2 Story");
                     break;
-            }
+            }*/
         }
 
         public void LoadRound()
@@ -45,5 +60,6 @@ namespace Script.Manager
         {
             SceneManager.LoadScene(sceneName);
         }
+
     }
 }

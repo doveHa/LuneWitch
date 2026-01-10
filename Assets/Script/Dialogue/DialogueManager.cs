@@ -77,6 +77,16 @@ public class DialogueManager : MonoBehaviour
 
         if (skipButton != null)
             skipButton.onClick.AddListener(OnSkipBtnClicked);
+
+        if(StoryContext.storyToPlay != null)
+        {
+            PlayStory(StoryContext.storyToPlay);
+            StoryContext.storyToPlay = null; // 재사용 방지
+        }
+        else
+        {
+            Debug.Log("다이얼로그 데이터 없음");
+        }
     }
 
     // 외부 호출 시작 함수
@@ -89,49 +99,6 @@ public class DialogueManager : MonoBehaviour
         // 1. 인트로 시작
         StartCoroutine(PlayIntroSequence());
     }
-
-    // 인트로 연출 코루틴
-    /*    IEnumerator PlayIntroSequence()
-        {
-            // UI 초기 설정
-            dialogueCanvas.SetActive(false); // 대화창 숨김
-            if (rewardPanel) rewardPanel.SetActive(false);
-
-            // 배경 설정
-            if (backgroundImage != null && currentStory.backgroundSprite != null)
-                backgroundImage.sprite = currentStory.backgroundSprite;
-
-            // 인트로 패널 활성화 및 텍스트 설정
-            if (introPanel != null)
-            {
-                introPanel.SetActive(true);
-                CanvasGroup canvasGroup = introPanel.GetComponent<CanvasGroup>();
-                if (canvasGroup == null) canvasGroup = introPanel.AddComponent<CanvasGroup>();
-
-                canvasGroup.alpha = 1f; // 완전 불투명
-                if (introTitleText) introTitleText.text = currentStory.introTitle;
-                if (introDescText) introDescText.text = currentStory.introDescription;
-
-                // 대기
-                yield return new WaitForSeconds(introDuration);
-
-                // 페이드 아웃 (검은 화면이 서서히 사라짐)
-                float timer = 0f;
-                while (timer < fadeDuration)
-                {
-                    timer += Time.deltaTime;
-                    canvasGroup.alpha = Mathf.Lerp(1f, 0f, timer / fadeDuration);
-                    yield return null;
-                }
-
-                introPanel.SetActive(false); // 인트로 끄기
-            }
-
-            // 2. 대화창 켜고 대화 시작
-            dialogueCanvas.SetActive(true);
-            DisplayNextLine();
-        }*/
-
     IEnumerator PlayIntroSequence()
     {
         // 1. 인트로 패널(검은 화면) 세팅
@@ -371,14 +338,23 @@ public class DialogueManager : MonoBehaviour
         if (toonyVoices != null) toonyVoices.StopSpeech();
 
         isDialogueActive = false;
-        dialogueCanvas.SetActive(false);
+        //dialogueCanvas.SetActive(false);
         Debug.Log("대화 종료");
+
+        // 다음 소챕터가 있을 경우 진행
+        if (currentStory.nextStory != null)
+        {
+            Debug.Log($"다음 소챕터({currentStory.nextStory.name}) 진행");
+            PlayStory(currentStory.nextStory);
+            return;
+        }
 
         if (currentStory.isChapterEnd)
         {
             // 1장 2장 종료 -> 보상 패널 활성화
             Debug.Log("보상 패널 활성화");
-            if (rewardPanel != null) rewardPanel.SetActive(true);
+            //if (rewardPanel != null) 
+            rewardPanel.SetActive(true);
         }
         else
         {
@@ -386,6 +362,12 @@ public class DialogueManager : MonoBehaviour
             Debug.Log($"소챕터 종료: {currentStory.nextSceneName} 씬으로 이동");
             if (!string.IsNullOrEmpty(currentStory.nextSceneName))
             {
+                if (currentStory.nextStoryAfterBattle != null)
+                {
+                    StoryContext.storyAfterBattle = currentStory.nextStoryAfterBattle;
+                    Debug.Log($"전투 후 '{currentStory.nextStoryAfterBattle.name}' 진행");
+                }
+
                 SceneManager.LoadScene(currentStory.nextSceneName);
             }
         }

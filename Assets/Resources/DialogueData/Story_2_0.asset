@@ -49,4 +49,5 @@ MonoBehaviour:
     leftSprite: {fileID: 5352576004762474852, guid: dc6975b729361dc43bae75da403e04ca, type: 3}
     rightSprite: {fileID: 0}
   isChapterEnd: 0
-  nextSceneName: 
+  nextSceneName: BattleScene
+  nextStory: {fileID: 0}

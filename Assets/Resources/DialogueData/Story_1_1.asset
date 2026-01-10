@@ -122,3 +122,4 @@ MonoBehaviour:
     rightSprite: {fileID: -9194723345426570509, guid: 228b3c56279d772459dcc2527efd5edf, type: 3}
   isChapterEnd: 0
   nextSceneName: 
+  nextStory: {fileID: 11400000, guid: 22c9a0d291493394f9b7ec912477d109, type: 2}

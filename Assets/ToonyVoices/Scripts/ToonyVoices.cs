@@ -285,7 +285,12 @@ public class ToonyVoices : MonoBehaviour
     /// <param name="word">Word to be parsed</param>
 	private void ParseWord(string word)
     {
-		bool skipNextCharacter = false;
+        if (string.IsNullOrEmpty(word)) // 단어가 비어 있는 경우 계산 X, 무시
+        {
+            return;
+        }
+
+        bool skipNextCharacter = false;
 		bool inflective = (word[word.Length - 1] == '?');
 
 		for(int i = 0; i < word.Length; i++)

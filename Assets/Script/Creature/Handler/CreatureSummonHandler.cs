@@ -1,9 +1,6 @@
 ﻿using System;
-using Script.BattleStyle.DataDefinitions.Data;
 using Script.BattleStyle.DataDefinitions.Enum;
-using Script.BattleStyle.Handler;
 using Script.BattleStyle.Manager;
-using Script.Creature.DataDefinitions.ScriptableObjects;
 using UnityEngine;
 
 namespace Script.Creature.Handler

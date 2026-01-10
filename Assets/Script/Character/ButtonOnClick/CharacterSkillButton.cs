@@ -1,5 +1,4 @@
-﻿using Script.Character.Handler;
-using Script.Stage.Manager;
+﻿using Script.Stage.Manager;
 using UnityEngine;
 using UnityEngine.UI;
 

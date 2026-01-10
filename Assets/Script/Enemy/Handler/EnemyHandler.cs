@@ -3,7 +3,6 @@ using Script.BattleStyle.DataDefinitions.Data;
 using Script.BattleStyle.Manager;
 using Script.Core.DataDefinitions.ScriptableObjects;
 using Script.Core.Handler;
-using Script.Creature.Handler;
 using Script.Enemy.DataDefinitions.ScriptableObjects;
 using Script.Stage.Manager;
 using UnityEngine;

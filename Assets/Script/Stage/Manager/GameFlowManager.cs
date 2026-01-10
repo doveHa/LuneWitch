@@ -150,6 +150,7 @@ namespace Script.Stage.Manager
             }
         }
 
+        //Story가 하나의 Scene으로 통합되면 아래 함수를 수정하여 연결
         private void LoadNextStory()
         {
             switch (SceneLoadManager.SelectedRoundNo)

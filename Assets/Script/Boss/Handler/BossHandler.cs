@@ -3,9 +3,7 @@ using Script.BattleStyle.Manager;
 using Script.Core.Handler;
 using Script.Creature.Handler;
 using Script.Enemy.Handler;
-using Script.Manager;
 using Script.Stage.Manager;
-using UnityEditor.Build.Content;
 using UnityEngine;
 
 namespace Script.Boss.Handler

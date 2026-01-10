@@ -1,6 +1,7 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections.Generic;
 
 public class BacklogManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class BacklogManager : MonoBehaviour
     public GameObject backlogPanel; // 백로그 전체 패널
     public Transform logContent;    // Scroll View의 Content 오브젝트 (여기에 자식으로 쌓임)
     public GameObject logItemPrefab; // 위에서 만든 프리팹
+    public ScrollRect scrollRect;   // 스크롤뷰 컴포넌트
 
     [Header("Buttons")]
     public Button openButton;  // 게임 화면의 'Log' 버튼
@@ -36,18 +38,37 @@ public class BacklogManager : MonoBehaviour
         GameObject newLog = Instantiate(logItemPrefab, logContent);
 
         // 텍스트 설정
-        LogItem itemScript = newLog.GetComponent<LogItem>();
+        //LogItem itemScript = newLog.GetComponent<LogItem>();
+        DialogueLogItem itemScript = newLog.GetComponent<DialogueLogItem>();
         if (itemScript != null)
         {
-            itemScript.SetLog(name, text);
+            itemScript.SetData(name, text);
+        }
+        else
+        {
+            Debug.LogError("스크립트 없음 에러!");
         }
 
         // (선택사항) 스크롤을 맨 아래로 내리기 위한 로직이 필요할 수 있음
+        StartCoroutine(ScrollToBottom());
+    }
+
+    IEnumerator ScrollToBottom()
+    {
+        // UI가 갱신될 때까지 한 프레임 대기
+        yield return null;
+
+        if (scrollRect != null)
+        {
+            // 강제로 맨 아래(0)로 이동
+            scrollRect.verticalNormalizedPosition = 0f;
+        }
     }
 
     public void OpenBacklog()
     {
         backlogPanel.SetActive(true);
+        StartCoroutine(ScrollToBottom());
     }
 
     public void CloseBacklog()

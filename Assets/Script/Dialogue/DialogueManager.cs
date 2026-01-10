@@ -80,32 +80,86 @@ public class DialogueManager : MonoBehaviour
     }
 
     // 인트로 연출 코루틴
+    /*    IEnumerator PlayIntroSequence()
+        {
+            // UI 초기 설정
+            dialogueCanvas.SetActive(false); // 대화창 숨김
+            if (rewardPanel) rewardPanel.SetActive(false);
+
+            // 배경 설정
+            if (backgroundImage != null && currentStory.backgroundSprite != null)
+                backgroundImage.sprite = currentStory.backgroundSprite;
+
+            // 인트로 패널 활성화 및 텍스트 설정
+            if (introPanel != null)
+            {
+                introPanel.SetActive(true);
+                CanvasGroup canvasGroup = introPanel.GetComponent<CanvasGroup>();
+                if (canvasGroup == null) canvasGroup = introPanel.AddComponent<CanvasGroup>();
+
+                canvasGroup.alpha = 1f; // 완전 불투명
+                if (introTitleText) introTitleText.text = currentStory.introTitle;
+                if (introDescText) introDescText.text = currentStory.introDescription;
+
+                // 대기
+                yield return new WaitForSeconds(introDuration);
+
+                // 페이드 아웃 (검은 화면이 서서히 사라짐)
+                float timer = 0f;
+                while (timer < fadeDuration)
+                {
+                    timer += Time.deltaTime;
+                    canvasGroup.alpha = Mathf.Lerp(1f, 0f, timer / fadeDuration);
+                    yield return null;
+                }
+
+                introPanel.SetActive(false); // 인트로 끄기
+            }
+
+            // 2. 대화창 켜고 대화 시작
+            dialogueCanvas.SetActive(true);
+            DisplayNextLine();
+        }*/
+
     IEnumerator PlayIntroSequence()
     {
-        // UI 초기 설정
-        dialogueCanvas.SetActive(false); // 대화창 숨김
-        if (rewardPanel) rewardPanel.SetActive(false);
-
-        // 배경 설정
-        if (backgroundImage != null && currentStory.backgroundSprite != null)
-            backgroundImage.sprite = currentStory.backgroundSprite;
-
-        // 인트로 패널 활성화 및 텍스트 설정
+        // 1. 인트로 패널(검은 화면) 세팅
         if (introPanel != null)
         {
             introPanel.SetActive(true);
             CanvasGroup canvasGroup = introPanel.GetComponent<CanvasGroup>();
             if (canvasGroup == null) canvasGroup = introPanel.AddComponent<CanvasGroup>();
 
-            canvasGroup.alpha = 1f; // 완전 불투명
+            canvasGroup.alpha = 1f; // 완전 불투명 (뒤에 뭐가 있든 가림)
+            canvasGroup.blocksRaycasts = true; // 클릭 방지
+
             if (introTitleText) introTitleText.text = currentStory.introTitle;
             if (introDescText) introDescText.text = currentStory.introDescription;
+        }
 
-            // 대기
-            yield return new WaitForSeconds(introDuration);
+        // [핵심 변경] 대화창을 '미리' 켭니다.
+        // 인트로 패널이 불투명(alpha 1)해서 맨 위에 덮여 있으므로, 
+        // 대화창을 지금 켜도 유저 눈에는 안 보입니다. (뒤에 숨어있음)
+        dialogueCanvas.SetActive(true);
 
-            // 페이드 아웃 (검은 화면이 서서히 사라짐)
+        // 아직 대사는 출력하지 말고 UI만 준비 (이미지 등)
+        // 필요하다면 첫 대사의 배경이나 캐릭터 이미지를 여기서 미리 세팅해도 좋습니다.
+        DialogueLine firstLine = currentStory.lines[0];
+        if (!currentStory.isIllustrationMode)
+        {
+            UpdateCharacterImages(firstLine);
+            UpdateVisuals(firstLine.speakerType);
+        }
+
+        // 2. 인트로 대기 시간 (필요 없으면 주석 처리하거나 0으로 설정)
+        // yield return new WaitForSeconds(introDuration); 
+
+        // 3. 페이드 아웃 (검은 화면이 서서히 투명해짐 -> 뒤에 있던 대화창이 자연스럽게 드러남)
+        if (introPanel != null)
+        {
+            CanvasGroup canvasGroup = introPanel.GetComponent<CanvasGroup>();
             float timer = 0f;
+
             while (timer < fadeDuration)
             {
                 timer += Time.deltaTime;
@@ -113,23 +167,23 @@ public class DialogueManager : MonoBehaviour
                 yield return null;
             }
 
-            introPanel.SetActive(false); // 인트로 끄기
+            // 다 투명해졌으면 인트로 끄기
+            introPanel.SetActive(false);
         }
 
-        // 2. 대화창 켜고 대화 시작
-        dialogueCanvas.SetActive(true);
+        // 4. 대사 타이핑 시작
         DisplayNextLine();
     }
 
-/*    public void StartDialogue(DialogueData storyData)
-    {
-        currentStory = storyData;
-        currentLineIndex = 0;
-        isDialogueActive = true;
-        dialoguePanel.SetActive(true);
+    /*    public void StartDialogue(DialogueData storyData)
+        {
+            currentStory = storyData;
+            currentLineIndex = 0;
+            isDialogueActive = true;
+            dialoguePanel.SetActive(true);
 
-        DisplayNextLine();
-    }*/
+            DisplayNextLine();
+        }*/
 
     // Next 버튼이 클릭되었을 때 실행
     public void OnNextBtnClicked()

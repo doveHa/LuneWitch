@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 4808468907265451889}
   - component: {fileID: 2829280635101861571}
   m_Layer: 5
-  m_Name: GameObject
+  m_Name: LogPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -54,6 +54,9 @@ public class DialogueManager : MonoBehaviour
         if (introPanel) introPanel.SetActive(false);
         if (dialogueCanvas) dialogueCanvas.SetActive(false);
         if (rewardPanel) rewardPanel.SetActive(false);
+
+        if (leftCharImage) leftCharImage.gameObject.SetActive(false);
+        if (rightCharImage) rightCharImage.gameObject.SetActive(false);
     }
 
     private void Start()
@@ -218,6 +221,8 @@ public class DialogueManager : MonoBehaviour
         if (line.leftSprite != null && leftCharImage != null)
         {
             leftCharImage.sprite = line.leftSprite;
+            //코드로 비율 유지
+            leftCharImage.preserveAspect = true;
             leftCharImage.gameObject.SetActive(true);
         }
 
@@ -225,6 +230,8 @@ public class DialogueManager : MonoBehaviour
         if (line.rightSprite != null && rightCharImage != null)
         {
             rightCharImage.sprite = line.rightSprite;
+            //코드로 비율 유지
+            rightCharImage.preserveAspect = true;
             rightCharImage.gameObject.SetActive(true);
         }
     }

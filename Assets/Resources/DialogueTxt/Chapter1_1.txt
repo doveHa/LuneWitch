@@ -1,0 +1,18 @@
+Left	루미나	헉! 설마… 죽은 건 아니겠지?!	Player-12_0	citizen_0
+None		루미나가 조심스럽게 쓰러진 시민에게 다가간다.	Player-12_0	citizen_0
+Right	???	키에에엑!!	Player-12_0	citizen_0
+Left	루미나	으악!!	Player-12_0	citizen_0
+None		반사적으로 마법을 사용해 적을 소멸시킨다. 이내 공기는 무겁게 내려앉고, 주변엔 고요만이 남는다.	Player-12_0	citizen_0
+Left	루미나	헉... 방금 그건... 뭐였지...?	Player-12_0	citizen_0
+None		쓰러져 있던 시민이 서서히 의식을 되찾는다.	Player-12_0	citizen_0
+Right	시민	으... 아파...	Player-12_0	citizen_0
+Left	루미나	?! 정신이 드시나요?	Player-12_0	citizen_0
+Left	루미나	( 방금 그 이상한 생명체를 소멸 시키니, 의식을 되찾았어.)	Player-12_0	citizen_0
+Left	루미나	( 설마… 그 생명체가 사람을 조종하고 있었던 건가?)	Player-12_0	citizen_0
+Right	시민	여긴... 어디죠...?	Player-12_0	citizen_0
+Left	루미나	베스페라 외곽 숲이에요. 여긴 마물들도 자주 출몰하니, 혼자 돌아다니면 위험해요.	Player-12_0	citizen_0
+Right	시민	으으... 기억이 잘 안 나요... 분명 집 근처에서 걷고 있었는데...	Player-12_0	citizen_0
+Left	루미나	흠…무언가에게 습격당한 기억은 없으신가요?	Player-12_0	citizen_0
+Right	시민	잘 모르겠어요… 아무것도 떠오르질 않네요…	Player-12_0	citizen_0
+Left	루미나	그렇군요... 일단 여긴 위험하니, 마을로 돌아가시는 게 좋겠어요.	Player-12_0	citizen_0
+Right	시민	정말 감사합니다, 마녀님…	Player-12_0	citizen_0

@@ -2,7 +2,17 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using NUnit.Framework;
+
+[System.Serializable]
+public struct CharacterVoiceProfile
+{
+    public string characterName;
+    [UnityEngine.Range(0.5f, 8.0f)]
+    public float pitch;
+}
 
 public class DialogueManager : MonoBehaviour
 {
@@ -32,12 +42,13 @@ public class DialogueManager : MonoBehaviour
 
     [Header("Settings")]
     public ToonyVoices toonyVoices;
+    public List<CharacterVoiceProfile> characterVoices;
+    public float defaultPitch = 4.0f;
     public Color inactiveColor = new Color(0.5f, 0.5f, 0.5f, 1f);
     public float activeScale = 1.0f;
     public float inactiveScale = 0.85f;
-    [Range(0.01f, 0.5f)]
+    [UnityEngine.Range(0.01f, 0.5f)]
     public float typingSpeed = 0.08f; // 타이핑 속도 조절 필요
-
 
     private DialogueData currentStory;
     private int currentLineIndex = 0;
@@ -137,13 +148,8 @@ public class DialogueManager : MonoBehaviour
             if (introDescText) introDescText.text = currentStory.introDescription;
         }
 
-        // [핵심 변경] 대화창을 '미리' 켭니다.
-        // 인트로 패널이 불투명(alpha 1)해서 맨 위에 덮여 있으므로, 
-        // 대화창을 지금 켜도 유저 눈에는 안 보입니다. (뒤에 숨어있음)
         dialogueCanvas.SetActive(true);
 
-        // 아직 대사는 출력하지 말고 UI만 준비 (이미지 등)
-        // 필요하다면 첫 대사의 배경이나 캐릭터 이미지를 여기서 미리 세팅해도 좋습니다.
         DialogueLine firstLine = currentStory.lines[0];
         if (!currentStory.isIllustrationMode)
         {
@@ -151,10 +157,10 @@ public class DialogueManager : MonoBehaviour
             UpdateVisuals(firstLine.speakerType);
         }
 
-        // 2. 인트로 대기 시간 (필요 없으면 주석 처리하거나 0으로 설정)
+        // 인트로 대기 시간
         // yield return new WaitForSeconds(introDuration); 
 
-        // 3. 페이드 아웃 (검은 화면이 서서히 투명해짐 -> 뒤에 있던 대화창이 자연스럽게 드러남)
+        // 페이드 아웃
         if (introPanel != null)
         {
             CanvasGroup canvasGroup = introPanel.GetComponent<CanvasGroup>();
@@ -229,9 +235,8 @@ public class DialogueManager : MonoBehaviour
         // UI 설정
         nameText.text = line.speakerName;
 
-        // 텍스트는 바로 보여주지 않고 비워둠 (타이핑 코루틴이 채울 예정)
         dialogueText.text = "";
-        currentFullText = line.text; // 전체 문장 저장해두기
+        currentFullText = line.text;
 
         // 일러스트 모드 체크 후 배경 업데이트
         if (currentStory.isIllustrationMode)
@@ -259,7 +264,11 @@ public class DialogueManager : MonoBehaviour
         if (toonyVoices != null)
         {
             toonyVoices.StopSpeech(); // 이전 소리 끄고
-            toonyVoices.Speak(line.text); // 새 소리 재생
+
+            // 캐릭터에 맞는 피치 설정
+            float pitchToUse = GetPitchByName(line.speakerName);
+            toonyVoices.Speak(line.text, pitchToUse);
+            //toonyVoices.Speak(line.text); // 새 소리 재생
         }
 
         // --- 타이핑 효과 시작 ---
@@ -267,6 +276,20 @@ public class DialogueManager : MonoBehaviour
         typingCoroutine = StartCoroutine(TypeText(line.text));
 
         currentLineIndex++;
+    }
+
+    private float GetPitchByName(string name)
+    {
+        // 등록된 리스트를 뒤져서 이름이 같은 게 있는지 확인
+        foreach (var profile in characterVoices)
+        {
+            if (profile.characterName == name)
+            {
+                return profile.pitch;
+            }
+        }
+        // 없으면 기본값 반환
+        return defaultPitch;
     }
 
     void UpdateCharacterImages(DialogueLine line)

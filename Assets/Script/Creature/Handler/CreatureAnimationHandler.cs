@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using Script.Core.Handler;
 using UnityEngine;
 
@@ -54,7 +52,7 @@ namespace Script.Creature.Handler
         private IEnumerator DestroyCoroutine()
         {
             deathParticles.Play();
-            yield return new WaitUntil(() => deathParticles.isStopped);
+            yield return new WaitUntil(() => !deathParticles.isPlaying);
             Destroy(gameObject);
         }
 

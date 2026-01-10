@@ -2,22 +2,28 @@
 using Script.Character.Handler;
 using Script.Core.Manager;
 using Script.Manager;
+using Script.Stage.Abstaractions;
 using Script.Stage.Handler;
+using Script.Stage.StageHandler;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 namespace Script.Stage.Manager
 {
     public class GameFlowManager : ManagerBase<GameFlowManager>
     {
+        [SerializeField] private Slider waveProgressSlider;
+        [SerializeField] private GameObject RoundPanel;
+        [SerializeField] private TextMeshProUGUI elapsedTime;
+        [SerializeField] private GameObject EndGameScreen, GameOverScreen, GameWinScreen;
+
         private int targetCount, killCount = 0;
         private float startTime;
         public bool IsAllKill { get; private set; }
 
-        [SerializeField] private GameObject RoundPanel;
-        [SerializeField] private TextMeshProUGUI elapsedTime;
-        [SerializeField] private GameObject EndGameScreen, GameOverScreen, GameWinScreen;
+        private float sliderSpeed;
+        private bool isWaveInProgress;
 
         private StageHandlerBase currentStage;
         public CharacterHandler ChHandler { get; private set; }
@@ -32,13 +38,25 @@ namespace Script.Stage.Manager
         void Start()
         {
             currentStage = FindFirstObjectByType<StageHandlerBase>();
-            StartCoroutine(GameLoop());
             ChHandler = currentStage.Player().GetComponentInChildren<CharacterHandler>();
+            StartCoroutine(GameLoop());
         }
 
         void Update()
         {
             UpdateElapsedTime();
+            UpdateWaveProgress();
+        }
+
+        public void StartWaveLogic()
+        {
+            waveProgressSlider.maxValue = targetCount;
+            waveProgressSlider.value = 0f;
+
+            float avgInterval = (Constant.BattleSystem.MIN_SPAWN_TERM + Constant.BattleSystem.MAX_SPAWN_TERM) / 2;
+
+            sliderSpeed = 1.0f / avgInterval;
+            isWaveInProgress = true;
         }
 
         public EnemySpawnHandler Spawner()
@@ -56,18 +74,52 @@ namespace Script.Stage.Manager
         public void KillEnemy()
         {
             killCount++;
+            if (currentStage.GetType() == typeof(BossStageHandler))
+            {
+                var bossHandler = (currentStage as BossStageHandler).BossHandler;
+
+                if (bossHandler != null && !bossHandler.IsDead())
+                {
+                    bossHandler.Hit(Constant.Boss.ENEMY_KILL_DMG);
+                }
+            }
+
             if (killCount >= targetCount)
             {
                 IsAllKill = true;
             }
         }
 
+        public void AllKill()
+        {
+            IsAllKill = true;
+        }
+
         public void GameOver()
         {
             EndGameScreen.SetActive(true);
             GameOverScreen.SetActive(true);
+            ChHandler.GameOver();
         }
 
+        private void UpdateWaveProgress()
+        {
+            if (!isWaveInProgress)
+            {
+                return;
+            }
+
+            float visualLimit = killCount + 1;
+
+            if (waveProgressSlider.value < visualLimit)
+            {
+                waveProgressSlider.value += sliderSpeed * Time.deltaTime * 0.5f;
+            }
+            else
+            {
+                waveProgressSlider.value = visualLimit;
+            }
+        }
 
         private IEnumerator GameLoop()
         {
@@ -75,7 +127,6 @@ namespace Script.Stage.Manager
             startTime = Time.time;
 
             yield return StartCoroutine(currentStage.StartGame());
-
             HandlerGameClear();
         }
 
@@ -99,6 +150,7 @@ namespace Script.Stage.Manager
             }
         }
 
+        //Story가 하나의 Scene으로 통합되면 아래 함수를 수정하여 연결
         private void LoadNextStory()
         {
             switch (SceneLoadManager.SelectedRoundNo)

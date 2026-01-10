@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: Pumpy
   m_EditorClassIdentifier: 
   name: Pumpy
-  attack: 1000
+  attack: 20
   health: 120
   attackTerm: 4
   prefab: {fileID: 804819288300844835, guid: b44e20372bc812d4e92c975ea8a617bc, type: 3}
+  isActive: 0
   name_Kr: "\uD38C\uD53C"
-  description: 
+  description: "\uD38C\uD53C\uC785\uB2C8\uB2E4."
   cost: 100
   characterImage: {fileID: -433773718584046436, guid: 681847afacfdb9b49b30e8ba1b4e0bb2, type: 3}
   unitSize: {x: 1, y: 1}

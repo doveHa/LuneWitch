@@ -19,7 +19,6 @@ namespace Script.Character.SkillHandler
         {
             yield return new WaitUntil(() => particle.time / particle.totalTime > 0.7);
             Damage(GameFlowManager.Manager.Spawner().SpawnPoints());
-            GetComponent<CharacterAnimationHandler>().SkillEnd();
         }
 
         private void Damage(Transform[] points)

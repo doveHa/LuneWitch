@@ -1,4 +1,5 @@
-﻿namespace Script.Core.Handler
+﻿
+namespace Script.Core.Handler
 {
     public class HealthHandler
     {

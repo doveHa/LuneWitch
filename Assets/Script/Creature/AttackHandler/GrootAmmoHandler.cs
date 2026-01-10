@@ -42,6 +42,7 @@ namespace Script.Creature.AttackHandler
             }
 
             transform.position = end;
+            Destroy(gameObject);
         }
         
         void OnTriggerEnter2D(Collider2D other)

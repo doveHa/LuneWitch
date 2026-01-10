@@ -19,7 +19,7 @@ MonoBehaviour:
   prefab: {fileID: 804819288300844835, guid: 7b8fbfc441ca24346b3123d972879fa4, type: 3}
   isActive: 0
   name_Kr: "\uAC1C\uAD6C\uB9AC"
-  description: 
+  description: "\uAC1C\uAD6C\uB9AC\uC785\uB2C8\uB2E4."
   cost: 180
   characterImage: {fileID: -414100918, guid: ca4571ebc3450c04382cf2c224e3f3c0, type: 3}
   unitSize: {x: 2, y: 2}

@@ -139,7 +139,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: d7368b4b6c147684a903fbcf1def23cb
-      internalID: 611556260
+      internalID: -6306564193402033477
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 23477859d41868447b28c273d29dc6cd
-      internalID: -1721996527
+      internalID: -7239261007914143605
       vertices: []
       indices: 
       edges: []
@@ -183,7 +183,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 123a6b68ca9d0cc45877653bbbe735db
-      internalID: 784241747
+      internalID: -3652003480623911802
       vertices: []
       indices: 
       edges: []
@@ -205,7 +205,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 881fcfe0fd457a34eb08272517e75d60
-      internalID: 735453568
+      internalID: 1600470849187167811
       vertices: []
       indices: 
       edges: []
@@ -222,14 +222,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      Pumpy's Seed_0: 611556260
-      Pumpy's Seed_1: -1721996527
-      Pumpy's Seed_2: 784241747
-      Pumpy's Seed_3: 735453568
+      Pumpy's Seed_0: -6306564193402033477
+      Pumpy's Seed_1: -7239261007914143605
+      Pumpy's Seed_2: -3652003480623911802
+      Pumpy's Seed_3: 1600470849187167811
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

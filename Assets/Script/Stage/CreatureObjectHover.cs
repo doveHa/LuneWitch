@@ -1,4 +1,4 @@
-﻿using Script.BattleStyle.Manager;
+﻿ using Script.BattleStyle.Manager;
 using Script.Core.Handler;
 using Script.Creature;
 using Script.Creature.AttackHandler;

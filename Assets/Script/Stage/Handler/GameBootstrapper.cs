@@ -1,9 +1,10 @@
 ﻿using Script.Manager;
 using Script.Stage.Handler;
+using Script.Stage.StageHandler;
 using TMPro;
 using UnityEngine;
 
-namespace Script.Stage.Manager
+namespace Script.Stage.StageHandler
 {
     public class GameBootstrapper : MonoBehaviour
     {
@@ -17,9 +18,14 @@ namespace Script.Stage.Manager
                 InfinityStageHandler handler = managerObject.AddComponent<InfinityStageHandler>();
                 handler.Setup(sceneReferences);
             }
+            else if(SceneLoadManager.SelectedChapterNo == 2 && SceneLoadManager.SelectedRoundNo == 3)
+            {
+                BossStageHandler handler = managerObject.AddComponent<BossStageHandler>();
+                handler.Setup(sceneReferences);
+            }
             else
             {
-                StageHandler handler = managerObject.AddComponent<StageHandler>();
+                StoryStageHandler handler = managerObject.AddComponent<StoryStageHandler>();
                 handler.Setup(sceneReferences);
             }
         }

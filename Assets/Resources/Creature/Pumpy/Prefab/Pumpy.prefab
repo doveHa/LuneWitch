@@ -263,7 +263,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: -433773718584046436, guid: 681847afacfdb9b49b30e8ba1b4e0bb2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -421,7 +421,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammoPrefab: {fileID: 2608073512222398471, guid: ea85e3c5768651840a98304043394627, type: 3}
   shootPoint: {fileID: 4750009388380501251}
-  ammoSpeed: 1
+  ammoSpeed: 5
 --- !u!1 &5102369372082377853
 GameObject:
   m_ObjectHideFlags: 0
@@ -501,7 +501,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 4
   m_Sprite: {fileID: 0}
   m_Color: {r: 0.5754717, g: 0.54018337, b: 0.54018337, a: 0.69411767}
   m_FlipX: 0

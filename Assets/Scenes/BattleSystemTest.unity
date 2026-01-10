@@ -13840,13 +13840,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6870e4715ae799a41b348c64366a7b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnProgressSlider: {fileID: 0}
-  spawnPoints:
-  - {fileID: 140847133}
-  - {fileID: 431859414}
-  - {fileID: 1826024830}
-  - {fileID: 889899668}
-  - {fileID: 1970050235}
 --- !u!1 &1825269119
 GameObject:
   m_ObjectHideFlags: 0

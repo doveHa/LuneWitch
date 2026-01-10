@@ -17,6 +17,7 @@ TagManager:
   - enemy
   - "\uD654\uC5FC"
   - DropZone
+  - Boss
   layers:
   - Default
   - TransparentFX

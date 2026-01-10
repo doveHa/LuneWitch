@@ -348,6 +348,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e9add828d3648e8adb03e2a24294b07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creatureSprite: {fileID: 0}
+  hitEffectObject: {fileID: 0}
   deathParticles: {fileID: 4093918912061837179}
 --- !u!114 &2536509188850774287
 MonoBehaviour:
@@ -437,7 +439,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -524,7 +526,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 1417754435, guid: 8a715196fb3fe9e4c8fc0e7801128fde, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

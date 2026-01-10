@@ -9,7 +9,7 @@ namespace Script.Creature.AttackHandler
     {
         [SerializeField] private GameObject ammoPrefab;
         [SerializeField] private Transform shootPoint;
-        [SerializeField] private float ammoSpeed = 1f;
+        [SerializeField] private float ammoSpeed = 5f;
 
         public override HashSet<CardZoneCoordinate> AttackRanges()
         {
@@ -34,7 +34,7 @@ namespace Script.Creature.AttackHandler
             AmmoHandler ammoHandler = Instantiate(ammoPrefab, shootPoint.position, Quaternion.identity)
                 .GetComponent<AmmoHandler>();
             ammoHandler.SetStat(Atk, ammoSpeed);
-            ammoHandler.AddForce();
+            ammoHandler.Fire();
         }
     }
 }

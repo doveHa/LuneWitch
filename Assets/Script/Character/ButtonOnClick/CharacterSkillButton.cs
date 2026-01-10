@@ -1,5 +1,4 @@
-﻿using Script.Character.Handler;
-using Script.Stage.Manager;
+﻿using Script.Stage.Manager;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +11,7 @@ namespace Script.Character.ButtonOnClick
 
         private float currentGauge;
         private Button skillButton;
+
         void Start()
         {
             currentGauge = 0f;
@@ -37,6 +37,7 @@ namespace Script.Character.ButtonOnClick
 
         protected override void OnClick()
         {
+            currentGauge = 0f;
             GameFlowManager.Manager.ChHandler.UseSkill();
         }
 

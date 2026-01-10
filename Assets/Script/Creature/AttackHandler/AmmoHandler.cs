@@ -1,4 +1,5 @@
-﻿using Script.Enemy.Handler;
+﻿using Script.Boss.Handler;
+using Script.Enemy.Handler;
 using UnityEngine;
 
 namespace Script.Creature.AttackHandler
@@ -8,6 +9,7 @@ namespace Script.Creature.AttackHandler
     {
         private int atk;
         private float ammoSpeed;
+        private bool isFired = false;
 
         public void SetStat(int atk, float ammoSpeed)
         {
@@ -15,17 +17,39 @@ namespace Script.Creature.AttackHandler
             this.ammoSpeed = ammoSpeed;
         }
 
-        public void AddForce()
+        public void Fire()
         {
-            Debug.Log(ammoSpeed);
-            GetComponent<Rigidbody2D>().linearVelocity = Vector2.right * ammoSpeed;
+            isFired = true;
+        }
+
+        void Update()
+        {
+            if (isFired)
+            {
+                transform.Translate(Vector2.right * ammoSpeed * Time.deltaTime);
+            }
         }
 
         void OnTriggerEnter2D(Collider2D other)
         {
             if (other.CompareTag("Enemy"))
             {
-                other.GetComponentInChildren<EnemyHandler>().Hit(atk);
+                var enemy = other.GetComponentInChildren<EnemyHandler>();
+                if (enemy != null)
+                {
+                    enemy.Hit(atk);
+                }
+
+                Destroy(gameObject);
+            }
+            else if (other.CompareTag("Boss"))
+            {
+                var boss = other.GetComponentInChildren<BossHandler>();
+                if (boss != null)
+                {
+                    boss.Hit(atk);
+                }
+                
                 Destroy(gameObject);
             }
         }

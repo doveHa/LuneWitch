@@ -17,8 +17,9 @@ MonoBehaviour:
   health: 100
   attackTerm: 5
   prefab: {fileID: 804819288300844835, guid: c31023aafd4cfb246964a1190c6eabf7, type: 3}
+  isActive: 0
   name_Kr: "\uBC15\uC950"
-  description: 
+  description: "\uBC15\uC950\uC785\uB2C8\uB2E4."
   cost: 120
   characterImage: {fileID: -1735417878, guid: 4783c7c0936d8b242b7487a2e7782ef4, type: 3}
   unitSize: {x: 1, y: 1}

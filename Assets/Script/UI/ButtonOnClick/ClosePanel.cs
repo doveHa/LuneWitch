@@ -8,6 +8,7 @@ namespace Script.UI.ButtonOnClick
         protected override void OnClick()
         {
             closePanel.SetActive(false);
+            Time.timeScale = 1f; // 시간 정상화 -> 배속 수정 필요
         }
     }
 }

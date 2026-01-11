@@ -12,6 +12,8 @@ namespace Script.Manager
         public static int SelectedChapterNo;
         public static int SelectedRoundNo;
 
+        public string NextDialogueDataID { get; private set; }
+
         protected override void Awake()
         {
             base.Awake();
@@ -61,5 +63,20 @@ namespace Script.Manager
             SceneManager.LoadScene(sceneName);
         }
 
+        public void LoadStory(string sceneName, string dialogueDataID)
+        {
+            string path = $"DialogueData/Story_2_{dialogueDataID}";
+            DialogueData loadedData = Resources.Load<DialogueData>(path);
+
+            if (loadedData != null)
+            {
+                StoryContext.storyToPlay = loadedData;
+                SceneManager.LoadScene("StoryScene");
+            }
+            else
+            {
+                Debug.LogError($"DialogueData not found at path: {path}");
+            }
+        }
     }
 }

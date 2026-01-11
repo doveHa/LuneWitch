@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   introTitle: 
   introDescription: "\uBC88\uD654\uAC00"
-  backgroundSprite: {fileID: 5798488700277797637, guid: c72b93c97910b7d4b940076412aa0cf6, type: 3}
+  backgroundSprite: {fileID: -7416157319414336168, guid: 40041a8d3b1fe0a45b55a726934b7ae2, type: 3}
   isIllustrationMode: 0
   illustrationSprite: {fileID: 0}
   tsvFile: {fileID: 4900000, guid: 3dc1194d4f83a5142bca8a6603871132, type: 3}
@@ -68,5 +68,5 @@ MonoBehaviour:
     rightSprite: {fileID: 0}
   isChapterEnd: 0
   nextSceneName: 
-  nextStory: {fileID: 0}
+  nextStory: {fileID: 11400000, guid: 8759bc5ba078cb64b9581ffcbf7782fa, type: 2}
   nextStoryAfterBattle: {fileID: 0}

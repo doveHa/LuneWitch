@@ -24,5 +24,12 @@ namespace Script.Stage.ButtonOnClick
             Time.fixedDeltaTime = initialSpeed * speedStep[currentIndex];
             GetComponentInChildren<TextMeshProUGUI>().text = speedText[currentIndex];
         }
+
+        // H: 일시정지 해제 시 배속 유지하기 위한 메서드
+        public void ApplyCurrentSpeed()
+        {
+            Time.timeScale = speedStep[currentIndex];
+            Time.fixedDeltaTime = initialSpeed * speedStep[currentIndex];
+        }
     }
 }

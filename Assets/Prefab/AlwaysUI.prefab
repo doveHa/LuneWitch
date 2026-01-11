@@ -2782,6 +2782,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ExitMenu: {fileID: 7781974056285829461}
+  CancelBtn: {fileID: 2549569275415964043}
+  gameSpeedButton: {fileID: 0}
 --- !u!114 &1437586425644623147
 MonoBehaviour:
   m_ObjectHideFlags: 0

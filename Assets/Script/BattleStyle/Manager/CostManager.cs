@@ -44,7 +44,7 @@ namespace Script.BattleStyle.Manager
 
         private void Initialize()
         {
-            cps = 100;
+            cps = int.Parse(VarManager.Manager.inputField.text);
             costTimer = 0f;
             Cost = 0;
         }

@@ -29,17 +29,17 @@ namespace Script.Enemy.Handler
             rigidbody.linearVelocity = Vector2.zero;
         }
 
-        public void KnockBack(Vector2 knockBack)
+        public void KnockBack(float knockBack)
         {
             StartCoroutine(Slide(knockBack));
         }
 
-        private IEnumerator Slide(Vector2 knockBack)
+        private IEnumerator Slide(float knockBack)
         {
             rigidbody.linearVelocity = Vector2.zero;
 
             Vector2 startPos = transform.position;
-            Vector2 endPos = new Vector2(knockBack.x, startPos.y);
+            Vector2 endPos = new Vector2(startPos.x + knockBack, startPos.y);
             float elapsedTime = 0f;
 
             while (elapsedTime < knockBackTime)
@@ -54,7 +54,6 @@ namespace Script.Enemy.Handler
             }
 
             transform.position = endPos;
-            StartWalk();
         }
     }
 }

@@ -37,6 +37,7 @@ public class DialogueData : ScriptableObject
     [Header("Background")]
     public Sprite backgroundSprite;
     public bool isIllustrationMode; // 일러스트 모드면 캐릭터 이미지X
+    public Sprite illustrationSprite;
 
     [Header("TSV Text File")]
     public TextAsset tsvFile;

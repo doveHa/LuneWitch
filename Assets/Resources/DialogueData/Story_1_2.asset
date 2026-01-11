@@ -95,3 +95,5 @@ MonoBehaviour:
     rightSprite: {fileID: 0}
   isChapterEnd: 1
   nextSceneName: 
+  nextStory: {fileID: 11400000, guid: 212d83731e9617e4f81e77e89ae05da6, type: 2}
+  nextStoryAfterBattle: {fileID: 0}

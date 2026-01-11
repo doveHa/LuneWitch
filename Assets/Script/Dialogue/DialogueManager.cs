@@ -28,6 +28,7 @@ public class DialogueManager : MonoBehaviour
     [Header("Main Dialogue")]
     public GameObject dialogueCanvas;
     public Image backgroundImage;
+    public Image illustrationImage;
     public Image leftCharImage;
     public Image rightCharImage;
     public TextMeshProUGUI nameText;
@@ -68,6 +69,7 @@ public class DialogueManager : MonoBehaviour
 
         if (leftCharImage) leftCharImage.gameObject.SetActive(false);
         if (rightCharImage) rightCharImage.gameObject.SetActive(false);
+        if (illustrationImage) illustrationImage.gameObject.SetActive(false);
     }
 
     private void Start()
@@ -115,7 +117,24 @@ public class DialogueManager : MonoBehaviour
             if (introDescText) introDescText.text = currentStory.introDescription;
         }
 
+        backgroundImage.sprite = currentStory.backgroundSprite;
+        
         dialogueCanvas.SetActive(true);
+
+        backgroundImage.sprite = currentStory.backgroundSprite;
+
+        if (illustrationImage != null)
+        {
+            if (currentStory.isIllustrationMode && currentStory.illustrationSprite != null)
+            {
+                illustrationImage.sprite = currentStory.illustrationSprite;
+                illustrationImage.gameObject.SetActive(true);
+            }
+            else
+            {
+                illustrationImage.gameObject.SetActive(false);
+            }
+        }
 
         DialogueLine firstLine = currentStory.lines[0];
         if (!currentStory.isIllustrationMode)
@@ -123,9 +142,6 @@ public class DialogueManager : MonoBehaviour
             UpdateCharacterImages(firstLine);
             UpdateVisuals(firstLine.speakerType);
         }
-
-        // 인트로 대기 시간
-        // yield return new WaitForSeconds(introDuration); 
 
         // 페이드 아웃
         if (introPanel != null)
@@ -211,10 +227,18 @@ public class DialogueManager : MonoBehaviour
             // 일러스트 모드면 캐릭터 둘 다 숨김
             if (leftCharImage) leftCharImage.gameObject.SetActive(false);
             if (rightCharImage) rightCharImage.gameObject.SetActive(false);
+
+            if (illustrationImage != null && currentStory.illustrationSprite != null)
+            {
+                illustrationImage.sprite = currentStory.illustrationSprite;
+                illustrationImage.gameObject.SetActive(true);
+            }
         }
         else
         {
             // 일반 모드면 캐릭터 이미지 업데이트
+            if (illustrationImage) illustrationImage.gameObject.SetActive(false);
+
             UpdateCharacterImages(line);
             UpdateVisuals(line.speakerType);
         }

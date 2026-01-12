@@ -25,35 +25,43 @@ MonoBehaviour:
       \uC778\uAC04\uC740 \uD55C \uBA85\uB3C4 \uBABB \uBCF8 \uAC83 \uAC19\uC544."
     leftSprite: {fileID: 5352576004762474852, guid: dc6975b729361dc43bae75da403e04ca, type: 3}
     rightSprite: {fileID: 0}
+    eventCommand: 
   - speakerType: 1
     speakerName: "\uB8E8\uBBF8\uB098"
     text: "\uADF8\uB798\uB3C4 \uC774\uACF3\uC5D0\uC120 \uC778\uAC04\uB4E4\uC758 \uB9C8\uB825\uC774
       \uB290\uAEF4\uC838\u2026"
     leftSprite: {fileID: 5352576004762474852, guid: dc6975b729361dc43bae75da403e04ca, type: 3}
     rightSprite: {fileID: 0}
+    eventCommand: 
   - speakerType: 1
     speakerName: "\uB8E8\uBBF8\uB098"
     text: "\uADF8\uB7F0\uB370 \uADF8 \uB9C8\uB825\uC758 \uC6C0\uC9C1\uC784\uC774
       \uBB54\uAC00 \uC218\uC0C1\uD574."
     leftSprite: {fileID: 5352576004762474852, guid: dc6975b729361dc43bae75da403e04ca, type: 3}
     rightSprite: {fileID: 0}
+    eventCommand: 
   - speakerType: 1
     speakerName: "\uB8E8\uBBF8\uB098"
     text: "\uB0B4\uAC00 \uC804\uC5D0 \uB290\uAF08\uB358 \u2018\uC218\uC0C1\uD55C
       \uC0DD\uBA85\uCCB4\u2019\uC758 \uB9C8\uB825\uACFC \uBE44\uC2B7\uD55C \uB290\uB08C\uC774\uC57C\u2026"
     leftSprite: {fileID: 5352576004762474852, guid: dc6975b729361dc43bae75da403e04ca, type: 3}
     rightSprite: {fileID: 0}
+    eventCommand: 
   - speakerType: 1
     speakerName: "\uB8E8\uBBF8\uB098"
     text: "\uBB54\uAC00 \uBD88\uAE38\uD55C \uC608\uAC10\uC774 \uB4DC\uB294\uB370\u2026"
     leftSprite: {fileID: 5352576004762474852, guid: dc6975b729361dc43bae75da403e04ca, type: 3}
     rightSprite: {fileID: 0}
+    eventCommand: 
   - speakerType: 1
     speakerName: "\uB8E8\uBBF8\uB098"
     text: "\uC5B4\uC11C \uBB34\uC2A8 \uC77C\uC778\uC9C0 \uC54C\uC544\uBD10\uC57C\uACA0\uC5B4..!"
     leftSprite: {fileID: 5352576004762474852, guid: dc6975b729361dc43bae75da403e04ca, type: 3}
     rightSprite: {fileID: 0}
+    eventCommand: 
   isChapterEnd: 0
+  chapterClearMessage: 
+  nextBattleRoundNo: 2
   nextSceneName: BattleScene
   nextStory: {fileID: 0}
   nextStoryAfterBattle: {fileID: 11400000, guid: 561397b1e25d64e4f85a770ca02b5db9, type: 2}

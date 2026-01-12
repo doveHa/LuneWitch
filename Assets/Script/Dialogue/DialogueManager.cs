@@ -1,10 +1,11 @@
-using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
+using NUnit.Framework;
+using Script.Manager;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
 using UnityEngine.SceneManagement;
-using NUnit.Framework;
+using UnityEngine.UI;
 
 [System.Serializable]
 public struct CharacterVoiceProfile
@@ -336,10 +337,15 @@ public class DialogueManager : MonoBehaviour
             Debug.Log($"소챕터 종료: {currentStory.nextSceneName} 씬으로 이동");
             if (!string.IsNullOrEmpty(currentStory.nextSceneName))
             {
+                if (currentStory.nextBattleRoundNo > 0)
+                {
+                    Debug.Log($"라운드 정보 갱신: {SceneLoadManager.SelectedRoundNo} -> {currentStory.nextBattleRoundNo}");
+                    SceneLoadManager.SelectedRoundNo = currentStory.nextBattleRoundNo;
+                }
+
                 if (currentStory.nextStoryAfterBattle != null)
                 {
                     StoryContext.storyAfterBattle = currentStory.nextStoryAfterBattle;
-                    Debug.Log($"전투 후 '{currentStory.nextStoryAfterBattle.name}' 진행");
                 }
 
                 SceneManager.LoadScene(currentStory.nextSceneName);

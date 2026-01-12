@@ -1,12 +1,12 @@
-Left	루미나	제가 도와드릴 수 있는 건 여기까지인 것 같아요.	Player-12_0	citizen_0
-Left	루미나	전 이 영역에서 함부로 벗어나면 안 되거든요. 	Player-12_0	citizen_0
-Right	시민	정말로 감사드립니다 마녀님..! 이 은혜를 어찌 갚아야 할지..!	Player-12_0	citizen_0
-Left	루미나	아앗..! 아니에요. 해야 할 일을 했을 뿐인 걸요.	Player-12_0	citizen_0
-Right	시민	아이고..! 정말이지 마녀님은 천사가 따로 없네요.. 제가 가진 건 많이 없지만.. 이거라도 받아주시겠어요?	Player-12_0	citizen_0
-Right	시민	제가 비상식량으로 갖고 있던 블루베리에요. 조금 먼 곳에서 따왔지만 아직 신선하고 맛있어요.	Player-12_0	citizen_0
-Left	루미나	헉! 감사해요 그럼 사양하지 않고 받을게요	Player-12_0	citizen_0
-Right	시민	마녀님, 짧은 시간이었지만 정말 감사했습니다.	Player-12_0	citizen_0
-Left	루미나	잘 가요~! 여긴 위험하니 이젠 다시 오지 않는게 좋을 거에요! 만나서 반가웠어요.	Player-12_0	citizen_0
-None		이 후로도 그 시민은 몇 번씩이나 감사인사를 전하며 떠났다.	Player-12_0	citizen_0
-Left	루미나	휴… 너무 멀리 와버린 것 같네.. 	Player-12_0	
-Left	루미나	그럼, 이제 스승님을 뵈러 가야겠어. 그리고 오늘 있었던 일도.. 이야기해 봐야지.	Player-12_0	
+Left	루미나	제가 도와드릴 수 있는 건 여기까지인 것 같아요.	Player-12_0	citizen_0	
+Left	루미나	전 이 영역에서 함부로 벗어나면 안 되거든요. 	Player-12_0	citizen_0	
+Right	시민	정말로 감사드립니다 마녀님..! 이 은혜를 어찌 갚아야 할지..!	Player-12_0	citizen_0	
+Left	루미나	아앗..! 아니에요. 해야 할 일을 했을 뿐인 걸요.	Player-12_0	citizen_0	
+Right	시민	아이고..! 정말이지 마녀님은 천사가 따로 없네요.. 제가 가진 건 많이 없지만.. 이거라도 받아주시겠어요?	Player-12_0	citizen_0	
+Right	시민	제가 비상식량으로 갖고 있던 블루베리에요. 조금 먼 곳에서 따왔지만 아직 신선하고 맛있어요.	Player-12_0	citizen_0	Pop:blueberry1_0
+Left	루미나	헉! 감사해요 그럼 사양하지 않고 받을게요	Player-12_0	citizen_0	Pop:Off
+Right	시민	마녀님, 짧은 시간이었지만 정말 감사했습니다.	Player-12_0	citizen_0	
+Left	루미나	잘 가요~! 여긴 위험하니 이젠 다시 오지 않는게 좋을 거에요! 만나서 반가웠어요.	Player-12_0	citizen_0	
+None		이 후로도 그 시민은 몇 번씩이나 감사인사를 전하며 떠났다.	Player-12_0	citizen_0	
+Left	루미나	휴… 너무 멀리 와버린 것 같네.. 	Player-12_0		
+Left	루미나	그럼, 이제 스승님을 뵈러 가야겠어. 그리고 오늘 있었던 일도.. 이야기해 봐야지.	Player-12_0		

@@ -25,6 +25,9 @@ public class DialogueLine
 
     [Tooltip("오른쪽 캐릭터 스프라이트")]
     public Sprite rightSprite;
+
+    [Tooltip("스토리 연출 명령어")]
+    public string eventCommand;
 }
 
 [CreateAssetMenu(fileName = "New Story", menuName = "Dialogue/Story Data")]
@@ -101,6 +104,12 @@ public class DialogueData : ScriptableObject
             // 4. 이미지 찾기
             if (data.Length > 3) newLine.leftSprite = FindSprite(data[3].Trim());
             if (data.Length > 4) newLine.rightSprite = FindSprite(data[4].Trim());
+
+            // 이벤트 커맨드
+            if (data.Length > 5)
+            {
+                newLine.eventCommand = data[5].Trim();
+            }
 
             lines.Add(newLine);
         }

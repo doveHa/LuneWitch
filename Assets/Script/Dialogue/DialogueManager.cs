@@ -18,19 +18,22 @@ public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance;
 
+    public StoryDirector director;
+
     [Header("Intro Canvas")]
     public GameObject introPanel;
     public TextMeshProUGUI introTitleText;
     public TextMeshProUGUI introDescText;
+
     public float introDuration = 2.0f; // 인트로 패널 표시 시간
     public float fadeDuration = 1.5f;  // 페이드 아웃 시간
 
     [Header("Main Dialogue")]
     public GameObject dialogueCanvas;
-    public Image backgroundImage;
+/*    public Image backgroundImage;
     public Image illustrationImage;
     public Image leftCharImage;
-    public Image rightCharImage;
+    public Image rightCharImage;*/
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
 
@@ -68,9 +71,10 @@ public class DialogueManager : MonoBehaviour
         if (dialogueCanvas) dialogueCanvas.SetActive(false);
         if (rewardPanel) rewardPanel.SetActive(false);
 
-        if (leftCharImage) leftCharImage.gameObject.SetActive(false);
+        /*if (leftCharImage) leftCharImage.gameObject.SetActive(false);
         if (rightCharImage) rightCharImage.gameObject.SetActive(false);
-        if (illustrationImage) illustrationImage.gameObject.SetActive(false);
+        if (illustrationImage) illustrationImage.gameObject.SetActive(false);*/
+        if(director) director.Init();
     }
 
     private void Start()
@@ -105,7 +109,8 @@ public class DialogueManager : MonoBehaviour
         // 1. 인트로 시작
         StartCoroutine(PlayIntroSequence());
     }
-    IEnumerator PlayIntroSequence()
+
+    /*IEnumerator PlayIntroSequence()
     {
         // 1. 인트로 패널(검은 화면) 세팅
         if (introPanel != null)
@@ -167,16 +172,52 @@ public class DialogueManager : MonoBehaviour
         // 4. 대사 타이핑 시작
         DisplayNextLine();
     }
+*/
 
-    /*    public void StartDialogue(DialogueData storyData)
+    IEnumerator PlayIntroSequence()
+    {
+        // 1. 인트로 패널 켜기 (UI 제어는 매니저가 함)
+        if (introPanel)
         {
-            currentStory = storyData;
-            currentLineIndex = 0;
-            isDialogueActive = true;
-            dialoguePanel.SetActive(true);
+            introPanel.SetActive(true);
+            CanvasGroup cg = introPanel.GetComponent<CanvasGroup>();
+            if (!cg) cg = introPanel.AddComponent<CanvasGroup>();
+            cg.alpha = 1f;
+            cg.blocksRaycasts = true;
 
-            DisplayNextLine();
-        }*/
+            if (introTitleText) introTitleText.text = currentStory.introTitle;
+            if (introDescText) introDescText.text = currentStory.introDescription;
+        }
+
+        // 2. 대화창 켜기
+        dialogueCanvas.SetActive(true);
+
+        if (director) director.SetBackground(currentStory.backgroundSprite);
+
+        if (currentStory.lines.Count > 0 && director)
+        {
+            director.UpdateSceneVisuals(currentStory, currentStory.lines[0]);
+        }
+
+        // 3. 페이드 아웃
+        yield return new WaitForSeconds(0.5f); // 살짝 대기 (배경 전환 시간 벌기)
+
+        if (introPanel)
+        {
+            CanvasGroup cg = introPanel.GetComponent<CanvasGroup>();
+            float timer = 0f;
+            while (timer < fadeDuration)
+            {
+                timer += Time.deltaTime;
+                cg.alpha = Mathf.Lerp(1f, 0f, timer / fadeDuration);
+                yield return null;
+            }
+            introPanel.SetActive(false);
+        }
+
+        // 4. 대사 시작
+        DisplayNextLine();
+    }
 
     // Next 버튼이 클릭되었을 때 실행
     public void OnNextBtnClicked()
@@ -225,37 +266,43 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = "";
         currentFullText = line.text;
 
-        // 일러스트 모드 체크 후 배경 업데이트
-        if (currentStory.isIllustrationMode)
-        {
-            // 일러스트 모드면 캐릭터 둘 다 숨김
-            if (leftCharImage) leftCharImage.gameObject.SetActive(false);
-            if (rightCharImage) rightCharImage.gameObject.SetActive(false);
+        /*        // 일러스트 모드 체크 후 배경 업데이트
+                if (currentStory.isIllustrationMode)
+                {
+                    // 일러스트 모드면 캐릭터 둘 다 숨김
+                    if (leftCharImage) leftCharImage.gameObject.SetActive(false);
+                    if (rightCharImage) rightCharImage.gameObject.SetActive(false);
 
-            if (illustrationImage != null && currentStory.illustrationSprite != null)
-            {
-                illustrationImage.sprite = currentStory.illustrationSprite;
-                illustrationImage.gameObject.SetActive(true);
-            }
-        }
-        else
-        {
-            // 일반 모드면 캐릭터 이미지 업데이트
-            if (illustrationImage) illustrationImage.gameObject.SetActive(false);
+                    if (illustrationImage != null && currentStory.illustrationSprite != null)
+                    {
+                        illustrationImage.sprite = currentStory.illustrationSprite;
+                        illustrationImage.gameObject.SetActive(true);
+                    }
+                }
+                else
+                {
+                    // 일반 모드면 캐릭터 이미지 업데이트
+                    if (illustrationImage) illustrationImage.gameObject.SetActive(false);
 
-            UpdateCharacterImages(line);
-            UpdateVisuals(line.speakerType);
+                    UpdateCharacterImages(line);
+                    UpdateVisuals(line.speakerType);
+                }*/
+
+        // 화면 연출
+        if (director)
+        {
+            director.UpdateSceneVisuals(currentStory, line);
         }
 
         //UpdateVisuals(line.speakerType);
 
-        // 백로그 추가 (이전 대화 내용이 있다면)
+        // 백로그 추가
         if (BacklogManager.Instance != null)
         {
             BacklogManager.Instance.AddLog(line.speakerName, line.text);
         }
 
-        // --- 소리 재생 시작 ---
+        // 소리 재생
         if (toonyVoices != null)
         {
             toonyVoices.StopSpeech(); // 이전 소리 끄고
@@ -263,7 +310,6 @@ public class DialogueManager : MonoBehaviour
             // 캐릭터에 맞는 피치 설정
             float pitchToUse = GetPitchByName(line.speakerName);
             toonyVoices.Speak(line.text, pitchToUse);
-            //toonyVoices.Speak(line.text); // 새 소리 재생
         }
 
         // --- 타이핑 효과 시작 ---
@@ -287,7 +333,7 @@ public class DialogueManager : MonoBehaviour
         return defaultPitch;
     }
 
-    void UpdateCharacterImages(DialogueLine line)
+/*    void UpdateCharacterImages(DialogueLine line)
     {
         // 왼쪽 이미지 업데이트 (비어있으면 기존 것 유지)
         if (line.leftSprite != null && leftCharImage != null)
@@ -319,6 +365,7 @@ public class DialogueManager : MonoBehaviour
             SetCharacterVisual(rightCharImage, speaker == SpeakerType.Right);
         }
     }
+*/
 
     void SetCharacterVisual(Image targetImage, bool isActive)
     {

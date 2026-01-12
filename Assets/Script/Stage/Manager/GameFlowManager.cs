@@ -153,18 +153,25 @@ namespace Script.Stage.Manager
         //Story가 하나의 Scene으로 통합되면 아래 함수를 수정하여 연결
         private void LoadNextStory()
         {
+            string dialogueDataID = "";
+
             switch (SceneLoadManager.SelectedRoundNo)
             {
                 case 1:
-                    SceneLoadManager.Manager.LoadStory("Chapter 2 Story 1");
+                    dialogueDataID = "1";
+                    //SceneLoadManager.Manager.LoadStory("Chapter 2 Story 1");
                     break;
                 case 2:
-                    SceneLoadManager.Manager.LoadStory("Chapter 2 Story 4");
+                    dialogueDataID = "4";
+                    //SceneLoadManager.Manager.LoadStory("Chapter 2 Story 4");
                     break;
                 case 3:
-                    SceneLoadManager.Manager.LoadStory("Chapter 2 Story 5");
+                    dialogueDataID = "5";
+                    //SceneLoadManager.Manager.LoadStory("Chapter 2 Story 5");
                     break;
             }
+
+            SceneLoadManager.Manager.LoadStory("StoryScene", dialogueDataID);
         }
 
         private void UpdateElapsedTime()

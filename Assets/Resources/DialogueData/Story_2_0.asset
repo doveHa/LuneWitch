@@ -16,6 +16,7 @@ MonoBehaviour:
   introDescription: "\uBCA8\uBAA8\uB9AC\uC544 \uC678\uACFD"
   backgroundSprite: {fileID: -7416157319414336168, guid: 40041a8d3b1fe0a45b55a726934b7ae2, type: 3}
   isIllustrationMode: 0
+  illustrationSprite: {fileID: 0}
   tsvFile: {fileID: 4900000, guid: 2e95228530494f64790c0e2e4aeae572, type: 3}
   lines:
   - speakerType: 1
@@ -51,3 +52,4 @@ MonoBehaviour:
   isChapterEnd: 0
   nextSceneName: BattleScene
   nextStory: {fileID: 0}
+  nextStoryAfterBattle: {fileID: 11400000, guid: 6c629f0622a9f35468f46639032adac9, type: 2}

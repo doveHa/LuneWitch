@@ -39,8 +39,9 @@ public class DialogueManager : MonoBehaviour
 
     [Header("Buttons")]
     public Button nextButton; // 다음 대사 버튼
+    public Button nextButton2;
     public Button skipButton; // 스킵 버튼
-
+    
     [Header("Settings")]
     public ToonyVoices toonyVoices;
     public List<CharacterVoiceProfile> characterVoices;
@@ -76,6 +77,9 @@ public class DialogueManager : MonoBehaviour
     {
         if (nextButton != null)
             nextButton.onClick.AddListener(OnNextBtnClicked);
+
+        if(nextButton2 != null)
+            nextButton2.onClick.AddListener(OnNextBtnClicked);
 
         if (skipButton != null)
             skipButton.onClick.AddListener(OnSkipBtnClicked);

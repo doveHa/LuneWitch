@@ -175,6 +175,8 @@ MonoBehaviour:
     rightSprite: {fileID: -395058365, guid: 4499765106cd484429308e64bf172d9d, type: 3}
     eventCommand: 
   isChapterEnd: 1
+  chapterClearMessage: "<size=50%><color=#808080>\uC81C 1\uC7A5 \uC644\uB8CC </color></size>
+    \n\uBD88\uCCAD\uAC1D"
   nextSceneName: 
   nextStory: {fileID: 0}
   nextStoryAfterBattle: {fileID: 0}

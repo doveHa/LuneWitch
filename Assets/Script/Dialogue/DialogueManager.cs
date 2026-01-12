@@ -35,6 +35,7 @@ public class DialogueManager : MonoBehaviour
 
     [Header("Reward Panel")]
     public GameObject rewardPanel;
+    public TextMeshProUGUI rewardText;
 
     [Header("Buttons")]
     public Button nextButton; // 다음 대사 버튼
@@ -161,6 +162,12 @@ public class DialogueManager : MonoBehaviour
     {
         if (!isDialogueActive) return;
 
+        if (director != null && director.isSequencePlaying)
+        {
+            director.SkipSequence();
+            return; // 텍스트는 넘어가지 않음
+        }
+
         if (isTyping)
         {
             CompleteTextImmediately();
@@ -176,6 +183,11 @@ public class DialogueManager : MonoBehaviour
     public void OnSkipBtnClicked()
     {
         if (!isDialogueActive) return;
+
+        if (director != null && director.isSequencePlaying)
+        {
+            director.SkipSequence();
+        }
 
         StopAllCoroutines(); // 타이핑 등 모든 코루틴 중지
         if (toonyVoices != null) toonyVoices.StopSpeech();
@@ -309,8 +321,14 @@ public class DialogueManager : MonoBehaviour
         {
             // 1장 2장 종료 -> 보상 패널 활성화
             Debug.Log("보상 패널 활성화");
-            //if (rewardPanel != null) 
-            rewardPanel.SetActive(true);
+
+            if (rewardText != null && !string.IsNullOrEmpty(currentStory.chapterClearMessage))
+            {
+                rewardText.text = currentStory.chapterClearMessage;
+            }
+
+            if (rewardPanel != null)
+                rewardPanel.SetActive(true);
         }
         else
         {

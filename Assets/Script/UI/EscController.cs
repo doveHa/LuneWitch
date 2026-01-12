@@ -51,7 +51,16 @@ public class EscController : MonoBehaviour
             }
             else
             {
-                Time.timeScale = 1f;
+                if (gameSpeedButton != null)
+                {
+                    Debug.Log($"[EscController] 배속 버튼이 연결되어 있음! ({gameSpeedButton.name}) -> 배속 복구 시도");
+                    gameSpeedButton.ApplyCurrentSpeed();
+                }
+                else
+                {
+                    Debug.Log("[EscController] 배속 버튼이 연결 안 됨 (null) -> 1배속으로 강제 초기화");
+                    Time.timeScale = 1f;
+                }
             }
         }
     }
@@ -64,7 +73,16 @@ public class EscController : MonoBehaviour
         }
         else
         {
-            Time.timeScale = 1f;
+            if (gameSpeedButton != null)
+            {
+                Debug.Log($"CancelBtn: [EscController] 배속 버튼이 연결되어 있음! ({gameSpeedButton.name}) -> 배속 복구 시도");
+                gameSpeedButton.ApplyCurrentSpeed();
+            }
+            else
+            {
+                Debug.Log("CanselBtn: [EscController] 배속 버튼이 연결 안 됨 (null) -> 1배속으로 강제 초기화");
+                Time.timeScale = 1f;
+            }
         }
         ExitMenu.SetActive(false);
     }

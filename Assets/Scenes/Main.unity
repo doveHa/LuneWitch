@@ -19531,7 +19531,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2de4ff5b747944e38e0b9779437325ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputField: {fileID: 675381323}
 --- !u!4 &408776614
 Transform:
   m_ObjectHideFlags: 0
@@ -91142,6 +91141,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4877356237704406175, guid: 175cf936d348fc543b61f6bc99afbf16, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5813494566108886805, guid: 175cf936d348fc543b61f6bc99afbf16, type: 3}
       propertyPath: m_Name
       value: AlwaysUI

@@ -28,6 +28,8 @@ namespace Script.Stage.ButtonOnClick
         // H: 일시정지 해제 시 배속 유지하기 위한 메서드
         public void ApplyCurrentSpeed()
         {
+            Debug.Log($"[GameSpeedButton] 배속 적용됨. 현재 인덱스: {currentIndex}, 적용할 배속: {speedStep[currentIndex]}");
+
             Time.timeScale = speedStep[currentIndex];
             Time.fixedDeltaTime = initialSpeed * speedStep[currentIndex];
         }

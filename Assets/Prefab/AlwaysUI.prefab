@@ -3194,7 +3194,6 @@ GameObject:
   - component: {fileID: 1723163871390206160}
   - component: {fileID: 1911441436559275540}
   - component: {fileID: 2549569275415964043}
-  - component: {fileID: 4877356237704406175}
   m_Layer: 5
   m_Name: CancelButton
   m_TagString: Untagged
@@ -3304,19 +3303,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &4877356237704406175
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6185308887277035652}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a630ee3c9c64a8ab1a3da8e4d257b84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  closePanel: {fileID: 7781974056285829461}
 --- !u!1 &6584339500656299951
 GameObject:
   m_ObjectHideFlags: 0

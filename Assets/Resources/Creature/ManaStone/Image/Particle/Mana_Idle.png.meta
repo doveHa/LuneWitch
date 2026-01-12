@@ -138,111 +138,111 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: mana_0
+      name: Mana_Idle_0
       rect:
         serializedVersion: 2
-        x: 40
-        y: 40
-        width: 80
-        height: 70
+        x: 0
+        y: 0
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 3d68e1675cb64a620800000000000000
-      internalID: 2784468965456250579
+      spriteID: 5dc543979dbf8ca49b1f1efdaba018fa
+      internalID: 630781223
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mana_1
+      name: Mana_Idle_1
       rect:
         serializedVersion: 2
-        x: 200
-        y: 40
-        width: 80
-        height: 70
+        x: 160
+        y: 0
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9b240dde3181be260800000000000000
-      internalID: 7127817309117235897
+      spriteID: c0caf0c8dcfe3284a8bc7e95403857c4
+      internalID: -426175569
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mana_2
+      name: Mana_Idle_2
       rect:
         serializedVersion: 2
-        x: 360
-        y: 40
-        width: 80
-        height: 70
+        x: 320
+        y: 0
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9882f9cd7bb480030800000000000000
-      internalID: 3461099566686742665
+      spriteID: d1691c0daa349f846994a3604f85a955
+      internalID: 1581246425
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mana_3
+      name: Mana_Idle_3
       rect:
         serializedVersion: 2
-        x: 520
-        y: 40
-        width: 80
-        height: 70
+        x: 480
+        y: 0
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9b4d03c6634e43d30800000000000000
-      internalID: 4410400857497064633
+      spriteID: 29477522c17c43b40b1228fd4bf07e80
+      internalID: 1388870978
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mana_4
+      name: Mana_Idle_4
       rect:
         serializedVersion: 2
-        x: 680
-        y: 40
-        width: 80
-        height: 70
+        x: 640
+        y: 0
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e4a3f179b0d674ad0800000000000000
-      internalID: -2718083953547330994
+      spriteID: df21bc736fc909c4ead0f3250f6f9c16
+      internalID: -41569511
       vertices: []
       indices: 
       edges: []
@@ -259,13 +259,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":5.0,"y":1.0},"gridSpriteSize":{"x":160.0,"y":160.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      mana_0: 2784468965456250579
-      mana_1: 7127817309117235897
-      mana_2: 3461099566686742665
-      mana_3: 4410400857497064633
-      mana_4: -2718083953547330994
+      Mana_Idle_0: 630781223
+      Mana_Idle_1: -426175569
+      Mana_Idle_2: 1581246425
+      Mana_Idle_3: 1388870978
+      Mana_Idle_4: -41569511
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

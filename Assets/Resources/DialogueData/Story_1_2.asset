@@ -69,14 +69,14 @@ MonoBehaviour:
       \uC54A\uACE0 \uBC1B\uC744\uAC8C\uC694"
     leftSprite: {fileID: 5352576004762474852, guid: dc6975b729361dc43bae75da403e04ca, type: 3}
     rightSprite: {fileID: -9194723345426570509, guid: 228b3c56279d772459dcc2527efd5edf, type: 3}
-    eventCommand: Pop:Off
+    eventCommand: 
   - speakerType: 2
     speakerName: "\uC2DC\uBBFC"
     text: "\uB9C8\uB140\uB2D8, \uC9E7\uC740 \uC2DC\uAC04\uC774\uC5C8\uC9C0\uB9CC
       \uC815\uB9D0 \uAC10\uC0AC\uD588\uC2B5\uB2C8\uB2E4."
     leftSprite: {fileID: 5352576004762474852, guid: dc6975b729361dc43bae75da403e04ca, type: 3}
     rightSprite: {fileID: -9194723345426570509, guid: 228b3c56279d772459dcc2527efd5edf, type: 3}
-    eventCommand: 
+    eventCommand: Pop:OFF
   - speakerType: 1
     speakerName: "\uB8E8\uBBF8\uB098"
     text: "\uC798 \uAC00\uC694~! \uC5EC\uAE34 \uC704\uD5D8\uD558\uB2C8 \uC774\uC820

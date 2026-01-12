@@ -132,12 +132,12 @@ TextureImporter:
       name: "\uBCA0\uB974\uC81C\uC778_0"
       rect:
         serializedVersion: 2
-        x: 40
-        y: 27
+        x: 61
+        y: 530
         width: 592
-        height: 1206
-      alignment: 9
-      pivot: {x: 0.5, y: 0.47}
+        height: 703
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []

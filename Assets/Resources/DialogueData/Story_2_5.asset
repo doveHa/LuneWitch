@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Story_2_5
   m_EditorClassIdentifier: 
   introTitle: 
-  introDescription: "\uC601\uC8FC\uC758 \uC800\uD0DD"
+  introDescription: "\uC601\uC8FC\uC758 \uC800\uD0DD \uC804\uD22C \uD6C4"
   backgroundSprite: {fileID: 994415258, guid: fc1288ec68de55d4cbd14a4ac7b952b0, type: 3}
   isIllustrationMode: 0
   illustrationSprite: {fileID: 0}
@@ -187,7 +187,7 @@ MonoBehaviour:
       \uC228\uC744 \uAC70\uB454\uB2E4"
     leftSprite: {fileID: 5352576004762474852, guid: dc6975b729361dc43bae75da403e04ca, type: 3}
     rightSprite: {fileID: 5233598951272404550, guid: 76769d4a49f06784cb307ca7bfd186d2, type: 3}
-    eventCommand: Anim:MagotasDie
+    eventCommand: Anim:MagotasGone
   - speakerType: 1
     speakerName: "\uB8E8\uBBF8\uB098"
     text: "\u2026."
@@ -273,8 +273,6 @@ MonoBehaviour:
     rightSprite: {fileID: 0}
     eventCommand: 
   isChapterEnd: 1
-  chapterClearMessage: "<size=50%><color=#808080>\uC81C 2\uC7A5 \uC644\uB8CC </color></size>
-    \n\uBD88\uAE38\uD55C \uC11C\uB9C9"
   nextSceneName: 
   nextStory: {fileID: 0}
   nextStoryAfterBattle: {fileID: 0}

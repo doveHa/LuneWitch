@@ -50,8 +50,6 @@ public class DialogueData : ScriptableObject
 
     [Header("Outro")]
     public bool isChapterEnd; // 챕터 종료 여부 -> true면 보상 패널
-    [TextArea]
-    public string chapterClearMessage;
     public string nextSceneName; // 다음 장면 이름, BattleScene or Main
     public DialogueData nextStory;
 

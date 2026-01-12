@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 
 public class StoryDirector : MonoBehaviour
 {
@@ -13,23 +12,13 @@ public class StoryDirector : MonoBehaviour
     public Image leftCharImage;
     public Image rightCharImage;
 
-    [Header("Boss Animation")]
-    public GameObject magotasParent;
-    public Image magotasImage;
-    public Image bossImage;
-    public Sprite[] bossDeathSprites;
-    public float animationSpeed = 0.5f;
+    [Header("Effects")]
+    public Animator effectAnimator;
 
     [Header("Settings")]
     public Color inactiveColor = new Color(0.5f, 0.5f, 0.5f, 1f);
     public float activeScale = 1.0f;
     public float inactiveScale = 0.85f;
-
-    public bool isSequencePlaying { get; private set; } = false;
-    private Coroutine currentSequence;
-    private Coroutine bossAnimCoroutine;
-
-    private DialogueLine currentLine;
 
     // 초기화
     public void Init()
@@ -38,18 +27,12 @@ public class StoryDirector : MonoBehaviour
         if (overlayImage) overlayImage.gameObject.SetActive(false);
         if (leftCharImage) leftCharImage.gameObject.SetActive(false);
         if (rightCharImage) rightCharImage.gameObject.SetActive(false);
-
-        if (magotasParent) magotasParent.SetActive(false);
-        isSequencePlaying = false;
-        if (currentSequence != null) StopCoroutine(currentSequence);
-        if (bossAnimCoroutine != null) StopCoroutine(bossAnimCoroutine);
+        if (effectAnimator) effectAnimator.gameObject.SetActive(false);
     }
 
     // 연출
     public void UpdateSceneVisuals(DialogueData storyData, DialogueLine line)
     {
-        currentLine = line;
-
         // 1. 이벤트 명령어 처리 (CG, Pop, Anim 등)
         ProcessEventCommand(line.eventCommand, storyData);
 
@@ -72,11 +55,8 @@ public class StoryDirector : MonoBehaviour
             // 일반 모드: CG 끄고 캐릭터 켬
             if (illustrationImage) illustrationImage.gameObject.SetActive(false);
 
-            if (!isSequencePlaying)
-            {
-                UpdateCharacterImages(line);
-                HighlightSpeaker(line.speakerType);
-            }
+            UpdateCharacterImages(line);
+            HighlightSpeaker(line.speakerType);
         }
     }
 
@@ -122,92 +102,12 @@ public class StoryDirector : MonoBehaviour
                 }
                 break;
             case "ANIM":
-                if (value == "MagotasDie")
+                if (effectAnimator)
                 {
-                    StartCoroutine(PlayMagotasSequence());
+                    effectAnimator.gameObject.SetActive(true);
+                    effectAnimator.Play(value, -1, 0f);
                 }
                 break;
-        }
-    }
-
-    public void SkipSequence()
-    {
-        if (!isSequencePlaying) return;
-
-        if (currentSequence != null) StopCoroutine(currentSequence);
-        if (bossAnimCoroutine != null) StopCoroutine(bossAnimCoroutine);
-
-        if (magotasParent) magotasParent.SetActive(false);
-
-        if (magotasImage)
-        {
-            magotasImage.color = new Color(magotasImage.color.r, magotasImage.color.g, magotasImage.color.b, 0f);
-            RectTransform rect = magotasImage.GetComponent<RectTransform>();
-        }
-
-        isSequencePlaying = false;
-
-        UpdateCharacterImages(currentLine);
-        HighlightSpeaker(currentLine.speakerType);
-    }
-
-    IEnumerator PlayMagotasSequence()
-    {
-        isSequencePlaying = true;
-
-        if (leftCharImage) leftCharImage.gameObject.SetActive(false);
-        if (rightCharImage) rightCharImage.gameObject.SetActive(false);
-
-        if (magotasParent) magotasParent.SetActive(true);
-
-        // 영주 사망 애니메이션
-        if (bossImage != null && bossDeathSprites != null && bossDeathSprites.Length > 0)
-        {
-            bossAnimCoroutine = StartCoroutine(RunBossSpriteAnimation());
-        }
-
-        // Magotas 페이드 아웃
-        if (magotasImage)
-        {
-            RectTransform rect = magotasImage.GetComponent<RectTransform>();
-            Vector2 startPos = rect.anchoredPosition;
-            Vector2 targetPos = startPos + new Vector2(0, 600f);
-
-            Color startColor = magotasImage.color;
-            Color targetColor = new Color(startColor.r, startColor.g, startColor.b, 0f);
-
-            float duration = 5.0f;
-            float elapsed = 0f;
-
-            while (elapsed < duration)
-            {
-                elapsed += Time.deltaTime;
-                float t = elapsed / duration;
-                rect.anchoredPosition = Vector2.Lerp(startPos, targetPos, t);
-                magotasImage.color = Color.Lerp(startColor, targetColor, t);
-                yield return null;
-            }
-
-            rect.anchoredPosition = targetPos;
-            magotasImage.color = targetColor;
-        }
-
-        // 3. 종료 처리
-        if (magotasParent) magotasParent.SetActive(false);
-
-        isSequencePlaying = false;
-
-        UpdateCharacterImages(currentLine);
-        HighlightSpeaker(currentLine.speakerType);
-    }
-
-    IEnumerator RunBossSpriteAnimation()
-    {
-        bossImage.gameObject.SetActive(true);
-        foreach (Sprite frame in bossDeathSprites)
-        {
-            bossImage.sprite = frame;
-            yield return new WaitForSeconds(animationSpeed);
         }
     }
 

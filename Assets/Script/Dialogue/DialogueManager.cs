@@ -30,10 +30,6 @@ public class DialogueManager : MonoBehaviour
 
     [Header("Main Dialogue")]
     public GameObject dialogueCanvas;
-/*    public Image backgroundImage;
-    public Image illustrationImage;
-    public Image leftCharImage;
-    public Image rightCharImage;*/
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
 
@@ -71,9 +67,6 @@ public class DialogueManager : MonoBehaviour
         if (dialogueCanvas) dialogueCanvas.SetActive(false);
         if (rewardPanel) rewardPanel.SetActive(false);
 
-        /*if (leftCharImage) leftCharImage.gameObject.SetActive(false);
-        if (rightCharImage) rightCharImage.gameObject.SetActive(false);
-        if (illustrationImage) illustrationImage.gameObject.SetActive(false);*/
         if(director) director.Init();
     }
 
@@ -102,6 +95,11 @@ public class DialogueManager : MonoBehaviour
     // 외부 호출 시작 함수
     public void PlayStory(DialogueData storyData)
     {
+        // 기존 코루틴 중지
+        StopAllCoroutines();
+        if (director) director.Init();
+        if (dialogueCanvas) dialogueCanvas.SetActive(false);
+
         currentStory = storyData;
         currentLineIndex = 0;
         isDialogueActive = true;
@@ -109,70 +107,6 @@ public class DialogueManager : MonoBehaviour
         // 1. 인트로 시작
         StartCoroutine(PlayIntroSequence());
     }
-
-    /*IEnumerator PlayIntroSequence()
-    {
-        // 1. 인트로 패널(검은 화면) 세팅
-        if (introPanel != null)
-        {
-            introPanel.SetActive(true);
-            CanvasGroup canvasGroup = introPanel.GetComponent<CanvasGroup>();
-            if (canvasGroup == null) canvasGroup = introPanel.AddComponent<CanvasGroup>();
-
-            canvasGroup.alpha = 1f; // 완전 불투명 (뒤에 뭐가 있든 가림)
-            canvasGroup.blocksRaycasts = true; // 클릭 방지
-
-            if (introTitleText) introTitleText.text = currentStory.introTitle;
-            if (introDescText) introDescText.text = currentStory.introDescription;
-        }
-
-        backgroundImage.sprite = currentStory.backgroundSprite;
-        
-        dialogueCanvas.SetActive(true);
-
-        backgroundImage.sprite = currentStory.backgroundSprite;
-
-        if (illustrationImage != null)
-        {
-            if (currentStory.isIllustrationMode && currentStory.illustrationSprite != null)
-            {
-                illustrationImage.sprite = currentStory.illustrationSprite;
-                illustrationImage.gameObject.SetActive(true);
-            }
-            else
-            {
-                illustrationImage.gameObject.SetActive(false);
-            }
-        }
-
-        DialogueLine firstLine = currentStory.lines[0];
-        if (!currentStory.isIllustrationMode)
-        {
-            UpdateCharacterImages(firstLine);
-            UpdateVisuals(firstLine.speakerType);
-        }
-
-        // 페이드 아웃
-        if (introPanel != null)
-        {
-            CanvasGroup canvasGroup = introPanel.GetComponent<CanvasGroup>();
-            float timer = 0f;
-
-            while (timer < fadeDuration)
-            {
-                timer += Time.deltaTime;
-                canvasGroup.alpha = Mathf.Lerp(1f, 0f, timer / fadeDuration);
-                yield return null;
-            }
-
-            // 다 투명해졌으면 인트로 끄기
-            introPanel.SetActive(false);
-        }
-
-        // 4. 대사 타이핑 시작
-        DisplayNextLine();
-    }
-*/
 
     IEnumerator PlayIntroSequence()
     {
@@ -190,7 +124,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         // 2. 대화창 켜기
-        dialogueCanvas.SetActive(true);
+        //dialogueCanvas.SetActive(true);
 
         if (director) director.SetBackground(currentStory.backgroundSprite);
 
@@ -199,8 +133,11 @@ public class DialogueManager : MonoBehaviour
             director.UpdateSceneVisuals(currentStory, currentStory.lines[0]);
         }
 
+        yield return null;
         // 3. 페이드 아웃
         yield return new WaitForSeconds(0.5f); // 살짝 대기 (배경 전환 시간 벌기)
+        
+        if (dialogueCanvas) dialogueCanvas.SetActive(true);
 
         if (introPanel)
         {
@@ -266,28 +203,6 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = "";
         currentFullText = line.text;
 
-        /*        // 일러스트 모드 체크 후 배경 업데이트
-                if (currentStory.isIllustrationMode)
-                {
-                    // 일러스트 모드면 캐릭터 둘 다 숨김
-                    if (leftCharImage) leftCharImage.gameObject.SetActive(false);
-                    if (rightCharImage) rightCharImage.gameObject.SetActive(false);
-
-                    if (illustrationImage != null && currentStory.illustrationSprite != null)
-                    {
-                        illustrationImage.sprite = currentStory.illustrationSprite;
-                        illustrationImage.gameObject.SetActive(true);
-                    }
-                }
-                else
-                {
-                    // 일반 모드면 캐릭터 이미지 업데이트
-                    if (illustrationImage) illustrationImage.gameObject.SetActive(false);
-
-                    UpdateCharacterImages(line);
-                    UpdateVisuals(line.speakerType);
-                }*/
-
         // 화면 연출
         if (director)
         {
@@ -332,40 +247,6 @@ public class DialogueManager : MonoBehaviour
         // 없으면 기본값 반환
         return defaultPitch;
     }
-
-/*    void UpdateCharacterImages(DialogueLine line)
-    {
-        // 왼쪽 이미지 업데이트 (비어있으면 기존 것 유지)
-        if (line.leftSprite != null && leftCharImage != null)
-        {
-            leftCharImage.sprite = line.leftSprite;
-            //코드로 비율 유지
-            leftCharImage.preserveAspect = true;
-            leftCharImage.gameObject.SetActive(true);
-        }
-
-        // 오른쪽 이미지 업데이트
-        if (line.rightSprite != null && rightCharImage != null)
-        {
-            rightCharImage.sprite = line.rightSprite;
-            //코드로 비율 유지
-            rightCharImage.preserveAspect = true;
-            rightCharImage.gameObject.SetActive(true);
-        }
-    }
-
-    void UpdateVisuals(SpeakerType speaker)
-    {
-        if (leftCharImage.gameObject.activeSelf)
-        {
-            SetCharacterVisual(leftCharImage, speaker == SpeakerType.Left);
-        }
-        if (rightCharImage.gameObject.activeSelf)
-        {
-            SetCharacterVisual(rightCharImage, speaker == SpeakerType.Right);
-        }
-    }
-*/
 
     void SetCharacterVisual(Image targetImage, bool isActive)
     {

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Audio;
 
 static public class ToonyVoicesResources
 {
@@ -135,13 +136,14 @@ public class ToonyVoices : MonoBehaviour
 
 	//HH: 코루틴 제어 변수 추가
 	private Coroutine _speechCoroutine;
+    public AudioMixerGroup voiceMixerGroup; // 오디오 믹서 그룹 참조
 
     #endregion
 
     //--------------------------------------------------------------------------
     #region Properties
 
-	public CharacterSoundedEvent CharacterSounded
+    public CharacterSoundedEvent CharacterSounded
     {
 		get
         {
@@ -165,10 +167,16 @@ public class ToonyVoices : MonoBehaviour
     private void Awake() //Start -> Awake
     {
 		_source = GetComponent<AudioSource>();
-		_source.playOnAwake = false;
+
+        if (voiceMixerGroup != null)
+        {
+            _source.outputAudioMixerGroup = voiceMixerGroup;
+        }
+
+        _source.playOnAwake = false;
 		_source.pitch = _basePitch;
 		_previousVolume = _source.volume;
-	}
+    }
 
     #endregion
 

@@ -190,14 +190,51 @@ public class DialogueManager : MonoBehaviour
             director.SkipSequence();
         }
 
-        StopAllCoroutines(); // 타이핑 등 모든 코루틴 중지
-        if (toonyVoices != null) toonyVoices.StopSpeech();
+        if (currentLineIndex >= currentStory.lines.Count && !isTyping)
+        {
+            EndDialogue();
+            return;
+        }
 
+        SkipDialogue();
+    }
+
+    private void SkipDialogue()
+    {
+        if (typingCoroutine != null) StopCoroutine(typingCoroutine);
         isTyping = false;
 
-        // 마지막 대사로 점프
-        currentLineIndex = currentStory.lines.Count - 1;
-        DisplayNextLine();
+        if (toonyVoices != null) toonyVoices.StopSpeech();
+
+        // 백로그 대사 추가
+        if (BacklogManager.Instance != null && currentStory != null)
+        {
+            for (int i = currentLineIndex; i < currentStory.lines.Count; i++)
+            {
+                var line = currentStory.lines[i];
+                BacklogManager.Instance.AddLog(line.speakerName, line.text);
+            }
+        }
+
+        // 마지막 대사 출력
+        if (currentStory != null && currentStory.lines.Count > 0)
+        {
+            int lastIndex = currentStory.lines.Count - 1;
+            DialogueLine lastLine = currentStory.lines[lastIndex];
+
+            if (dialogueText) dialogueText.text = lastLine.text;
+            if (nameText) nameText.text = lastLine.speakerName;
+
+            if (director)
+            {
+                director.UpdateSceneVisuals(currentStory, lastLine);
+            }
+        }
+
+        // 다음 클릭 시 종료되도록 인덱스를 끝으로 설정
+        currentLineIndex = currentStory.lines.Count;
+
+        Debug.Log("대화 스킵 완료: 마지막 대사 출력 및 백로그 저장 완료");
     }
 
     private void DisplayNextLine()

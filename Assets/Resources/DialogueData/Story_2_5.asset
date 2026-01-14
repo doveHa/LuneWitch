@@ -193,17 +193,10 @@ MonoBehaviour:
     text: "\u2026."
     leftSprite: {fileID: 5352576004762474852, guid: dc6975b729361dc43bae75da403e04ca, type: 3}
     rightSprite: {fileID: 0}
-    eventCommand: 
+    eventCommand: Anim:BubbleOn
   - speakerType: 1
     speakerName: "\uB8E8\uBBF8\uB098"
     text: "\u2026\u2026.."
-    leftSprite: {fileID: 5352576004762474852, guid: dc6975b729361dc43bae75da403e04ca, type: 3}
-    rightSprite: {fileID: 0}
-    eventCommand: 
-  - speakerType: 0
-    speakerName: 
-    text: "\uB8E8\uBBF8\uB098\uC758 \uAE34 \uCE68\uBB35\uC774 \uD55C \uB3D9\uC548
-      \uC774\uC5B4\uC9C4\uB2E4."
     leftSprite: {fileID: 5352576004762474852, guid: dc6975b729361dc43bae75da403e04ca, type: 3}
     rightSprite: {fileID: 0}
     eventCommand: 
@@ -230,21 +223,6 @@ MonoBehaviour:
   - speakerType: 1
     speakerName: "\uB8E8\uBBF8\uB098"
     text: "\u2026\uC774\uAC78\u2026 \uB0B4\uAC00 \uB9C9\uC744 \uC218 \uC788\uC744\uAE4C..?"
-    leftSprite: {fileID: 5352576004762474852, guid: dc6975b729361dc43bae75da403e04ca, type: 3}
-    rightSprite: {fileID: 0}
-    eventCommand: 
-  - speakerType: 0
-    speakerName: 
-    text: "\uC804\uD22C\uC758 \uAE34\uC7A5\uAC10\uC774 \uAC00\uC2E0 \uC790\uB9AC\uC5D0,
-      \uC54C \uC218 \uC5C6\uB294 \uACF5\uD3EC\uC640 \uBD88\uC548\uC774 \uC11C\uC11C\uD788
-      \uC2A4\uBA70\uB4E0\uB2E4."
-    leftSprite: {fileID: 5352576004762474852, guid: dc6975b729361dc43bae75da403e04ca, type: 3}
-    rightSprite: {fileID: 0}
-    eventCommand: 
-  - speakerType: 0
-    speakerName: 
-    text: "\uC55E\uC73C\uB85C \uC790\uC2E0\uC5D0\uAC8C \uB2E5\uCE60 \uBBF8\uB798\uC5D0
-      \uBB38\uB4DD \uBA38\uB9AC\uAC00 \uC544\uD30C\uC9C4\uB2E4."
     leftSprite: {fileID: 5352576004762474852, guid: dc6975b729361dc43bae75da403e04ca, type: 3}
     rightSprite: {fileID: 0}
     eventCommand: 

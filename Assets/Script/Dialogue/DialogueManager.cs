@@ -60,6 +60,9 @@ public class DialogueManager : MonoBehaviour
     private string currentFullText = "";
     private Coroutine typingCoroutine;
 
+    private TextMeshProUGUI currentTargetText;
+    private bool isBubbleMode = false;
+
     private void Awake()
     {
         if (Instance == null) Instance = this;
@@ -92,6 +95,9 @@ public class DialogueManager : MonoBehaviour
         {
             Debug.Log("다이얼로그 데이터 없음");
         }
+
+        currentTargetText = dialogueText;
+        isBubbleMode = false;
     }
 
     // 외부 호출 시작 함수
@@ -250,13 +256,17 @@ public class DialogueManager : MonoBehaviour
         // UI 설정
         nameText.text = line.speakerName;
 
-        dialogueText.text = "";
+        if (currentTargetText != null) currentTargetText.text = "";
+        else dialogueText.text = "";
+
         currentFullText = line.text;
 
         // 화면 연출
         if (director)
         {
             director.UpdateSceneVisuals(currentStory, line);
+
+            CheckBubbleMode(line.eventCommand);
         }
 
         //UpdateVisuals(line.speakerType);
@@ -301,30 +311,15 @@ public class DialogueManager : MonoBehaviour
         return defaultPitch;
     }
 
-    void SetCharacterVisual(Image targetImage, bool isActive)
-    {
-        RectTransform rect = targetImage.GetComponent<RectTransform>();
-        if (isActive)
-        {
-            rect.localScale = Vector3.one * activeScale;
-            targetImage.color = Color.white;
-            rect.SetAsLastSibling();
-        }
-        else
-        {
-            rect.localScale = Vector3.one * inactiveScale;
-            targetImage.color = inactiveColor;
-        }
-    }
-
     IEnumerator TypeText(string textToType)
     {
         isTyping = true;
+        TextMeshProUGUI target = currentTargetText != null ? currentTargetText : dialogueText;
         dialogueText.text = ""; // 시작 전 초기화
 
         foreach (char letter in textToType.ToCharArray())
         {
-            dialogueText.text += letter; // 한 글자 추가
+            target.text += letter; // 한 글자 추가
             yield return new WaitForSeconds(typingSpeed); // 대기
         }
 
@@ -335,10 +330,12 @@ public class DialogueManager : MonoBehaviour
     {
         if (typingCoroutine != null) StopCoroutine(typingCoroutine);
 
-        dialogueText.text = currentFullText; // 완성된 문장 바로 출력
+        TextMeshProUGUI target = currentTargetText != null ? currentTargetText : dialogueText;
+
+        target.text = currentFullText;
+
         isTyping = false;
 
-        // 텍스트 완성 시 소리도 멈추기
         if (toonyVoices != null) toonyVoices.StopSpeech();
     }
 
@@ -390,6 +387,25 @@ public class DialogueManager : MonoBehaviour
 
                 SceneManager.LoadScene(currentStory.nextSceneName);
             }
+        }
+    }
+
+    // 버블 텍스트
+    void CheckBubbleMode(string command)
+    {
+        if (string.IsNullOrEmpty(command)) return;
+
+        if (command.ToUpper() == "ANIM:BUBBLEON")
+        {
+            isBubbleMode = true;
+
+            if (director != null && director.bubbleText != null)
+                currentTargetText = director.bubbleText;
+        }
+        else if (command.ToUpper() == "ANIM:BUBBLEOFF")
+        {
+            isBubbleMode = false;
+            currentTargetText = dialogueText;
         }
     }
 }

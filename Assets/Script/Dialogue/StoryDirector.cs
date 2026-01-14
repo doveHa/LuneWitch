@@ -1,11 +1,13 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using TMPro;
 
 public class StoryDirector : MonoBehaviour
 {
     [Header("Background & CG")]
     public Image backgroundImage;
+    public Image backlogImage;
     public Image illustrationImage; // CG용
     public Image overlayImage;      // 팝업 아이템용
 
@@ -25,6 +27,11 @@ public class StoryDirector : MonoBehaviour
     public float activeScale = 1.0f;
     public float inactiveScale = 0.85f;
 
+    [Header("UI")]
+    public GameObject dialoguePanel;
+    public GameObject bubblePanel;
+    public TextMeshProUGUI bubbleText;
+
     public bool isSequencePlaying { get; private set; } = false;
     private Coroutine currentSequence;
     private Coroutine bossAnimCoroutine;
@@ -43,6 +50,9 @@ public class StoryDirector : MonoBehaviour
         isSequencePlaying = false;
         if (currentSequence != null) StopCoroutine(currentSequence);
         if (bossAnimCoroutine != null) StopCoroutine(bossAnimCoroutine);
+
+        if (dialoguePanel) dialoguePanel.SetActive(true);
+        if (bubblePanel) bubblePanel.SetActive(false);
     }
 
     // 연출
@@ -87,6 +97,10 @@ public class StoryDirector : MonoBehaviour
         {
             backgroundImage.sprite = bgSprite;
         }
+        if (backlogImage != null && bgSprite != null)
+        {
+            backlogImage.sprite = bgSprite;
+        }
     }
 
     // 명령어 해석기
@@ -124,7 +138,17 @@ public class StoryDirector : MonoBehaviour
             case "ANIM":
                 if (value == "MagotasDie")
                 {
+                    if (currentSequence != null) StopCoroutine(currentSequence);
+                    if (bossAnimCoroutine != null) StopCoroutine(bossAnimCoroutine);
                     StartCoroutine(PlayMagotasSequence());
+                }
+                else if (value == "BubbleOn")
+                {
+                    SetBubbleMode(true);
+                }
+                else if (value == "BubbleOff")
+                {
+                    SetBubbleMode(false);
                 }
                 break;
         }
@@ -195,10 +219,12 @@ public class StoryDirector : MonoBehaviour
         // 3. 종료 처리
         if (magotasParent) magotasParent.SetActive(false);
 
+        SetBubbleMode(true);
+
         isSequencePlaying = false;
 
         UpdateCharacterImages(currentLine);
-        HighlightSpeaker(currentLine.speakerType);
+        //HighlightSpeaker(currentLine.speakerType);
     }
 
     IEnumerator RunBossSpriteAnimation()
@@ -251,6 +277,27 @@ public class StoryDirector : MonoBehaviour
         {
             rect.localScale = Vector3.one * inactiveScale;
             target.color = inactiveColor;
+        }
+    }
+
+    public void SetBubbleMode(bool isOn)
+    {
+        if (isOn)
+        {
+            // 말풍선 켜고, 기존 창 끄기
+            if (dialoguePanel) dialoguePanel.SetActive(false);
+            if (bubblePanel) bubblePanel.SetActive(true);
+            if (magotasParent) magotasParent.SetActive(true);
+
+            // 말풍선 텍스트 초기화
+            if (bubbleText) bubbleText.text = "";
+        }
+        else
+        {
+            // 말풍선 끄고, 기존 창 복구
+            if (bubblePanel) bubblePanel.SetActive(false);
+            if (dialoguePanel) dialoguePanel.SetActive(true);
+            if (magotasParent) magotasParent.SetActive(false);
         }
     }
 

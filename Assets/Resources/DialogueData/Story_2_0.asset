@@ -27,7 +27,7 @@ MonoBehaviour:
     eventCommand: CG:OFF
   - speakerType: 0
     speakerName: 
-    text: "\uC8FC\uBCC0\uC744 \uB458\uB7EC\uBCF8\uB2E4. \uAC89\uBCF4\uAE30\uC5D4
+    text: "\uC8FC\uBCC0\uC744 \uB458\uB7EC\uBCF8\uB2E4.  \\n\uAC89\uBCF4\uAE30\uC5D4
       \uD3C9\uC628\uD558\uC9C0\uB9CC, \uC5B4\uB518\uAC00 \uBBF8\uBB18\uD55C \uAE30\uC6B4\uC774
       \uAC10\uB3C8\uB2E4."
     leftSprite: {fileID: 5352576004762474852, guid: dc6975b729361dc43bae75da403e04ca, type: 3}
@@ -41,20 +41,22 @@ MonoBehaviour:
     eventCommand: 
   - speakerType: 1
     speakerName: "\uB8E8\uBBF8\uB098"
-    text: "\uBD84\uC704\uAE30\uAC00 \uBB18\uD558\uB124. \uD639\uC2DC \uC778\uAC04\uB4E4\uC758
+    text: "\uBD84\uC704\uAE30\uAC00 \uBB18\uD558\uB124.  \\n\uD639\uC2DC \uC778\uAC04\uB4E4\uC758
       \uC0DD\uD65C \uBC29\uC2DD\uC774 \uBC14\uB010 \uAC78\uAE4C?"
     leftSprite: {fileID: 5352576004762474852, guid: dc6975b729361dc43bae75da403e04ca, type: 3}
     rightSprite: {fileID: 0}
     eventCommand: 
   - speakerType: 1
     speakerName: "\uB8E8\uBBF8\uB098"
-    text: "\uC77C\uB2E8 \uBC88\uD654\uAC00\uB85C \uAC00\uBCF4\uC790. \uC0AC\uB78C\uB4E4\uC774
+    text: "\uC77C\uB2E8 \uBC88\uD654\uAC00\uB85C \uAC00\uBCF4\uC790.  \\n\uC0AC\uB78C\uB4E4\uC774
       \uBAA8\uC5EC \uC788\uB294 \uACF3\uC5D0\uC11C \uB2E8\uC11C\uB97C \uC5BB\uC744
       \uC218 \uC788\uC744\uAC70\uC57C."
     leftSprite: {fileID: 5352576004762474852, guid: dc6975b729361dc43bae75da403e04ca, type: 3}
     rightSprite: {fileID: 0}
     eventCommand: 
   isChapterEnd: 0
+  chapterClearMessage: 
+  nextBattleRoundNo: 0
   nextSceneName: BattleScene
   nextStory: {fileID: 0}
   nextStoryAfterBattle: {fileID: 11400000, guid: 6c629f0622a9f35468f46639032adac9, type: 2}

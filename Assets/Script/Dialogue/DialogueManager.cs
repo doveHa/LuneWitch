@@ -236,8 +236,11 @@ public class DialogueManager : MonoBehaviour
             toonyVoices.StopSpeech(); // 이전 소리 끄고
 
             // 캐릭터에 맞는 피치 설정
-            float pitchToUse = GetPitchByName(line.speakerName);
-            toonyVoices.Speak(line.text, pitchToUse);
+            if (!string.IsNullOrEmpty(line.speakerName))
+            {
+                float pitchToUse = GetPitchByName(line.speakerName);
+                toonyVoices.Speak(line.text, pitchToUse);
+            }
         }
 
         // --- 타이핑 효과 시작 ---

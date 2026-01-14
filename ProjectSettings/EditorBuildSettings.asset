@@ -12,31 +12,31 @@ EditorBuildSettings:
     path: Assets/Scenes/Main.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 0
-    path: Assets/Scenes/Chapter 1 Story.unity
+    path: Assets/Scenes/OLD/Chapter 1 Story.unity
     guid: 26005430f72282449ad86ae7e2947deb
   - enabled: 0
-    path: Assets/Scenes/Chapter 1 Story 1.unity
+    path: Assets/Scenes/OLD/Chapter 1 Story 1.unity
     guid: ff7e57c917a62054db0db7efc363fd0c
   - enabled: 0
-    path: Assets/Scenes/Chapter 1 Story 2.unity
+    path: Assets/Scenes/OLD/Chapter 1 Story 2.unity
     guid: 247bfaad807bdb14980840dc24e73729
   - enabled: 0
-    path: Assets/Scenes/Chapter 2 Story.unity
+    path: Assets/Scenes/OLD/Chapter 2 Story.unity
     guid: 1f0f6aec2ae99bc4396304579b6f24a7
   - enabled: 0
-    path: Assets/Scenes/Chapter 2 Story 1.unity
+    path: Assets/Scenes/OLD/Chapter 2 Story 1.unity
     guid: b54735fb2d253af4bb0bde159af2f669
   - enabled: 0
-    path: Assets/Scenes/Chapter 2 Story 2.unity
+    path: Assets/Scenes/OLD/Chapter 2 Story 2.unity
     guid: 5694ee848c485f34c8b24bba10a73490
   - enabled: 0
-    path: Assets/Scenes/Chapter 2 Story 3.unity
+    path: Assets/Scenes/OLD/Chapter 2 Story 3.unity
     guid: 298a2929b332fca40af2eea90ded710e
   - enabled: 0
-    path: Assets/Scenes/Chapter 2 Story 4.unity
+    path: Assets/Scenes/OLD/Chapter 2 Story 4.unity
     guid: 2ad656235bb56fe4583e04b3b43859a6
   - enabled: 0
-    path: Assets/Scenes/Chapter 2 Story 5.unity
+    path: Assets/Scenes/OLD/Chapter 2 Story 5.unity
     guid: 44eea8d2d747f844398400ad338caf1d
   - enabled: 0
     path: Assets/Scenes/chapter 2-1.unity

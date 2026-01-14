@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Script.Manager;
 
 namespace Script.UI.ButtonOnClick
 {
@@ -13,7 +14,8 @@ namespace Script.UI.ButtonOnClick
 
             if (pauseGame)
             {
-                Time.timeScale = 0f;
+                if (TimeScaleManager.Manager != null)
+                    TimeScaleManager.Manager.PauseGame();
             }
         }
     }

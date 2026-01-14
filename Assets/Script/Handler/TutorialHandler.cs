@@ -4,6 +4,7 @@ using Script.Core.Manager;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Script.Manager;
 
 public class TutorialHandler : MonoBehaviour
 {
@@ -37,6 +38,9 @@ public class TutorialHandler : MonoBehaviour
     {
         Initialize();
         transform.GetChild(0).gameObject.SetActive(true);
+
+        if (TimeScaleManager.Manager != null)
+            TimeScaleManager.Manager.PauseGame();
     }
 
     public void Close()
@@ -44,6 +48,9 @@ public class TutorialHandler : MonoBehaviour
         Debug.Log("Press Close Button");
         Initialize();
         transform.GetChild(0).gameObject.SetActive(false);
+
+        if (TimeScaleManager.Manager != null)
+            TimeScaleManager.Manager.ResumeGame();
     }
 
     public void NextPage()

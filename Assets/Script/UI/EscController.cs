@@ -1,3 +1,4 @@
+using Script.Manager;
 using Script.Stage.ButtonOnClick;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,7 +10,7 @@ public class EscController : MonoBehaviour
     public GameObject OptionMenu;
     public Button CancelBtn;
 
-    public GameSpeedButton gameSpeedButton;
+    //public GameSpeedButton gameSpeedButton;
 
     private void Start()
     {
@@ -41,49 +42,21 @@ public class EscController : MonoBehaviour
 
         if (!isActive)
         {
-            Time.timeScale = 0f; // 시간 정지
+            if (TimeScaleManager.Manager != null)
+                TimeScaleManager.Manager.PauseGame();
         }
-        else // 패널을 끌 때
+        else
         {
-            if (gameSpeedButton != null)
-            {
-                gameSpeedButton.ApplyCurrentSpeed();
-            }
-            else
-            {
-                if (gameSpeedButton != null)
-                {
-                    Debug.Log($"[EscController] 배속 버튼이 연결되어 있음! ({gameSpeedButton.name}) -> 배속 복구 시도");
-                    gameSpeedButton.ApplyCurrentSpeed();
-                }
-                else
-                {
-                    Debug.Log("[EscController] 배속 버튼이 연결 안 됨 (null) -> 1배속으로 강제 초기화");
-                    Time.timeScale = 1f;
-                }
-            }
+            if (TimeScaleManager.Manager != null)
+                TimeScaleManager.Manager.ResumeGame();
         }
     }
 
     public void CancelOnClicked()
     {
-        if (gameSpeedButton != null)
-        {
-            gameSpeedButton.ApplyCurrentSpeed();
-        }
-        else
-        {
-            if (gameSpeedButton != null)
-            {
-                Debug.Log($"CancelBtn: [EscController] 배속 버튼이 연결되어 있음! ({gameSpeedButton.name}) -> 배속 복구 시도");
-                gameSpeedButton.ApplyCurrentSpeed();
-            }
-            else
-            {
-                Debug.Log("CanselBtn: [EscController] 배속 버튼이 연결 안 됨 (null) -> 1배속으로 강제 초기화");
-                Time.timeScale = 1f;
-            }
-        }
+        if (TimeScaleManager.Manager != null)
+            TimeScaleManager.Manager.ResumeGame();
+
         ExitMenu.SetActive(false);
     }
 }

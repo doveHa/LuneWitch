@@ -1741,6 +1741,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showPanel: {fileID: 1588170595}
+  pauseGame: 0
 --- !u!1 &137268566
 GameObject:
   m_ObjectHideFlags: 0
@@ -36209,6 +36210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showPanel: {fileID: 1491781870}
+  pauseGame: 0
 --- !u!114 &604327037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47873,6 +47875,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showPanel: {fileID: 723609551}
+  pauseGame: 0
 --- !u!1 &752848525
 GameObject:
   m_ObjectHideFlags: 0
@@ -60062,6 +60065,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showPanel: {fileID: 1335410428}
+  pauseGame: 0
 --- !u!1 &992068284
 GameObject:
   m_ObjectHideFlags: 0
@@ -91141,6 +91145,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3920310811077378492, guid: 175cf936d348fc543b61f6bc99afbf16, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761337570671412740, guid: 175cf936d348fc543b61f6bc99afbf16, type: 3}
+      propertyPath: pauseGame
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4877356237704406175, guid: 175cf936d348fc543b61f6bc99afbf16, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -109933,6 +109945,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showPanel: {fileID: 911722035}
+  pauseGame: 0
 --- !u!114 &2011070833
 MonoBehaviour:
   m_ObjectHideFlags: 0

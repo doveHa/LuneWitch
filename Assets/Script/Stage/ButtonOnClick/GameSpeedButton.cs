@@ -1,5 +1,6 @@
 ﻿using TMPro;
 using UnityEngine;
+using Script.Manager;
 
 namespace Script.Stage.ButtonOnClick
 {
@@ -10,18 +11,24 @@ namespace Script.Stage.ButtonOnClick
         private string[] speedText = { "1X", "2X", "3X" };
         private int currentIndex = 0;
 
-        void Start()
+/*        void Start()
         {
             initialSpeed = Time.fixedDeltaTime;
-        }
+        }*/
 
         protected override void OnClick()
         {
             currentIndex++;
-
             currentIndex %= speedStep.Length;
-            Time.timeScale = speedStep[currentIndex];
-            Time.fixedDeltaTime = initialSpeed * speedStep[currentIndex];
+            //Time.timeScale = speedStep[currentIndex];
+            //Time.fixedDeltaTime = initialSpeed * speedStep[currentIndex];
+
+            float targetSpeed = speedStep[currentIndex];
+            if (TimeScaleManager.Manager != null)
+            {
+                TimeScaleManager.Manager.SetSpeed(targetSpeed);
+            }
+
             GetComponentInChildren<TextMeshProUGUI>().text = speedText[currentIndex];
         }
 

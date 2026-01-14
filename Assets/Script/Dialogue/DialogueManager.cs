@@ -158,6 +158,10 @@ public class DialogueManager : MonoBehaviour
                 yield return null;
             }
             introPanel.SetActive(false);
+
+            if (introTitleText) introTitleText.text = "";
+            if (introDescText) introDescText.text = "";
+            // 지워서 검은 화면 페이드 인/아웃 용으로 사용
         }
 
         // 4. 대사 시작
@@ -182,6 +186,12 @@ public class DialogueManager : MonoBehaviour
         // 2. 타이핑이 끝난 상태라면? -> 다음 대사로 넘어가기
         else
         {
+            if (director != null && director.hasPendingSequence)
+            {
+                director.PlayPendingSequence();
+                return;
+            }
+
             DisplayNextLine();
         }
     }
@@ -209,8 +219,13 @@ public class DialogueManager : MonoBehaviour
     {
         if (typingCoroutine != null) StopCoroutine(typingCoroutine);
         isTyping = false;
-
         if (toonyVoices != null) toonyVoices.StopSpeech();
+
+        if (director != null)
+        {
+            director.hasPendingSequence = false;
+            director.SkipSequence(); // 현재 재생 중인 연출도 즉시 종료
+        }
 
         // 백로그 대사 추가
         if (BacklogManager.Instance != null && currentStory != null)
@@ -219,6 +234,36 @@ public class DialogueManager : MonoBehaviour
             {
                 var line = currentStory.lines[i];
                 BacklogManager.Instance.AddLog(line.speakerName, line.text);
+
+                string cmd = line.eventCommand;
+                if (!string.IsNullOrEmpty(cmd))
+                {
+                    string upperCmd = cmd.ToUpper();
+
+                    if (upperCmd.Contains("MAGOTASDIE"))
+                    {
+                        if (director)
+                        {
+                            director.ForceFinishMagotasSequence();
+                            director.SetBubbleMode(true);
+                        }
+
+                        isBubbleMode = true;
+                        CheckBubbleMode("ANIM:BubbleOn");
+                    }
+                    else if(upperCmd.Contains("BUBBLEON") || upperCmd.Contains("MAGOTASDIE"))
+                    {
+                        isBubbleMode = true;
+                        if (director) director.SetBubbleMode(true);
+                        CheckBubbleMode("ANIM:BubbleOn");
+                    }
+                    else if (upperCmd.Contains("BUBBLEOFF"))
+                    {
+                        isBubbleMode = false;
+                        if (director) director.SetBubbleMode(false);
+                        CheckBubbleMode("ANIM:BubbleOff");
+                    }
+                }
             }
         }
 
@@ -228,12 +273,19 @@ public class DialogueManager : MonoBehaviour
             int lastIndex = currentStory.lines.Count - 1;
             DialogueLine lastLine = currentStory.lines[lastIndex];
 
-            if (dialogueText) dialogueText.text = lastLine.text;
+            TextMeshProUGUI target = currentTargetText != null ? currentTargetText : dialogueText;
+
+            if (target) target.text = lastLine.text;
             if (nameText) nameText.text = lastLine.speakerName;
 
             if (director)
             {
                 director.UpdateSceneVisuals(currentStory, lastLine);
+
+                if (director.bubblePanel.activeSelf)
+                {
+                    currentTargetText = director.bubbleText;
+                }
             }
         }
 

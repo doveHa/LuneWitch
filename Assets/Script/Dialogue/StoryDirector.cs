@@ -32,7 +32,10 @@ public class StoryDirector : MonoBehaviour
     public GameObject bubblePanel;
     public TextMeshProUGUI bubbleText;
 
+    public CanvasGroup transition;
+
     public bool isSequencePlaying { get; private set; } = false;
+    public bool hasPendingSequence = false;
     private Coroutine currentSequence;
     private Coroutine bossAnimCoroutine;
 
@@ -138,9 +141,10 @@ public class StoryDirector : MonoBehaviour
             case "ANIM":
                 if (value == "MagotasDie")
                 {
-                    if (currentSequence != null) StopCoroutine(currentSequence);
+                    hasPendingSequence = true;
+                    /*if (currentSequence != null) StopCoroutine(currentSequence);
                     if (bossAnimCoroutine != null) StopCoroutine(bossAnimCoroutine);
-                    StartCoroutine(PlayMagotasSequence());
+                    StartCoroutine(PlayMagotasSequence());*/
                 }
                 else if (value == "BubbleOn")
                 {
@@ -175,14 +179,39 @@ public class StoryDirector : MonoBehaviour
         HighlightSpeaker(currentLine.speakerType);
     }
 
+    public void PlayPendingSequence()
+    {
+        if (hasPendingSequence)
+        {
+            if (currentSequence != null) StopCoroutine(currentSequence);
+            currentSequence = StartCoroutine(PlayMagotasSequence());
+
+            hasPendingSequence = false;
+        }
+    }
+
     IEnumerator PlayMagotasSequence()
     {
         isSequencePlaying = true;
 
+        if (transition != null)
+        {
+            transition.gameObject.SetActive(true);
+            yield return StartCoroutine(FadeCanvasGroup(transition, 0f, 1f, 0.5f));
+        }
+
         if (leftCharImage) leftCharImage.gameObject.SetActive(false);
         if (rightCharImage) rightCharImage.gameObject.SetActive(false);
-
+        if (dialoguePanel) dialoguePanel.SetActive(false);
         if (magotasParent) magotasParent.SetActive(true);
+
+        yield return new WaitForSeconds(0.5f);
+
+        if (transition != null)
+        {
+            yield return StartCoroutine(FadeCanvasGroup(transition, 1f, 0f, 0.5f));
+            transition.gameObject.SetActive(false);
+        }
 
         // 영주 사망 애니메이션
         if (bossImage != null && bossDeathSprites != null && bossDeathSprites.Length > 0)
@@ -223,8 +252,31 @@ public class StoryDirector : MonoBehaviour
 
         isSequencePlaying = false;
 
-        UpdateCharacterImages(currentLine);
+        //UpdateCharacterImages(currentLine);
         //HighlightSpeaker(currentLine.speakerType);
+    }
+
+    public void ForceFinishMagotasSequence()
+    {
+        if (currentSequence != null) StopCoroutine(currentSequence);
+        if (bossAnimCoroutine != null) StopCoroutine(bossAnimCoroutine);
+
+        hasPendingSequence = false;
+        isSequencePlaying = false;
+
+        if (magotasParent) magotasParent.SetActive(false);
+
+        if (bossImage != null && bossDeathSprites != null && bossDeathSprites.Length > 0)
+        {
+            bossImage.gameObject.SetActive(true);
+            bossImage.sprite = bossDeathSprites[bossDeathSprites.Length - 1];
+        }
+
+        if (transition != null)
+        {
+            transition.gameObject.SetActive(false);
+            transition.alpha = 0f;
+        }
     }
 
     IEnumerator RunBossSpriteAnimation()
@@ -299,6 +351,20 @@ public class StoryDirector : MonoBehaviour
             if (dialoguePanel) dialoguePanel.SetActive(true);
             if (magotasParent) magotasParent.SetActive(false);
         }
+    }
+
+    IEnumerator FadeCanvasGroup(CanvasGroup cg, float start, float end, float duration)
+    {
+        float timer = 0f;
+        cg.alpha = start;
+
+        while (timer < duration)
+        {
+            timer += Time.deltaTime;
+            cg.alpha = Mathf.Lerp(start, end, timer / duration);
+            yield return null;
+        }
+        cg.alpha = end;
     }
 
     // 리소스 로드 헬퍼

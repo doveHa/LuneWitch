@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -42,8 +43,9 @@ public class DialogueManager : MonoBehaviour
     public Button nextButton; // 다음 대사 버튼
     public Button nextButton2;
     public Button skipButton; // 스킵 버튼
-    
+
     [Header("Settings")]
+    public AudioSource bgmSource;
     public ToonyVoices toonyVoices;
     public List<CharacterVoiceProfile> characterVoices;
     public float defaultPitch = 4.0f;
@@ -112,8 +114,22 @@ public class DialogueManager : MonoBehaviour
         currentLineIndex = 0;
         isDialogueActive = true;
 
+        PlayBGM(currentStory.bgm);
+
         // 1. 인트로 시작
         StartCoroutine(PlayIntroSequence());
+    }
+
+    private void PlayBGM(AudioClip newClip)
+    {
+        if (newClip == null) return;
+
+        if (bgmSource == null) return;
+
+        if (bgmSource.clip == newClip && bgmSource.isPlaying) return;
+
+        bgmSource.clip = newClip;
+        bgmSource.Play();
     }
 
     IEnumerator PlayIntroSequence()

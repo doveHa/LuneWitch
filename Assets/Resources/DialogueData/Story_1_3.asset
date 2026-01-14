@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   introTitle: 
   introDescription: "\uB9C8\uB140\uD68C"
+  bgm: {fileID: 8300000, guid: 53dac00adba345347bb3480d496251e5, type: 3}
   backgroundSprite: {fileID: 2996479508777163340, guid: 838daae80bd27204b984d96f42539621, type: 3}
   isIllustrationMode: 0
   illustrationSprite: {fileID: 0}

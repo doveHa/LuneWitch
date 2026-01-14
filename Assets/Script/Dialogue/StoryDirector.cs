@@ -26,6 +26,7 @@ public class StoryDirector : MonoBehaviour
     public Color inactiveColor = new Color(0.5f, 0.5f, 0.5f, 1f);
     public float activeScale = 1.0f;
     public float inactiveScale = 0.85f;
+    public SoundManager soundManager;
 
     [Header("UI")]
     public GameObject dialoguePanel;
@@ -153,6 +154,21 @@ public class StoryDirector : MonoBehaviour
                 else if (value == "BubbleOff")
                 {
                     SetBubbleMode(false);
+                }
+                break;
+            case "SFX":
+                if (int.TryParse(value, out int sfxIndex))
+                {
+                    if (soundManager != null)
+                    {
+                        soundManager.PlaySFX(sfxIndex);
+                    }
+                    else
+                    {
+                        // ºñ»ó¿ë
+                        var sm = FindObjectOfType<SoundManager>();
+                        if (sm != null) sm.PlaySFX(sfxIndex);
+                    }
                 }
                 break;
         }

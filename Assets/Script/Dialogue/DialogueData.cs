@@ -36,6 +36,7 @@ public class DialogueData : ScriptableObject
     [Header("Intro")]
     public string introTitle;
     [TextArea] public string introDescription;
+    public AudioClip bgm;
 
     [Header("Background")]
     public Sprite backgroundSprite;

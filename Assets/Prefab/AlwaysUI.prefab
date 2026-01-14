@@ -2025,13 +2025,14 @@ GameObject:
   - component: {fileID: 5198176001283694725}
   - component: {fileID: 6385001017312376783}
   - component: {fileID: 4761337570671412740}
+  - component: {fileID: 2095482647839781316}
   m_Layer: 5
   m_Name: SettingButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6345880918340081191
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2160,6 +2161,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   showPanel: {fileID: 5520206989213524556}
   pauseGame: 1
+--- !u!114 &2095482647839781316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3920310811077378492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2137f40012ec1ef47bc16598c01bf42e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfxIndex: 0
 --- !u!1 &4837681142485046648
 GameObject:
   m_ObjectHideFlags: 0
@@ -2936,6 +2950,7 @@ GameObject:
   - component: {fileID: 8512592544065529754}
   - component: {fileID: 4196361295507737182}
   - component: {fileID: 1135978268461543074}
+  - component: {fileID: 4606959698715230311}
   m_Layer: 5
   m_Name: ExitOptionMenu
   m_TagString: Untagged
@@ -3070,6 +3085,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   closePanel: {fileID: 5520206989213524556}
+--- !u!114 &4606959698715230311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6047925896721721876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2137f40012ec1ef47bc16598c01bf42e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfxIndex: 0
 --- !u!1 &6138205600199589672
 GameObject:
   m_ObjectHideFlags: 0

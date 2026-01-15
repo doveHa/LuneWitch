@@ -2025,7 +2025,7 @@ GameObject:
   - component: {fileID: 5198176001283694725}
   - component: {fileID: 6385001017312376783}
   - component: {fileID: 4761337570671412740}
-  - component: {fileID: 2095482647839781316}
+  - component: {fileID: 3668298343603773310}
   m_Layer: 5
   m_Name: SettingButton
   m_TagString: Untagged
@@ -2161,7 +2161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   showPanel: {fileID: 5520206989213524556}
   pauseGame: 1
---- !u!114 &2095482647839781316
+--- !u!114 &3668298343603773310
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3251,6 +3251,7 @@ GameObject:
   - component: {fileID: 1723163871390206160}
   - component: {fileID: 1911441436559275540}
   - component: {fileID: 2549569275415964043}
+  - component: {fileID: 2731936230225884054}
   m_Layer: 5
   m_Name: CancelButton
   m_TagString: Untagged
@@ -3372,6 +3373,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2731936230225884054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6185308887277035652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2137f40012ec1ef47bc16598c01bf42e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfxIndex: 0
 --- !u!1 &6584339500656299951
 GameObject:
   m_ObjectHideFlags: 0
@@ -3420,6 +3434,7 @@ GameObject:
   - component: {fileID: 4129778390032539963}
   - component: {fileID: 2592563677029742709}
   - component: {fileID: 7252296029916889542}
+  - component: {fileID: 7984572997657195718}
   m_Layer: 5
   m_Name: ExitButton
   m_TagString: Untagged
@@ -3541,6 +3556,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7984572997657195718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6592414346012008498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2137f40012ec1ef47bc16598c01bf42e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfxIndex: 0
 --- !u!1 &6732636681922940088
 GameObject:
   m_ObjectHideFlags: 0

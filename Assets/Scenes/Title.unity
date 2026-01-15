@@ -4483,6 +4483,7 @@ GameObject:
   - component: {fileID: 1571536132}
   - component: {fileID: 1571536131}
   - component: {fileID: 1571536134}
+  - component: {fileID: 1571536135}
   m_Layer: 5
   m_Name: SettingButton
   m_TagString: Untagged
@@ -4618,6 +4619,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   showPanel: {fileID: 968654675}
   pauseGame: 0
+--- !u!114 &1571536135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571536127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2137f40012ec1ef47bc16598c01bf42e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfxIndex: 0
 --- !u!1 &1579573928
 GameObject:
   m_ObjectHideFlags: 0
@@ -5011,6 +5025,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99cf26569d46bdf49bc56ac23db8a2e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bgmSource: {fileID: 0}
+  chapter1BGM: {fileID: 0}
+  chapter2BGM: {fileID: 0}
+  bossBGM: {fileID: 0}
+  infinityBGM: {fileID: 0}
   sfxClips:
   - {fileID: 8300000, guid: 2faee4540b346014f81b430df7a41cb0, type: 3}
   poolSize: 2
@@ -5547,6 +5566,11 @@ MonoBehaviour:
   ExitMenu: {fileID: 26048747}
   OptionMenu: {fileID: 968654675}
   CancelBtn: {fileID: 1588572456}
+  ExitBtn: {fileID: 0}
+  ExitText: {fileID: 0}
+  activeScenes:
+  - BattleScene
+  - StoryScene
 --- !u!1 &1716387066
 GameObject:
   m_ObjectHideFlags: 0

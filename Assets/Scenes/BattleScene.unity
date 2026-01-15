@@ -2193,9 +2193,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 432579567002785912, guid: 1cba39eb7b254104384fd0a4de48f798, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 7c1847c6a62645d4b97414598ffe5c49, type: 3}
-  m_Resource: {fileID: 8300000, guid: 7c1847c6a62645d4b97414598ffe5c49, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
   m_Volume: 0.8
   m_Pitch: 1
   Loop: 1
@@ -24638,6 +24638,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99cf26569d46bdf49bc56ac23db8a2e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bgmSource: {fileID: 154168139}
+  chapter1BGM: {fileID: 8300000, guid: aeec3c636ff31f74f903bc5d339b5745, type: 3}
+  chapter2BGM: {fileID: 8300000, guid: b4fdbcdccfd6071499753b20284c51aa, type: 3}
+  bossBGM: {fileID: 8300000, guid: 6e1879f71b0e058459b1e9c93708c512, type: 3}
+  infinityBGM: {fileID: 8300000, guid: aeec3c636ff31f74f903bc5d339b5745, type: 3}
   sfxClips:
   - {fileID: 8300000, guid: 2faee4540b346014f81b430df7a41cb0, type: 3}
   - {fileID: 8300000, guid: 5626e3373d25ca7419653c9bdad1e851, type: 3}

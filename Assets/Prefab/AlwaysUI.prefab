@@ -2811,6 +2811,11 @@ MonoBehaviour:
   ExitMenu: {fileID: 7781974056285829461}
   OptionMenu: {fileID: 5520206989213524556}
   CancelBtn: {fileID: 2549569275415964043}
+  ExitBtn: {fileID: 7252296029916889542}
+  ExitText: {fileID: 3721825176358861597}
+  activeScenes:
+  - BattleScene
+  - StoryScene
 --- !u!114 &1437586425644623147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3110,7 +3115,7 @@ GameObject:
   - component: {fileID: 9199616497915049556}
   - component: {fileID: 3721825176358861597}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Desc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3270,7 +3275,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 457.20114, y: -351.7455}
+  m_AnchoredPosition: {x: 457.20108, y: -351.7455}
   m_SizeDelta: {x: 162.52, y: 42.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1723163871390206160
@@ -3415,7 +3420,6 @@ GameObject:
   - component: {fileID: 4129778390032539963}
   - component: {fileID: 2592563677029742709}
   - component: {fileID: 7252296029916889542}
-  - component: {fileID: 7761731052336810967}
   m_Layer: 5
   m_Name: ExitButton
   m_TagString: Untagged
@@ -3537,18 +3541,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7761731052336810967
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6592414346012008498}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 410760e0336146669a7b24050bb21c22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6732636681922940088
 GameObject:
   m_ObjectHideFlags: 0

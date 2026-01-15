@@ -21,6 +21,8 @@ namespace Script.Manager
 
         public void LoadMainScene()
         {
+            Time.timeScale = 1f;
+
             SceneManager.LoadScene(Constant.Scene.MAIN_SCENE);
         }
 

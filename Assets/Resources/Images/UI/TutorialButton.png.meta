@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: b46a31ad9472bf542b568977ba428684
+guid: f40c602669f334e40a483090e7cba19c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5571056225990928251
-    second: "\uBCF4\uC2A4 \uD53C\uD1B52_0"
-  - first:
-      213: -4569626218196950068
-    second: "\uBCF4\uC2A4 \uD53C\uD1B52_1"
+      213: 8575710031886937591
+    second: TutorialButton_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -112,30 +109,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\uBCF4\uC2A4 \uD53C\uD1B52_0"
+      name: TutorialButton_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 11
-        width: 398
-        height: 6
+        x: 5
+        y: 5
+        width: 86
+        height: 86
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,30 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b77eaedee1e505d40800000000000000
-      internalID: 5571056225990928251
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "\uBCF4\uC2A4 \uD53C\uD1B52_1"
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 0
-        width: 410
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cc32f0c5a2d6590c0800000000000000
-      internalID: -4569626218196950068
+      spriteID: 7fdef5386da030770800000000000000
+      internalID: 8575710031886937591
       vertices: []
       indices: 
       edges: []
@@ -186,8 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "\uBCF4\uC2A4 \uD53C\uD1B52_0": 5571056225990928251
-      "\uBCF4\uC2A4 \uD53C\uD1B52_1": -4569626218196950068
+      TutorialButton_0: 8575710031886937591
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

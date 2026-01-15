@@ -18,11 +18,13 @@ namespace Script.Enemy.Handler
         public bool IsRecognize { get; set; }
         private bool isAttack;
 
+        private bool isDead;
         private CardZoneCoordinate attackZone;
 
         void Awake()
         {
             isAttack = false;
+            isDead = false;
         }
 
         void Update()
@@ -46,7 +48,7 @@ namespace Script.Enemy.Handler
 
         private void Walk()
         {
-            if (!isAttack)
+            if (!isAttack && !isDead)
             {
                 (AnimationHandler as EnemyAnimationHandler).StartWalkAnimation();
                 MoveHandler.StartWalk();
@@ -55,19 +57,26 @@ namespace Script.Enemy.Handler
 
         public override void Hit(int damage)
         {
-            base.Hit(damage);
-            StartCoroutine(WaitDelayAndWalk());
+            if (!isDead)
+            {
+                base.Hit(damage);
+                StartCoroutine(WaitDelayAndWalk());
+            }
         }
 
         private IEnumerator WaitDelayAndWalk()
         {
             MoveHandler.StopWalk();
             yield return new WaitForSeconds(Constant.BattleSystem.HIT_TIME);
-            Walk();
+            if (!isDead)
+            {
+                Walk();
+            }
         }
 
         public override void Dead()
         {
+            MoveHandler.StopWalk();
             GameFlowManager.Manager.KillEnemy();
             AnimationHandler.PlayDeathAnimation();
         }
@@ -85,22 +94,24 @@ namespace Script.Enemy.Handler
 
         public void KillCreature()
         {
-            Debug.Log("KillCreature");
             IsRecognize = false;
             isAttack = false;
             Walk();
         }
-        
+
         public void AdjustCreatureDamage()
         {
-            CardZoneManager.Manager.GetZone(attackZone).AttackCreature(enemyData.attack);
+            if (IsRecognize)
+            {
+                CardZoneManager.Manager.GetZone(attackZone).AttackCreature(enemyData.attack);
+            }
         }
 
         public void DestroyGameObject()
         {
             Destroy(transform.parent.gameObject);
         }
-        
+
         private IEnumerator SpeedDebuff(float disSpeedRate, float slowTime)
         {
             float originalSpeed = MoveHandler.Speed;

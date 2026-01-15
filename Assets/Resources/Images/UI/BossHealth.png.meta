@@ -1,19 +1,13 @@
 fileFormatVersion: 2
-guid: aad5a35b2d76ec64aa4fe7aed7a5c894
+guid: b46a31ad9472bf542b568977ba428684
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5560208762045671388
-    second: Doll_Idle_0
+      213: 5571056225990928251
+    second: "\uBCF4\uC2A4 \uD53C\uD1B52_0"
   - first:
-      213: -2586539159087611810
-    second: Doll_Idle_1
-  - first:
-      213: -2061438130103389612
-    second: Doll_Idle_2
-  - first:
-      213: -2653158066684374411
-    second: Doll_Idle_3
+      213: -4569626218196950068
+    second: "\uBCF4\uC2A4 \uD53C\uD1B52_1"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -60,7 +54,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 110
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -84,7 +78,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -135,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Muret_Idle_0
+      name: BossHealth_0
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
-        width: 140
-        height: 168
+        x: 8
+        y: 12
+        width: 396
+        height: 4
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +144,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 86d54d08170d81643a95a06d7e5f6b17
-      internalID: 34582505
+      spriteID: a8700a1aa5399004480c1768a14a19ca
+      internalID: -2143255338
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Muret_Idle_1
+      name: BossHealth_1
       rect:
         serializedVersion: 2
-        x: 180
+        x: 2
         y: 0
-        width: 140
-        height: 168
+        width: 408
+        height: 9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,52 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 426355fb4bd9b9a42ac188fdf597d3df
-      internalID: -1460969723
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Muret_Idle_2
-      rect:
-        serializedVersion: 2
-        x: 332
-        y: 0
-        width: 140
-        height: 168
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ed77f9e0f2ced2443940b7010d6588f3
-      internalID: -195555490
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Muret_Idle_3
-      rect:
-        serializedVersion: 2
-        x: 488
-        y: 0
-        width: 140
-        height: 164
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b875c2916941e7846a648c3781892000
-      internalID: -1934791777
+      spriteID: 7a911c8e17c592948817eae9b8f51efd
+      internalID: -1711336055
       vertices: []
       indices: 
       edges: []
@@ -226,7 +176,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: cd1c30bef21535749b4c890e3b40912b
+    spriteID: 1036554e491e76c44801340643086a61
     internalID: 0
     vertices: []
     indices: 
@@ -238,10 +188,8 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Muret_Idle_0: 34582505
-      Muret_Idle_1: -1460969723
-      Muret_Idle_2: -195555490
-      Muret_Idle_3: -1934791777
+      BossHealth_0: -2143255338
+      BossHealth_1: -1711336055
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

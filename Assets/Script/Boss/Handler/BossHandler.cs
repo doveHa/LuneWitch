@@ -10,6 +10,8 @@ namespace Script.Boss.Handler
 {
     public class BossHandler : MonoBehaviour
     {
+        [SerializeField] private BossHealthBarHandler healthBarHandler;
+        
         private BossAnimationHandler animationHandler;
         private BossAttackHandler attackHandler;
         private HealthHandler healthHandler;
@@ -21,6 +23,7 @@ namespace Script.Boss.Handler
             animationHandler = GetComponent<BossAnimationHandler>();
             attackHandler = GetComponent<BossAttackHandler>();
             healthHandler = new EnemyHealthHandler(Constant.Boss.HEALTH);
+            healthBarHandler.Init(healthHandler.MaxHealth);
         }
 
         public void StartBossState()
@@ -36,6 +39,8 @@ namespace Script.Boss.Handler
             }
 
             healthHandler.Hit(atk);
+            
+            healthBarHandler.UpdateHealthBar(healthHandler.Health);
             if (healthHandler.IsDead)
             {
                 isDeadProsess = true;
@@ -78,7 +83,7 @@ namespace Script.Boss.Handler
                     .GetComponentsInChildren<CreatureHandler>().Length;
                 Debug.Log(creatureCount);
                 yield return new WaitUntil(() => creatureCount > 0);
-                
+
                 int attackPattern = attackHandler.GetAttackPatternIndex();
                 animationHandler.AttackAnimation(attackPattern);
                 attackHandler.ActiveBossPattern(attackPattern).Invoke();

@@ -57,9 +57,9 @@ namespace Script
 
             public const float HIT_TIME = 0.3f;
 
-            public const float MIN_SPAWN_TERM = 3f;
+            public const float MIN_SPAWN_TERM = 4f;
 
-            public const float MAX_SPAWN_TERM = 6f;
+            public const float MAX_SPAWN_TERM = 7f;
         }
 
         public static class Scene
@@ -99,7 +99,7 @@ namespace Script
 
         public static class Boss
         {
-            public static int ATTACKTERM = 5;
+            public static int ATTACKTERM = 8;
             public static int HEALTH = 4500;
             public static int ENEMY_KILL_DMG = 150;
         }

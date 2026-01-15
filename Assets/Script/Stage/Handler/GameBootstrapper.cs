@@ -38,6 +38,7 @@ namespace Script.Stage.StageHandler
         public TextMeshProUGUI waveTitle;
         public TextMeshProUGUI roundPanelRound;
         public TextMeshProUGUI roundPanelTitle;
+        public TextMeshProUGUI enemyCount;
         public SpriteRenderer backGroundImage;
         public GameObject player;
     }

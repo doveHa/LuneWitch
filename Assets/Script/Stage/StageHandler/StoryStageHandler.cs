@@ -18,12 +18,13 @@ namespace Script.Stage.StageHandler
                 Constant.ResourcePath.STAGE_INFO_DATA_PATH_BY_CHAPTER_ROUND(
                     SceneLoadManager.SelectedChapterNo, SceneLoadManager.SelectedRoundNo));
 
-            sceneReferences.waveTitle.text = data.chapter + "-" + data.round;
+            sceneReferences.waveTitle.text = data.chapter + "-" + data.round + " " + data.roundTitle;
             sceneReferences.roundPanelRound.text = "Round " + data.round;
             sceneReferences.roundPanelTitle.text = data.roundTitle;
             sceneReferences.backGroundImage.sprite = data.backGroundImage;
-
             SpawnCount = data.enemyCount;
+            sceneReferences.enemyCount.text = "0 / " + SpawnCount;
+            
             SetEnemyData(data.enemyData);
             SetPlayer();
         }
@@ -32,7 +33,7 @@ namespace Script.Stage.StageHandler
         {
             GameFlowManager.Manager.SetTargetCount(SpawnCount);
             GameFlowManager.Manager.StartWaveLogic();
-            
+
             sceneReferences.spawner.SpawnStart(SpawnCount, EnemyData);
             yield return new WaitUntil(() => GameFlowManager.Manager.IsAllKill);
         }

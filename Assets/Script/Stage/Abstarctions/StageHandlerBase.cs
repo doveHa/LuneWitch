@@ -4,6 +4,7 @@ using Script.BattleStyle.Manager;
 using Script.Enemy.DataDefinitions.ScriptableObjects;
 using Script.Manager;
 using Script.Stage.Handler;
+using Script.Stage.Manager;
 using Script.Stage.StageHandler;
 using UnityEngine;
 
@@ -30,6 +31,7 @@ namespace Script.Stage.Abstaractions
             sceneReferences.roundPanelRound = references.roundPanelRound;
             sceneReferences.roundPanelTitle = references.roundPanelTitle;
             sceneReferences.backGroundImage = references.backGroundImage;
+            sceneReferences.enemyCount = references.enemyCount;
             sceneReferences.player = references.player;
         }
 
@@ -43,6 +45,16 @@ namespace Script.Stage.Abstaractions
         public EnemySpawnHandler Spawner()
         {
             return sceneReferences.spawner;
+        }
+
+        public Sprite StageBackGround()
+        {
+            return sceneReferences.backGroundImage.sprite;
+        }
+
+        public void CountEnemyKill(int killCount)
+        {
+            sceneReferences.enemyCount.text = killCount + " / " + SpawnCount;
         }
 
         protected void SetPlayer()

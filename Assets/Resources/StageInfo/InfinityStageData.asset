@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: InfinityStageData
   m_EditorClassIdentifier: 
   stageTitle: "\uBB34\uD55C\uC758 \uD0D1"
-  backGroundImage: {fileID: 857720722223687862, guid: 7a906f3aea476e043abe6a10187f490c, type: 3}
+  backGroundImage:
+  - {fileID: 2016905225, guid: a2b7c14865698eb4a99cb0b416e61373, type: 3}
+  - {fileID: -2070388412, guid: 89fd009c82d4ce747a477411fc29977e, type: 3}
+  - {fileID: 419152220, guid: 581f2180f1d8236438952d12ea024f34, type: 3}
+  - {fileID: 994415258, guid: fc1288ec68de55d4cbd14a4ac7b952b0, type: 3}
   normalEnemyPool:
   - {fileID: 11400000, guid: 5945ec5650f0001428c1d188a5f19fb2, type: 2}
   - {fileID: 11400000, guid: a5ee1d405a8ddaa49be928a0a0b5e48d, type: 2}

@@ -1,6 +1,7 @@
 ﻿using System;
 using Script;
 using Script.Core.Manager;
+using Script.Stage.Manager;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,13 +15,14 @@ public class TutorialHandler : MonoBehaviour
     [SerializeField] private Image[] dotSet;
     [SerializeField] private Image tutorialImage;
     [SerializeField] private TextMeshProUGUI tutorialText;
+    [SerializeField] private Image backGroundImage;
+
     private int currentPage = 0;
     private Sprite onDotImage, offDotImage;
 
     public void Start()
     {
         pageSprites = ResourceManager.LoadAll<Sprite>(Constant.ResourcePath.TUTORIAL_IMAGES_PATH);
-        Debug.Log(pageSprites.Length);
         onDotImage = ResourceManager.Load<Sprite>(Constant.ResourcePath.UI_IMAGE_PATH_BY_NAME("OnDot"));
         offDotImage = ResourceManager.Load<Sprite>(Constant.ResourcePath.UI_IMAGE_PATH_BY_NAME("OffDot"));
         Array.Sort(pageSprites, (a, b) => string.Compare(a.name, b.name, StringComparison.Ordinal));
@@ -37,6 +39,7 @@ public class TutorialHandler : MonoBehaviour
     public void Open()
     {
         Initialize();
+        backGroundImage.sprite = GameFlowManager.Manager.CurrentStage.StageBackGround();
         transform.GetChild(0).gameObject.SetActive(true);
 
         if (TimeScaleManager.Manager != null)

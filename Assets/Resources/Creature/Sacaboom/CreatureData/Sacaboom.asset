@@ -12,14 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 234cd38b9848a3e498c0cca54a1d01d6, type: 3}
   m_Name: Sacaboom
   m_EditorClassIdentifier: 
-  name: Sacaboom
+  name: Sakaboom
   attack: 300
   health: 300
   attackTerm: 0
   prefab: {fileID: 804819288300844835, guid: 6edbd60b3b0d23a43a39091b47733a58, type: 3}
   isActive: 1
   name_Kr: "\uC0AC\uCE74\uBD90"
-  description: "\uC0AC\uCE74\uBD90\uC785\uB2C8\uB2E4."
+  description: "\uC5B4\uB5A4 \uAD34\uC9DC \uB9C8\uB140\uAC00 \uB9CC\uB4E4\uC5B4\uB0B8
+    \uC791\uD488.\r\n\"\uD3ED\uBC1C\uC740 \uC608\uC220\uC774\uB2E4!\" \uB77C\uB294
+    \uBA85\uC5B8\uC744 \uB0A8\uACBC\uB2E4."
   cost: 300
   characterImage: {fileID: 1417754435, guid: 8a715196fb3fe9e4c8fc0e7801128fde, type: 3}
   unitSize: {x: 2, y: 1}

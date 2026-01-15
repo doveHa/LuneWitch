@@ -19,7 +19,9 @@ MonoBehaviour:
   prefab: {fileID: 804819288300844835, guid: 1fca9568ffba75141be0b9ffa1597dca, type: 3}
   isActive: 0
   name_Kr: "\uD788\uD3EC\uD06C\uB77C\uD14C\uC2A4"
-  description: "\uD788\uD3EC\uD06C\uB77C\uD14C\uC2A4\uC785\uB2C8\uB2E4."
+  description: "\uBA38\uB9AC\uAC00 \uD558\uB9C8\uB97C \uB2EE\uC740 \uACE4\uCDA9.
+    \uBFD4\uC758 \uC545\uB825\uC774 \uC5C4\uCCAD\uB098\uB2E4. \uBB3C\uB9AC\uBA74
+    \uC190\uC774 \uC808\uB2E8 \uB420 \uC218\uB3C4 \uC788\uB2E4."
   cost: 140
   characterImage: {fileID: 809257557, guid: 4c6b3e15cfb19154a89bc210d1c636bd, type: 3}
   unitSize: {x: 2, y: 1}

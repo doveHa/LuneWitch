@@ -132,67 +132,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\uC2A4\uD0AC \uC2DC\uC804_0"
+      name: Irene_ActiveSkill_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1
-        width: 61
-        height: 79
+        y: 0
+        width: 64
+        height: 80
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f2c2e47cdc279d7e0800000000000000
-      internalID: -1740233552864334801
+      spriteID: 70191988916157844afe0ef9894620bd
+      internalID: -1183681026
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\uC2A4\uD0AC \uC2DC\uC804_1"
+      name: Irene_ActiveSkill_1
       rect:
         serializedVersion: 2
         x: 64
-        y: 1
-        width: 62
-        height: 79
+        y: 0
+        width: 64
+        height: 80
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7fa065d538a545830800000000000000
-      internalID: 4058968684420795127
+      spriteID: ae54c6ac2f0b2ca4c94552671fe1a241
+      internalID: 1683644973
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\uC2A4\uD0AC \uC2DC\uC804_2"
+      name: Irene_ActiveSkill_2
       rect:
         serializedVersion: 2
         x: 128
-        y: 1
-        width: 62
-        height: 79
+        y: 0
+        width: 64
+        height: 80
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f4d1866cd4d140790800000000000000
-      internalID: -7564889254197191345
+      spriteID: e849865697e9f9f4b8154f8e9a6f99a3
+      internalID: -876937279
       vertices: []
       indices: 
       edges: []
@@ -209,11 +209,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":80.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      "\uC2A4\uD0AC \uC2DC\uC804_0": -1740233552864334801
-      "\uC2A4\uD0AC \uC2DC\uC804_1": 4058968684420795127
-      "\uC2A4\uD0AC \uC2DC\uC804_2": -7564889254197191345
+      Irene_ActiveSkill_0: -1183681026
+      Irene_ActiveSkill_1: 1683644973
+      Irene_ActiveSkill_2: -876937279
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

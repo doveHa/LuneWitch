@@ -76,6 +76,7 @@ namespace Script.Enemy.Handler
 
         public override void Dead()
         {
+            isDead = true;
             MoveHandler.StopWalk();
             GameFlowManager.Manager.KillEnemy();
             AnimationHandler.PlayDeathAnimation();

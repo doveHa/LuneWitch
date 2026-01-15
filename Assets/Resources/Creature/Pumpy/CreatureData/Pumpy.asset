@@ -19,7 +19,13 @@ MonoBehaviour:
   prefab: {fileID: 804819288300844835, guid: b44e20372bc812d4e92c975ea8a617bc, type: 3}
   isActive: 0
   name_Kr: "\uD38C\uD53C"
-  description: "\uD38C\uD53C\uC785\uB2C8\uB2E4."
+  description: "\uC624\uB798\uC804 \uD3D0\uD5C8\uAC00 \uB41C \uB9C8\uC744\uC758 \uBB18\uC9C0
+    \uADFC\uCC98\uC5D0\uC11C \uD0DC\uC5B4\uB09C \uB9C8\uBC95 \uD638\uBC15. \uB9C8\uB140\uC758
+    \uB9C8\uB825\uC774 \uB0A8\uC544 \uC788\uB294 \uB545\uC5D0\uC11C \uD0DC\uC5B4\uB098,
+    \uC8FD\uC740 \uC774\uB4E4\uC758 \uD63C\uC744 \uBC1D\uD788\uB294 \uB4F1\uBD88\uC774
+    \uB418\uC5C8\uB2E4. \uD63C\uC790 \uB0A8\uACA8\uC9C0\uB294 \uAC83\uC744 \uC2EB\uC5B4\uD558\uBA70,
+    \uB204\uAD70\uAC00\uB97C \uC9C0\uD0A4\uB294 \uAC83\uC744 \uBCF8\uB2A5\uCC98\uB7FC
+    \uB530\uB978\uB2E4. "
   cost: 100
   characterImage: {fileID: -433773718584046436, guid: 681847afacfdb9b49b30e8ba1b4e0bb2, type: 3}
   unitSize: {x: 1, y: 1}

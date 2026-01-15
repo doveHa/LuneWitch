@@ -13,11 +13,13 @@ namespace Script.Character.Handler
 
         public void SkillOnAnimation()
         {
-            animator.SetTrigger("SkillOn");
+            animator.SetBool("SkillOn",true);
         }
+        
 
         public void ActiveSkillAnimation()
         {
+            animator.SetBool("SkillOn",false);
             animator.SetTrigger("ActiveSkill");
         }
 

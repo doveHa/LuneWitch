@@ -12,14 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 234cd38b9848a3e498c0cca54a1d01d6, type: 3}
   m_Name: Shadow
   m_EditorClassIdentifier: 
-  name: Shadow
+  name: Grumpling
   attack: 30
   health: 120
   attackTerm: 5
   prefab: {fileID: 804819288300844835, guid: b12299ca47d1a0944b7a2410c0b23d3e, type: 3}
   isActive: 0
-  name_Kr: "\uC544\uAE30 \uADF8\uB9BC\uC790"
-  description: "\uC544\uAE30\uADF8\uB9BC\uC790 \uC785\uB2C8\uB2E4."
+  name_Kr: "\uADF8\uB7FC\uD50C\uB9C1"
+  description: "\uC601\uD63C \uC220\uC2DD\uC73C\uB85C \uD0DC\uC5B4\uB09C \uC544\uAE30
+    \uADF8\uB9BC\uC790. \uAE68\uB057\uD558\uACE0 \uC21C\uC218\uD55C \uB9C8\uC74C\uACFC,
+    \uC6D0\uD55C\uC774 \uACB0\uD569\uB418\uC5B4 \uBAA8\uC21C\uC801\uC778 \uC544\uC774\uAC00
+    \uD0C4\uC0DD\uD588\uB2E4."
   cost: 120
   characterImage: {fileID: 393381480, guid: bbf473d06c175f94ea1737abc6c4c401, type: 3}
   unitSize: {x: 1, y: 1}

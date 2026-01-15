@@ -54,7 +54,7 @@ namespace Script.Stage.Abstaractions
 
         public void CountEnemyKill(int killCount)
         {
-            sceneReferences.enemyCount.text = killCount + " / " + SpawnCount;
+            sceneReferences.enemyCount.text = (SpawnCount - killCount).ToString();
         }
 
         protected void SetPlayer()

@@ -111,7 +111,7 @@ namespace Script.BattleStyle.Handler
         private void SetDescription()
         {
             StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.Append(CreatureHandler.CreatureData.description + "\n");
+            stringBuilder.Append(CreatureHandler.CreatureData.name + "\n");
             if (CreatureHandler.CreatureSummonHandler.IsOnSummoned)
             {
                 stringBuilder

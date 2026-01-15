@@ -235,8 +235,8 @@ public class StoryDirector : MonoBehaviour
             bossAnimCoroutine = StartCoroutine(RunBossSpriteAnimation());
         }
 
-        // Magotas 페이드 아웃
-        if (magotasImage)
+        // Magotas 페이드 아웃 -> 없어도 될 거 같음
+/*        if (magotasImage)
         {
             RectTransform rect = magotasImage.GetComponent<RectTransform>();
             Vector2 startPos = rect.anchoredPosition;
@@ -259,7 +259,7 @@ public class StoryDirector : MonoBehaviour
 
             rect.anchoredPosition = targetPos;
             magotasImage.color = targetColor;
-        }
+        }*/
 
         // 3. 종료 처리
         if (magotasParent) magotasParent.SetActive(false);
@@ -301,6 +301,7 @@ public class StoryDirector : MonoBehaviour
         foreach (Sprite frame in bossDeathSprites)
         {
             bossImage.sprite = frame;
+            bossImage.SetNativeSize();
             yield return new WaitForSeconds(animationSpeed);
         }
     }

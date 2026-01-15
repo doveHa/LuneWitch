@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   introTitle: "\uC81C 1\uC7A5"
   introDescription: "\uC804\uD22C \uD6C4"
+  bgm: {fileID: 0}
   backgroundSprite: {fileID: -2007323066047294462, guid: 33b027faad2ce7a4799c9ef72ab087c6, type: 3}
   isIllustrationMode: 0
   illustrationSprite: {fileID: 0}
@@ -24,7 +25,7 @@ MonoBehaviour:
     text: "\uD5C9! \uC124\uB9C8\u2026 \uC8FD\uC740 \uAC74 \uC544\uB2C8\uACA0\uC9C0?!"
     leftSprite: {fileID: 5352576004762474852, guid: dc6975b729361dc43bae75da403e04ca, type: 3}
     rightSprite: {fileID: -9194723345426570509, guid: 228b3c56279d772459dcc2527efd5edf, type: 3}
-    eventCommand: 
+    eventCommand: SFX:2
   - speakerType: 0
     speakerName: 
     text: "\uB8E8\uBBF8\uB098\uAC00 \uC870\uC2EC\uC2A4\uB7FD\uAC8C \uC4F0\uB7EC\uC9C4
@@ -37,7 +38,7 @@ MonoBehaviour:
     text: "\uD0A4\uC5D0\uC5D0\uC5D1!!"
     leftSprite: {fileID: 5352576004762474852, guid: dc6975b729361dc43bae75da403e04ca, type: 3}
     rightSprite: {fileID: -9194723345426570509, guid: 228b3c56279d772459dcc2527efd5edf, type: 3}
-    eventCommand: 
+    eventCommand: SFX:3
   - speakerType: 1
     speakerName: "\uB8E8\uBBF8\uB098"
     text: "\uC73C\uC545!!"
@@ -96,7 +97,7 @@ MonoBehaviour:
     text: "\uC5EC\uAE34... \uC5B4\uB514\uC8E0...?"
     leftSprite: {fileID: 5352576004762474852, guid: dc6975b729361dc43bae75da403e04ca, type: 3}
     rightSprite: {fileID: -9194723345426570509, guid: 228b3c56279d772459dcc2527efd5edf, type: 3}
-    eventCommand: 
+    eventCommand: SFX:8
   - speakerType: 1
     speakerName: "\uB8E8\uBBF8\uB098"
     text: "\uBCA0\uC2A4\uD398\uB77C \uC678\uACFD \uC232\uC774\uC5D0\uC694. \\n\uC5EC\uAE34

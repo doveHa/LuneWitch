@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   introTitle: 
   introDescription: 
+  bgm: {fileID: 0}
   backgroundSprite: {fileID: -7917261364429478005, guid: d1493184128de1547a760c6d193e411b, type: 3}
   isIllustrationMode: 1
   illustrationSprite: {fileID: 7227120680640278575, guid: 39a55d602c96db649a4f6085cbde7ace, type: 3}
@@ -34,7 +35,7 @@ MonoBehaviour:
       \uACFC\uC790\uB791 \uD568\uAED8 \uCC9C\uCC9C\uD788 \uB4DC\uC154\uBCF4\uC138\uC694."
     leftSprite: {fileID: 5352576004762474852, guid: dc6975b729361dc43bae75da403e04ca, type: 3}
     rightSprite: {fileID: -1265705340174883840, guid: c619c1651814be14ab9adfe358ee413e, type: 3}
-    eventCommand: 
+    eventCommand: SFX:7
   - speakerType: 2
     speakerName: "\uC544\uC774\uB9B0"
     text: "\uC5ED\uC2DC \uB108 \uBC16\uC5D0 \uC5C6\uB2E4\uB2C8\uAE4C! \\n\uB0B4\uAC00
@@ -54,7 +55,7 @@ MonoBehaviour:
     text: "\uC6C5 \uBA4D\uB370 \uB9D0\uD574\uBD25 \uC6C5\uB0E0"
     leftSprite: {fileID: 5352576004762474852, guid: dc6975b729361dc43bae75da403e04ca, type: 3}
     rightSprite: {fileID: -1265705340174883840, guid: c619c1651814be14ab9adfe358ee413e, type: 3}
-    eventCommand: 
+    eventCommand: SFX:6
   - speakerType: 1
     speakerName: "\uB8E8\uBBF8\uB098"
     text: "\uBC29\uAE08 \uB4E4\uC73C\uC2E0 \uBBFC\uC6D0 \uB0B4\uC6A9\uC5D0 \uC5F0\uAD00\uB41C
@@ -94,7 +95,7 @@ MonoBehaviour:
       \uB9DB \uBCFC \uC218 \uC5C6\uC5C8\uC744\uAC70\uC57C."
     leftSprite: {fileID: 5352576004762474852, guid: dc6975b729361dc43bae75da403e04ca, type: 3}
     rightSprite: {fileID: -395058365, guid: 4499765106cd484429308e64bf172d9d, type: 3}
-    eventCommand: 
+    eventCommand: SFX:6
   - speakerType: 1
     speakerName: "\uB8E8\uBBF8\uB098"
     text: "\uADF8\uB798\uB3C4... \uC81C\uAC00 \uADF8 \uB54C \uC880\uB354 \uACBD\uACC4\uD588\uC5C8\uB2E4\uBA74
@@ -130,7 +131,7 @@ MonoBehaviour:
       \\n\uC774\uAC70 \uCC38 \uACE8\uCE58 \uC544\uD504\uB124."
     leftSprite: {fileID: 5352576004762474852, guid: dc6975b729361dc43bae75da403e04ca, type: 3}
     rightSprite: {fileID: -395058365, guid: 4499765106cd484429308e64bf172d9d, type: 3}
-    eventCommand: 
+    eventCommand: SFX:7
   - speakerType: 1
     speakerName: "\uB8E8\uBBF8\uB098"
     text: "\uC81C\uAC00 \uB2E4\uB140\uC640\uB3C4 \uAD1C\uCC2E\uC744\uAE4C\uC694?

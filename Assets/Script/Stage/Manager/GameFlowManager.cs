@@ -7,6 +7,7 @@ using Script.Stage.Handler;
 using Script.Stage.StageHandler;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Script.Stage.Manager
@@ -16,7 +17,7 @@ namespace Script.Stage.Manager
         [SerializeField] private Slider waveProgressSlider;
         [SerializeField] private GameObject RoundPanel;
         [SerializeField] private TextMeshProUGUI elapsedTime;
-        [SerializeField] private GameObject EndGameScreen, GameOverScreen, GameWinScreen;
+        [SerializeField] private GameObject EndGameScreen, GameOverScreen;
 
         private int targetCount, killCount = 0;
         private float startTime;
@@ -25,7 +26,7 @@ namespace Script.Stage.Manager
         private float sliderSpeed;
         private bool isWaveInProgress;
 
-        private StageHandlerBase currentStage;
+        public StageHandlerBase CurrentStage { get; private set; }
         public CharacterHandler ChHandler { get; private set; }
 
         protected override void Awake()
@@ -37,8 +38,8 @@ namespace Script.Stage.Manager
 
         void Start()
         {
-            currentStage = FindFirstObjectByType<StageHandlerBase>();
-            ChHandler = currentStage.Player().GetComponentInChildren<CharacterHandler>();
+            CurrentStage = FindFirstObjectByType<StageHandlerBase>();
+            ChHandler = CurrentStage.Player().GetComponentInChildren<CharacterHandler>();
             StartCoroutine(GameLoop());
         }
 
@@ -61,7 +62,7 @@ namespace Script.Stage.Manager
 
         public EnemySpawnHandler Spawner()
         {
-            return currentStage.Spawner();
+            return CurrentStage.Spawner();
         }
 
         public void SetTargetCount(int count)
@@ -74,9 +75,11 @@ namespace Script.Stage.Manager
         public void KillEnemy()
         {
             killCount++;
-            if (currentStage.GetType() == typeof(BossStageHandler))
+            CurrentStage.CountEnemyKill(killCount);
+
+            if (CurrentStage.GetType() == typeof(BossStageHandler))
             {
-                var bossHandler = (currentStage as BossStageHandler).BossHandler;
+                var bossHandler = (CurrentStage as BossStageHandler).BossHandler;
 
                 if (bossHandler != null && !bossHandler.IsDead())
                 {
@@ -100,6 +103,11 @@ namespace Script.Stage.Manager
             EndGameScreen.SetActive(true);
             GameOverScreen.SetActive(true);
             ChHandler.GameOver();
+        }
+
+        public int KillCount()
+        {
+            return killCount;
         }
 
         private void UpdateWaveProgress()
@@ -126,7 +134,7 @@ namespace Script.Stage.Manager
             yield return !RoundPanel.activeInHierarchy;
             startTime = Time.time;
 
-            yield return StartCoroutine(currentStage.StartGame());
+            yield return StartCoroutine(CurrentStage.StartGame());
             HandlerGameClear();
         }
 
@@ -141,7 +149,18 @@ namespace Script.Stage.Manager
 
             if (SceneLoadManager.SelectedChapterNo == 1)
             {
-                GameWinScreen.SetActive(true);
+                if (StoryContext.storyAfterBattle != null)
+                {
+                    StoryContext.storyToPlay = StoryContext.storyAfterBattle;
+                    StoryContext.storyAfterBattle = null;
+
+                    SceneManager.LoadScene("StoryScene");
+                }
+                else
+                {
+                    //SceneManager.LoadScene("Main");
+                    Debug.Log("storyAfterBattle is null");
+                }
             }
             else if (SceneLoadManager.SelectedChapterNo == 2)
             {

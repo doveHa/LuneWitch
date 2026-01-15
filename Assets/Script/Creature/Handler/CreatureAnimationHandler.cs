@@ -35,6 +35,7 @@ namespace Script.Creature.Handler
 
         public override void PlayDeathAnimation()
         {
+            Destroy(creatureSprite);
             StartCoroutine(DestroyCoroutine());
         }
 
@@ -51,8 +52,10 @@ namespace Script.Creature.Handler
 
         private IEnumerator DestroyCoroutine()
         {
+            Debug.Log("DeathParticles.play");
             deathParticles.Play();
             yield return new WaitUntil(() => !deathParticles.isPlaying);
+            Debug.Log("DeathParticles.end");
             Destroy(gameObject);
         }
 

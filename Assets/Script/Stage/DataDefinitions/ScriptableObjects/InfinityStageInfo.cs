@@ -8,7 +8,7 @@ namespace Script.Stage.DataDefinitions.ScriptableObjects
     public class InfinityStageInfo : ScriptableObject
     {
         public string stageTitle = "무한의 탑";
-        public Sprite backGroundImage;
+        public Sprite[] backGroundImage;
 
         public EnemyData[] normalEnemyPool;
         public List<EnemyData> bossEnemyPool;

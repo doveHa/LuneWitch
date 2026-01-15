@@ -71,7 +71,6 @@ namespace Script.BattleStyle.Manager
             float summonChance = Random.Range(0, probabilitySum);
             foreach (CreatureSummonHandler card in cardPool)
             {
-                Debug.Log(card);
                 if (card.SummonChance > summonChance)
                 {
                     return card;

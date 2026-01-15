@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Nurse
   m_EditorClassIdentifier: 
   name: Nurse
-  attack: 0
+  attack: 10
   health: 100
   attackTerm: 1
   prefab: {fileID: 8436103653396323419, guid: fc80f356fd4b9e64787d4cd695eda968, type: 3}

@@ -16,7 +16,7 @@ namespace Script.Character.SkillHandler
         }
         
         private IEnumerator AdjustDamage()
-        {
+        {    
             yield return new WaitUntil(() => particle.time / particle.totalTime > 0.7);
             Damage(GameFlowManager.Manager.Spawner().SpawnPoints());
         }

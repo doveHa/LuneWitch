@@ -23,6 +23,7 @@ namespace Script.Character.ButtonOnClick
         {
             if (currentGauge < maxGauge)
             {
+                skillButton.interactable = false;
                 RecoverGauge(Time.deltaTime);
                 UIUpdate();
             }

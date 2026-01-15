@@ -10,8 +10,11 @@ namespace Script.Core.Handler
 
         public virtual void Hit(int damage)
         {
-            AnimationHandler.PlayHitAnimation();
-            HealthHandler.Hit(damage);
+            if (!HealthHandler.IsDead)
+            {
+                AnimationHandler.PlayHitAnimation();
+                HealthHandler.Hit(damage);
+            }
 
             if (HealthHandler.IsDead)
             {

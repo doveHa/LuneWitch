@@ -1,4 +1,5 @@
-﻿
+﻿using UnityEngine;
+
 namespace Script.Core.Handler
 {
     public class HealthHandler
@@ -24,7 +25,7 @@ namespace Script.Core.Handler
         public void HealthAddUpgrade(int health)
         {
             HealthUpgradeCount += health;
-            
+
             MaxHealth += health;
             Health += MaxHealth - Health;
         }
@@ -32,8 +33,10 @@ namespace Script.Core.Handler
         public void Hit(int damage)
         {
             Health -= damage;
+            Debug.Log($"Health: {Health}/{MaxHealth}");
             if (Health <= 0)
             {
+                Debug.Log("Dead");
                 IsDead = true;
             }
         }

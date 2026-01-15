@@ -46,7 +46,7 @@ namespace Script.UI.Base
             }
         }
 
-        void Start()
+        void OnEnable()
         {
             switch (type)
             {
@@ -60,6 +60,10 @@ namespace Script.UI.Base
                     StartCoroutine(WaitAndFadeInOut());
                     break;
             }
+        }
+
+        void Start()
+        {
         }
 
         private IEnumerator WaitAndFadeIn()

@@ -28,6 +28,7 @@ namespace Script.Character.SkillHandler
                 EnemyHandler[] stats = point.gameObject.GetComponentsInChildren<EnemyHandler>();
                 foreach (EnemyHandler enemyHandler in stats)
                 {
+                    Debug.Log(enemyHandler.name + "Skill Hit");
                     enemyHandler.Hit(damage);
                 }
             }

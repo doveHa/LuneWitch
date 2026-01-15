@@ -41,7 +41,6 @@ namespace Script.Creature.Handler
         {
             CardPoolManager.Manager.RemoveCardInPool(CreatureSummonHandler);
             AnimationHandler.PlayDeathAnimation();
-            Destroy(gameObject);
         }
 
         public CreatureSummonHandler SummonCreature(CardZoneCoordinate coordinate)

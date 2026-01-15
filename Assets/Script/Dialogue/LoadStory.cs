@@ -4,23 +4,12 @@ using UnityEngine.SceneManagement;
 
 public class LoadStory : MonoBehaviour
 {
-    //ÀüÅõ ÈÄ ½ºÅä¸® ¾À ·Îµå
+    //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ä¸® ï¿½ï¿½ ï¿½Îµï¿½
     public void LoadNextAfterBattle()
     {
         Debug.Log(StoryContext.storyAfterBattle);
         Debug.Log(StoryContext.storyToPlay);
 
-        if (StoryContext.storyAfterBattle != null)
-        {
-            StoryContext.storyToPlay = StoryContext.storyAfterBattle;
-            StoryContext.storyAfterBattle = null;
-
-            SceneManager.LoadScene("StoryScene"); // ÅëÇÕµÈ ½ºÅä¸® ¾À ÀÌ¸§
-        }
-        else
-        {
-            //SceneManager.LoadScene("Main");
-            Debug.Log("storyAfterBattle is null");
-        }
+        
     }
 }

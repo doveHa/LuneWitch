@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 234cd38b9848a3e498c0cca54a1d01d6, type: 3}
   m_Name: Broomstick
   m_EditorClassIdentifier: 
-  name: Broomstick
+  name: Broomit
   attack: 10
   health: 130
   attackTerm: 3
   prefab: {fileID: 804819288300844835, guid: 21c68269abd281b4ea81cf261212a6ed, type: 3}
   isActive: 0
-  name_Kr: "\uBE57\uC790\uB8E8"
-  description: "\uBE57\uC790\uB8E8\uC785\uB2C8\uB2E4."
+  name_Kr: "\uBE0C\uB8E8\uBC0B"
+  description: "\uC790\uC544\uAC00 \uAE43\uB4E0 \uBE57\uC790\uB8E8. \uB9C8\uB140\uB4E4\uC758
+    \uC601\uC6D0\uD55C \uCCAD\uC18C\uBD80\uC774\uB2E4."
   cost: 100
   characterImage: {fileID: -1265781473, guid: b5d92acea184ca645b9ac6ba20a3be40, type: 3}
   unitSize: {x: 1, y: 1}

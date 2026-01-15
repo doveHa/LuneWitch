@@ -12,14 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 234cd38b9848a3e498c0cca54a1d01d6, type: 3}
   m_Name: Frog
   m_EditorClassIdentifier: 
-  name: Frog
+  name: Froak
   attack: 0
   health: 300
   attackTerm: 13
   prefab: {fileID: 804819288300844835, guid: 7b8fbfc441ca24346b3123d972879fa4, type: 3}
   isActive: 0
-  name_Kr: "\uAC1C\uAD6C\uB9AC"
-  description: "\uAC1C\uAD6C\uB9AC\uC785\uB2C8\uB2E4."
+  name_Kr: "\uD504\uB85C\uD06C"
+  description: "\uB3FC\uC9C0 \uAC1C\uAD6C\uB9AC. \uBA39\uACE0 \uB0AE\uC7A0 \uC790\uB294
+    \uAC83\uC744 \uB9E4\uC6B0 \uC88B\uC544\uD55C\uB2E4. \uB369\uCE58 \uB54C\uBB38\uC5D0
+    \uC8FC\uB85C \uB450\uAEBC\uBE44\uB85C \uC624\uD574\uBC1B\uB294\uB2E4."
   cost: 180
   characterImage: {fileID: -414100918, guid: ca4571ebc3450c04382cf2c224e3f3c0, type: 3}
   unitSize: {x: 2, y: 2}

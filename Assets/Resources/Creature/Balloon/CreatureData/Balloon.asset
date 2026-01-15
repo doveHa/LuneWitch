@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 234cd38b9848a3e498c0cca54a1d01d6, type: 3}
   m_Name: Balloon
   m_EditorClassIdentifier: 
-  name: Balloon
+  name: Mr.Bitune
   attack: 30
   health: 70
   attackTerm: 2
   prefab: {fileID: 804819288300844835, guid: b15adc9c700b76842b3e2855139cb034, type: 3}
   isActive: 0
-  name_Kr: "\uD48D\uC120"
-  description: "\uD48D\uC120\uC785\uB2C8\uB2E4."
+  name_Kr: "\uBBF8\uC2A4\uD130 \uBC14\uC774\uD2A0"
+  description: "\uC2E0\uC0AC\uC801\uC778 \uD48D\uC120. \uC2A4\uBAB0\uD1A0\uD06C\uB97C
+    \uC88B\uC544\uD55C\uB2E4."
   cost: 105
   characterImage: {fileID: 409549244, guid: 2251ed9b96b91d44ca25c2eb4b00a62a, type: 3}
   unitSize: {x: 1, y: 1}

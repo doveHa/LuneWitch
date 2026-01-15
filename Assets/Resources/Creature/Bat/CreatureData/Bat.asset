@@ -12,14 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 234cd38b9848a3e498c0cca54a1d01d6, type: 3}
   m_Name: Bat
   m_EditorClassIdentifier: 
-  name: Bat
+  name: Batty
   attack: 50
   health: 100
   attackTerm: 5
   prefab: {fileID: 804819288300844835, guid: c31023aafd4cfb246964a1190c6eabf7, type: 3}
   isActive: 0
-  name_Kr: "\uBC15\uC950"
-  description: "\uBC15\uC950\uC785\uB2C8\uB2E4."
+  name_Kr: "\uBC30\uD2F0"
+  description: "\uADC0\uC5EC\uC6B4 \uC560\uC644 \uBC15\uC950. \uB2E4\uB9CC \uC2A4\uD2B8\uB808\uC2A4\uB97C
+    \uBC1B\uC73C\uBA74 \uC5C4\uCCAD\uB098 \uCD08\uC74C\uD30C\uB85C \uACE0\uB9C9\uC744
+    \uCC22\uC5B4\uBC84\uB9AC\uB2C8 \uC8FC\uC758\uD558\uC790."
   cost: 120
   characterImage: {fileID: -1735417878, guid: 4783c7c0936d8b242b7487a2e7782ef4, type: 3}
   unitSize: {x: 1, y: 1}

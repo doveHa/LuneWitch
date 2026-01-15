@@ -18,7 +18,7 @@ namespace Script.Stage.StageHandler
                 Constant.ResourcePath.STAGE_INFO_DATA_PATH_BY_CHAPTER_ROUND(
                     SceneLoadManager.SelectedChapterNo, SceneLoadManager.SelectedRoundNo));
 
-            sceneReferences.waveTitle.text = data.chapter + "-" + data.round + "\n" + data.roundTitle;
+            sceneReferences.waveTitle.text = data.chapter + "-" + data.round + " " + data.roundTitle;
             sceneReferences.roundPanelRound.text = "Round " + data.round;
             sceneReferences.roundPanelTitle.text = data.roundTitle;
             sceneReferences.backGroundImage.sprite = data.backGroundImage;

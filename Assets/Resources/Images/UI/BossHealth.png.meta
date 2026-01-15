@@ -129,45 +129,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\uBCF4\uC2A4 \uD53C\uD1B52_0"
+      name: BossHealth_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 11
-        width: 398
-        height: 6
+        x: 8
+        y: 12
+        width: 396
+        height: 4
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: b77eaedee1e505d40800000000000000
-      internalID: 5571056225990928251
+      spriteID: a8700a1aa5399004480c1768a14a19ca
+      internalID: -2143255338
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\uBCF4\uC2A4 \uD53C\uD1B52_1"
+      name: BossHealth_1
       rect:
         serializedVersion: 2
-        x: 1
+        x: 2
         y: 0
-        width: 410
-        height: 10
+        width: 408
+        height: 9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: cc32f0c5a2d6590c0800000000000000
-      internalID: -4569626218196950068
+      spriteID: 7a911c8e17c592948817eae9b8f51efd
+      internalID: -1711336055
       vertices: []
       indices: 
       edges: []
@@ -176,7 +176,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 1036554e491e76c44801340643086a61
     internalID: 0
     vertices: []
     indices: 
@@ -184,10 +184,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      "\uBCF4\uC2A4 \uD53C\uD1B52_0": 5571056225990928251
-      "\uBCF4\uC2A4 \uD53C\uD1B52_1": -4569626218196950068
+      BossHealth_0: -2143255338
+      BossHealth_1: -1711336055
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

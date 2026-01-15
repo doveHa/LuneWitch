@@ -32,7 +32,6 @@ namespace Script.BattleStyle.Handler
         {
             if (other.CompareTag("Creature"))
             {
-                Debug.Log("CardZone ExitTrigger");
                 SummonedCreature = null;
             }
             else if (other.CompareTag("Enemy"))

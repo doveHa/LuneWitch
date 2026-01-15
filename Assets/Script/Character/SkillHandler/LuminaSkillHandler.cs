@@ -1,9 +1,12 @@
 ﻿using System.Collections;
+using Script.Boss.Handler;
 using Script.Character.Handler;
 using Script.Enemy.Handler;
+using Script.Manager;
 using Script.Player;
 using Script.Stage.Manager;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Script.Character.SkillHandler
 {
@@ -31,6 +34,11 @@ namespace Script.Character.SkillHandler
                     Debug.Log(enemyHandler.name + "Skill Hit");
                     enemyHandler.Hit(damage);
                 }
+            }
+
+            if (SceneLoadManager.SelectedChapterNo == 2 && SceneLoadManager.SelectedRoundNo == 3)
+            {
+                FindAnyObjectByType<BossHandler>().Hit(damage);
             }
         }
     }

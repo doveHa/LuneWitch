@@ -30,4 +30,4 @@ MonoBehaviour:
   atkMultiplierPerWave: 0.05
   spawnCountIncreaseRate: 1
   rewardCostPerWave: 50
-  enemyCount: 1
+  enemyCount: 15

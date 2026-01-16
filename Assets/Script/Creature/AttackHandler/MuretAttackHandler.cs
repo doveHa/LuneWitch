@@ -53,6 +53,7 @@ namespace Script.Creature.AttackHandler
         private IEnumerator DestroyCoroutine()
         {
             explodeParticles.Play();
+            StartAttacking();
             yield return new WaitUntil(() => explodeParticles.isStopped);
             Destroy(gameObject);
         }

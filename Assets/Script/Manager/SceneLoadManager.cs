@@ -28,7 +28,6 @@ namespace Script.Manager
 
         public void LoadChapter()
         {
-            Time.timeScale = 1f;
             string path = $"DialogueData/Story_{SelectedChapterNo}_0";
             // 시작 스토리가 2개 뿐이기 때문에 하드코딩 하였음
 
@@ -58,20 +57,16 @@ namespace Script.Manager
 
         public void LoadRound()
         {
-            Time.timeScale = 1f;
             SceneManager.LoadScene("BattleScene");
         }
 
         public void LoadStory(string sceneName)
         {
-            Time.timeScale = 1f;
             SceneManager.LoadScene(sceneName);
         }
 
         public void LoadStory(string sceneName, string dialogueDataID)
         {
-            Time.timeScale = 1f;
-
             string path = $"DialogueData/Story_2_{dialogueDataID}";
             DialogueData loadedData = Resources.Load<DialogueData>(path);
 

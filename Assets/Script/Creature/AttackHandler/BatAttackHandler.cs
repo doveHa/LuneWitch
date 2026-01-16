@@ -11,13 +11,6 @@ namespace Script.Creature.AttackHandler
 {
     public class BatAttackHandler : BaseAttackHandler
     {
-        private SoundManager soundManager;
-
-        private void Start()
-        {
-            soundManager = FindObjectOfType<SoundManager>();
-        }
-
         public override HashSet<CardZoneCoordinate> AttackRanges()
         {
             HashSet<CardZoneCoordinate> attackRange = new HashSet<CardZoneCoordinate>();
@@ -34,7 +27,6 @@ namespace Script.Creature.AttackHandler
             foreach (EnemyHandler enemy in enemies)
             {
                 enemy.Hit(Atk);
-                soundManager.PlaySFX(40);
             }
         }
     }

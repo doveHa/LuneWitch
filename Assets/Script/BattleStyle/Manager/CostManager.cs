@@ -44,7 +44,7 @@ namespace Script.BattleStyle.Manager
 
         private void Initialize()
         {
-            cps = VarManager.cost;
+            cps = 10;
             costTimer = 0f;
             Cost = 0;
         }

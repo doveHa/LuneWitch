@@ -40,12 +40,9 @@ namespace Script.Boss.Handler
 
             healthHandler.Hit(atk);
             
-            SoundManager.Instance.PlaySFX(20);
-
             healthBarHandler.UpdateHealthBar(healthHandler.Health);
             if (healthHandler.IsDead)
             {
-                SoundManager.Instance.PlaySFX(21);
                 isDeadProsess = true;
                 StopAllCoroutines();
 

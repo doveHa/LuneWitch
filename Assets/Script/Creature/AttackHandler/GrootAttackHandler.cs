@@ -14,6 +14,8 @@ namespace Script.Creature.AttackHandler
         [SerializeField] private float disSpeedRate = 0.5f;
         [SerializeField] private GameObject ammoPrefab;
         [SerializeField] private Transform shootPoint;
+
+
         public override HashSet<CardZoneCoordinate> AttackRanges()
         {
             HashSet<CardZoneCoordinate> attackRange = new HashSet<CardZoneCoordinate>();
@@ -35,7 +37,6 @@ namespace Script.Creature.AttackHandler
             
             ammoHandler.ShootAmmo(shootPoint.transform,cardZone.transform);
             ammoHandler.SetStat(Atk, disSpeedRate, slowTime);
-            SoundManager.Instance.PlaySFX(47);
         }
     }
 }

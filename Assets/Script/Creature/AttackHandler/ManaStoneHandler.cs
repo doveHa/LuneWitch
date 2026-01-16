@@ -37,6 +37,8 @@ namespace Script.Creature.AttackHandler
 
             if (readyIcon != null)
                 readyIcon.SetActive(ready);
+
+            SoundManager.Instance.PlaySFX(6);
         }
 
         private void OnMouseDown()
@@ -53,6 +55,8 @@ namespace Script.Creature.AttackHandler
             CostManager.Manager.AddCost(bonusCostAmount);
             currentTimer = 0f;
             SetReadyState(false);
+
+            SoundManager.Instance.PlaySFX(6); // 효과음 재생
         }
     }
 }

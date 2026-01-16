@@ -1,8 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Script.BattleStyle.DataDefinitions.Data;
-using Script.BattleStyle.Handler;
-using Script.BattleStyle.Manager;
 using Script.Creature.DataDefinitions.ScriptableObjects;
 using Script.Enemy.Handler;
 using UnityEngine;
@@ -51,11 +49,10 @@ namespace Script.Creature.AttackHandler
         {
             StartCoroutine(DestroyCoroutine());
         }
-
+        
         private IEnumerator DestroyCoroutine()
         {
             explodeParticles.Play();
-            StartAttacking();
             yield return new WaitUntil(() => explodeParticles.isStopped);
             Destroy(gameObject);
         }

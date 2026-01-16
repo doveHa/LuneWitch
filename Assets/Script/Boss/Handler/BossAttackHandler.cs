@@ -93,6 +93,7 @@ namespace Script.Boss.Handler
         {
             pattern3Target.Dead();
             pattern3Sprite.gameObject.SetActive(true);
+            SoundManager.Instance.PlaySFX(25);
         }
 
         public void KillCreature()
@@ -108,6 +109,8 @@ namespace Script.Boss.Handler
             int killCreatureIndex = Random.Range(0, handlers.Length);
             pattern3Sprite.sprite = handlers[killCreatureIndex].CreatureData.characterImage;
             pattern3Target = handlers[killCreatureIndex];
+
+            SoundManager.Instance.PlaySFX(22);
         }
     }
 }

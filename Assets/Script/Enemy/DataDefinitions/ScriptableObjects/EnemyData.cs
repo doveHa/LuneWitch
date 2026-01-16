@@ -7,5 +7,10 @@ namespace Script.Enemy.DataDefinitions.ScriptableObjects
     public class EnemyData : BaseData
     {
         public float moveSpeed;
+
+        [Header("Sound Info")]
+        public int walkSfxIndex;
+        public int attackSfxIndex;
+        public int deathSfxIndex;
     }
 }

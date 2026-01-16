@@ -8,10 +8,15 @@ namespace Script.Character.Handler
         private CharacterAnimationHandler animationHandler;
         private BaseSkillHandler skillHandler;
 
+        //H: Add Sound
+        private SoundManager soundManager;
+
         void Start()
         {
             animationHandler = GetComponent<CharacterAnimationHandler>();
             skillHandler = GetComponent<BaseSkillHandler>();
+
+            soundManager = FindObjectOfType<SoundManager>();
         }
 
         public void SkillOn()
@@ -29,6 +34,9 @@ namespace Script.Character.Handler
         {
             transform.parent.position = new Vector2(0, 0);
             animationHandler.DeathAnimation();
+
+            soundManager.StopAllSFX();
+            soundManager.PlaySFX(17);
         }
     }
 }

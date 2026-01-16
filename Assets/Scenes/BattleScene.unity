@@ -17408,7 +17408,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2097604328}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: PlaySFX
+        m_MethodName: PlaySystemSFX
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19070,6 +19070,18 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3920310811077378492, guid: 175cf936d348fc543b61f6bc99afbf16, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1533257113}
+    - targetCorrespondingSourceObject: {fileID: 508845608200797133, guid: 175cf936d348fc543b61f6bc99afbf16, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1533257116}
+    - targetCorrespondingSourceObject: {fileID: 508845608200797133, guid: 175cf936d348fc543b61f6bc99afbf16, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1533257115}
+    - targetCorrespondingSourceObject: {fileID: 8094368536703634127, guid: 175cf936d348fc543b61f6bc99afbf16, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1688002707}
+    - targetCorrespondingSourceObject: {fileID: 8094368536703634127, guid: 175cf936d348fc543b61f6bc99afbf16, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1688002706}
   m_SourcePrefab: {fileID: 100100000, guid: 175cf936d348fc543b61f6bc99afbf16, type: 3}
 --- !u!1 &1533257111 stripped
 GameObject:
@@ -19100,6 +19112,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sfxIndex: 0
+--- !u!1 &1533257114 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 508845608200797133, guid: 175cf936d348fc543b61f6bc99afbf16, type: 3}
+  m_PrefabInstance: {fileID: 1533257110}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1533257115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1533257114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!223 &1533257116
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1533257114}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 1
+  m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 7
+  m_TargetDisplay: 0
 --- !u!1 &1535011982
 GameObject:
   m_ObjectHideFlags: 0
@@ -20470,12 +20527,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1647951039}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -9000}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1929867927}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1650522808
 GameObject:
@@ -21222,6 +21279,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1688002705 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8094368536703634127, guid: 175cf936d348fc543b61f6bc99afbf16, type: 3}
+  m_PrefabInstance: {fileID: 1533257110}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1688002706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1688002705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!223 &1688002707
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1688002705}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 7
+  m_TargetDisplay: 0
 --- !u!1 &1694293428
 GameObject:
   m_ObjectHideFlags: 0
@@ -22414,7 +22516,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2097604328}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: PlaySFX
+        m_MethodName: PlaySystemSFX
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -23866,6 +23968,7 @@ RectTransform:
   - {fileID: 1284857449}
   - {fileID: 1725906909}
   - {fileID: 1979741779}
+  - {fileID: 1647951041}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -25561,6 +25664,16 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 653653ae768eb964fb6720f828826383, type: 3}
   - {fileID: 8300000, guid: f3b0eb63caf9dc143bad5a9d73bd37a2, type: 3}
   - {fileID: 8300000, guid: 1163fa73e2c87f74a998e10d4d130e78, type: 3}
+  - {fileID: 8300000, guid: 0203741b83426b3449961823f0a7fb2e, type: 3}
+  - {fileID: 8300000, guid: 1a45041f506661542995c5a06bf6efc6, type: 3}
+  - {fileID: 8300000, guid: 0c2a35b351053b74c9e28505d582ee51, type: 3}
+  - {fileID: 8300000, guid: eb6c37f12afa669489eb3266b07cd81b, type: 3}
+  - {fileID: 8300000, guid: a98449786082e1b46a0ddf0a7f88a727, type: 3}
+  - {fileID: 8300000, guid: e3b8f41c5126c424684eef9073a42806, type: 3}
+  - {fileID: 8300000, guid: 566cd7a6af246634b8c791ffd2848043, type: 3}
+  - {fileID: 8300000, guid: 0e30a08bf1b46a041882426666aad0bd, type: 3}
+  - {fileID: 8300000, guid: b5973d214351a8342832a4e3f89698db, type: 3}
+  - {fileID: 8300000, guid: fbb20e33b31db6a4ba3674e25170a667, type: 3}
   poolSize: 16
   sfxMixerGroup: {fileID: 6277956185827522352, guid: 1cba39eb7b254104384fd0a4de48f798, type: 2}
   allowRapidRepeatIndices: 000000000800000023000000
@@ -26170,7 +26283,6 @@ SceneRoots:
   - {fileID: 166114794}
   - {fileID: 1929867927}
   - {fileID: 1590428911}
-  - {fileID: 1647951041}
   - {fileID: 2000374698}
   - {fileID: 2097604329}
   - {fileID: 4920351153687549627}

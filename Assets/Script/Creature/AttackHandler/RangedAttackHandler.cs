@@ -35,6 +35,7 @@ namespace Script.Creature.AttackHandler
                 .GetComponent<AmmoHandler>();
             ammoHandler.SetStat(Atk, ammoSpeed);
             ammoHandler.Fire();
+            SoundManager.Instance.PlaySFX(3);
         }
     }
 }

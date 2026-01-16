@@ -23,6 +23,7 @@ namespace Script.Creature.AttackHandler
         {
             enemies[0].Hit(Atk);
             enemies[0].MoveHandler.KnockBack(knockBackDistance);
-        }
+            SoundManager.Instance.PlaySFX(41)
+;        }
     }
 }

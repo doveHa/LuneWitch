@@ -35,6 +35,9 @@ public class SoundManager : MonoBehaviour
     // 자주 눌러도 되는 효과음 인덱스
     public int[] allowRapidRepeatIndices;
 
+    public static SoundManager Instance;
+    private bool isGameEnded = false;
+
     void Awake()
     {
         /*
@@ -43,6 +46,9 @@ public class SoundManager : MonoBehaviour
         
         */
         // AudioSource 풀 생성
+
+        Instance = this;
+
         sfxSources = new AudioSource[poolSize];
         for (int i = 0; i < poolSize; i++)
         {
@@ -67,6 +73,7 @@ public class SoundManager : MonoBehaviour
         {
             PlayBattleBGM();
         }
+        isGameEnded = false;
     }
 
     public void PlayBGM(AudioClip clip)
@@ -125,8 +132,19 @@ public class SoundManager : MonoBehaviour
         PlayBGM(clipToPlay);
     }
 
+    public void StopAllSFX()
+    {
+        isGameEnded = true;
+
+        for (int i = 0; i < sfxSources.Length; i++)
+        {
+            sfxSources[i].Stop();
+        }
+    }
     public void PlaySFX(int index)
     {
+        if (isGameEnded) return;
+
         if (index < 0 || index >= sfxClips.Length) return;
         if (sfxClips[index] == null) return; // 🎯 null AudioClip 방지
 
@@ -141,6 +159,14 @@ public class SoundManager : MonoBehaviour
 
         // 시간 갱신
         lastPlayedTimes[index] = Time.time;
+        currentIndex = (currentIndex + 1) % poolSize;
+    }
+
+    public void PlaySystemSFX(int index)
+    {
+        if (index < 0 || index >= sfxClips.Length) return;
+
+        sfxSources[currentIndex].PlayOneShot(sfxClips[index]);
         currentIndex = (currentIndex + 1) % poolSize;
     }
 }

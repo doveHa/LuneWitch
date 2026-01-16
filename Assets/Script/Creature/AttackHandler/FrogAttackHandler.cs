@@ -34,6 +34,7 @@ namespace Script.Creature.AttackHandler
 
         protected override void Attack(List<EnemyHandler> enemies)
         {
+            SoundManager.Instance.PlaySFX(42);
             target = enemies[0];
             StartCoroutine(WaitCoolDown());
         }
@@ -48,6 +49,7 @@ namespace Script.Creature.AttackHandler
         {
             yield return new WaitForSeconds(AttackTerm);
             GetComponent<CreatureAnimationHandler>().EndAdditionalAttackAnimation();
+            SoundManager.Instance.PlaySFX(43);
         }
     }
 }

@@ -20,7 +20,7 @@ MonoBehaviour:
   isActive: 0
   name_Kr: "\uC2AC\uB7EC\uBC84"
   description: "\uCE68 \uBC49\uB294 \uC2DD\uBB3C. \uC5B4\uB5A4 \uB9C8\uB140\uAC00
-    \uC2EC\uC220\uB0A8 \uC2EC\uC815\uC73C\uB85C \uC2E4\uD5D8\uC744 \uD558\uB2E4 \uC0DD\uACBC\uB2E4."
+    \uC2EC\uC220\uB09C \uC2EC\uC815\uC73C\uB85C \uC2E4\uD5D8\uC744 \uD558\uB2E4 \uC0DD\uACBC\uB2E4."
   cost: 130
   characterImage: {fileID: 1144950720, guid: e6acae5d6116d2f49a0cf2de81f8cdfb, type: 3}
   unitSize: {x: 1, y: 1}

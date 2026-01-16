@@ -24,3 +24,4 @@ MonoBehaviour:
   cost: 90
   characterImage: {fileID: -1307796211, guid: 16a5a747a3330584ca8c0f3b07f4fa0e, type: 3}
   unitSize: {x: 1, y: 1}
+  Thumbnail: {fileID: 393101113689829478, guid: f6e47c23b9fe0f941805ddb565d443b6, type: 3}

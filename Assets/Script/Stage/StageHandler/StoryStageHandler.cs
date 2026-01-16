@@ -23,7 +23,7 @@ namespace Script.Stage.StageHandler
             sceneReferences.roundPanelTitle.text = data.roundTitle;
             sceneReferences.backGroundImage.sprite = data.backGroundImage;
             SpawnCount = data.enemyCount;
-            sceneReferences.enemyCount.text = "0 / " + SpawnCount;
+            sceneReferences.enemyCount.text = SpawnCount.ToString();
             
             SetEnemyData(data.enemyData);
             SetPlayer();

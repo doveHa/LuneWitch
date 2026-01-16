@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Luna_Witch_icon_0: 6154411477765819138
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

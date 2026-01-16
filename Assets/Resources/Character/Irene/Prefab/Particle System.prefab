@@ -340,7 +340,7 @@ ParticleSystem:
     startSizeY:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 18
+      scalar: 17
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -1538,7 +1538,7 @@ ParticleSystem:
         m_RotationOrder: 4
     speedRange: {x: 0, y: 1}
     tilesX: 6
-    tilesY: 5
+    tilesY: 6
     animationType: 0
     rowIndex: 0
     cycles: 1

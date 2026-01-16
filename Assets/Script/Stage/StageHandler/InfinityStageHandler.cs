@@ -26,7 +26,7 @@ namespace Script.Stage.StageHandler
             sceneReferences.roundPanelRound.text = WaveText();
             sceneReferences.roundPanelTitle.text = stageInfo.stageTitle;
             sceneReferences.backGroundImage.sprite = stageInfo.backGroundImage[0];
-
+            
             roundPanel = sceneReferences.roundPanelRound.transform.GetComponentInParent<RoundPanelHandler>();
             SetEnemyData(stageInfo.normalEnemyPool);
             SetPlayer();
@@ -39,7 +39,7 @@ namespace Script.Stage.StageHandler
                 int backgroundIndex = (currentWave / 5) % 4;
                 sceneReferences.backGroundImage.sprite = stageInfo.backGroundImage[backgroundIndex];
                 SpawnCount = stageInfo.enemyCount + currentWave * 3;
-
+                
                 CountEnemyKill(0);
                 GameFlowManager.Manager.SetTargetCount(SpawnCount);
                 GameFlowManager.Manager.StartWaveLogic();

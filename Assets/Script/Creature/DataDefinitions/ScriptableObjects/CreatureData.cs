@@ -15,5 +15,6 @@ namespace Script.Creature.DataDefinitions.ScriptableObjects
         public Sprite characterImage;
 
         public Vector2Int unitSize;
+        public Sprite Thumbnail;
     }
 }

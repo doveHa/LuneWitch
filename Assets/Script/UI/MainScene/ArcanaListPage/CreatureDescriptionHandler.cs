@@ -25,8 +25,15 @@ namespace Script.UI.MainScene.ArcanaListPage
             costText.text = creature.cost.ToString();
             descriptionText.text = creature.description;
 
-            creatureIcon.sprite = creature.characterImage;
-            creatureIcon.SetNativeSize();
+            if (creature.Thumbnail != null)
+            {
+                creatureIcon.sprite = creature.Thumbnail;
+            }
+            else
+            {
+                creatureIcon.sprite = creature.characterImage;
+                creatureIcon.SetNativeSize();
+            }
         }
 
         public void PositionInitialize()

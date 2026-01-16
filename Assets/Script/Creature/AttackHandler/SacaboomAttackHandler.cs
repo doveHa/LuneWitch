@@ -51,8 +51,8 @@ namespace Script.Creature.AttackHandler
         public void Destroy()
         {
             Destroy(gameObject);
-
         }
+
         void OnTriggerEnter2D(Collider2D other)
         {
             if (other.CompareTag("Enemy"))

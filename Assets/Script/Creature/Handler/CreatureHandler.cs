@@ -39,7 +39,8 @@ namespace Script.Creature.Handler
 
         public override void Dead()
         {
-            CardPoolManager.Manager.RemoveCardInPool(CreatureSummonHandler);
+            // 업그레이드 시스템
+            //CardPoolManager.Manager.RemoveCardInPool(CreatureSummonHandler);
             AnimationHandler.PlayDeathAnimation();
         }
 
@@ -53,14 +54,13 @@ namespace Script.Creature.Handler
             creatureObject.transform.SetParent(summonTransform);
             creatureObject.GetComponent<BaseAttackHandler>().RootCoordinate = coordinate;
             creatureObject.GetComponent<CreatureHandler>().Initialize(CreatureData);
-
-            return creatureObject.GetComponent<CreatureSummonHandler>().FirstSummonInitialize();
             
             if (creatureObject.GetComponent<CreatureHandler>().CreatureData.isActive)
             {
                 return creatureObject.GetComponent<CreatureSummonHandler>();
             }
 
+            return creatureObject.GetComponent<CreatureSummonHandler>().FirstSummonInitialize();
         }
 
         public void UpgradeCreature(UpgradeType upgradeType)

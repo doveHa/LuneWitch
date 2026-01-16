@@ -51,7 +51,7 @@ namespace Script.Creature.AttackHandler
         public void Destroy()
         {
             Destroy(gameObject);
-
+            SoundManager.Instance.PlaySFX(45);
         }
         void OnTriggerEnter2D(Collider2D other)
         {

@@ -19,6 +19,7 @@ namespace Script.Creature.AttackHandler
             foreach (EnemyHandler enemy in enemies)
             {
                 enemy.Hit(Atk);
+                SoundManager.Instance.PlaySFX(46);
             }
         }
     }

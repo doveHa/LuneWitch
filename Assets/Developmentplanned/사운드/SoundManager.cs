@@ -35,6 +35,8 @@ public class SoundManager : MonoBehaviour
     // 자주 눌러도 되는 효과음 인덱스
     public int[] allowRapidRepeatIndices;
 
+    public static SoundManager Instance;
+
     void Awake()
     {
         /*
@@ -43,6 +45,9 @@ public class SoundManager : MonoBehaviour
         
         */
         // AudioSource 풀 생성
+
+        Instance = this;
+
         sfxSources = new AudioSource[poolSize];
         for (int i = 0; i < poolSize; i++)
         {
@@ -125,6 +130,13 @@ public class SoundManager : MonoBehaviour
         PlayBGM(clipToPlay);
     }
 
+    public void StopAllSFX()
+    {
+        for (int i = 0; i < sfxSources.Length; i++)
+        {
+            sfxSources[i].Stop();
+        }
+    }
     public void PlaySFX(int index)
     {
         if (index < 0 || index >= sfxClips.Length) return;

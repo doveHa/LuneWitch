@@ -21,6 +21,7 @@ namespace Script.Enemy.Handler
         private bool isDead;
         private CardZoneCoordinate attackZone;
 
+
         void Awake()
         {
             isAttack = false;
@@ -52,6 +53,7 @@ namespace Script.Enemy.Handler
             {
                 (AnimationHandler as EnemyAnimationHandler).StartWalkAnimation();
                 MoveHandler.StartWalk();
+                SoundManager.Instance.PlaySFX(enemyData.walkSfxIndex);
             }
         }
 
@@ -111,6 +113,7 @@ namespace Script.Enemy.Handler
         public void DestroyGameObject()
         {
             Destroy(transform.parent.gameObject);
+            SoundManager.Instance.PlaySFX(enemyData.deathSfxIndex);
         }
 
         private IEnumerator SpeedDebuff(float disSpeedRate, float slowTime)
@@ -129,6 +132,7 @@ namespace Script.Enemy.Handler
             while (IsRecognize)
             {
                 AnimationHandler.PlayAttackAnimation();
+                SoundManager.Instance.PlaySFX(enemyData.attackSfxIndex);
                 yield return new WaitForSeconds(enemyData.attackTerm);
             }
 

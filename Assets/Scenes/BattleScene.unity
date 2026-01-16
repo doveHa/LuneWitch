@@ -25663,6 +25663,16 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 653653ae768eb964fb6720f828826383, type: 3}
   - {fileID: 8300000, guid: f3b0eb63caf9dc143bad5a9d73bd37a2, type: 3}
   - {fileID: 8300000, guid: 1163fa73e2c87f74a998e10d4d130e78, type: 3}
+  - {fileID: 8300000, guid: 0203741b83426b3449961823f0a7fb2e, type: 3}
+  - {fileID: 8300000, guid: 1a45041f506661542995c5a06bf6efc6, type: 3}
+  - {fileID: 8300000, guid: 0c2a35b351053b74c9e28505d582ee51, type: 3}
+  - {fileID: 8300000, guid: eb6c37f12afa669489eb3266b07cd81b, type: 3}
+  - {fileID: 8300000, guid: a98449786082e1b46a0ddf0a7f88a727, type: 3}
+  - {fileID: 8300000, guid: e3b8f41c5126c424684eef9073a42806, type: 3}
+  - {fileID: 8300000, guid: 566cd7a6af246634b8c791ffd2848043, type: 3}
+  - {fileID: 8300000, guid: 0e30a08bf1b46a041882426666aad0bd, type: 3}
+  - {fileID: 8300000, guid: b5973d214351a8342832a4e3f89698db, type: 3}
+  - {fileID: 8300000, guid: fbb20e33b31db6a4ba3674e25170a667, type: 3}
   poolSize: 16
   sfxMixerGroup: {fileID: 6277956185827522352, guid: 1cba39eb7b254104384fd0a4de48f798, type: 2}
   allowRapidRepeatIndices: 000000000800000023000000

@@ -18,3 +18,6 @@ MonoBehaviour:
   attackTerm: 5
   prefab: {fileID: 8436103653396323419, guid: be9f0f62e294ca647aec7ff890dbdcee, type: 3}
   moveSpeed: 0.5
+  walkSfxIndex: 7
+  attackSfxIndex: 1
+  deathSfxIndex: 11

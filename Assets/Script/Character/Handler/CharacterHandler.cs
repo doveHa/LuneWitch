@@ -36,8 +36,7 @@ namespace Script.Character.Handler
             animationHandler.DeathAnimation();
 
             soundManager.StopAllSFX();
-            Debug.Log("StopSfx");
-            soundManager.PlaySFX(17); // 플레이어 사망
+            soundManager.PlaySFX(17);
         }
     }
 }

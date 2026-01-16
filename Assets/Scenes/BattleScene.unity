@@ -17408,7 +17408,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2097604328}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: PlaySFX
+        m_MethodName: PlaySystemSFX
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -20527,12 +20527,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1647951039}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -9000}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1929867927}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1650522808
 GameObject:
@@ -22516,7 +22516,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2097604328}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: PlaySFX
+        m_MethodName: PlaySystemSFX
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -23968,6 +23968,7 @@ RectTransform:
   - {fileID: 1284857449}
   - {fileID: 1725906909}
   - {fileID: 1979741779}
+  - {fileID: 1647951041}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -26282,7 +26283,6 @@ SceneRoots:
   - {fileID: 166114794}
   - {fileID: 1929867927}
   - {fileID: 1590428911}
-  - {fileID: 1647951041}
   - {fileID: 2000374698}
   - {fileID: 2097604329}
   - {fileID: 4920351153687549627}

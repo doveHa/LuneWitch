@@ -50,11 +50,10 @@ namespace Script.Creature.Handler
 
         public CreatureSummonHandler FirstSummonInitialize()
         {
-            /* 업그레이드 파트
             SetNextProbability();
             SetCost();
             CardPoolManager.Manager.AddCardInPool(this);
-            */
+            //업그레이드 파트
             IsOnSummoned = true;
             return this;
         }

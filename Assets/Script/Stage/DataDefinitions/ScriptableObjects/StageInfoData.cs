@@ -1,6 +1,5 @@
 ﻿using Script.Enemy.DataDefinitions.ScriptableObjects;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Script.Stage.DataDefinitions.ScriptableObjects
 {
